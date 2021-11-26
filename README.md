@@ -115,7 +115,7 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
    * --> Abrimos una Nueva Terminal en VS Code y 
    * --> Escribimos `ng new 'nombreDelProyectoSinComillasTodoSeguido' ` en mi caso `ng new 'crudAngularFirebaseBootstrap' `
    * --> Seguidamente nos pregunta si queremos agregar una routing, escribimos yes o y
-   * --> Ahora cual Lenguaje de Mauqetación queremos, elegimos CSS.
+   * --> Ahora cual Lenguaje de Maquetación queremos, elegimos CSS.
    * --> Esperamos a que se cree el Proyecto(este paso lleva tiempo).
 
 </br>
@@ -151,7 +151,7 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
 </br>
 
 #### 5.1) Incluir el CSS desde el CDN de Bootstrap en el index.html
-* Nos dirijimos al index.html
+* Nos dirijimos al `index.html`
 * Incluimos la hoja de estilo dentro del head 
 * Código en la Página oficial https://getbootstrap.com/docs/5.1/getting-started/introduction/ o acá..
 
@@ -203,7 +203,7 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   * --> Escribimos `ng generate module components/navbar --module app` o `ng g m components/navbar --module app`
 
 #### 6.2) Configuración del componente html Navbar
-* Vamos a incluir el código html de ejemplo de la página de bootstrap en el navbar.component.html(app/navbar/navbar.component.html)
+* Vamos a incluir el código html de ejemplo de la página de bootstrap en el `navbar.component.html`(app/navbar/navbar.component.html)
 * Código https://getbootstrap.com/docs/5.1/components/navbar/
 
 
@@ -235,7 +235,7 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
 </nav>
 ```
 
-* Seguidamente vamos a comprobar si el componente creado se ha importado dentro de app.module.ts
+* Seguidamente vamos a comprobar si el componente creado se ha importado dentro de `app.module.ts`
 * Nos dirigimos al archivo (app/app.module.ts)
 * Deberías tener el siguiente código indicando que tenemos el componente importado correctamente
 
@@ -267,7 +267,7 @@ export class AppModule { }
 
 ```
 
-* Seguidamente vamos a incluir el código html del componente navbar dentro del componente app, especificamente dentro de app.component.html
+* Seguidamente vamos a incluir el código html del componente navbar dentro del componente app, especificamente dentro de `app.component.html`
 * Nos dirijimos a app.component.html(app/app.component.html) y escribimos
 
 ```html
@@ -291,53 +291,48 @@ export class AppModule { }
 ### Paso 7) Imágenes de la Aplicación
 #### (Por convención las imágenes locales, iconos web, etc, las guardamos dentro de la carpeta assets).
 
+</br>
+
+#### 7.1) Descarga de Imágenes e Íconos
 * Descargar imágenes e iconos a gusto, en mi caso de electrónica
 * Ted recomiendo la página https://www.flaticon.es/iconos-gratis/electronica
-* Creamos un directorio raiz dentro de assets llamado images(src/assets/images)
+* Creamos un directorio raiz dentro de `assets` llamado images(src/assets/images)
 * Copiamos todas las imágenes descargadas al directorio images
-* Incluimos el icono deseado como representación de la tienda y nombre dentro de navbar.component.html
-* Código
+* Incluimos el icono deseado como representación de la tienda y nombre dentro de `navbar.component.html`
+* Porción de Código
 
 ```html
+
 <header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-
-            <div>
-                <img src="assets/images/elect02.png" alt="" width="30" height="30" class="d-inline-block align-text-top "> Tienda de Electrónica
+     <div>
+                <img src="assets/images/elect02.png" alt="" width="40" height="40" class="d-inline-block align-text-top "> ElectroThings
             </div>
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/']">Inicio</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/listado-componentes']">Listado de Componentes</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/agregar-componentes']">Agregar Componentes</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/editar-componentes']">Editar Componentes</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/ayuda']">Ayuda</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
 </header>
 
-
-
 ```
+
+### 7.2) Cambio de Título e Ícono de la app
+* Nos dirigimos al index.html y en title cambiamos el titulo de la app
+* Para cambiar el icono de la app, linkear la imagen descargada desde el `<link rel="icon">`
+* Porción de Código
+
+```html
+
+<head>
+    <meta charset="utf-8">
+    <title>ElectroThings</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/images/elect02.png">
+
+
+</head>
+```
+
+
+
 
 
 </br>
@@ -353,6 +348,15 @@ export class AppModule { }
 
 header {
     color: white;
+}
+
+img {
+    padding-right: 2px;
+}
+
+div.collapse {
+    margin-left: 15px;
+    padding: 5px;
 }
 
 ```
@@ -396,21 +400,49 @@ header {
 </br>
 
 
+#### 9.4) Página para Ayuda
+* Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/utilidades/ayuda).
+* El comando completo sería `ng g m pages/utilidades/ayuda --module app --route ayuda`
+* Abris una nueva terminal y escribir el comando anterior (en mi caso)
+
+
+</br>
+
+
 ### Paso 10) Ruteo de las páginas de la app
 #### (Declarar las rutas con directivas en angular se consideran buenas prácticas, ya que podremos controlar los errores que pudiesen surgir).
 
-* Nos dirigimos al navbar.component.html y allí modificamos los nav-item agregando las directivas de enlaces `[routerLink] = "['/nombrePagina']"` indicando las páginas de redireccionamiento
+* Primeramente hay que incluir la Directiva `<router-outlet></router-outlet>` dentro de `app.component.html`, por qué sino no se establece el ruteo de forma dinámica, osea no se van a mostrar las páginas creadas.
+
+
+```html
+
+<div>
+
+    <app-navbar></app-navbar>
+
+    <router-outlet></router-outlet>
+
+</div>
+
+```
+
+
+* Ahora nos dirigimos al `navbar.component.html` y allí modificamos los nav-item agregando las directivas de enlaces `[routerLink] = "['/nombrePagina']"` indicando las páginas de redireccionamiento
+* También modifique algunas etiquetas
 * Código
 
 ```html
 
 <header>
 
+   <header>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
 
             <div>
-                <img src="assets/images/elect02.png" alt="" width="30" height="30" class="d-inline-block align-text-top "> Tienda de Electrónica
+                <img src="assets/images/elect02.png" alt="" width="40" height="40" class="d-inline-block align-text-top "> ElectroThings
             </div>
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -418,16 +450,19 @@ header {
     </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" [routerLink]="['/#']">Inicio</a>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/']">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/listadoComponentes']">Listado Componentes</a>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/listado-componentes']">Listado de Componentes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/agregarComponentes']">Agregar Componentes</a>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/agregar-componentes']">Agregar Componentes</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/editar-componentes']">Editar Componentes</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
                         <a class="nav-link" [routerLink]="['/ayuda']">Ayuda</a>
                     </li>
                 </ul>
