@@ -8,12 +8,12 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
 
 | Tecnologías | Versión | Finalidad
 | ------------- | ------------- | ------------- |
-| Angular |   9.1.12 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| Angular |   12.2.11 | FrameWork Web Desarrollo de Apps con TypeScript | 
 | Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
 | Netlify | - | Servidor de Despliegue de Apps| 
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
-| Git | 2.29.1.windows.1  | Control de Versiones |
-| Angular CLI | 9.1.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
+| Git | 2.29.1  | Control de Versiones |
+| Angular CLI | 12.2.11 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
 | Netlify CLI | 2.69.10 | Herramienta de Netlify para Configurar el Despliegue de la App| 
 
 </br>
@@ -297,11 +297,11 @@ export class AppModule { }
 ```html
 <header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
 
             <div>
-                <img src="assets/images/elect02.png" alt="" width="30" height="30" class="d-inline-block align-text-top"> Tienda de Electrónica
+                <img src="assets/images/elect02.png" alt="" width="30" height="30" class="d-inline-block align-text-top "> Tienda de Electrónica
             </div>
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -309,17 +309,20 @@ export class AppModule { }
     </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/']">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/listado-componentes']">Listado de Componentes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/agregar-componentes']">Agregar Componentes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/editar-componentes']">Editar Componentes</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" [routerLink]="['/ayuda']">Ayuda</a>
                     </li>
                 </ul>
             </div>
@@ -327,6 +330,7 @@ export class AppModule { }
     </nav>
 
 </header>
+
 
 
 ```
@@ -391,7 +395,7 @@ header {
 ### Paso 10) Ruteo de las páginas de la app
 #### (Declarar las rutas con directivas en angular se consideran buenas prácticas, ya que podremos controlar los errores que pudiesen surgir).
 
-* Nos dirigimos al navbar.component.html y allí modificamos los nav-item agregando las directivas de enlaces `[routerLink] = "['/nombrePagina']"`
+* Nos dirigimos al navbar.component.html y allí modificamos los nav-item agregando las directivas de enlaces `[routerLink] = "['/nombrePagina']"` indicando las páginas de redireccionamiento
 * Código
 
 ```html
