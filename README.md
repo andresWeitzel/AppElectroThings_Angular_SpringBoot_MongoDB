@@ -9,12 +9,13 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
 | Tecnologías | Versión | Finalidad
 | ------------- | ------------- | ------------- |
 | Angular |   12.2.11 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| Angular CLI | 12.2.11 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
 | Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
+| Firebase | | Base de Datos en Nube |
 | Netlify | - | Servidor de Despliegue de Apps| 
+| Netlify CLI | 2.69.10 | Herramienta de Netlify para Configurar el Despliegue de la App| 
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
 | Git | 2.29.1  | Control de Versiones |
-| Angular CLI | 12.2.11 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
-| Netlify CLI | 2.69.10 | Herramienta de Netlify para Configurar el Despliegue de la App| 
 
 </br>
 
