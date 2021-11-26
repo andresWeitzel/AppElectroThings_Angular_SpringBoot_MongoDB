@@ -196,11 +196,11 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   * --> View -> Terminal
 * Nos posicionamos sobre el proyecto
   * --> Escribimos `cd crud AngularFirebaseBootstrap`
-* Creamos el Nuevo Componente
-  * --> Escribimos `ng generate component navbar` o `ng g c navbar`
-* Si desplegas app, se debería haber generado el componente
+* Creamos el Nuevo Componente modularizado
+  * --> Escribimos `ng generate component components/navbar --module app` o `ng g c components/navbar --module app`
+* Si desplegas componentes, se debería haber generado el componente, junto con sus archivos
 * Ahora creamos el módulo interno de configuración del navbar
-  * --> Escribimos `ng generate module navbar` o `ng g m navbar`
+  * --> Escribimos `ng generate module components/navbar --module app` o `ng g m components/navbar --module app`
 
 #### 6.2) Configuración del componente html Navbar
 * Vamos a incluir el código html de ejemplo de la página de bootstrap en el navbar.component.html(app/navbar/navbar.component.html)
@@ -245,21 +245,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarModule } from './components/navbar/navbar.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 
 ```
 
