@@ -1,0 +1,12 @@
+header {
+    color: white;
+}
+
+img {
+    padding-right: 2px;
+}
+
+div.collapse {
+    margin-left: 15px;
+    padding: 5px;
+}
