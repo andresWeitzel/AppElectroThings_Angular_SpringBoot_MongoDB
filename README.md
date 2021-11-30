@@ -65,11 +65,26 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   - [Paso 8) Maquetado del Componente con css](#paso-8-maquetado-del-componente-con-css)
 
   
-  #### Sección 4) Creación y Configuración de Páginas Web
+  #### Sección 4) Creación-Configuración de Páginas Web y Servicios
   
   - [Paso 9) Generación de Módulos y Componentes para otras páginas](#paso-9-generación-de-módulos-y-componentes-para-otras-páginas)
   
-   
+  - [Paso 10) Ruteo de las Páginas Web](#paso-10-ruteo-de-las-páginas-web)
+
+  - [Paso 11) Creación de Servicios](#paso-11-creación-de-servicios)
+  
+
+
+  #### Sección 5) Desarrollo de las Páginas Web
+  
+  - [Paso 12) Listado de Componentes de Electrónica](#paso-12-listado-de-componentes-de-electrónica)
+  
+
+
+ 
+
+
+
 
 
 </br>
@@ -366,7 +381,9 @@ div.collapse {
 
 </br>
 
-  ## Sección 4) Creación y Configuración de Páginas Web
+
+  ## Sección 4) Creación-Configuración de Páginas Web y Servicios
+
 
 </br>
 
@@ -410,7 +427,7 @@ div.collapse {
 </br>
 
 
-### Paso 10) Ruteo de las páginas de la app
+### Paso 10) Ruteo de las Páginas Web
 #### (Declarar las rutas con directivas en angular se consideran buenas prácticas, ya que podremos controlar los errores que pudiesen surgir).
 
 * Primeramente hay que incluir la Directiva `<router-outlet></router-outlet>` dentro de `app.component.html`, por qué sino no se establece el ruteo de forma dinámica, osea no se van a mostrar las páginas creadas.
@@ -472,6 +489,80 @@ div.collapse {
     </nav>
 
 </header>
+
+```
+
+
+</br>
+
+### Paso 11) Creación de Servicios
+#### (Un servicio Angular es un objeto sin estado y proporciona algunas funciones muy útiles. Estas funciones se pueden invocar desde cualquier componente de Angular, como Controladores, Directivas, etc. Esto ayuda a dividir la aplicación web en unidades lógicas pequeñas y diferentes que se pueden reutilizar.).
+
+</br>
+
+
+* Vamos a generar el servicio dentro de la carpeta de electronica y el mismo se llamara electronica.service (pages/electronica/electronica.service).
+* El comando completo sería `ng g s pages/electronica/electronica`
+* Abris una nueva terminal y escribir el comando anterior (en mi caso)
+* Se tendria que haber generado el archivo `electronica.service.ts`
+
+
+
+
+
+</br>
+
+  ## Sección 5) Desarrollo de las Páginas Web
+
+</br>
+
+  ### Paso 12) Listado de Componentes de Electrónica
+  #### (Como se explico anteriormente esta página contendra la lista de componentes de eletrónica)
+  
+  #### 12.1) Creación de una Tabla
+  * Copiamos la estructura base de la tabla de bootstrap https://getbootstrap.com/docs/5.1/content/tables/ y la pegamos en el listado-`componentes.component.html` dentro de listado-componentes.
+  * Voy a cambiar la variante de la tabla a tipo hover, también los nombres, columnas,etc.
+  * Código..
+  
+```html
+
+<div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Código</th>
+                <th scope="col">Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Módulo WIFI MCU-ESP32</td>
+                <td>MCU-65788</td>
+                <td>1600</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Arduino ETHERNET SHIELD</td>
+                <td>ARDUINO-88445</td>
+                <td>1300</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Raspberry-PI3 Modelo B PLUS</td>
+                <td>RASPBERRY-48953</td>
+                <td>2300</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+
 
 ```
 
