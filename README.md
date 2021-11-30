@@ -9,12 +9,13 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
 | Tecnologías | Versión | Finalidad
 | ------------- | ------------- | ------------- |
 | Angular |   12.2.11 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| Angular CLI | 12.2.11 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
 | Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
+| Firebase | | Base de Datos en Nube |
 | Netlify | - | Servidor de Despliegue de Apps| 
+| Netlify CLI | 2.69.10 | Herramienta de Netlify para Configurar el Despliegue de la App| 
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
 | Git | 2.29.1  | Control de Versiones |
-| Angular CLI | 12.2.11 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
-| Netlify CLI | 2.69.10 | Herramienta de Netlify para Configurar el Despliegue de la App| 
 
 </br>
 
@@ -64,11 +65,26 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   - [Paso 8) Maquetado del Componente con css](#paso-8-maquetado-del-componente-con-css)
 
   
-  #### Sección 4) Creación y Configuración de Páginas Web
+  #### Sección 4) Creación-Configuración de Páginas Web y Servicios
   
   - [Paso 9) Generación de Módulos y Componentes para otras páginas](#paso-9-generación-de-módulos-y-componentes-para-otras-páginas)
   
-   
+  - [Paso 10) Ruteo de las Páginas Web](#paso-10-ruteo-de-las-páginas-web)
+
+  - [Paso 11) Creación de Servicios](#paso-11-creación-de-servicios)
+  
+
+
+  #### Sección 5) Desarrollo de las Páginas Web
+  
+  - [Paso 12) Listado de Componentes de Electrónica](#paso-12-listado-de-componentes-de-electrónica)
+  
+
+
+ 
+
+
+
 
 
 </br>
@@ -365,7 +381,9 @@ div.collapse {
 
 </br>
 
-  ## Sección 4) Creación y Configuración de Páginas Web
+
+  ## Sección 4) Creación-Configuración de Páginas Web y Servicios
+
 
 </br>
 
@@ -409,7 +427,7 @@ div.collapse {
 </br>
 
 
-### Paso 10) Ruteo de las páginas de la app
+### Paso 10) Ruteo de las Páginas Web
 #### (Declarar las rutas con directivas en angular se consideran buenas prácticas, ya que podremos controlar los errores que pudiesen surgir).
 
 * Primeramente hay que incluir la Directiva `<router-outlet></router-outlet>` dentro de `app.component.html`, por qué sino no se establece el ruteo de forma dinámica, osea no se van a mostrar las páginas creadas.
@@ -471,6 +489,123 @@ div.collapse {
     </nav>
 
 </header>
+
+```
+
+
+</br>
+
+### Paso 11) Creación de Servicios
+#### (Un servicio Angular es un objeto sin estado y proporciona algunas funciones muy útiles. Estas funciones se pueden invocar desde cualquier componente de Angular, como Controladores, Directivas, etc. Esto ayuda a dividir la aplicación web en unidades lógicas pequeñas y diferentes que se pueden reutilizar.).
+
+</br>
+
+
+* Vamos a generar el servicio dentro de la carpeta de electronica y el mismo se llamara electronica.service (pages/electronica/electronica.service).
+* El comando completo sería `ng g s pages/electronica/electronica`
+* Abris una nueva terminal y escribir el comando anterior (en mi caso)
+* Se tendria que haber generado el archivo `electronica.service.ts`
+
+
+
+
+
+</br>
+
+  ## Sección 5) Desarrollo de las Páginas Web
+
+</br>
+
+  ### Paso 12) Listado de Componentes de Electrónica
+  #### (Como se explico anteriormente esta página contendra la lista de componentes de eletrónica)
+  
+  #### 12.1) Creación de una Tabla
+  * Copiamos la estructura base de la tabla de bootstrap https://getbootstrap.com/docs/5.1/content/tables/ y la pegamos en el listado-`componentes.component.html` dentro de listado-componentes.
+  * Voy a cambiar la variante de la tabla a tipo hover, también los nombres, columnas, agregar botones, colores, etc.
+  * Además voy a agregar iconos de bootstrap `(https://icons.getbootstrap.com/)` para la visualizacion, la edición y la eliminación de los productos del listado
+  * Código..
+  
+```html
+<div class="table-responsive">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Código</th>
+                <th scope="col">Precio</th>
+                <th class="d-none d-sm-block" scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Replicamos 4 veces los productos e iconos-->
+            <tr *ngFor=" let item of [0,1,2,3,4]">
+                <th scope="row">1</th>
+                <td>Módulo WIFI MCU-ESP32</td>
+                <td>MCU-65788</td>
+                <td>1600</td>
+                <!--En caso de moviles ocultamos -->
+                <td class="btn-group d-none d-sm-block" role="group">
+
+                    <button class="btn btn-primary border-light alert-link m-1 ">
+                    <!--Icono Visualizar Producto-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+                    </svg>
+                      <!--Fin Icono Visualizar Producto-->
+                        </button>
+
+                    <button class="btn btn-warning border-light alert-link m-1 ">
+                          <!--Icono Editar Producto-->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                          </svg>
+                            <!--Fin Icono Editar Producto-->
+              </button>
+
+                    <button class="btn btn-danger border-light alert-link m-1 ">
+                                <!--Icono Eliminar Producto-->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                                  <!--Fin Icono Eliminar Producto-->
+                                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <button class="btn btn-outline-dark  border-dark alert-link m-2 ">Regresar
+                <!--Icono Regresar Inicio-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
+                  <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
+                </svg>
+                  <!--Fin Icono Regresar Inicio-->
+                    </button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-outline-dark  border-dark alert-link m-2 ">Actualizar
+                <!--Icono Actualizar Listado-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                </svg>
+                  <!--Fin Icono Actualizar Listado-->
+                    </button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 
 ```
 
