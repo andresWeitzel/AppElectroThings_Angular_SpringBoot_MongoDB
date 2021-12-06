@@ -399,8 +399,15 @@ div.collapse {
 
 </br>
 
+#### 9.2) Página detalles-componentes
+* Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/detalles-componentes).
+* El comando completo sería `ng g m pages/electronica/datalles-componentes --module app --route detalles-componentes`
+* Abris una nueva terminal y escribir el comando anterior (en mi caso)
 
-#### 9.2) Página agregar-componentes
+</br>
+
+
+#### 9.3) Página agregar-componentes
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/agregar-componentes).
 * El comando completo sería `ng g m pages/electronica/agregar-componentes --module app --route agregar-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -409,7 +416,7 @@ div.collapse {
 </br>
 
 
-#### 9.3) Página editar-componentes
+#### 9.4) Página editar-componentes
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/editar-componentes).
 * El comando completo sería `ng g m pages/electronica/editar-componentes --module app --route editar-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -418,7 +425,7 @@ div.collapse {
 </br>
 
 
-#### 9.4) Página para Ayuda
+#### 9.5) Página para Ayuda
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/utilidades/ayuda).
 * El comando completo sería `ng g m pages/utilidades/ayuda --module app --route ayuda`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -519,11 +526,112 @@ div.collapse {
   ### Paso 12) Listado de Componentes de Electrónica
   #### (Como se explico anteriormente esta página contendra la lista de componentes de eletrónica)
   
+  </br>
+  
   #### 12.1) Creación de una Tabla
   * Copiamos la estructura base de la tabla de bootstrap https://getbootstrap.com/docs/5.1/content/tables/ y la pegamos en el listado-`componentes.component.html` dentro de listado-componentes.
   * Voy a cambiar la variante de la tabla a tipo hover, también los nombres, columnas, agregar botones, colores, etc.
-  * Además voy a agregar iconos de bootstrap `(https://icons.getbootstrap.com/)` para la visualizacion, la edición y la eliminación de los productos del listado
-  * Código..
+  * También voy a agregar iconos de bootstrap `(https://icons.getbootstrap.com/)` para la visualizacion, la edición y la eliminación de los productos del listado
+  
+  </br>
+  
+  #### 12.2) Uso de la Directiva `*ngFor`
+  * Vamos a replicar el listado de productos 4 veces, usando la directiva de angular `*ngFor`, esta directiva nos permite generar muchos elementos HTML repetidos a partir de un recorrido de un arreglo de datos.
+
+```TypeScript
+<!--Replicamos 4 veces los productos e iconos-->
+            <tr *ngFor=" let item of [0,1,2,3,4]">
+                <th scope="row">1</th>
+                <td>Módulo WIFI MCU-ESP32</td>
+                <td>MCU-65788</td>
+                <td>1600</td>
+```
+
+</br>
+
+  #### 12.3) Creación de Funciones CRUD (editar, eliminar y ver )
+  * Necesitamos funciones que nos permitan eliminar, mostrar y modificar los PRODUCTOS que se muestran en el listado, estas funciones las vamos a usar con eventos posteriormente.
+  * Nos dirigimos a `listado-componentes.component.ts`
+  * Vamos a pasarle la clase Route en el constructor, esta clase es la encargada de gestionar las rutas de nuestras paginas web creadas. Importar dichos módulos
+  * Vamos a crear las funciones. Las mismas se llamaran `editarProducto`, `eliminarProducto` y `mostrarProducto`.
+
+</br>
+
+#### 12.3.1) Función `eliminarProducto`
+* Por el momento , en el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente un alert que simplemente nos diga que el producto ha sido borrado..
+* Código Snippet..
+  
+```TypeScript
+eliminarProducto(item : any): void{
+  alert('El Producto ha sido Eliminado');}
+```
+
+#### 12.3.2) Función `editarProducto`
+* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. 
+* Código Snippet..
+  
+```TypeScript
+editarProducto(item : any): void{
+  this.router.navigate(['editar-componentes']);
+}
+```
+
+#### 12.3.3) Función `detallesProducto`
+* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto
+* Código Snippet..
+  
+```TypeScript
+mostrarProducto(item : any): void{
+  this.router.navigate(['detalles-componentes']);
+}
+```
+
+  </br>
+  
+ * Código Completo para `listado-componentes.component.ts`..
+
+```TypeScript
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-listado-componentes',
+  templateUrl: './listado-componentes.component.html',
+  styleUrls: ['./listado-componentes.component.css']
+})
+export class ListadoComponentesComponent implements OnInit {
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  // Métodos CRUD para los Componentes Electrónicos
+
+  // Mostrar Productos
+  detallesProducto(item : any): void{
+    this.router.navigate(['detalles-componentes']);
+  }
+
+  // Editar Productos
+  editarProducto(item : any): void{
+    this.router.navigate(['editar-componentes']);
+  }
+
+  // Eliminar Productos
+  eliminarProducto(item : any): void{
+    alert('El Producto ha sido Eliminado');
+  }
+}
+```
+
+  
+  #### 12.4) Uso de Enlaces a Eventos `(click)`
+  * El enlace de Eventos escucha los eventos de click en el botón y llama al método indicado cada vez que se produce un click
+  * Para poder implementar este evento se deben haber creado previamente las funciones correspondientes para que realizen las acciones de tipo CRUD básicas (editar, eliminar, agregar elementos), como se indica paso a paso en los items anteriores.
+  * Estas funciones se van a agregar dentro de cada boton correspondiente para que realice la acción deseada.
+
+  *  Código..
   
 ```html
 <div class="table-responsive">
@@ -548,7 +656,7 @@ div.collapse {
                 <!--En caso de moviles ocultamos -->
                 <td class="btn-group d-none d-sm-block" role="group">
 
-                    <button class="btn btn-primary border-light alert-link m-1 ">
+                    <button class="btn btn-primary border-light alert-link m-1" (click)="detallesProducto(item)">
                     <!--Icono Visualizar Producto-->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
@@ -556,7 +664,7 @@ div.collapse {
                       <!--Fin Icono Visualizar Producto-->
                         </button>
 
-                    <button class="btn btn-warning border-light alert-link m-1 ">
+                    <button class="btn btn-warning border-light alert-link m-1 " (click)="editarProducto(item)">
                           <!--Icono Editar Producto-->
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
@@ -564,7 +672,7 @@ div.collapse {
                             <!--Fin Icono Editar Producto-->
               </button>
 
-                    <button class="btn btn-danger border-light alert-link m-1 ">
+                    <button class="btn btn-danger border-light alert-link m-1 " (click)="eliminarProducto(item)">
                                 <!--Icono Eliminar Producto-->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -604,7 +712,6 @@ div.collapse {
     </div>
 
 </div>
-
 
 
 ```
