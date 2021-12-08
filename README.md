@@ -523,6 +523,9 @@ div.collapse {
 
 </br>
 
+
+
+
   ### Paso 12) Listado de Componentes de Electrónica
   #### (Como se explico anteriormente esta página contendra la lista de componentes de eletrónica)
   
@@ -540,7 +543,7 @@ div.collapse {
 
 ```TypeScript
 <!--Replicamos 4 veces los productos e iconos-->
-            <tr *ngFor=" let item of [0,1,2,3,4]">
+            <tr *ngFor=" let producto of [0,1,2,3,4]">
                 <th scope="row">1</th>
                 <td>Módulo WIFI MCU-ESP32</td>
                 <td>MCU-65788</td>
@@ -553,37 +556,57 @@ div.collapse {
   * Necesitamos funciones que nos permitan eliminar, mostrar y modificar los PRODUCTOS que se muestran en el listado, estas funciones las vamos a usar con eventos posteriormente.
   * Nos dirigimos a `listado-componentes.component.ts`
   * Vamos a pasarle la clase Route en el constructor, esta clase es la encargada de gestionar las rutas de nuestras paginas web creadas. Importar dichos módulos
-  * Vamos a crear las funciones. Las mismas se llamaran `editarProducto`, `eliminarProducto` y `mostrarProducto`.
+  * Además vamos a utilizar la propiedad llamada `state` que nos permite trabajar con el objeto completo, dicha propiedad deberá ser implementada en cada una de las siguientes funciones.
+  * Para usar dicha propiedad debemos declara un objeto de tipo NavigationExtras importando la interfaz correspondiente y pasandole un estado
+  * Código de la Propiedad..
+  ```TypeScript
+    navigationExtras : NavigationExtras = {
+
+      state : {
+        value:null
+      }
+  ```
+  * `ATENTI`, si se tiene una configuración estricta de TypeScript surgirá un error en este paso, ya que se está declarando la propiedad como nula, hay que dirrijirnos al archivo `tsconfig.json` y dentro del `compilerOptions` cambiar el paramnetro `"strict":true` a `"strict":false`
+  * Por Último vamos a crear las funciones. Las mismas se llamaran `editarProducto`, `eliminarProducto` y `mostrarProducto`.
 
 </br>
 
 #### 12.3.1) Función `eliminarProducto`
-* Por el momento , en el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente un alert que simplemente nos diga que el producto ha sido borrado..
+* Este Método va a recibir un producto en su argumento 
+* Luego, por el momento , en el cuerpo del método vamos a indicar con un alert que simplemente nos diga que el producto ha sido borrado..
 * Código Snippet..
   
 ```TypeScript
-eliminarProducto(item : any): void{
-  alert('El Producto ha sido Eliminado');}
+  // Eliminar Productos
+  eliminarProducto(producto : any): void{
+    alert('El Producto ha sido Eliminado');
+  }
 ```
 
 #### 12.3.2) Función `editarProducto`
-* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. 
+* Este Método va a recibir un producto en su argumento 
+* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. Además vamos a usar la propiedad  creada `navigationExtras` haciendo referencia al estado para trabajar con el objeto en sí. En el segundo parametro del `router.navigate` vamos a pasarle además el estado de la propiedad creada
 * Código Snippet..
   
 ```TypeScript
-editarProducto(item : any): void{
-  this.router.navigate(['editar-componentes']);
-}
+   // Editar Productos
+  editarProducto(producto : any): void{
+    this.navigationExtras.state.value = producto;
+    this.router.navigate(['editar-componentes' , this.navigationExtras]);
+  }
 ```
 
 #### 12.3.3) Función `detallesProducto`
+* Este Método va a recibir un producto en su argumento 
 * En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto
 * Código Snippet..
   
 ```TypeScript
-mostrarProducto(item : any): void{
-  this.router.navigate(['detalles-componentes']);
-}
+  // Mostrar Productos
+  detallesProducto(producto : any): void{
+    this.navigationExtras.state.value = producto;
+    this.router.navigate(['detalles-componentes' , this.navigationExtras]);
+  }
 ```
 
   </br>
@@ -592,7 +615,7 @@ mostrarProducto(item : any): void{
 
 ```TypeScript
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-componentes',
@@ -601,30 +624,42 @@ import { Router } from '@angular/router';
 })
 export class ListadoComponentesComponent implements OnInit {
 
+  navigationExtras : NavigationExtras = {
+
+      state : {
+        value :null
+      }
+  };
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   // Métodos CRUD para los Componentes Electrónicos
 
   // Mostrar Productos
-  detallesProducto(item : any): void{
-    this.router.navigate(['detalles-componentes']);
+  detallesProducto(producto : any): void{
+    this.navigationExtras.state.value = producto;
+    this.router.navigate(['detalles-componentes' , this.navigationExtras]);
   }
 
   // Editar Productos
-  editarProducto(item : any): void{
-    this.router.navigate(['editar-componentes']);
+  editarProducto(producto : any): void{
+    this.navigationExtras.state.value = producto;
+    this.router.navigate(['editar-componentes' , this.navigationExtras]);
   }
 
   // Eliminar Productos
-  eliminarProducto(item : any): void{
+  eliminarProducto(producto : any): void{
     alert('El Producto ha sido Eliminado');
   }
 }
+
 ```
 
+</br>
   
   #### 12.4) Uso de Enlaces a Eventos `(click)`
   * El enlace de Eventos escucha los eventos de click en el botón y llama al método indicado cada vez que se produce un click
@@ -648,7 +683,7 @@ export class ListadoComponentesComponent implements OnInit {
         </thead>
         <tbody>
             <!--Replicamos 4 veces los productos e iconos-->
-            <tr *ngFor=" let item of [0,1,2,3,4]">
+            <tr *ngFor=" let producto of [0,1,2,3,4]">
                 <th scope="row">1</th>
                 <td>Módulo WIFI MCU-ESP32</td>
                 <td>MCU-65788</td>
@@ -656,7 +691,7 @@ export class ListadoComponentesComponent implements OnInit {
                 <!--En caso de moviles ocultamos -->
                 <td class="btn-group d-none d-sm-block" role="group">
 
-                    <button class="btn btn-primary border-light alert-link m-1" (click)="detallesProducto(item)">
+                    <button class="btn btn-primary border-light alert-link m-1" (click)="detallesProducto(producto)">
                     <!--Icono Visualizar Producto-->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
@@ -664,7 +699,7 @@ export class ListadoComponentesComponent implements OnInit {
                       <!--Fin Icono Visualizar Producto-->
                         </button>
 
-                    <button class="btn btn-warning border-light alert-link m-1 " (click)="editarProducto(item)">
+                    <button class="btn btn-warning border-light alert-link m-1 " (click)="editarProducto(producto)">
                           <!--Icono Editar Producto-->
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
@@ -672,7 +707,7 @@ export class ListadoComponentesComponent implements OnInit {
                             <!--Fin Icono Editar Producto-->
               </button>
 
-                    <button class="btn btn-danger border-light alert-link m-1 " (click)="eliminarProducto(item)">
+                    <button class="btn btn-danger border-light alert-link m-1 " (click)="eliminarProducto(producto)">
                                 <!--Icono Eliminar Producto-->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -713,8 +748,64 @@ export class ListadoComponentesComponent implements OnInit {
 
 </div>
 
+```
+
+
+</br>
+  
+  #### 12.5) Capturando el objeto Producto en las otras Páginas 
+  * Una vez definidos los métodos CRUD vamos a capturar los objetos que se pasen al `state` cuando se haga click en los iconos.
+  * Hay que trabajar este tema en cada una de las páginas creadas, pero vamos a comenzar en la página `editar-componentes`
+  * Nos dirigimos a `editar-componentes.component.ts`
+  * Una vez allí, dentro del constructor, inyectamos el `router` definiendolo en su argumento, dentro de este creamos una variable-propiedad (`const navigacionActual`) que nos traiga ese objeto con el método  `getCurrentNavidation()` a través de la ruta pasada.
+  *  Seguidamente, fuera del constructor declaramos una variable `valorProducto` del objeto como nulo. Dentro del constructor indicamos que la variable-propiedad `valorProducto` tendrá la propiedad de tomar el estado actual del objeto. Osea que nos muestre el valor de ese objeto .
+  *  Los signos de interrogación se indican ya que no es necesario pasarle sus valores.
+  * Código Completo..
+  
+  ```TypeScript
+  
+  import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-editar-componentes',
+  templateUrl: './editar-componentes.component.html',
+  styleUrls: ['./editar-componentes.component.css']
+})
+export class EditarComponentesComponent implements OnInit {
+
+  valorProducto = null
+
+  constructor(private router : Router) {
+   
+    const navigacionActual = this.router.getCurrentNavigation();
+
+    this.valorProducto = navigacionActual?.extras?.state;
+  }
+
+
+
+  ngOnInit(): void {
+  }
+
+}
+
+  
+  ```
+  * Por Último testeamos el valor del objeto que se obtiene al hacer click sobre los botones del listado.
+  * Nos dirigimos a `editar-componentes.component.html` e indicamos con interpolación el valor del producto, trabajamos con json.
+  * Código Snippet..
+```html
+
+<p>editar-componentes works!</p>
+
+{{ valorProducto | json }}
+
 
 ```
+ 
+
+
 
 
 
