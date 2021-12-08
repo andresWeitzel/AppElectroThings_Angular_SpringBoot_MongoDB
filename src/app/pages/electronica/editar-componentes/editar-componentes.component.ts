@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-componentes',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarComponentesComponent implements OnInit {
 
-  constructor() { }
+  valorProducto = null
+
+  constructor(private router : Router) {
+
+    const navigacionActual = this.router.getCurrentNavigation();
+
+    this.valorProducto = navigacionActual?.extras?.state;
+  }
+
+
 
   ngOnInit(): void {
   }

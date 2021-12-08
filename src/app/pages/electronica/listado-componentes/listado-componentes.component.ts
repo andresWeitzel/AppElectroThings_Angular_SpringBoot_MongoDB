@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-componentes',
@@ -8,21 +8,31 @@ import { Router } from '@angular/router';
 })
 export class ListadoComponentesComponent implements OnInit {
 
+  navigationExtras : NavigationExtras = {
+
+      state : {
+        value :null
+      }
+  };
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   // Métodos CRUD para los Componentes Electrónicos
 
   // Mostrar Productos
   detallesProducto(item : any): void{
-    this.router.navigate(['detalles-componentes']);
+    this.navigationExtras.state.value = item;
+    this.router.navigate(['detalles-componentes' , this.navigationExtras]);
   }
 
   // Editar Productos
   editarProducto(item : any): void{
-    this.router.navigate(['editar-componentes']);
+    this.navigationExtras.state.value = item;
+    this.router.navigate(['editar-componentes' , this.navigationExtras]);
   }
 
   // Eliminar Productos
