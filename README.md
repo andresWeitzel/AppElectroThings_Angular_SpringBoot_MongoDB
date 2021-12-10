@@ -78,6 +78,9 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   #### Sección 5) Desarrollo de las Páginas Web
   
   - [Paso 12) Listado de Componentes de Electrónica](#paso-12-listado-de-componentes-de-electrónica)
+
+  - [Paso 13) Detalles de Componentes de Electrónica](#paso-13-detalles-de-componentes-de-electrónica)
+
   
 
 
@@ -392,22 +395,22 @@ div.collapse {
 
 </br>
 
-#### 9.1) Página listado-componentes
+#### 9.1) Página `listado-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/listado-componentes).
 * El comando completo sería `ng g m pages/electronica/listado-componentes --module app --route listado-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
 
 </br>
 
-#### 9.2) Página detalles-componentes
+#### 9.2) Página `detalles-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/detalles-componentes).
-* El comando completo sería `ng g m pages/electronica/datalles-componentes --module app --route detalles-componentes`
+* El comando completo sería `ng g m pages/electronica/detalles-componentes --module app --route detalles-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
 
 </br>
 
 
-#### 9.3) Página agregar-componentes
+#### 9.3) Página `agregar-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/agregar-componentes).
 * El comando completo sería `ng g m pages/electronica/agregar-componentes --module app --route agregar-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -416,7 +419,7 @@ div.collapse {
 </br>
 
 
-#### 9.4) Página editar-componentes
+#### 9.4) Página `editar-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/editar-componentes).
 * El comando completo sería `ng g m pages/electronica/editar-componentes --module app --route editar-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -425,7 +428,7 @@ div.collapse {
 </br>
 
 
-#### 9.5) Página para Ayuda
+#### 9.5) Página para `Ayuda`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/utilidades/ayuda).
 * El comando completo sería `ng g m pages/utilidades/ayuda --module app --route ayuda`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -532,7 +535,7 @@ div.collapse {
   </br>
   
   #### 12.1) Creación de una Tabla
-  * Copiamos la estructura base de la tabla de bootstrap https://getbootstrap.com/docs/5.1/content/tables/ y la pegamos en el listado-`componentes.component.html` dentro de listado-componentes.
+  * Copiamos la estructura base de la tabla de bootstrap https://getbootstrap.com/docs/5.1/content/tables/ y la pegamos en el `listado-componentes.component.html` dentro del modulo `listado-componentes`.
   * Voy a cambiar la variante de la tabla a tipo hover, también los nombres, columnas, agregar botones, colores, etc.
   * También voy a agregar iconos de bootstrap `(https://icons.getbootstrap.com/)` para la visualizacion, la edición y la eliminación de los productos del listado
   
@@ -556,17 +559,17 @@ div.collapse {
   * Necesitamos funciones que nos permitan eliminar, mostrar y modificar los PRODUCTOS que se muestran en el listado, estas funciones las vamos a usar con eventos posteriormente.
   * Nos dirigimos a `listado-componentes.component.ts`
   * Vamos a pasarle la clase Route en el constructor, esta clase es la encargada de gestionar las rutas de nuestras paginas web creadas. Importar dichos módulos
-  * Además vamos a utilizar la propiedad llamada `state` que nos permite trabajar con el objeto completo, dicha propiedad deberá ser implementada en cada una de las siguientes funciones.
-  * Para usar dicha propiedad debemos declara un objeto de tipo NavigationExtras importando la interfaz correspondiente y pasandole un estado
+  * Vamos a utilizar la propiedad llamada `state` dentro y fuera de los métodos que desarrollemos, esta propiedad nos permite trabajar con el objeto completo, dicha propiedad deberá ser implementada en cada una de las siguientes funciones.
+  * Para usar dicha propiedad debemos declarar un objeto de tipo NavigationExtras importando la interfaz correspondiente y pasandole un estado
   * Código de la Propiedad..
   ```TypeScript
     navigationExtras : NavigationExtras = {
 
       state : {
         value:null
-      }
+      };
   ```
-  * `ATENTI`, si se tiene una configuración estricta de TypeScript surgirá un error en este paso, ya que se está declarando la propiedad como nula, hay que dirrijirnos al archivo `tsconfig.json` y dentro del `compilerOptions` cambiar el paramnetro `"strict":true` a `"strict":false`
+  * `ATENTI`, si se tiene una configuración estricta de TypeScript surgirá un error en este paso, ya que se está declarando la propiedad como nula, hay que dirigirnos al archivo `tsconfig.json` y dentro del `compilerOptions` cambiar el paramnetro `"strict":true` a `"strict":false`
   * Por Último vamos a crear las funciones. Las mismas se llamaran `editarProducto`, `eliminarProducto` y `mostrarProducto`.
 
 </br>
@@ -585,7 +588,7 @@ div.collapse {
 
 #### 12.3.2) Función `editarProducto`
 * Este Método va a recibir un producto en su argumento 
-* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. Además vamos a usar la propiedad  creada `navigationExtras` haciendo referencia al estado para trabajar con el objeto en sí. En el segundo parametro del `router.navigate` vamos a pasarle además el estado de la propiedad creada
+* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. Además vamos a usar la propiedad  creada `navigationExtras` haciendo referencia al valor del `state` para trabajar con el objeto en sí. En el segundo parametro del `router.navigate` vamos a pasarle además el estado de la propiedad creada
 * Código Snippet..
   
 ```TypeScript
@@ -598,7 +601,7 @@ div.collapse {
 
 #### 12.3.3) Función `detallesProducto`
 * Este Método va a recibir un producto en su argumento 
-* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto
+* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. Además vamos a usar la propiedad  creada `navigationExtras` haciendo referencia al valor del `state` para trabajar con el objeto en sí. En el segundo parametro del `router.navigate` vamos a pasarle además el estado de la propiedad creada
 * Código Snippet..
   
 ```TypeScript
@@ -803,9 +806,19 @@ export class EditarComponentesComponent implements OnInit {
 
 
 ```
- 
+ * LA INTERPOLACIÓN NO FUNCIONA POR EL MOMENTO
 
 
+
+</br>
+
+  ### Paso 13) Detalles de Componentes de Electrónica
+  #### (Esta Página contendrá los Detalles Específicos de cada Producto o Componente de Electrónica)
+  
+  </br>
+  
+  #### 13.1) Creación de una Tabla
+  * Copiamos la estructura base de la tabla de bootstrap 
 
 
 
