@@ -77,7 +77,10 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
 
   #### Sección 5) Desarrollo de las Páginas Web
   
-  - [Paso 12) Listado de Componentes de Electrónica](#paso-12-listado-de-componentes-de-electrónica)
+  - [Paso 12) Página Listado de Componentes de Electrónica](#paso-12-página-listado-de-componentes-de-electrónica)
+
+  - [Paso 13) Página Detalles de Componentes de Electrónica](#paso-13-página-detalles-de-componentes-de-electrónica)
+
   
 
 
@@ -392,22 +395,22 @@ div.collapse {
 
 </br>
 
-#### 9.1) Página listado-componentes
+#### 9.1) Página `listado-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/listado-componentes).
 * El comando completo sería `ng g m pages/electronica/listado-componentes --module app --route listado-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
 
 </br>
 
-#### 9.2) Página detalles-componentes
+#### 9.2) Página `detalles-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/detalles-componentes).
-* El comando completo sería `ng g m pages/electronica/datalles-componentes --module app --route detalles-componentes`
+* El comando completo sería `ng g m pages/electronica/detalles-componentes --module app --route detalles-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
 
 </br>
 
 
-#### 9.3) Página agregar-componentes
+#### 9.3) Página `agregar-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/agregar-componentes).
 * El comando completo sería `ng g m pages/electronica/agregar-componentes --module app --route agregar-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -416,7 +419,7 @@ div.collapse {
 </br>
 
 
-#### 9.4) Página editar-componentes
+#### 9.4) Página `editar-componentes`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/electronica/editar-componentes).
 * El comando completo sería `ng g m pages/electronica/editar-componentes --module app --route editar-componentes`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -425,7 +428,7 @@ div.collapse {
 </br>
 
 
-#### 9.5) Página para Ayuda
+#### 9.5) Página para `Ayuda`
 * Vamos a generar un módulo con sus componentes indicando también la ruta del mismo que utilizaremos para la página web deseada. El mismo lo vamos a crear dentro de una nueva ruta (pages/utilidades/ayuda).
 * El comando completo sería `ng g m pages/utilidades/ayuda --module app --route ayuda`
 * Abris una nueva terminal y escribir el comando anterior (en mi caso)
@@ -526,13 +529,13 @@ div.collapse {
 
 
 
-  ### Paso 12) Listado de Componentes de Electrónica
+  ### Paso 12) Página Listado de Componentes de Electrónica
   #### (Como se explico anteriormente esta página contendra la lista de componentes de eletrónica)
   
   </br>
   
   #### 12.1) Creación de una Tabla
-  * Copiamos la estructura base de la tabla de bootstrap https://getbootstrap.com/docs/5.1/content/tables/ y la pegamos en el listado-`componentes.component.html` dentro de listado-componentes.
+  * Copiamos la estructura base de la tabla de bootstrap https://getbootstrap.com/docs/5.1/content/tables/ y la pegamos en el `listado-componentes.component.html` dentro del modulo `listado-componentes`.
   * Voy a cambiar la variante de la tabla a tipo hover, también los nombres, columnas, agregar botones, colores, etc.
   * También voy a agregar iconos de bootstrap `(https://icons.getbootstrap.com/)` para la visualizacion, la edición y la eliminación de los productos del listado
   
@@ -556,17 +559,17 @@ div.collapse {
   * Necesitamos funciones que nos permitan eliminar, mostrar y modificar los PRODUCTOS que se muestran en el listado, estas funciones las vamos a usar con eventos posteriormente.
   * Nos dirigimos a `listado-componentes.component.ts`
   * Vamos a pasarle la clase Route en el constructor, esta clase es la encargada de gestionar las rutas de nuestras paginas web creadas. Importar dichos módulos
-  * Además vamos a utilizar la propiedad llamada `state` que nos permite trabajar con el objeto completo, dicha propiedad deberá ser implementada en cada una de las siguientes funciones.
-  * Para usar dicha propiedad debemos declara un objeto de tipo NavigationExtras importando la interfaz correspondiente y pasandole un estado
+  * Vamos a utilizar la propiedad llamada `state` dentro y fuera de los métodos que desarrollemos, esta propiedad nos permite trabajar con el objeto completo, dicha propiedad deberá ser implementada en cada una de las siguientes funciones.
+  * Para usar dicha propiedad debemos declarar un objeto de tipo NavigationExtras importando la interfaz correspondiente y pasandole un estado
   * Código de la Propiedad..
   ```TypeScript
     navigationExtras : NavigationExtras = {
 
       state : {
         value:null
-      }
+      };
   ```
-  * `ATENTI`, si se tiene una configuración estricta de TypeScript surgirá un error en este paso, ya que se está declarando la propiedad como nula, hay que dirrijirnos al archivo `tsconfig.json` y dentro del `compilerOptions` cambiar el paramnetro `"strict":true` a `"strict":false`
+  * `ATENTI`, si se tiene una configuración estricta de TypeScript surgirá un error en este paso, ya que se está declarando la propiedad como nula, hay que dirigirnos al archivo `tsconfig.json` y dentro del `compilerOptions` cambiar el paramnetro `"strict":true` a `"strict":false`
   * Por Último vamos a crear las funciones. Las mismas se llamaran `editarProducto`, `eliminarProducto` y `mostrarProducto`.
 
 </br>
@@ -585,27 +588,27 @@ div.collapse {
 
 #### 12.3.2) Función `editarProducto`
 * Este Método va a recibir un producto en su argumento 
-* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. Además vamos a usar la propiedad  creada `navigationExtras` haciendo referencia al estado para trabajar con el objeto en sí. En el segundo parametro del `router.navigate` vamos a pasarle además el estado de la propiedad creada
+* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. Además vamos a usar la propiedad  creada `navigationExtras` haciendo referencia al valor del `state` para trabajar con el objeto en sí. En el segundo parametro del `router.navigate` vamos a pasarle además el estado de la propiedad creada
 * Código Snippet..
   
 ```TypeScript
-   // Editar Productos
+  // Editar Productos
   editarProducto(producto : any): void{
     this.navigationExtras.state.value = producto;
-    this.router.navigate(['editar-componentes' , this.navigationExtras]);
+    this.router.navigate(['editar-componentes'] , this.navigationExtras);
   }
 ```
 
 #### 12.3.3) Función `detallesProducto`
 * Este Método va a recibir un producto en su argumento 
-* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto
+* En el cuerpo del método vamos a pasarle la ruta definida cuando creamos los componentes de las paginas creadas anteriormente que va a mostrar en detalle dicho producto. Además vamos a usar la propiedad  creada `navigationExtras` haciendo referencia al valor del `state` para trabajar con el objeto en sí. En el segundo parametro del `router.navigate` vamos a pasarle además el estado de la propiedad creada
 * Código Snippet..
   
 ```TypeScript
   // Mostrar Productos
   detallesProducto(producto : any): void{
     this.navigationExtras.state.value = producto;
-    this.router.navigate(['detalles-componentes' , this.navigationExtras]);
+    this.router.navigate(['detalles-componentes'] , this.navigationExtras);
   }
 ```
 
@@ -642,13 +645,13 @@ export class ListadoComponentesComponent implements OnInit {
   // Mostrar Productos
   detallesProducto(producto : any): void{
     this.navigationExtras.state.value = producto;
-    this.router.navigate(['detalles-componentes' , this.navigationExtras]);
+    this.router.navigate(['detalles-componentes'] , this.navigationExtras);
   }
 
   // Editar Productos
   editarProducto(producto : any): void{
     this.navigationExtras.state.value = producto;
-    this.router.navigate(['editar-componentes' , this.navigationExtras]);
+    this.router.navigate(['editar-componentes'] , this.navigationExtras);
   }
 
   // Eliminar Productos
@@ -656,6 +659,7 @@ export class ListadoComponentesComponent implements OnInit {
     alert('El Producto ha sido Eliminado');
   }
 }
+
 
 ```
 
@@ -753,12 +757,16 @@ export class ListadoComponentesComponent implements OnInit {
 
 </br>
   
-  #### 12.5) Capturando el objeto Producto en las otras Páginas 
-  * Una vez definidos los métodos CRUD vamos a capturar los objetos que se pasen al `state` cuando se haga click en los iconos.
-  * Hay que trabajar este tema en cada una de las páginas creadas, pero vamos a comenzar en la página `editar-componentes`
+  #### 12.5) Capturando el objeto Producto en la Página `editar-componente`
+  
+  </br>
+  
+  * Una vez definidos los métodos CRUD vamos a capturar los objetos que se pasen al `state` cuando se haga click en el icono de editar.
+  * Vamos a trabajar las Navegaciones y estados en `editar-componentes.component.ts`
   * Nos dirigimos a `editar-componentes.component.ts`
+  * Dentro de la clase EditarComponentesComponent, fuera del constructor declaramos una variable llmada `valorProducto` del objeto como nulo. Dentro del constructor indicamos que la variable-propiedad `valorProducto` tendrá la propiedad de tomar el estado actual del objeto. Osea que nos muestre el valor de ese objeto .
   * Una vez allí, dentro del constructor, inyectamos el `router` definiendolo en su argumento, dentro de este creamos una variable-propiedad (`const navigacionActual`) que nos traiga ese objeto con el método  `getCurrentNavidation()` a través de la ruta pasada.
-  *  Seguidamente, fuera del constructor declaramos una variable `valorProducto` del objeto como nulo. Dentro del constructor indicamos que la variable-propiedad `valorProducto` tendrá la propiedad de tomar el estado actual del objeto. Osea que nos muestre el valor de ese objeto .
+
   *  Los signos de interrogación se indican ya que no es necesario pasarle sus valores.
   * Código Completo..
   
@@ -792,7 +800,7 @@ export class EditarComponentesComponent implements OnInit {
 
   
   ```
-  * Por Último testeamos el valor del objeto que se obtiene al hacer click sobre los botones del listado.
+  * Por Último testeamos el valor del objeto que se obtiene al hacer click sobre el boton de editar.
   * Nos dirigimos a `editar-componentes.component.html` e indicamos con interpolación el valor del producto, trabajamos con json.
   * Código Snippet..
 ```html
@@ -803,7 +811,216 @@ export class EditarComponentesComponent implements OnInit {
 
 
 ```
- 
+
+
+
+
+
+</br>
+  
+  #### 12.6) Capturando el objeto Producto en la Página `detalles-componente`
+  
+  </br>
+  
+  
+  * Una vez definidos los métodos CRUD vamos a capturar los objetos que se pasen al `state` cuando se haga click en el icono de detalles.
+  * Vamos a trabajar las Navegaciones y estados en `detalles-componentes.component.ts`
+  * Nos dirigimos a `detalles-componentes.component.ts`
+  * Dentro de la clase DetallesComponentesComponent, fuera del constructor declaramos una variable llmada `valorProducto` del objeto como nulo. Dentro del constructor indicamos que la variable-propiedad `valorProducto` tendrá la propiedad de tomar el estado actual del objeto. Osea que nos muestre el valor de ese objeto .
+  * Una vez allí, dentro del constructor, inyectamos el `router` definiendolo en su argumento, dentro de este creamos una variable-propiedad (`const navigacionActual`) que nos traiga ese objeto con el método  `getCurrentNavidation()` a través de la ruta pasada.
+
+  *  Los signos de interrogación se indican ya que no es necesario pasarle sus valores.
+  * Código Completo..
+  
+  ```TypeScript
+  import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-detalles-componentes',
+  templateUrl: './detalles-componentes.component.html',
+  styleUrls: ['./detalles-componentes.component.css']
+})
+export class DetallesComponentesComponent implements OnInit {
+
+  valorProducto = null;
+
+  constructor(private router: Router) {
+
+    const navegacionActual = this.router.getCurrentNavigation();
+
+    this.valorProducto = navegacionActual?.extras?.state;
+
+
+  }
+
+  ngOnInit(): void {
+  }
+
+}
+
+  
+  ```
+  * Por Último testeamos el valor del objeto que se obtiene al hacer click sobre el boton de detalles.
+  * Nos dirigimos a `detalles-componentes.component.html` e indicamos con interpolación el valor del producto, trabajamos con json.
+  * Código Snippet..
+```html
+
+<p>detalles-componentes works!</p>
+
+{{ valorProducto | json }}
+
+
+```
+
+
+
+
+
+
+
+</br>
+
+  ### Paso 13) Página Detalles Componentes de Electrónica
+  #### (Esta Página contendrá los Detalles Específicos de cada Producto o Componente de Electrónica)
+  
+  </br>
+  
+  #### 13.1) Maquetación Página Detalles de Componentes
+  * En esta página se alojará el detalle de cada componente una vez que el usuario haga click sobre el icono de detalles.
+  * La Maquetación de la Página es `detalles-componentes.component.html`
+  * Voy a crear un Card para el Producto con su foto, detalle, etc y otro Card para el detalle del producto con sus botones y descripcion. La idea es que ambas cards sean responsives
+  * Código completo de `detalles-componentes.component.html`..
+
+```html
+<div class="container m-2">
+    <div class="row justify-content-start">
+
+
+
+        <!--CARD PRODUCTO-->
+        <div class="col-md-5 col-sm-12">
+
+            <div class="card bg-opacity-10 bg-secondary" style="max-width: 540px;">
+                <div class="row g-0  ">
+                    <div class="col-md-4">
+                        <img src="assets/images/esp32.jpg" class="card-img-top " alt="...">
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body ">
+                            <h5 class="card-title bg-gradient bg-opacity-10 bg-dark text-center">Módulo Wifi Mcu Esp32</h5>
+                            <p class="card-text">Incluyen puerto de conexión microUSB para alimentación y conector JST para alimentación de la placa. Y se pueden programar desde el IDE de Arduino..</p>
+                        </div>
+                        <div class="card-body  ">
+                            <a href="https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Datasheet</a>
+                            <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Proyectos</a>
+                            <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Más Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--FIN CARD PRODUCTO-->
+
+        <!--CARD DETALLES PRODUCTO-->
+
+        <div class="col-md-7 col-sm-12">
+
+            <div class="bg-opacity-10 bg-dark ">
+                <hr>
+                <div class="card-body text-center">
+                    <div class="text-center ">
+                        <h5 class="text-underline">DETALLES PRODUCTO</h5>
+                    </div>
+                    <hr>
+                    <ul class=" m-2 p-2 text-center list-group list-group-flush list-group-horizontal-lg list-group-horizontal-md input-group ">
+
+                        <li class="list-group-item "><strong>ID</strong>
+                            <p>1</p>
+                        </li>
+                        <li class="list-group-item "><strong>Nombre</strong>
+                            <p>Módulo Wifi Mcu Esp32
+                            </p>
+                        </li>
+                        <li class="list-group-item"><strong>Código</strong>
+                            <p>MCU-65788</p>
+                        </li>
+                        <li class="list-group-item"><strong>Precio</strong>
+                            <p>1600</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--BOTONES-->
+            <div class="container col-sm-12 bg-opacity-75 bg-dark p-1">
+                <div class="row justify-content-center">
+
+                    <div class="col-md-2 col-sm-2">
+                        <button class="btn btn-primary border-dark alert-link m-1 ">
+                      <!--Icono Regresar-->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                      </svg>
+                        <!--FIN Icono Regresar-->
+                    </button>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2">
+                        <button class="btn btn-warning border-dark alert-link m-1 ">
+                          <!--Icono Editar Producto-->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                          </svg>
+                            <!--Fin Icono Editar Producto-->
+                        </button>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <button class="btn btn-danger border-dark alert-link m-1 ">
+                <!--Icono Eliminar Producto-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg>
+                <!--Fin Icono Eliminar Producto-->
+                  </button>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2">
+
+                        <button onClick="window.location.reload()" class="btn btn-secondary border-dark alert-link m-1  ">
+                <!--Icono Actualizar Listado-->
+                <svg xmlns="http://www.w3.org/2000/svg " width="20 " height="20 " fill="currentColor " class="bi bi-arrow-repeat " viewBox="0 0 16 16 ">
+                  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z "/>
+                  <path fill-rule="evenodd " d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z "/>
+                </svg>
+                  <!--Fin Icono Actualizar Listado-->
+                  </button>
+
+                    </div>
+
+                </div>
+            </div>
+            <!--FIN BOTONES-->
+
+
+        </div>
+
+        <!-- CARD FIN DETALLES PRODUCTO-->
+
+
+
+
+
+
+    </div>
+
+
+```
 
 
 
