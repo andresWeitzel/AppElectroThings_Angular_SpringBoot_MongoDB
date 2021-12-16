@@ -24,19 +24,19 @@ export class ListadoComponentesComponent implements OnInit {
   // Métodos CRUD para los Componentes Electrónicos
 
   // Mostrar Productos
-  detallesProducto(item : any): void{
-    this.navigationExtras.state.value = item;
-    this.router.navigate(['detalles-componentes' , this.navigationExtras]);
+  detallesProducto(producto : any): void{
+    this.navigationExtras.state.value = producto;
+    this.router.navigate(['detalles-componentes'] , this.navigationExtras);
   }
 
   // Editar Productos
-  editarProducto(item : any): void{
-    this.navigationExtras.state.value = item;
-    this.router.navigate(['editar-componentes' , this.navigationExtras]);
+  editarProducto(producto : any): void{
+    this.navigationExtras.state.value = producto;
+    this.router.navigate(['editar-componentes'] , this.navigationExtras);
   }
 
   // Eliminar Productos
-  eliminarProducto(item : any): void{
+  eliminarProducto(producto : any): void{
     alert('El Producto ha sido Eliminado');
   }
 }

@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <!--Replicamos 4 veces los productos e iconos-->
-            <tr *ngFor=" let producto of [0,1,2,3,4]">
+            <tr *ngFor=" let producto of [0, 1, 2, 3, 4]">
                 <th scope="row">1</th>
                 <td>Módulo WIFI MCU-ESP32</td>
                 <td>MCU-65788</td>
@@ -53,16 +53,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-2">
-                <button class="btn btn-outline-dark  border-dark alert-link m-2 ">Regresar
+                <a href="#">
+                    <button class="btn btn-outline-dark  border-dark alert-link ">Regresar
                 <!--Icono Regresar Inicio-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
                   <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
                 </svg>
                   <!--Fin Icono Regresar Inicio-->
                     </button>
+                </a>
             </div>
             <div class="col-2">
-                <button class="btn btn-outline-dark  border-dark alert-link m-2 ">Actualizar
+
+                <button onClick="window.location.reload()" class="btn btn-outline-dark  border-dark alert-link ">Actualizar
                 <!--Icono Actualizar Listado-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                   <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>

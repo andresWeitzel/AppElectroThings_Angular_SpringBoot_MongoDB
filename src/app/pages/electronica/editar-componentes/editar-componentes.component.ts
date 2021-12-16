@@ -12,9 +12,9 @@ export class EditarComponentesComponent implements OnInit {
 
   constructor(private router : Router) {
 
-    const navigacionActual = this.router.getCurrentNavigation();
+    const navegacionActual = this.router.getCurrentNavigation();
 
-    this.valorProducto = navigacionActual?.extras?.state;
+    this.valorProducto = navegacionActual?.extras?.state;
   }
 
 
