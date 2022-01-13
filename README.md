@@ -83,6 +83,9 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   
   - [Paso 14) Página Editar Componentes de Electrónica](#paso-14-página-editar-componentes-de-electrónica)
 
+   - [Paso 15) Página Agregar Componentes de Electrónica](#paso-15-página-agregar-componentes-de-electrónica)
+
+   - [Paso 16) Página de Inicio](#paso-16-página-de-inicio)
 
 
  
@@ -320,7 +323,138 @@ export class AppModule { }
 ```
 
 * Guardamos (Ctrl + s )
+* Levantamos el Servidor `ng server` desde terminal
 * Visualizamos el contenido.
+
+
+</br>
+
+#### 6.3) Creación del componente y módulo Carousel
+* Abrimos una nueva terminal
+* Nos posicionamos sobre el proyecto
+* Creamos el Nuevo Componente modularizado
+  * --> Escribimos `ng generate component components/carousel --module app` o `ng g c components/carousel --module app`
+* Si desplegas componentes, se debería haber generado el componente, junto con sus archivos
+* Ahora creamos el módulo interno de configuración del carousel
+  * --> Escribimos `ng generate module components/carousel --module app` o `ng g m components/carousel --module app`
+
+#### 6.4) Configuración del componente html Carousel
+* Vamos a incluir el código html de ejemplo de la página de bootstrap en el `carousel.component.html`(app/carousel/carousel.component.html)
+* Voy a implementar un Carousel de tipo Dark variant
+* Voy a incluir algunas rutas a imagenes de internet y cambiar algunos colores para que se visualize correctamente el carousel
+* Código https://getbootstrap.com/docs/5.1/components/carousel/
+
+
+```html
+
+
+<section>
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+    </div>
+</section>
+
+
+
+
+
+```
+
+* Seguidamente vamos a comprobar si el componente creado se ha importado dentro de `app.module.ts`
+* Nos dirigimos al archivo (app/app.module.ts)
+* Deberías tener el siguiente código indicando que tenemos el componente importado correctamente
+
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarModule } from './components/navbar/navbar.module';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselModule } from './components/carousel/carousel.module';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    CarouselComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NavbarModule,
+    CarouselModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+```
+
+* Seguidamente vamos a incluir el código html del componente carousel dentro del componente app, especificamente dentro de `app.component.html`
+* Nos dirijimos a app.component.html(app/app.component.html) y escribimos
+
+```html
+
+<div>
+
+     <app-carousel></app-carousel>
+
+</div>
+
+
+```
+
+* Guardamos (Ctrl + s )
+* Levantamos el Servidor `ng server` desde terminal
+* Visualizamos el contenido.
+
+
+
+
+
+
 
 
 
@@ -1113,6 +1247,27 @@ export class DetallesComponentesComponent implements OnInit {
   </br>
   
   #### 14.1) Maquetación Página Editar Componentes de Electrónica
+
+
+</br>
+
+  ### Paso 15) Página Agregar Componentes de Electrónica
+  #### (Esta Página contendrá el formulario para agregar componentes de Electrónica)
+  
+  </br>
+  
+  #### 15.1) Maquetación Página Editar Componentes de Electrónica
+
+
+</br>
+
+  ### Paso 16) Página de Inicio
+  #### (Esta Página será la página de Inicio de la Aplicación)
+  
+  </br>
+  
+  #### 16.1) Maquetación Página de Inicio
+
 
 
 
