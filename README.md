@@ -65,7 +65,7 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   - [Paso 8) Maquetado del Componente con css](#paso-8-maquetado-del-componente-con-css)
 
   
-  #### Sección 4) Creación-Configuración de Páginas Web y Servicios
+  #### Sección 4) Creación y Configuración de Páginas Web y Servicios
   
   - [Paso 9) Generación de Módulos y Componentes para otras páginas](#paso-9-generación-de-módulos-y-componentes-para-otras-páginas)
   
@@ -80,8 +80,9 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   - [Paso 12) Página Listado de Componentes de Electrónica](#paso-12-página-listado-de-componentes-de-electrónica)
 
   - [Paso 13) Página Detalles de Componentes de Electrónica](#paso-13-página-detalles-de-componentes-de-electrónica)
-
   
+  - [Paso 14) Página Editar Componentes de Electrónica](#paso-14-página-editar-componentes-de-electrónica)
+
 
 
  
@@ -223,32 +224,50 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
 
 #### 6.2) Configuración del componente html Navbar
 * Vamos a incluir el código html de ejemplo de la página de bootstrap en el `navbar.component.html`(app/navbar/navbar.component.html)
+* Voy a implementar un Navbar de tipo Offcanvas que se despliegua al costado de la pantalla. 
 * Código https://getbootstrap.com/docs/5.1/components/navbar/
 
 
 ```html
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-light bg-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Offcanvas navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
   </div>
 </nav>
@@ -356,7 +375,7 @@ export class AppModule { }
 
 </br>
 
-### Paso 8) Maquetado del Componente con css
+### Paso 8) Maquetado del Componente Navbar con css
 #### (Mas allá que implementemos un esplendido framework como bootstrap, no podemos dejar de lado css, ya que nos ayuda a ahorrar lineas spaghettis en el html).
 
 * Dentro del navbar.component.css vamos a implementar el maquetado para este componente.
@@ -457,46 +476,55 @@ div.collapse {
 
 
 * Ahora nos dirigimos al `navbar.component.html` y allí modificamos los nav-item agregando las directivas de enlaces `[routerLink] = "['/nombrePagina']"` indicando las páginas de redireccionamiento
-* También modifique algunas etiquetas
+* Vamos a modificar nuestro Offcanvas navbar a gusto, cambiamos los fondos, agregamos iconos, cambiamos los nombres, etc
 * Código
 
 ```html
 
 <header>
 
-   <header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-
+            <!--Icono-->
             <div>
                 <img src="assets/images/elect02.png" alt="" width="40" height="40" class="d-inline-block align-text-top "> ElectroThings
             </div>
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/']">Inicio</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/listado-componentes']">Listado de Componentes</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/agregar-componentes']">Agregar Componentes</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/editar-componentes']">Editar Componentes</a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link" [routerLink]="['/ayuda']">Ayuda</a>
-                    </li>
-                </ul>
+            <!--Fin Icono-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <!--Boton Close-->
+                <div class="offcanvas-header bg-dark">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="assets/images/elect02.png" alt="" width="40" height="40" class="d-inline-block align-text-top "> ElectroThings</h5>
+
+                    <button type="button" class="btn-close bg-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!--Fin Boton Close-->
+                <div class="offcanvas-body bg-dark">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['/']">Inicio</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['/listado-componentes']">Listado de Componentes</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['/agregar-componentes']">Agregar Componentes</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['/editar-componentes']">Editar Componentes</a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['/ayuda']">Ayuda</a>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
         </div>
     </nav>
+
 
 </header>
 
@@ -826,15 +854,17 @@ export class EditarComponentesComponent implements OnInit {
   * Una vez definidos los métodos CRUD vamos a capturar los objetos que se pasen al `state` cuando se haga click en el icono de detalles.
   * Vamos a trabajar las Navegaciones y estados en `detalles-componentes.component.ts`
   * Nos dirigimos a `detalles-componentes.component.ts`
-  * Dentro de la clase DetallesComponentesComponent, fuera del constructor declaramos una variable llmada `valorProducto` del objeto como nulo. Dentro del constructor indicamos que la variable-propiedad `valorProducto` tendrá la propiedad de tomar el estado actual del objeto. Osea que nos muestre el valor de ese objeto .
-  * Una vez allí, dentro del constructor, inyectamos el `router` definiendolo en su argumento, dentro de este creamos una variable-propiedad (`const navigacionActual`) que nos traiga ese objeto con el método  `getCurrentNavidation()` a través de la ruta pasada.
-
+  * Dentro de la clase DetallesComponentesComponent, fuera del constructor declaramos una variable llamada `valorProducto` del objeto como nulo. Dentro del constructor indicamos que la variable-propiedad `valorProducto` tendrá la propiedad de tomar el estado actual del objeto. Osea que nos muestre el valor de ese objeto .
+  * Una vez allí, dentro del constructor, inyectamos el `router` definiendolo en el argumento del constructor, dentro de este creamos una variable-propiedad (`const navigacionActual`) que nos traiga ese objeto con el método  `getCurrentNavidation()` a través de la ruta pasada.
   *  Los signos de interrogación se indican ya que no es necesario pasarle sus valores.
+  *  Vamos a crear una funcion para que nos regrese al listado de componentes cuando estemos en el detalle de un solo componente, la funcion se va a llamar `regresarListadoComponentes()`
+  * Vamos a reutilizar las funciones  `editarProducto()` y `eliminarProducto()` que declaramos en el `listado-componentes.component.ts`, para las operaciones de este producto. La diferencia acá es que no necesitamos pasarle el producto clickeado en el argumento de la funcion ya que lo recuperamos con el `getCurrentNavigation` , por ende en los estados de la funcion le pasamos la variable declarada `valorProducto`
+  * Importante declarar el navigationExtras e importar su módulo
   * Código Completo..
   
   ```TypeScript
   import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalles-componentes',
@@ -842,6 +872,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./detalles-componentes.component.css']
 })
 export class DetallesComponentesComponent implements OnInit {
+
+  navigationExtras : NavigationExtras = {
+
+    state : {
+      value :null
+    }
+};
+
+
+
 
   valorProducto = null;
 
@@ -857,10 +897,32 @@ export class DetallesComponentesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+    //Regresar Listado Productos
+  regresarListadoProductos():void{
+    this.router.navigate(['listado-componentes']);
+  }
+  
+
+  // Editar Productos
+  editarProducto(): void{
+    this.navigationExtras.state.value = this.valorProducto;
+    this.router.navigate(['editar-componentes'] , this.navigationExtras);
+  }
+
+  // Eliminar Productos
+  eliminarProducto(): void{
+    alert('El Producto ha sido Eliminado');
+  }
+
+
+
+
 }
+
 
   
   ```
+ 
   * Por Último testeamos el valor del objeto que se obtiene al hacer click sobre el boton de detalles.
   * Nos dirigimos a `detalles-componentes.component.html` e indicamos con interpolación el valor del producto, trabajamos con json.
   * Código Snippet..
@@ -889,7 +951,25 @@ export class DetallesComponentesComponent implements OnInit {
   #### 13.1) Maquetación Página Detalles de Componentes
   * En esta página se alojará el detalle de cada componente una vez que el usuario haga click sobre el icono de detalles.
   * La Maquetación de la Página es `detalles-componentes.component.html`
-  * Voy a crear un Card para el Producto con su foto, detalle, etc y otro Card para el detalle del producto con sus botones y descripcion. La idea es que ambas cards sean responsives
+  * Voy a crear un Card para el Producto con su foto, detalle, etc y otro Card para el detalle del producto con sus botones y descripcion. La idea es que ambas cards sean responsives.
+   * Una vez que hemos declarado las funciones en el `detalles-componentes.component.ts`, vamos a pasarles los eventos a los botones y cuando se haga click se dispare las funciones realizadas anteriormente.
+    * En el boton de regresar declaramos la funcion click para que se dispare dicho evento y nos muestre el alert..
+  
+  ```html
+   <button class="btn btn-danger border-dark alert-link m-1 " (click)="regresarListadoProductos()">
+  ```
+  
+  * En el boton de eliminar declaramos la funcion click para que se dispare dicho evento y nos muestre el alert..
+  
+  ```html
+   <button class="btn btn-danger border-dark alert-link m-1 " (click)="eliminarProducto()">
+  ```
+   * En el boton de editar declaramos la funcion click para que se dispare dicho evento 
+   
+  ```html
+   <button class="btn btn-danger border-dark alert-link m-1 " (click)="editarProducto()">
+  ```
+  
   * Código completo de `detalles-componentes.component.html`..
 
 ```html
@@ -961,7 +1041,7 @@ export class DetallesComponentesComponent implements OnInit {
                 <div class="row justify-content-center">
 
                     <div class="col-md-2 col-sm-2">
-                        <button class="btn btn-primary border-dark alert-link m-1 ">
+                        <button class="btn btn-primary border-dark alert-link m-1 " (click)="regresarListadoProductos()">
                       <!--Icono Regresar-->
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
@@ -971,7 +1051,7 @@ export class DetallesComponentesComponent implements OnInit {
                     </div>
 
                     <div class="col-md-2 col-sm-2">
-                        <button class="btn btn-warning border-dark alert-link m-1 ">
+                        <button class="btn btn-warning border-dark alert-link m-1 " (click)="editarProducto()">
                           <!--Icono Editar Producto-->
                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
@@ -980,7 +1060,7 @@ export class DetallesComponentesComponent implements OnInit {
                         </button>
                     </div>
                     <div class="col-md-2 col-sm-2">
-                        <button class="btn btn-danger border-dark alert-link m-1 ">
+                        <button class="btn btn-danger border-dark alert-link m-1 " (click)="eliminarProducto()">
                 <!--Icono Eliminar Producto-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -1007,6 +1087,7 @@ export class DetallesComponentesComponent implements OnInit {
             </div>
             <!--FIN BOTONES-->
 
+            {{valorProducto | json}}
 
         </div>
 
@@ -1024,7 +1105,14 @@ export class DetallesComponentesComponent implements OnInit {
 
 
 
+</br>
 
+  ### Paso 14) Página Editar Componentes de Electrónica
+  #### (Esta Página contendrá el formulario para editar el componente seleccionado de la lista de componentes de Electrónica)
+  
+  </br>
+  
+  #### 14.1) Maquetación Página Editar Componentes de Electrónica
 
 
 
