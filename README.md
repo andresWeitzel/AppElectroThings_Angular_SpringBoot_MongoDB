@@ -83,6 +83,9 @@ CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase.
   
   - [Paso 14) Página Editar Componentes de Electrónica](#paso-14-página-editar-componentes-de-electrónica)
 
+   - [Paso 15) Página Agregar Componentes de Electrónica](#paso-15-página-agregar-componentes-de-electrónica)
+
+   - [Paso 16) Página de Inicio](#paso-16-página-de-inicio)
 
 
  
@@ -320,7 +323,121 @@ export class AppModule { }
 ```
 
 * Guardamos (Ctrl + s )
+* Levantamos el Servidor `ng server` desde terminal
 * Visualizamos el contenido.
+
+
+</br>
+
+#### 6.3) Creación del componente y módulo Carousel
+* Abrimos una nueva terminal
+* Nos posicionamos sobre el proyecto
+* Creamos el Nuevo Componente modularizado
+  * --> Escribimos `ng generate component components/carousel --module app` o `ng g c components/carousel --module app`
+* Si desplegas componentes, se debería haber generado el componente, junto con sus archivos
+* Ahora creamos el módulo interno de configuración del carousel
+  * --> Escribimos `ng generate module components/carousel --module app` o `ng g m components/carousel --module app`
+
+#### 6.4) Configuración del componente html Carousel
+* Vamos a incluir el código html de ejemplo de la página de bootstrap en el `carousel.component.html`(app/carousel/carousel.component.html)
+* Voy a implementar un Carousel de tipo Dark variant
+* Voy a incluir algunas rutas a imagenes de internet y cambiar algunos colores para que se visualize correctamente el carousel
+* Código https://getbootstrap.com/docs/5.1/components/carousel/
+
+
+```html
+
+
+<section>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ElectroThings</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/images/elect02.png">
+    <!--CSS BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <app-root></app-root>
+
+    <!--JS Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+
+
+
+```
+
+* Seguidamente vamos a comprobar si el componente creado se ha importado dentro de `app.module.ts`
+* Nos dirigimos al archivo (app/app.module.ts)
+* Deberías tener el siguiente código indicando que tenemos el componente importado correctamente
+
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarModule } from './components/navbar/navbar.module';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselModule } from './components/carousel/carousel.module';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    CarouselComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NavbarModule,
+    CarouselModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+```
+
+* Seguidamente vamos a incluir el código html del componente carousel dentro del componente app, especificamente dentro de `app.component.html`
+* Nos dirijimos a app.component.html(app/app.component.html) y escribimos
+
+```html
+
+<div>
+
+     <app-carousel></app-carousel>
+
+</div>
+
+
+```
+
+* Guardamos (Ctrl + s )
+* Levantamos el Servidor `ng server` desde terminal
+* Visualizamos el contenido.
+
+
+
+
+
+
 
 
 
@@ -1113,6 +1230,27 @@ export class DetallesComponentesComponent implements OnInit {
   </br>
   
   #### 14.1) Maquetación Página Editar Componentes de Electrónica
+
+
+</br>
+
+  ### Paso 15) Página Agregar Componentes de Electrónica
+  #### (Esta Página contendrá el formulario para agregar componentes de Electrónica)
+  
+  </br>
+  
+  #### 15.1) Maquetación Página Editar Componentes de Electrónica
+
+
+</br>
+
+  ### Paso 16) Página de Inicio
+  #### (Esta Página será la página de Inicio de la Aplicación)
+  
+  </br>
+  
+  #### 16.1) Maquetación Página de Inicio
+
 
 
 
