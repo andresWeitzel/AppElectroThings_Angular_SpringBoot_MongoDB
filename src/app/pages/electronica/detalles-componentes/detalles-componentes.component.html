@@ -1,21 +1,22 @@
 <div class="container ">
+
+
+    <div class="alert alert-dark text-center" role="alert">
+        <h4><strong>DETALLES DEL COMPONENTE</strong></h4>
+    </div>
+
+
+    <!--CARDS-->
     <div class="row justify-content-center">
-
-        <div class="alert alert-secondary text-center" role="alert">
-            <h4><strong>DETALLES DEL COMPONENTE</strong></h4>
-        </div>
-
-
-
 
         <!--CARD PRODUCTO-->
         <div class="col-md-6 col-sm-12 ">
 
             <div class="card bg-opacity-10 bg-secondary" style="max-width: 540px;">
-                <div class="text-center ">
+                <div id="card" class="text-center ">
                     <h5 class="text-underline m-2">INFO</h5>
                 </div>
-                <div class="row g-0  ">
+                <div id="card" class="row g-0  ">
 
                     <hr>
                     <div class="col-md-4">
@@ -45,16 +46,16 @@
 
         <div class="col-md-6 col-sm-12">
 
-            <div class="card bg-opacity-10 bg-secondary text-center">
-                <div class="text-center ">
+            <div id="card" class="card bg-opacity-10 bg-secondary text-center">
+                <div id="card" class="text-center ">
                     <h5 class="text-underline m-2">REGISTRO</h5>
                 </div>
-                <div class="row g-0  ">
-
+                <div id="card" class="row g-0  ">
                     <hr>
                     <div class="text-center">
+
                         <div class="col-md-12 text-center">
-                            <div class="card-body text-center m-2 ">
+                            <div class="card-body text-center m-1 ">
                                 <ul class=" text-center list-group list-group-flush list-group-horizontal-lg list-group-horizontal-md input-group ">
 
                                     <li class="list-group-item "><strong>ID</strong>
@@ -132,8 +133,12 @@
             </div>
         </div>
     </div>
+    <!--  FIN CARD DETALLES PRODUCTO-->
+
+</div>
+<!--FIN CARDS-->
 
 
-    <!-- CARD FIN DETALLES PRODUCTO-->
 
-    {{valorProducto | json}}
+
+{{valorProducto | json}}
