@@ -1,7 +1,8 @@
 div .alert {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 div .list-group {
+    background-color: rgb(211, 210, 210);
     opacity: 0.8;
 }

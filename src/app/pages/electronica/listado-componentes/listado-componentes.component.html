@@ -2,27 +2,40 @@
     <div class="row justify-content-center">
 
 
-        <div class="alert alert-dark text-center" role="alert">
-            <h4><strong>LISTADO DE COMPONENTES</strong></h4>
+        <div class="alert alert-dark bg-dark text-white text-center" role="alert">
+            <h4 class=""><strong>LISTADO DE COMPONENTES</strong></h4>
         </div>
 
 
-        <table class="table table-hover text-center">
-            <thead>
+        <table class="table table-secondary table-bordered border-dark table-hover">
+            <thead class="table-dark text-center">
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Código</th>
-                    <th scope="col">Precio</th>
-                    <th class="d-none d-sm-block" scope="col">Opciones</th>
+                    <th scope="col"><strong>ID</strong></th>
+                    <th scope="col"><strong>CÓDIGO</strong>
+                    </th>
+                    <th scope="col"><strong>NOMBRE</strong>
+                    </th>
+                    <th scope="col"><strong>DESCRIPCIÓN</strong></th>
+                    <th scope="col"><strong>CATEGORÍA</strong></th>
+                    <th scope="col"><strong>MARCA</strong></th>
+                    <th scope="col"><strong>HOJA DE DATOS</strong></th>
+                    <th scope="col"><strong>STOCK</strong></th>
+                    <th scope="col"><strong>PRECIO</strong></th>
+                    <th class="d-none d-sm-block" scope="col"><strong>OPCIONES</strong></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-dark bg-dark text-center">
                 <!--Replicamos 4 veces los productos e iconos-->
                 <tr *ngFor=" let producto of [0, 1, 2, 3, 4]">
                     <th scope="row">1</th>
+                    <td>5095-MCU-65788</td>
+                    <td>MCU-ESP32</td>
                     <td>Módulo WIFI MCU-ESP32</td>
-                    <td>MCU-65788</td>
+                    <td>Microcontroladores</td>
+                    <td>Genérica</td>
+                    <td>
+                        <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/a" target="_blank">Link</a></td>
+                    <td>100</td>
                     <td>1600</td>
                     <!--En caso de moviles ocultamos -->
                     <td class="btn-group d-none d-sm-block" role="group">
@@ -57,11 +70,13 @@
             </tbody>
 
         </table>
+
+        <!--BTN'S REGRESAR/ACTUALIZAR-->
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-2 col-md-2">
                     <a href="#">
-                        <button class="btn btn-outline-dark  border-dark alert-link ">Regresar
+                        <button class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Regresar
                 <!--Icono Regresar Inicio-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
                   <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
@@ -72,7 +87,7 @@
                 </div>
                 <div class="col-2">
 
-                    <button onClick="window.location.reload()" class="btn btn-outline-dark  border-dark alert-link ">Actualizar
+                    <button onClick="window.location.reload()" class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Actualizar
                 <!--Icono Actualizar Listado-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                   <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
@@ -84,6 +99,8 @@
                 </div>
             </div>
         </div>
+
+        <!--FIN BTN'S REGRESAR/ACTUALIZAR-->
 
     </div>
 </div>
