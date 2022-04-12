@@ -1,6 +1,6 @@
-# CRUD_Angular_Firebase_Bootstrap
+# AppTiendaElectronica_Angular_Firebase_Bootstrap.
 
-CRUD acerca de Componentes Electrónicos con Angular, Bootstrap y Firebase. 
+* Aplicación Tienda de Electrónica con Angular, Bootstrap y Firebase.. 
 
 <hr>
 
