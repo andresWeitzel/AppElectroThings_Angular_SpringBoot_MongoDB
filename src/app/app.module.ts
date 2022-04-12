@@ -10,12 +10,13 @@ import { CarouselModule } from './components/carousel/carousel.module';
 import { FooterComponent } from './components/footer/footer.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CarouselComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
