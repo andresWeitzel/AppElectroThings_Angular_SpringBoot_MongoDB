@@ -6,49 +6,128 @@
             <h4 class=""><strong>INICIO</strong></h4>
         </div>
 
-
+        <!--CARDS COMPONENTES-->
         <div class="d-flex justify-content-center">
+            <!--LISTADO DE COMPONENTES-->
             <div class="card bg-dark text-white m-1 ms-0">
-                <img src="/assets/cards/card01.jpg" class="card-img" alt="...">
+                <img src="/assets/cards/card01.jpg" class="card-img" height="350px" alt="...">
                 <div class="card-img-overlay">
 
                     <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Listado de Componentes</strong></h4>
 
-                    <div class="container align-content-center bg-dark">
-                        <p>Operaciones Disponibles:</p>
+                    <div class="container align-content-left bg-dark">
+                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
+                        <ol>
+                            <li>Listado de la Base de Datos</li>
+                            <li>Detalles y Características</li>
+                            <li>Editar</li>
+                            <li>Eliminar</li>
+                        </ol>
+
+                        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                            <a class="nav-link" [routerLink]="['/listado-componentes']">
+                                <button class=" btn btn-primary border-light p-1" type="button ">VER LISTADO</button>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- FIN LISTADO DE COMPONENTES-->
+            <!--AGREGAR COMPONENTES-->
+            <div class="card bg-dark text-white m-1 ">
+                <img src="/assets/cards/card04.jpg" class="card-img" height="350px" alt="...">
+                <div class="card-img-overlay">
+
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Agregar Componentes</strong></h4>
+
+                    <div class="container align-content-left bg-dark">
+                        <p class="text-decoration-underline mb-0">Operaciones Disponibles:</p>
                         <ol>
                             <li>Detallar</li>
                             <li>Editar</li>
                             <li>Eliminar</li>
-
-
                         </ol>
 
+                        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                            <a class="nav-link" [routerLink]="['/agregar-componentes']">
+                                <button class=" btn btn-primary border-light p-1" type="button ">AGREGAR</button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--FIN AGREGAR COMPONENTES-->
+            <!--NOVEDADES-->
+            <div class="card bg-dark text-white m-1 ">
+                <img src="/assets/cards/card03.jpg" class="card-img" height="350px" alt="...">
+                <div class="card-img-overlay">
+
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Novedades</strong></h4>
+
+                    <div class="container align-content-left bg-dark">
+                        <p class="text-decoration-underline mb-0 p-2">Información Disponibles:</p>
+                        <ol>
+                            <li>Nuevas Placas Electrónicas</li>
+                            <li>Nuevos Componentes</li>
+                            <li>Nuevos Proveedores</li>
+                            <li>Fabricantes</li>
+                            <li>Blog Técnico</li>
+                            <li>Otros(Destacados)</li>
+                        </ol>
+
+                        <div class="d-grid gap-2 col-6 mx-auto mt-1">
+                            <a class="nav-link" [routerLink]="['/novedades-componentes']">
+                                <button class=" btn btn-primary border-light p-1" type="button ">VER NOVEDADES</button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--FIN NOVEDADES-->
+
+        </div>
+        <!--FIN CARDS COMPONENTES-->
+
+        <!-- CARD AYUDA-->
+        <div class="d-flex-12 justify-content-center">
+            <!--LISTADO DE COMPONENTES-->
+            <div class="card bg-dark text-white m-1 ms-0">
+                <img src="/assets/background/back-elec07.jpg" class="card-img" height="300px" alt="...">
+                <div class="card-img-overlay">
+
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Listado de Componentes</strong></h4>
+
+                    <div class="container align-content-left bg-dark">
+                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
+                        <ol>
+                            <li>Listado de la Base de Datos</li>
+                            <li>Detalles y Características</li>
+                            <li>Editar</li>
+                            <li>Eliminar</li>
+                        </ol>
+
+                        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                            <a class="nav-link" [routerLink]="['/listado-componentes']">
+                                <button class=" btn btn-primary border-light p-1" type="button ">VER LISTADO</button>
+                            </a>
+
+                        </div>
 
                     </div>
 
+
                 </div>
             </div>
-
-            <div class="card bg-dark text-white m-1">
-                <img src="/assets/cards/card04.jpg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text">Last updated 3 mins ago</p>
-                </div>
-            </div>
-
-            <div class="card bg-dark text-white m-1">
-                <img src="/assets/cards/card03.jpg" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text">Last updated 3 mins ago</p>
-                </div>
-            </div>
-
         </div>
+        <!--FIN CARD AYUDA-->
 
 
     </div>

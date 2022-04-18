@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-2 col-md-2">
-                    <a href="#">
+                    <a class="nav-link" [routerLink]="['/inicio-componentes']">
                         <button class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Regresar
                 <!--Icono Regresar Inicio-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
@@ -84,9 +84,11 @@
                 </svg>
                   <!--Fin Icono Regresar Inicio-->
                     </button>
+
+
                     </a>
                 </div>
-                <div class="col-2">
+                <div class="col-2 mt-2">
 
                     <button onClick="window.location.reload()" class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Actualizar
                 <!--Icono Actualizar Listado-->
