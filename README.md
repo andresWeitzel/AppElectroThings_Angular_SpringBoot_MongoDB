@@ -1,6 +1,6 @@
-# AppTiendaElectronica_Angular_Firebase_Bootstrap.
+# AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB.
 
-* Aplicación Tienda de Electrónica con Angular, Bootstrap y Firebase.. 
+* Aplicación Tienda de Electrónica con Angular y Bootstrap lado FRONT y Spring Boot lado BACKEND y MongoDB lado DATABASE.. 
 
 <hr>
 
