@@ -2,6 +2,10 @@ div .alert {
     opacity: 0.8;
 }
 
+div .container {
+    opacity: 0.9;
+}
+
 #card {
     background-color: rgb(211, 210, 210);
     opacity: 0.8;

@@ -15,6 +15,36 @@ export class ListadoComponentesComponent implements OnInit {
       }
   };
 
+testData =[
+{
+  id: '1',
+  codigo:'5095-MCU-65788',
+  nombre:'MCU-ESP32',
+  descripcion:'Módulo WIFI MCU-ESP32',
+  categoria : 'Microcontroladores',
+  marca: 'generica',
+  hojaDatos : 'https://www.todomicro.com.ar/6038-large_default/modulo-de-desarrollo-nodemcu-lua-esp8266.jpg',
+  stock : 100,
+  precio : 1600
+
+},
+{
+  id :'2',
+  codigo : '29-LLP-78296',
+  nombre: 'Teclado Gamer',
+  descripcion : 'Teclado Gamer HP',
+  categoria : 'Gamer',
+  marca : 'HP',
+  hojaDatos : 'https://www.todomicro.com.ar/6038-large_default/modulo-de-desarrollo-nodemcu-lua-esp8266.jpg',stock : 50,
+  precio : 4500
+}
+
+]
+
+
+
+
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {

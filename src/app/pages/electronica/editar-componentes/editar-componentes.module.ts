@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EditarComponentesRoutingModule } from './editar-componentes-routing.module';
 import { EditarComponentesComponent } from './editar-componentes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { EditarComponentesComponent } from './editar-componentes.component';
   ],
   imports: [
     CommonModule,
-    EditarComponentesRoutingModule
+    EditarComponentesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class EditarComponentesModule { }

@@ -3,7 +3,7 @@
 
 
         <div class="alert alert-dark bg-dark text-white text-center" role="alert">
-            <h4 class=""><strong>LISTADO DE COMPONENTES</strong></h4>
+            <h4 class=""><strong>LISTADO DE PRODUCTOS</strong></h4>
         </div>
 
 
@@ -26,17 +26,17 @@
             </thead>
             <tbody class="table-dark bg-dark text-center">
                 <!--Replicamos 4 veces los productos e iconos-->
-                <tr *ngFor=" let producto of [0, 1, 2, 3, 4]">
-                    <th scope="row">1</th>
-                    <td>5095-MCU-65788</td>
-                    <td>MCU-ESP32</td>
-                    <td>Módulo WIFI MCU-ESP32</td>
-                    <td>Microcontroladores</td>
-                    <td>Genérica</td>
+                <tr *ngFor=" let producto of testData">
+                    <th scope="row">{{producto.id}}</th>
+                    <td>{{producto.codigo}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.descripcion}}</td>
+                    <td>{{producto.categoria}}</td>
+                    <td>{{producto.marca}}</td>
                     <td>
-                        <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/a" target="_blank">Link</a></td>
-                    <td>100</td>
-                    <td>1600</td>
+                        <a href={{producto.hojaDatos}} target="_blank">Link</a></td>
+                    <td>{{producto.stock}}</td>
+                    <td>{{producto.precio}}</td>
                     <!--En caso de moviles ocultamos -->
                     <td class="btn-group d-none d-sm-block" role="group">
                         <div class="d-flex justify-content-center">
