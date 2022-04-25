@@ -13,7 +13,7 @@
             <!--FORMULARIO -->
             <div class="container text-center  d-flex justify-content-center ">
 
-                <form (ngSubmit)="addProducto()" [formGroup]="productoFormulario">
+                <form (ngSubmit)="addProducto()" [formGroup]="testDataFormulario">
 
                     <div class="text-left p-2  bg-dark text-white ">
                         <!-- PRIMERA FILA -->
@@ -24,8 +24,7 @@
               <h5>Código</h5>
             </label>
                                 <!-- PATTERN LETRAS MINUS/MAYUSC, NUMEROS, GUIONES MEDIO Y ESPACIOS [a-zA-Z0-9.-\s]+ -->
-                                <input type="text" class="form-control" id="codigo" required pattern="[a-zA-Z0-9.-\s]+" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO" minlength="3" maxlength="100" placeholder="(Ej: 8769-JKSU-9IA) " formControlName="codigo">
-
+                                <input type="text" class="form-control" id="codigo" required pattern="[a-zA-Z0-9.-\s]+" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO" minlength="3" maxlength="100" placeholder="(Ej: 8769-JKSU-9IA)" formControlName="codigo">
                             </div>
                             <div class="form-group m-3 ">
                                 <label for="nombre">

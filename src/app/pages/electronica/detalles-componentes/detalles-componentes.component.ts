@@ -18,13 +18,13 @@ export class DetallesComponentesComponent implements OnInit {
 
 
 
-  valorProducto = null;
+  testData:any = null;
 
   constructor(private router: Router) {
 
     const navegacionActual = this.router.getCurrentNavigation();
 
-    this.valorProducto = navegacionActual?.extras?.state;
+    this.testData = navegacionActual?.extras?.state?.value;
 
 
   }
@@ -40,7 +40,7 @@ export class DetallesComponentesComponent implements OnInit {
 
   // Editar Productos
   editarProducto(): void{
-    this.navigationExtras.state.value = this.valorProducto;
+    this.navigationExtras.state.value = this.testData;
     this.router.navigate(['editar-componentes'] , this.navigationExtras);
   }
 

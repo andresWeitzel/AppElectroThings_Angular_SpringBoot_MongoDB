@@ -9,21 +9,32 @@ import { Router } from '@angular/router';
 })
 export class EditarComponentesComponent implements OnInit {
 
-  producto = null
+  testData = null
 
-  productoFormulario : FormGroup;
+  testDataFormulario : FormGroup;
 
   constructor(private router : Router , private formBuilder:FormBuilder) {
 
     const navegacionActual = this.router.getCurrentNavigation();
 
-    this.producto = navegacionActual?.extras?.state;
+    this.testData = navegacionActual?.extras?.state?.value;
+
+    this.initTestDataFormulario();
   }
 
 
 
   ngOnInit(): void {
-    this.initProductoFormulario();
+
+
+    //Colocamos los valores en el form
+    //Si la data no esta definida redireccionamos, sino
+    //cargamos el form
+    if(typeof this.testData == 'undefined'){
+  this.router.navigate(['new']);
+    }else{
+      this.testDataFormulario.patchValue(this.testData)
+    }
   }
 
 
@@ -33,10 +44,10 @@ export class EditarComponentesComponent implements OnInit {
   }
 
   //Inicializar Formulario con los datos del registro seleccionado
-  private initProductoFormulario(): void{
+  private initTestDataFormulario(): void{
 
     //Inicializamos el objeto con las propiedades de nuestro producto.Aca podemos usar patrones regex, pero ya lo aplicamos en la Vista
-    this.productoFormulario = this.formBuilder.group({
+    this.testDataFormulario = this.formBuilder.group({
         codigo : ['' , [Validators.required]],
         nombre : ['' , [Validators.required]],
         descripcion : ['' , [Validators.required]],

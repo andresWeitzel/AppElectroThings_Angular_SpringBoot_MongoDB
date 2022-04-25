@@ -145,20 +145,21 @@
 
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>KAHJS-89S-A</td>
+                                <td>{{testData.id}}</td>
+                                <td>{{testData.codigo}}</td>
 
-                                <td>5095-MCU-65788</td>
+                                <td>{{testData.nombre}}</td>
 
-                                <td>Módulo WIFI MCU-ESP32</td>
-                                <td>Microcontroladores</td>
+                                <td>{{testData.descripcion}}</td>
 
-                                <td>Genérica</td>
+                                <td>{{testData.categoria}}</td>
+
+                                <td>{{testData.marca}}</td>
 
                                 <td>
-                                    <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/a" target="_blank">Link</a></td>
-                                <td>100</td>
-                                <td>1600</td>
+                                    <a href="{{testData.hojaDatos}}" target="_blank">Link</a></td>
+                                <td>{{testData.stock}}</td>
+                                <td>{{testData.precio}}</td>
                                 <td>
                                     <!--BOTONES-->
                                     <div class="card-body  ">
@@ -253,7 +254,3 @@
 
 </div>
 <!--FIN CARDS-->
-
-
-
-{{valorProducto | json}}
