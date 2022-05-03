@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IProducto } from 'src/app/shared/models/iproducto.interface';
+import { IProducto } from '../../models/iproducto.interface';
 
 @Component({
-  selector: 'app-editar-componentes',
-  templateUrl: './editar-componentes.component.html',
-  styleUrls: ['./editar-componentes.component.css']
+  selector: 'app-producto-form',
+  templateUrl : './producto-form.component.html',
+  styleUrls: ['./producto-form.component.css']
 })
-export class EditarComponentesComponent implements OnInit {
-
+export class ProductoFormComponent implements OnInit {
   testData: IProducto = null
 
   testDataFormulario : FormGroup;
@@ -41,7 +40,7 @@ export class EditarComponentesComponent implements OnInit {
 
   //Agregar Producto
   addProducto():void{
-    console.log("PRODUCTO EDITADO CORRECTAMENTE");
+    console.log("PRODUCTO AGREGADO CORRECTAMENTE");
   }
 
   //Inicializar Formulario con los datos del registro seleccionado
@@ -60,5 +59,6 @@ export class EditarComponentesComponent implements OnInit {
 
     });
   }
-
 }
+
+

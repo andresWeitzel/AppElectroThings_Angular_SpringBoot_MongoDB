@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { IProducto } from 'src/app/shared/models/iproducto.interface';
 
 @Component({
   selector: 'app-listado-componentes',
@@ -15,9 +16,9 @@ export class ListadoComponentesComponent implements OnInit {
       }
   };
 
-testData =[
+testData  =[
 {
-  id: '1',
+  id: 1,
   codigo:'5095-MCU-65788',
   nombre:'MCU-ESP32',
   descripcion:'Módulo WIFI MCU-ESP32',
@@ -29,13 +30,14 @@ testData =[
 
 },
 {
-  id :'2',
+  id :2,
   codigo : '29-LLP-78296',
   nombre: 'Teclado Gamer',
   descripcion : 'Teclado Gamer HP',
   categoria : 'Gamer',
   marca : 'HP',
-  hojaDatos : 'https://www.todomicro.com.ar/6038-large_default/modulo-de-desarrollo-nodemcu-lua-esp8266.jpg',stock : 50,
+  hojaDatos : 'https://www.todomicro.com.ar/6038-large_default/modulo-de-desarrollo-nodemcu-lua-esp8266.jpg'
+  ,stock : 50,
   precio : 4500
 }
 

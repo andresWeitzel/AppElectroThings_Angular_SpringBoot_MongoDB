@@ -10,23 +10,25 @@
         <div class="d-flex justify-content-center">
             <!--LISTADO DE COMPONENTES-->
             <div class="card bg-dark text-white m-1 ms-0">
-                <img src="/assets/background/red-back-08.webp" class="card-img" height="350px" alt="...">
+                <img src="/assets/background/red-back-10.jpg" class="card-img" height="350px" alt="...">
                 <div class="card-img-overlay">
 
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Listado de Productos</strong></h4>
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>LISTADO DE PRODUCTOS</strong></h4>
 
                     <div class="container align-content-left bg-dark">
                         <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
                         <ol>
-                            <li>Listado de Productos de la Base de Datos</li>
+                            <li>Listado de Productos Paginados</li>
                             <li>Detalles y Características</li>
-                            <li>Editar</li>
-                            <li>Eliminar</li>
+                            <li>Formularios REGEX</li>
+                            <li>Modificación del Producto</li>
+                            <li>Eliminación del Producto</li>
+                            <li>Otros</li>
                         </ol>
 
-                        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                        <div class="mt-1">
                             <a class="nav-link" [routerLink]="['/listado-componentes']">
-                                <button class=" btn btn-primary border-light p-1" type="button ">VER LISTADO</button>
+                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">VER PRODUCTOS</button>
                             </a>
 
                         </div>
@@ -39,22 +41,25 @@
             <!-- FIN LISTADO DE COMPONENTES-->
             <!--AGREGAR COMPONENTES-->
             <div class="card bg-dark text-white m-1 ">
-                <img src="/assets/background/red-back-08.webp" class="card-img" height="350px" alt="...">
+                <img src="/assets/background/red-back-10.jpg" class="card-img" height="350px" alt="...">
                 <div class="card-img-overlay">
 
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Agregar Productos</strong></h4>
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>AGREGAR PRODUCTOS</strong></h4>
 
                     <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline mb-0">Operaciones Disponibles:</p>
+                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
                         <ol>
-                            <li>Detallar</li>
-                            <li>Editar</li>
-                            <li>Eliminar</li>
+                            <li>Formulario REGEX</li>
+                            <li>Transacción Directa</li>
+                            <li>Comprobación</li>
+                            <li>Detalle del Producto Agregado</li>
+                            <li>Modificación del Producto</li>
+                            <li>Eliminación del Producto</li>
                         </ol>
 
-                        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                        <div class="mt-1">
                             <a class="nav-link" [routerLink]="['/agregar-componentes']">
-                                <button class=" btn btn-primary border-light p-1" type="button ">AGREGAR</button>
+                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">AGREGAR PRODUCTO</button>
                             </a>
 
                         </div>
@@ -63,15 +68,51 @@
 
             </div>
             <!--FIN AGREGAR COMPONENTES-->
-            <!--NOVEDADES-->
-            <div class="card bg-dark text-white m-1 ">
-                <img src="/assets/background/red-back-08.webp" class="card-img" height="350px" alt="...">
-                <div class="card-img-overlay">
+            <!--EDITAR-->
+            <div class="card bg-dark text-white  m-1 ">
+                <img src="/assets/background/red-back-10.jpg" class="card-img" height="350px" alt="...">
+                <div class="card-img-overlay ">
 
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Novedades</strong></h4>
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>EDITAR PRODUCTOS</strong></h4>
 
                     <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline mb-0 p-2">Información Disponibles:</p>
+                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
+                        <ol>
+                            <li>Formulario REGEX</li>
+                            <li>Transacción Directa</li>
+                            <li>Información del Producto</li>
+                            <li>Detalle del Producto Editado</li>
+                            <li>Modificación del Producto</li>
+                            <li>Eliminación del Producto</li>
+                        </ol>
+
+                        <div class="mt-1">
+                            <a class="nav-link" [routerLink]="['/listado-componentes']">
+                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">EDITAR PRODUCTO</button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--FIN EDITAR-->
+
+        </div>
+        <!--FIN CARDS COMPONENTES-->
+
+
+        <!-- CARD UTILIDADES-->
+        <div class="d-flex justify-content-center">
+            <!--NOVEDADES-->
+            <div class="card bg-dark text-white m-1 ms-0">
+                <img src="/assets/background/red-back-12.jpg" class="card-img" height="350px" alt="...">
+                <div class="card-img-overlay">
+
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>NOVEDADES</strong></h4>
+
+                    <div class="container align-content-left bg-dark">
+                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
                         <ol>
                             <li>Nuevas Placas Electrónicas</li>
                             <li>Nuevos Componentes</li>
@@ -81,53 +122,53 @@
                             <li>Otros(Destacados)</li>
                         </ol>
 
-                        <div class="d-grid gap-2 col-6 mx-auto mt-1">
+                        <div class="mt-1">
                             <a class="nav-link" [routerLink]="['/novedades-componentes']">
-                                <button class=" btn btn-primary border-light p-1" type="button ">VER NOVEDADES</button>
+                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">VER NOVEDADES</button>
                             </a>
 
                         </div>
-                    </div>
-                </div>
 
+                    </div>
+
+
+                </div>
             </div>
             <!--FIN NOVEDADES-->
 
-        </div>
-        <!--FIN CARDS COMPONENTES-->
-
-        <!-- CARD AYUDA-->
-        <div class="d-flex-12 justify-content-center">
-            <!--LISTADO DE COMPONENTES-->
-            <div class="card bg-dark text-white m-1 ms-0">
-                <img src="/assets/background/red-back-13.webp" class="card-img" height="300px" alt="...">
+            <!--AYUDA-->
+            <div class="card bg-dark text-white m-1 ">
+                <img src="/assets/background/red-back-01.jpg" class="card-img" height="350px" alt="...">
                 <div class="card-img-overlay">
 
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>Listado de Productos</strong></h4>
+                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong>AYUDA</strong></h4>
 
                     <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
+                        <p class="text-decoration-underline mb-0 p-2">Operaciones Disponibles:</p>
                         <ol>
-                            <li>Listado de la Base de Datos</li>
-                            <li>Detalles y Características</li>
-                            <li>Editar</li>
-                            <li>Eliminar</li>
+                            <li>Nuevas Placas Electrónicas</li>
+                            <li>Nuevos Componentes</li>
+                            <li>Nuevos Proveedores</li>
+                            <li>Fabricantes</li>
+                            <li>Blog Técnico</li>
+                            <li>Otros(Destacados)</li>
                         </ol>
 
-                        <div class="d-grid gap-2 col-6 mx-auto mt-4">
-                            <a class="nav-link" [routerLink]="['/listado-componentes']">
-                                <button class=" btn btn-primary border-light p-1" type="button ">VER LISTADO</button>
+                        <div class="mt-1">
+                            <a class="nav-link" [routerLink]="['/ayuda']">
+                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">VER AYUDA</button>
                             </a>
 
                         </div>
-
                     </div>
-
-
                 </div>
+
             </div>
+            <!--FIN AYUDA-->
+
+
         </div>
-        <!--FIN CARD AYUDA-->
+        <!--FIN CARD UTILIDADES-->
 
 
     </div>

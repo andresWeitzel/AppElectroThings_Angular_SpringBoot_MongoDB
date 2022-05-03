@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { IProducto} from 'src/app/shared/models/iproducto.interface';
 
 @Component({
   selector: 'app-detalles-componentes',
@@ -17,8 +18,8 @@ export class DetallesComponentesComponent implements OnInit {
 
 
 
-
-  testData:any = null;
+  //Aplicamos la interfaz creada Producto
+  testData:IProducto = null;
 
   constructor(private router: Router) {
 
@@ -30,6 +31,8 @@ export class DetallesComponentesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
   }
 
   //Regresar Listado Productos
@@ -40,13 +43,25 @@ export class DetallesComponentesComponent implements OnInit {
 
   // Editar Productos
   editarProducto(): void{
-    this.navigationExtras.state.value = this.testData;
-    this.router.navigate(['editar-componentes'] , this.navigationExtras);
+    //Redirijimos si tenemos un producto vacio
+    if(typeof this.testData == 'undefined'){
+        this.router.navigate(['listado-componentes']);
+    }else{
+      this.navigationExtras.state.value = this.testData;
+      this.router.navigate(['editar-componentes'] , this.navigationExtras);
+  }
   }
 
   // Eliminar Productos
   eliminarProducto(): void{
+    //Redirijimos si tenemos un producto vacio
+    if(typeof this.testData == 'undefined'){
+      this.router.navigate(['listado-componentes']);
+  }else{
     alert('El Producto ha sido Eliminado');
+}
+
+
   }
 
 

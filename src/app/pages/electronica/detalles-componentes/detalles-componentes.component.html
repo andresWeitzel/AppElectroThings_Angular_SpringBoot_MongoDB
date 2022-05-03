@@ -10,122 +10,27 @@
     <div class="row justify-content-center">
 
 
-        <!--CARD PRODUCTO-->
-        <div class="col-md-12 col-sm-12 d-flex justify-content-center text-center mt-3">
-
-            <!--CARD INFO-->
-            <div class="card alert alert-dark bg-dark text-white text-center " style="max-width: 540px;">
-                <div id="card" class="text-center bg-dark text-white text-center">
-                    <h5 class="text-underline alert alert-dark bg-dark text-white text-center m-2">INFORMACIÓN</h5>
-                </div>
-                <div id="card" class="row g-0 bg-dark text-white text-center">
-
-                    <hr>
-                    <div class="col-md-5">
-                        <img src="assets/images/esp32.jpg" class="card-img-top " alt="...">
-                    </div>
-                    <div class="col-md-7 ">
-                        <div class="card-body ">
-                            <h5 class="card-title bg-gradient bg-opacity-10 bg-dark text-center">Módulo Wifi Mcu Esp32</h5>
-                            <p class="card-text">Incluyen puerto de conexión microUSB para alimentación y conector JST para alimentación de la placa. Y se pueden programar desde el IDE de Arduino.
-
-                            </p>
-                        </div>
-                        <div class="card-body  ">
-                            <a href="https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Datasheet</a>
-                            <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Proyectos</a>
-                            <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Más Info</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--FIN CARD INFO-->
-
-            <!--CARD CARACTERISTICAS-->
-            <div class="card alert alert-dark bg-dark text-white text-center ">
-                <div id="card" class="text-center bg-dark text-white text-center">
-                    <h5 class="text-underline alert alert-dark bg-dark text-white text-center m-2">CARACTERÍSTICAS</h5>
-                </div>
-                <div id="card" class="row g-0 bg-dark text-white text-center">
-
-                    <hr>
-                    <table class="table table-secondary table-bordered border-dark table-hover">
-                        <thead class="table-dark text-center">
-                            <tr>
-                                <th scope="col"><strong>Característica</strong></th>
-
-                                <th scope="col"><strong>Valor</strong></th>
-
-                            </tr>
-                        </thead>
-                        <tbody class="table-dark bg-dark text-center">
-
-                            <tr>
-                                <td>Velocidad</td>
-                                <td>80MHz/160MHz.</td>
-                            </tr>
-                            <tr>
-                                <td>Memoria Flash</td>
-                                <td>4 MBytes.</td>
-
-                            </tr>
-                            <tr>
-                                <td>Tensión Funcionamiento</td>
-                                <td>3.3 volts.</td>
-
-                            </tr>
-
-                            <tr>
-                                <td>Entradas y Salidas Digitales</td>
-                                <td>11, todos (salvo el D0) con PWM, interrupciones, e I2C.</td>
-
-                            </tr>
-
-                            <tr>
-                                <td>Entradas Analógicas</td>
-                                <td>1 (Max. 3.2V).</td>
-
-                            </tr>
-
-                            <tr>
-                                <td>Conector</td>
-                                <td> Micro-USB.</td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-
-                </div>
-            </div>
-            <!--FIN CARD CARACTERISTICAS-->
-
-        </div>
-
-
-        <!--FIN CARD PRODUCTO-->
-
 
 
         <!--CARD DETALLES PRODUCTO-->
 
         <div class="col-md-12 col-sm-12">
 
+
             <div id="card" class="card alert alert-dark bg-dark text-white text-center">
+
+
                 <div id="card" class="text-center bg-dark text-white">
-                    <h5 class="text-underline alert alert-dark bg-dark text-white text-center m-2">REGISTRO</h5>
+
+                    <h5 class=" alert alert-dark bg-dark text-white text-center m-2"><strong>REGISTRO SELECCIONADO</strong></h5>
                 </div>
                 <div id="card" class="row g-0   bg-dark text-white ">
                     <hr>
 
+                    <table class="table table-secondary table-bordered border-light table-hover ">
 
 
-
-                    <table class="table table-secondary table-bordered border-dark table-hover">
-
-                        <thead class="table-dark">
+                        <thead class="table-dark border-light">
                             <tr>
                                 <th scope="col"><strong>ID</strong></th>
                                 <th scope="col"><strong>CÓDIGO</strong>
@@ -143,7 +48,7 @@
                         </thead>
 
 
-                        <tbody>
+                        <tbody class="table-dark border-light bg-dark text-center">
                             <tr>
                                 <td>{{testData.id}}</td>
                                 <td>{{testData.codigo}}</td>
@@ -167,23 +72,23 @@
                                         <div class="d-flex justify-content-center text-center">
 
                                             <div class="">
-                                                <button class="btn btn-warning border-light alert-link m-1" (click)="editarProducto()">
-                          <!--Icono Editar Producto-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                          </svg>
-                            <!--Fin Icono Editar Producto-->
-                        </button>
+                                                <button class="btn btn-warning border-dark alert-link m-1" (click)="editarProducto()">
+                        <!--Icono Editar Producto-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                        </svg>
+                          <!--Fin Icono Editar Producto-->
+                      </button>
                                             </div>
                                             <div class="">
-                                                <button class="btn btn-danger border-light alert-link m-1 " (click)="eliminarProducto()">
-                <!--Icono Eliminar Producto-->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                </svg>
-                <!--Fin Icono Eliminar Producto-->
-                  </button>
+                                                <button class="btn btn-danger border-dark alert-link m-1 " (click)="eliminarProducto()">
+              <!--Icono Eliminar Producto-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+              </svg>
+              <!--Fin Icono Eliminar Producto-->
+                </button>
                                             </div>
 
 
@@ -201,18 +106,147 @@
 
 
 
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
     <!--  FIN CARD DETALLES PRODUCTO-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--CARD PRODUCTO-->
+    <div class="col-md-12 col-sm-12 d-flex justify-content-center text-center mt-3">
+
+        <!--CARD INFO-->
+        <div class="card alert alert-dark bg-dark text-white text-center " style="max-width: 540px;">
+            <div id="card" class="text-center bg-dark text-white text-center">
+                <h5 class="text-underline alert alert-dark bg-dark text-white text-center m-2">INFORMACIÓN</h5>
+            </div>
+            <div id="card" class="row g-0 bg-dark text-white text-center">
+
+                <hr>
+                <div class="col-md-5">
+                    <img src="assets/images/esp32.jpg" class="card-img-top " alt="...">
+                </div>
+                <div class="col-md-7 ">
+                    <div class="card-body ">
+                        <h5 class="card-title bg-gradient bg-opacity-10 bg-dark text-center">Módulo Wifi Mcu Esp32</h5>
+                        <p class="card-text">Incluyen puerto de conexión microUSB para alimentación y conector JST para alimentación de la placa. Y se pueden programar desde el IDE de Arduino.
+
+                        </p>
+                    </div>
+                    <div class="card-body  ">
+                        <a href="https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Datasheet</a>
+                        <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Proyectos</a>
+                        <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Más Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD INFO-->
+
+        <!--CARD CARACTERISTICAS-->
+        <div class="card alert alert-dark bg-dark text-white text-center ms-5">
+            <div id="card" class="text-center bg-dark text-white text-center">
+                <h5 class="text-underline alert alert-dark bg-dark text-white text-center m-2">CARACTERÍSTICAS</h5>
+            </div>
+            <div id="card" class="row g-0 bg-dark text-white text-center">
+
+                <hr>
+                <table class="table table-secondary table-bordered border-dark table-hover border-light">
+                    <thead class="table-dark text-center border-light">
+                        <tr>
+                            <th scope="col"><strong>Característica</strong></th>
+
+                            <th scope="col"><strong>Valor</strong></th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="table-dark bg-dark text-center border-light">
+
+                        <tr>
+                            <td>Velocidad</td>
+                            <td>80MHz/160MHz.</td>
+                        </tr>
+                        <tr>
+                            <td>Memoria Flash</td>
+                            <td>4 MBytes.</td>
+
+                        </tr>
+                        <tr>
+                            <td>Tensión Funcionamiento</td>
+                            <td>3.3 volts.</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Entradas y Salidas Digitales</td>
+                            <td>11, todos (salvo el D0) con PWM, interrupciones, e I2C.</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Entradas Analógicas</td>
+                            <td>1 (Max. 3.2V).</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Conector</td>
+                            <td> Micro-USB.</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+            </div>
+        </div>
+        <!--FIN CARD CARACTERISTICAS-->
+
+    </div>
+
+
+    <!--FIN CARD PRODUCTO-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!--BTN'S REGRESAR/ACTUALIZAR-->

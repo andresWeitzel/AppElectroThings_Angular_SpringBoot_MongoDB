@@ -9,6 +9,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from './components/carousel/carousel.module';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { ProductoFormModule } from './shared/components/producto-form/producto-form.module';
+
 
 
 @NgModule({
@@ -16,13 +18,14 @@ import { FooterComponent } from './components/footer/footer.component';
     AppComponent,
     NavbarComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NavbarModule,
-    CarouselModule
+    CarouselModule,
+    ProductoFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
