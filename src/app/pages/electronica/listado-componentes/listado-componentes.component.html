@@ -21,12 +21,14 @@
                     <th scope="col"><strong>HOJA DE DATOS</strong></th>
                     <th scope="col"><strong>STOCK</strong></th>
                     <th scope="col"><strong>PRECIO</strong></th>
+                    <th scope="col"><strong>FECHA</strong></th>
+                    <th scope="col"><strong>HORA</strong></th>
                     <th scope="col"><strong>OPCIONES</strong></th>
                 </tr>
             </thead>
             <tbody class="table-dark bg-dark text-center">
                 <!--Replicamos 4 veces los productos e iconos-->
-                <tr *ngFor=" let producto of testData">
+                <tr *ngFor="let producto of testData ">
                     <th scope="row">{{producto.id}}</th>
                     <td>{{producto.codigo}}</td>
                     <td>{{producto.nombre}}</td>
@@ -37,6 +39,8 @@
                         <a href={{producto.hojaDatos}} target="_blank">Link</a></td>
                     <td>{{producto.stock}}</td>
                     <td>{{producto.precio}}</td>
+                    <td>{{producto.fecha}}</td>
+                    <td>{{producto.hora}}</td>
                     <!--En caso de moviles ocultamos -->
                     <td class="btn-group d-none d-sm-block" role="group">
                         <div class="d-flex justify-content-center">

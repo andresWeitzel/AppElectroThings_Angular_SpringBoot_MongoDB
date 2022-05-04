@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AgregarComponentesRoutingModule } from './agregar-componentes-routing.module';
 import { AgregarComponentesComponent } from './agregar-componentes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { AgregarComponentesComponent } from './agregar-componentes.component';
   ],
   imports: [
     CommonModule,
-    AgregarComponentesRoutingModule
-  ]
+    AgregarComponentesRoutingModule,
+    ReactiveFormsModule
+
+  ],
 })
-export class AgregarComponentesModule { }
+export class AgregarComponentesModule {}

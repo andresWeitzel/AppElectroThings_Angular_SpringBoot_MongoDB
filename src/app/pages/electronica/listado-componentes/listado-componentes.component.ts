@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { Producto } from 'src/app/services/models/producto';
+import { ProductosService } from 'src/app/services/productos/productos.service';
 import { IProducto } from 'src/app/shared/models/iproducto.interface';
 
 @Component({
@@ -16,40 +18,16 @@ export class ListadoComponentesComponent implements OnInit {
       }
   };
 
-testData  =[
-{
-  id: 1,
-  codigo:'5095-MCU-65788',
-  nombre:'MCU-ESP32',
-  descripcion:'Módulo WIFI MCU-ESP32',
-  categoria : 'Microcontroladores',
-  marca: 'generica',
-  hojaDatos : 'https://www.todomicro.com.ar/6038-large_default/modulo-de-desarrollo-nodemcu-lua-esp8266.jpg',
-  stock : 100,
-  precio : 1600
 
-},
-{
-  id :2,
-  codigo : '29-LLP-78296',
-  nombre: 'Teclado Gamer',
-  descripcion : 'Teclado Gamer HP',
-  categoria : 'Gamer',
-  marca : 'HP',
-  hojaDatos : 'https://www.todomicro.com.ar/6038-large_default/modulo-de-desarrollo-nodemcu-lua-esp8266.jpg'
-  ,stock : 50,
-  precio : 4500
-}
-
-]
+  //Array de Productos
+  testData : any[]=[];
 
 
-
-
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private productoService:ProductosService) { }
 
   ngOnInit(): void {
+
+    this.getAll();
 
   }
 
@@ -71,4 +49,13 @@ testData  =[
   eliminarProducto(producto : any): void{
     alert('El Producto ha sido Eliminado');
   }
-}
+
+
+  private getAll(){
+    this.productoService.getAll().subscribe(
+      (objeto:any[])=>this.testData = objeto
+      );
+  }
+  }
+
+

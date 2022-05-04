@@ -5,7 +5,6 @@ import { EditarComponentesRoutingModule } from './editar-componentes-routing.mod
 import { EditarComponentesComponent } from './editar-componentes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ProductoFormModule } from 'src/app/shared/components/producto-form/producto-form.module';
 
 
 @NgModule({
@@ -16,7 +15,6 @@ import { ProductoFormModule } from 'src/app/shared/components/producto-form/prod
     CommonModule,
     EditarComponentesRoutingModule,
     ReactiveFormsModule,
-    ProductoFormModule
-  ]
+  ],
 })
 export class EditarComponentesModule { }

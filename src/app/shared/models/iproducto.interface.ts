@@ -1,13 +1,13 @@
 export interface IProducto{
-  id: number,
-  codigo:String,
-  nombre:String,
-  descripcion:String,
-  categoria : String,
-  marca: String,
-  hojaDatos : String,
+  id: string,
+  codigo:string,
+  nombre:string,
+  descripcion:string,
+  categoria : string,
+  marca: string,
+  hojaDatos : string,
   stock : number,
-  precio : number
-
-
+  precio : number,
+  fecha: string,
+  hora: string
 }

@@ -8,8 +8,7 @@ import { NavbarModule } from './components/navbar/navbar.module';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from './components/carousel/carousel.module';
 import { FooterComponent } from './components/footer/footer.component';
-
-import { ProductoFormModule } from './shared/components/producto-form/producto-form.module';
+import { HttpClientModule } from "@angular/common/http";
 
 
 
@@ -25,7 +24,7 @@ import { ProductoFormModule } from './shared/components/producto-form/producto-f
     AppRoutingModule,
     NavbarModule,
     CarouselModule,
-    ProductoFormModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

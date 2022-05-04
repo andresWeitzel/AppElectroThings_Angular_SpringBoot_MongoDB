@@ -3,12 +3,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IProducto } from 'src/app/shared/models/iproducto.interface';
 
+
 @Component({
   selector: 'app-editar-componentes',
   templateUrl: './editar-componentes.component.html',
   styleUrls: ['./editar-componentes.component.css']
 })
-export class EditarComponentesComponent implements OnInit {
+export class EditarComponentesComponent implements OnInit{
 
   testData: IProducto = null
 
@@ -41,7 +42,7 @@ export class EditarComponentesComponent implements OnInit {
 
   //Agregar Producto
   addProducto():void{
-    console.log("PRODUCTO EDITADO CORRECTAMENTE");
+    console.log("PRODUCTO AGREGADO CORRECTAMENTE");
   }
 
   //Inicializar Formulario con los datos del registro seleccionado
@@ -61,4 +62,6 @@ export class EditarComponentesComponent implements OnInit {
     });
   }
 
+
 }
+
