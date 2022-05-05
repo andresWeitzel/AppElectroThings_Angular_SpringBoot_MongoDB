@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Producto } from 'src/app/services/models/producto';
 import { ProductosService } from 'src/app/services/productos/productos.service';
-import { IProducto } from 'src/app/shared/models/iproducto.interface';
+
 
 @Component({
   selector: 'app-listado-componentes',
@@ -20,7 +20,13 @@ export class ListadoComponentesComponent implements OnInit {
 
 
   //Array de Productos
-  testData : any[]=[];
+  testData : Array<Producto>=[];
+
+  //Paginado
+  nroPage=0;
+  size=12;
+  order='id';
+  asc=true;
 
 
   constructor(private router: Router, private productoService:ProductosService) { }
@@ -32,6 +38,19 @@ export class ListadoComponentesComponent implements OnInit {
   }
 
   // Métodos CRUD para los Componentes Electrónicos
+
+  //Obtener Productos
+  private getAll(){
+    this.productoService.listadoProductos(this.nroPage,this.size,this.order,this.asc).subscribe(
+      (response:Array<Producto>)=>{
+        this.testData = Object.values(response);
+        console.log(this.testData);
+      },
+      (err)=>{
+        console.log(err.error);
+      }
+      );
+  }
 
   // Mostrar Productos
   detallesProducto(producto : any): void{
@@ -51,11 +70,7 @@ export class ListadoComponentesComponent implements OnInit {
   }
 
 
-  private getAll(){
-    this.productoService.getAll().subscribe(
-      (objeto:any[])=>this.testData = objeto
-      );
-  }
+
   }
 
 
