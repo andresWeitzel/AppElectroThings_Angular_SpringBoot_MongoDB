@@ -70,6 +70,12 @@
 ## ``Documentación y Guía del Proyecto ``
 #### (Esta Documentación que Desarrollé es para la Creación, Configuración, Posibles Errores, Despliegue, etc de la Aplicación con Angular, Firebase y Bootstrap. Recomiendo Leerla y Realizar todo paso a paso como se indica en la misma).
 
+</br>
+
+Documentación de Desarrollo Sin Revisión y Actualización Momentáneamente
+
+</br>
+
 <hr>
 
 ## Indice
