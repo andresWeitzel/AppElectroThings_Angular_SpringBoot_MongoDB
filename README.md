@@ -1,6 +1,18 @@
 # AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB.
 
-* Aplicación Tienda de Electrónica con Angular y Bootstrap lado FRONT y Spring Boot lado BACKEND y MongoDB lado DATABASE.. 
+* Aplicación Tienda de Electrónica para la Gestión de Productos Electrónicos 
+* Repositorio ApiRest_ElectroThingsV1 : https://github.com/andresWeitzel/ApiRest_ElectroThingsV1_SpringBoot_MongoDB
+* Repositorio db_ElectroThings_MongoDB : https://github.com/andresWeitzel/db_ElectroThings_MongoDB
+
+
+
+</br>
+
+| Área | Stack |
+| ------------- | ------------- |
+| Front End | HTML5, CSS3, Angular12, Bootstrap5 y Otros | 
+| Back End | Spring Boot, Maven, Open-API y Otros | 
+| Database | MongoDB Compass, MongoDB, CMD | 
 
 <hr>
 
@@ -11,11 +23,21 @@
 | Angular |   12.2.11 | FrameWork Web Desarrollo de Apps con TypeScript | 
 | Angular CLI | 12.2.11 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
 | Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
-| Firebase | | Base de Datos en Nube |
-| Netlify | - | Servidor de Despliegue de Apps| 
-| Netlify CLI | 2.69.10 | Herramienta de Netlify para Configurar el Despliegue de la App| 
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
+| Java |   12.0.2 | JDK |
+| Spring Tool Suite 4 | 4.9.0  | IDE |
+| Spring Boot |   2.6.4  | Framework |
+| Spring Boot Data JPA  | 2.6.3 | Mapeo de objetos y persistencia en la db |
+| Lombok | 1.18.22 | Automatización de Código | 
+| Open-Api y UI Swagger | 1.6.4 | Documentación de la Api | 
+| UI Swagger | 1.6.4 | Visualización y Gestión de la Api | 
+| Maven |  4.0.0 | Gestor de Proyectos |
+| MongoDB | 5.0 | Base de Datos |
+| MongoDB Compass	| 1.31.2 |	Gestor para MongoDB |
+| CMD | 10 | Símbolo del Sistema para linea de comandos | 
+| GNU bash / Terminal | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
 | Git | 2.29.1  | Control de Versiones |
+
 
 </br>
 
@@ -30,10 +52,29 @@
 
 </br>
 
+### Documentación No Oficial Recomendada
+* Api Rest Spring Boot Mongodb : https://www.youtube.com/watch?v=OtBukxJy4kg
+* Api Rest Guía Spring Boot Mongodb Codigo :https://github.com/heroe-geek/rest-api-springboot-mvc/blob/master/src/main/java/com/hg/crud/controllers/ProductController.java
+* Tutorial MongoDB con Spring Boot : https://www.mongodb.com/compatibility/spring-boot
+* Tutorial Spring Data MongoDB (01) : https://stackabuse.com/spring-data-mongodb-guide-to-the-aggregation-annotation/
+* Tutorial Spring Data MongoDB(02) :  https://blog.marcnuri.com/spring-data-mongodb-implementacion-de-un-repositorio-a-medida
+* Tutorial Uso de Queys en MongoDB : https://www.baeldung.com/queries-in-spring-data-mongodb
+* Código Ejemplo genérico : https://github.com/heroe-geek/rest-api-springboot-mvc/blob/master/src/main/java/com/hg/crud/models/ProductDTO.java
+* Config Mongo y Spring Boot : https://hevodata.com/learn/spring-boot-mongodb-config/
+
+
+</br>
+
 <hr>
 
 ## ``Documentación y Guía del Proyecto ``
 #### (Esta Documentación que Desarrollé es para la Creación, Configuración, Posibles Errores, Despliegue, etc de la Aplicación con Angular, Firebase y Bootstrap. Recomiendo Leerla y Realizar todo paso a paso como se indica en la misma).
+
+</br>
+
+# Documentación de Desarrollo Sin Revisión y Actualización Momentáneamente
+
+</br>
 
 <hr>
 
