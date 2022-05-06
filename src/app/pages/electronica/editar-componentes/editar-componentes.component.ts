@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IProducto } from 'src/app/shared/models/iproducto.interface';
+import { Producto } from 'src/app/services/models/producto';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { IProducto } from 'src/app/shared/models/iproducto.interface';
 })
 export class EditarComponentesComponent implements OnInit{
 
-  testData: IProducto = null
+  testData: Producto = null
 
   testDataFormulario : FormGroup;
 

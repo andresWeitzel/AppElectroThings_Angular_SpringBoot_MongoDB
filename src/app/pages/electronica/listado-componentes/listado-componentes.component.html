@@ -10,10 +10,31 @@
         <table class="table table-secondary table-bordered border-dark table-hover">
             <thead class="table-dark text-center">
                 <tr>
-                    <th scope="col"><strong>ID</strong></th>
-                    <th scope="col"><strong>CÓDIGO</strong>
+                    <th scope="row">
+
+                        <div class="d-flex flex-row  justify-content-center m-2 p-1">
+                            <h5><strong>ID</strong></h5>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" (click)="sortBy('id')">
+                            <img src="assets/list/sort01.png" width="20"  alt=""></button>
+                        </div>
+
                     </th>
-                    <th scope="col"><strong>NOMBRE</strong>
+                    <th scope="col">
+                        <div class="d-flex flex-row  justify-content-center m-2 p-1">
+                            <h5><strong>CÓDIGO</strong></h5>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('codigo')">
+                        <img src="assets/list/sort01.png" width="20"  alt=""></button>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="d-flex flex-row  justify-content-center m-2 p-1">
+                            <h5><strong>NOMBRE</strong></h5>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('nombre')">
+                    <img src="assets/list/sort01.png" width="20"  alt=""></button>
+                        </div>
                     </th>
                     <th scope="col"><strong>DESCRIPCIÓN</strong></th>
                     <th scope="col"><strong>CATEGORÍA</strong></th>
@@ -76,10 +97,31 @@
 
         </table>
 
-        <!--BTN'S REGRESAR/ACTUALIZAR-->
+        <!--PAGINACION/REGRESAR/ACTUALIZAR-->
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-sm-2 col-md-2">
+
+                <!--Paginacion-->
+                <div class="col-4 mt-2">
+                    <nav aria-label="..." class="bg-dark text-white">
+                        <ul class="pagination pagination-lg bg-dark text-white">
+                            <li class="page-item disabled bg-dark text-white">
+                                <span class="page-link bg-dark text-white">Anterior</span>
+                            </li>
+                            <li class="page-item "><a class="page-link bg-dark text-white" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link bg-dark text-white">2</span>
+                            </li>
+                            <li class="page-item"><a class="page-link bg-dark text-white" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link bg-dark text-white" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--Fin Paginacion-->
+
+                <div class="col-2 ms-5">
                     <a class="nav-link" [routerLink]="['/inicio-componentes']">
                         <button class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Regresar
                 <!--Icono Regresar Inicio-->
@@ -92,7 +134,7 @@
 
                     </a>
                 </div>
-                <div class="col-2 mt-2">
+                <div class="col-2 mt-2 ms-0">
 
                     <button onClick="window.location.reload()" class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Actualizar
                 <!--Icono Actualizar Listado-->
@@ -104,10 +146,12 @@
                     </button>
 
                 </div>
+
             </div>
+
         </div>
 
-        <!--FIN BTN'S REGRESAR/ACTUALIZAR-->
+        <!--FIN PAGINACION/REGRESAR/ACTUALIZAR-->
 
     </div>
 </div>

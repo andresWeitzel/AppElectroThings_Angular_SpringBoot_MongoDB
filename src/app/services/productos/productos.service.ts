@@ -19,8 +19,8 @@ export class ProductosService {
   constructor(private http : HttpClient) { }
 
   //Lista de Productos desde Spring
-  public listadoProductos(page:number , size:number , order:string, asc:boolean):Observable<Producto[]>{
-    return this.http.get<Producto[]>(`${URL_PRODUCTOS}/listado?page=${page}&size=${size}&order=${order}&asc=${asc}`);
+  public listadoProductos(page:number , size:number , order:string, asc:boolean):Observable<Producto>{
+    return this.http.get<any>(`${URL_PRODUCTOS}/listado?page=${page}&size=${size}&order=${order}&asc=${asc}`);
   }
 
 

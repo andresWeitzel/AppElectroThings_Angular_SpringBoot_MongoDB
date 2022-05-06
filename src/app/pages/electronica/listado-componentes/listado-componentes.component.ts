@@ -20,7 +20,7 @@ export class ListadoComponentesComponent implements OnInit {
 
 
   //Array de Productos
-  testData : Array<Producto>=[];
+  testData : Producto[];
 
   //Paginado
   nroPage=0;
@@ -31,19 +31,18 @@ export class ListadoComponentesComponent implements OnInit {
 
   constructor(private router: Router, private productoService:ProductosService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     this.getAll();
-
   }
 
   // Métodos CRUD para los Componentes Electrónicos
 
   //Obtener Productos
-  private getAll(){
+   getAll(){
     this.productoService.listadoProductos(this.nroPage,this.size,this.order,this.asc).subscribe(
-      (response:Array<Producto>)=>{
-        this.testData = Object.values(response);
+      (data:any)=>{
+        this.testData = data.content;
         console.log(this.testData);
       },
       (err)=>{
@@ -51,6 +50,14 @@ export class ListadoComponentesComponent implements OnInit {
       }
       );
   }
+
+  sortBy(tipo:string):void{
+
+    this.testData=[];
+    this.order = tipo;
+    this.getAll();
+  }
+
 
   // Mostrar Productos
   detallesProducto(producto : any): void{

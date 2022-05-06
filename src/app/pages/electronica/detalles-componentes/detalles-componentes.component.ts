@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { IProducto} from 'src/app/shared/models/iproducto.interface';
+import { Producto } from 'src/app/services/models/producto';
 
 @Component({
   selector: 'app-detalles-componentes',
@@ -19,7 +19,7 @@ export class DetallesComponentesComponent implements OnInit {
 
 
   //Aplicamos la interfaz creada Producto
-  testData:IProducto = null;
+  testData:Producto = null;
 
   constructor(private router: Router) {
 
