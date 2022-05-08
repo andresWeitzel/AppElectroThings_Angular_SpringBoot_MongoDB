@@ -20,12 +20,12 @@ export class ListadoComponentesComponent implements OnInit {
 
 
   //Array de Productos
-  testData : Producto[];
+  testData : Producto[]=[];
 
   //Paginado
   nroPage=0;
-  size=12;
-  order='id';
+  size=15;
+  sort='id';
   asc=true;
 
 
@@ -36,11 +36,13 @@ export class ListadoComponentesComponent implements OnInit {
     this.getAll();
   }
 
-  // Métodos CRUD para los Componentes Electrónicos
+
+
+  //=============METODOS CRUD========================
 
   //Obtener Productos
    getAll(){
-    this.productoService.listadoProductos(this.nroPage,this.size,this.order,this.asc).subscribe(
+    this.productoService.listadoProductos(this.nroPage,this.size,this.sort,this.asc).subscribe(
       (data:any)=>{
         this.testData = data.content;
         console.log(this.testData);
@@ -49,13 +51,6 @@ export class ListadoComponentesComponent implements OnInit {
         console.log(err.error);
       }
       );
-  }
-
-  sortBy(tipo:string):void{
-
-    this.testData=[];
-    this.order = tipo;
-    this.getAll();
   }
 
 
@@ -74,6 +69,15 @@ export class ListadoComponentesComponent implements OnInit {
   // Eliminar Productos
   eliminarProducto(producto : any): void{
     alert('El Producto ha sido Eliminado');
+  }
+
+//==================== METODOS PAGINACION ==============
+
+
+  //Ordenar los registros por tipo
+  sortBy(tipo:string):void{
+    this.sort = tipo;
+    this.getAll();
   }
 
 

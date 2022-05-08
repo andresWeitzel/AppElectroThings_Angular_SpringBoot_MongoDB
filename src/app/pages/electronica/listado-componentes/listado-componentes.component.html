@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center m-1 ">
 
 
         <div class="alert alert-dark bg-dark text-white text-center" role="alert">
@@ -7,43 +7,117 @@
         </div>
 
 
-        <table class="table table-secondary table-bordered border-dark table-hover">
+        <table class="table table-secondary table-bordered border-dark table-hover ">
             <thead class="table-dark text-center">
                 <tr>
                     <th scope="row">
 
-                        <div class="d-flex flex-row  justify-content-center m-2 p-1">
-                            <h5><strong>ID</strong></h5>
+                        <div class="d-flex flex-row  justify-content-center  p-1">
+                            <h6><strong>ID</strong></h6>
 
                             <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" (click)="sortBy('id')">
-                            <img src="assets/list/sort01.png" width="20"  alt=""></button>
+                            <img src="assets/list/sort01.png" width="15" alt=""></button>
                         </div>
 
                     </th>
                     <th scope="col">
                         <div class="d-flex flex-row  justify-content-center m-2 p-1">
-                            <h5><strong>CÓDIGO</strong></h5>
+                            <h6><strong>CÓDIGO</strong></h6>
 
                             <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('codigo')">
-                        <img src="assets/list/sort01.png" width="20"  alt=""></button>
+                        <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
                     </th>
                     <th scope="col">
                         <div class="d-flex flex-row  justify-content-center m-2 p-1">
-                            <h5><strong>NOMBRE</strong></h5>
+                            <h6><strong>NOMBRE</strong></h6>
 
                             <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('nombre')">
-                    <img src="assets/list/sort01.png" width="20"  alt=""></button>
+                    <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
                     </th>
-                    <th scope="col"><strong>DESCRIPCIÓN</strong></th>
-                    <th scope="col"><strong>CATEGORÍA</strong></th>
-                    <th scope="col"><strong>MARCA</strong></th>
-                    <th scope="col"><strong>HOJA DE DATOS</strong></th>
-                    <th scope="col"><strong>STOCK</strong></th>
-                    <th scope="col"><strong>PRECIO</strong></th>
-                    <th scope="col"><strong>FECHA</strong></th>
-                    <th scope="col"><strong>HORA</strong></th>
+                    <th scope="col">
+                        <div class="d-flex flex-row  justify-content-center m-2 p-1">
+                            <h6><strong>DESCRIPCIÓN</strong></h6>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('descripcion')">
+                <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+
+                    </th>
+                    <th scope="col">
+
+                        <div class="d-flex flex-row  justify-content-center m-0 p-1">
+                            <h6><strong>CATEGORÍA</strong></h6>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('categoria')">
+            <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+
+
+
+                    </th>
+                    <th scope="col">
+                        <div class="d-flex flex-row  justify-content-center m-1 p-1">
+                            <h6><strong>MARCA</strong></h6>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('marca')">
+            <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+
+                    </th>
+                    <th scope="col">
+
+                        <div class="d-flex flex-row  justify-content-center m-1 p-1">
+                            <div class="p-1">
+                                <h6><strong>DATASHEET</strong></h6>
+                            </div>
+
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('hojaDatos')">
+            <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+
+
+
+
+                    </th>
+                    <th scope="col">
+
+                        <div class="d-flex flex-row  justify-content-center m-1 p-1">
+                            <h6><strong>STOCK</strong></h6>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('stock')">
+            <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+
+
+
+                    </th>
+                    <th scope="col">
+                        <div class="d-flex flex-row  justify-content-center m-1 p-1">
+                            <h6><strong>PRECIO</strong></h6>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('precio')">
+          <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="d-flex flex-row  justify-content-center m-1 p-1">
+                            <h6><strong>FECHA</strong></h6>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('fecha')">
+          <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="d-flex flex-row  justify-content-center m-1 p-1">
+                            <h6><strong>HORA</strong></h6>
+
+                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('hora')">
+          <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+                    </th>
                     <th scope="col"><strong>OPCIONES</strong></th>
                 </tr>
             </thead>
@@ -97,6 +171,7 @@
 
         </table>
 
+
         <!--PAGINACION/REGRESAR/ACTUALIZAR-->
         <div class="container">
             <div class="row justify-content-center">
@@ -123,7 +198,7 @@
 
                 <div class="col-2 ms-5">
                     <a class="nav-link" [routerLink]="['/inicio-componentes']">
-                        <button class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Regresar
+                        <button class="btn btn-lg btn-outline-dark  border-light alert-link bg-dark text-white">Regresar
                 <!--Icono Regresar Inicio-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
                   <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
@@ -136,7 +211,7 @@
                 </div>
                 <div class="col-2 mt-2 ms-0">
 
-                    <button onClick="window.location.reload()" class="btn btn-outline-dark  border-light alert-link bg-dark text-white">Actualizar
+                    <button onClick="window.location.reload()" class="btn btn-lg btn-outline-dark  border-light alert-link bg-dark text-white">Actualizar
                 <!--Icono Actualizar Listado-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                   <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
