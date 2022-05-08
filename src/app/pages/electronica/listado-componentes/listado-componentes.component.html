@@ -12,10 +12,10 @@
                 <tr>
                     <th scope="row">
 
-                        <div class="d-flex flex-row  justify-content-center  p-1">
+                        <div class="d-flex flex-row  justify-content-center m-2 p-1">
                             <h6><strong>ID</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" (click)="sortBy('id')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" (click)="ordenacionTipo('id')">
                             <img src="assets/list/sort01.png" width="15" alt=""></button>
                         </div>
 
@@ -24,7 +24,7 @@
                         <div class="d-flex flex-row  justify-content-center m-2 p-1">
                             <h6><strong>CÓDIGO</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('codigo')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('codigo')">
                         <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
                     </th>
@@ -32,7 +32,7 @@
                         <div class="d-flex flex-row  justify-content-center m-2 p-1">
                             <h6><strong>NOMBRE</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('nombre')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('nombre')">
                     <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
                     </th>
@@ -40,7 +40,7 @@
                         <div class="d-flex flex-row  justify-content-center m-2 p-1">
                             <h6><strong>DESCRIPCIÓN</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('descripcion')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('descripcion')">
                 <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
 
@@ -50,7 +50,7 @@
                         <div class="d-flex flex-row  justify-content-center m-0 p-1">
                             <h6><strong>CATEGORÍA</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('categoria')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('categoria')">
             <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
 
@@ -61,7 +61,7 @@
                         <div class="d-flex flex-row  justify-content-center m-1 p-1">
                             <h6><strong>MARCA</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('marca')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('marca')">
             <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
 
@@ -74,7 +74,7 @@
                             </div>
 
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('hojaDatos')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('hojaDatos')">
             <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
 
@@ -87,7 +87,7 @@
                         <div class="d-flex flex-row  justify-content-center m-1 p-1">
                             <h6><strong>STOCK</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('stock')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('stock')">
             <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
 
@@ -98,7 +98,7 @@
                         <div class="d-flex flex-row  justify-content-center m-1 p-1">
                             <h6><strong>PRECIO</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('precio')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('precio')">
           <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
                     </th>
@@ -106,7 +106,7 @@
                         <div class="d-flex flex-row  justify-content-center m-1 p-1">
                             <h6><strong>FECHA</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('fecha')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('fecha')">
           <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
                     </th>
@@ -114,7 +114,7 @@
                         <div class="d-flex flex-row  justify-content-center m-1 p-1">
                             <h6><strong>HORA</strong></h6>
 
-                            <button class=" btn  border-dark bg-danger justify-content-center p-1 ms-2" type="button" (click)="sortBy('hora')">
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('hora')">
           <img src="assets/list/sort01.png" width="15"  alt=""></button>
                         </div>
                     </th>
@@ -123,7 +123,7 @@
             </thead>
             <tbody class="table-dark bg-dark text-center">
                 <!--Replicamos 4 veces los productos e iconos-->
-                <tr *ngFor="let producto of testData">
+                <tr *ngFor="let producto of productos">
                     <th scope="row">{{producto.id}}</th>
                     <td class="text-white">{{producto.codigo}}</td>
                     <td>{{producto.nombre}}</td>
@@ -180,16 +180,19 @@
                 <div class="col-4 mt-2">
                     <nav aria-label="..." class="bg-dark text-white">
                         <ul class="pagination pagination-lg bg-dark text-white">
-                            <li class="page-item disabled bg-dark text-white">
-                                <span class="page-link bg-dark text-white">Anterior</span>
+                            <li class="page-item  bg-dark text-white" (click)="paginaAnterior()">
+                                <button class="page-link bg-dark text-white">Anterior</button>
                             </li>
-                            <li class="page-item "><a class="page-link bg-dark text-white" href="#">1</a></li>
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link bg-dark text-white">2</span>
+                            <li class="page-item "><button class="page-link  bg-dark text-white" (click)="cambiarPagina(0)">1</button>
                             </li>
-                            <li class="page-item"><a class="page-link bg-dark text-white" href="#">3</a></li>
                             <li class="page-item">
-                                <a class="page-link bg-dark text-white" href="#">Siguiente</a>
+                                <button class="page-link bg-dark text-white" (click)="cambiarPagina(1)">2</button>
+                            </li>
+                            <li class="page-item"><button class="page-link bg-dark text-white" (click)="cambiarPagina(2)">3</button></li>
+                            <li class="page-item">
+                                <button class="page-link bg-dark text-white" (click)="paginaSiguiente()">
+                                   Siguiente
+                                </button>
                             </li>
                         </ul>
                     </nav>

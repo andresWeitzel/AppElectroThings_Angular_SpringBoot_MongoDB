@@ -20,20 +20,23 @@ export class ListadoComponentesComponent implements OnInit {
 
 
   //Array de Productos
-  testData : Producto[]=[];
+  productos : Producto[]=[];
 
   //Paginado
-  nroPage=0;
-  size=15;
-  sort='id';
-  asc=true;
+  nroPagina=0;
+  nroElementos=10;
+  ordenacion='id';
+  ascendente=true;
+
+  primeraPagina=false;
+  ultimaPagina=false;
 
 
   constructor(private router: Router, private productoService:ProductosService) { }
 
   ngOnInit() {
 
-    this.getAll();
+    this.listadoProductos();
   }
 
 
@@ -41,11 +44,14 @@ export class ListadoComponentesComponent implements OnInit {
   //=============METODOS CRUD========================
 
   //Obtener Productos
-   getAll(){
-    this.productoService.listadoProductos(this.nroPage,this.size,this.sort,this.asc).subscribe(
-      (data:any)=>{
-        this.testData = data.content;
-        console.log(this.testData);
+   listadoProductos(){
+    this.productoService.listadoProductos(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
+      (registros:any)=>{
+        this.productos = registros.content;
+        this.primeraPagina = registros.first;
+        this.ultimaPagina = registros.last;
+
+        console.log(this.productos);
       },
       (err)=>{
         console.log(err.error);
@@ -75,10 +81,32 @@ export class ListadoComponentesComponent implements OnInit {
 
 
   //Ordenar los registros por tipo
-  sortBy(tipo:string):void{
-    this.sort = tipo;
-    this.getAll();
+  ordenacionTipo(tipo:string):void{
+    this.ordenacion = tipo;
+    this.listadoProductos();
   }
+
+
+  //Pagina Anterior
+  paginaAnterior():void{
+    if(!this.primeraPagina){
+this.nroPagina--;
+this.listadoProductos();
+    }
+  }
+
+    //Pagina Anterior
+    paginaSiguiente():void{
+      if(!this.ultimaPagina){
+        this.nroPagina++;
+        this.listadoProductos();
+      }
+    }
+
+    cambiarPagina(pagina:number):void{
+      this.nroPagina=pagina;
+      this.listadoProductos();
+    }
 
 
 
