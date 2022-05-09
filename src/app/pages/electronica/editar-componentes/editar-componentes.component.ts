@@ -11,17 +11,17 @@ import { Producto } from 'src/app/services/models/producto';
 })
 export class EditarComponentesComponent implements OnInit{
 
-  testData: Producto = null
+  productos: Producto = null
 
-  testDataFormulario : FormGroup;
+  productosFormulario : FormGroup;
 
   constructor(private router : Router , private formBuilder:FormBuilder) {
 
     const navegacionActual = this.router.getCurrentNavigation();
 
-    this.testData = navegacionActual?.extras?.state?.value;
+    this.productos = navegacionActual?.extras?.state?.value;
 
-    this.initTestDataFormulario();
+    this.initproductosFormulario();
   }
 
 
@@ -32,10 +32,10 @@ export class EditarComponentesComponent implements OnInit{
     //Colocamos los valores en el form
     //Si la data no esta definida redireccionamos, sino
     //cargamos el form
-    if(typeof this.testData == 'undefined'){
+    if(typeof this.productos == 'undefined'){
         this.router.navigate(['listado-componentes']);
     }else{
-      this.testDataFormulario.patchValue(this.testData)
+      this.productosFormulario.patchValue(this.productos)
     }
   }
 
@@ -46,18 +46,21 @@ export class EditarComponentesComponent implements OnInit{
   }
 
   //Inicializar Formulario con los datos del registro seleccionado
-  private initTestDataFormulario(): void{
+  private initproductosFormulario(): void{
 
     //Inicializamos el objeto con las propiedades de nuestro producto.Aca podemos usar patrones regex, pero ya lo aplicamos en la Vista
-    this.testDataFormulario = this.formBuilder.group({
+    this.productosFormulario = this.formBuilder.group({
         codigo : ['' , [Validators.required]],
         nombre : ['' , [Validators.required]],
         descripcion : ['' , [Validators.required]],
         categoria : ['' , [Validators.required]],
         marca : ['' , [Validators.required]],
+        imagen : ['' , [Validators.required]],
         hojaDatos : ['' , [Validators.required]],
         stock : ['' , [Validators.required]],
         precio : ['' , [Validators.required]],
+        fecha : ['' , [Validators.required]],
+        hora : ['' , [Validators.required]],
 
     });
   }

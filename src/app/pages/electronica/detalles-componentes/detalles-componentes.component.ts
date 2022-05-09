@@ -33,6 +33,13 @@ export class DetallesComponentesComponent implements OnInit {
   ngOnInit(): void {
 
 
+    if(typeof this.testData == 'undefined'){
+      this.router.navigate(['listado-componentes']);
+  }else{
+    this.router.navigate(['detalles-componentes'] , this.navigationExtras);
+  }
+
+
   }
 
   //Regresar Listado Productos

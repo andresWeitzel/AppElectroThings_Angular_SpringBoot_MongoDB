@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row justify-content-center m-1 ">
+    <div class="row justify-content-center m-3">
 
 
         <div class="alert alert-dark bg-dark text-white text-center" role="alert">
@@ -70,6 +70,23 @@
 
                         <div class="d-flex flex-row  justify-content-center m-1 p-1">
                             <div class="p-1">
+                                <h6><strong>IMAGEN</strong></h6>
+                            </div>
+
+
+                            <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="ordenacionTipo('imagen')">
+          <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                        </div>
+
+
+
+
+                    </th>
+
+                    <th scope="col">
+
+                        <div class="d-flex flex-row  justify-content-center m-1 p-1">
+                            <div class="p-1">
                                 <h6><strong>DATASHEET</strong></h6>
                             </div>
 
@@ -130,6 +147,8 @@
                     <td>{{producto.descripcion}}</td>
                     <td>{{producto.categoria}}</td>
                     <td>{{producto.marca}}</td>
+                    <td>
+                        <a href={{producto.imagen}} target="_blank">Link</a></td>
                     <td>
                         <a href={{producto.hojaDatos}} target="_blank">Link</a></td>
                     <td>{{producto.stock}}</td>
