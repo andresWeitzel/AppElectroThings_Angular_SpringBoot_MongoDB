@@ -65,6 +65,10 @@
 
 </br>
 
+### Documentación Creación de Gráficos con Highchart en Angular 12
+* Ejemplo Base : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.module.ts
+* Doc Oficial : https://api.highcharts.com/highcharts/
+
 <hr>
 
 ## ``Documentación y Guía del Proyecto ``
