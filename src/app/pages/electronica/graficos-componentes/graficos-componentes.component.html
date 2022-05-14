@@ -1,1 +1,35 @@
 <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"></highcharts-chart>
+
+
+
+
+
+<table class="table table-secondary table-bordered border-dark table-hover ">
+    <thead class="table-dark text-center">
+        <tr>
+            <th scope="row">
+
+                <div class="d-flex flex-row  justify-content-center m-2 p-1">
+                    <h6><strong></strong></h6>
+
+
+                </div>
+
+            </th>
+
+        </tr>
+    </thead>
+    <tbody class="table-dark bg-dark text-center">
+        <!--Replicamos 4 veces los productos e iconos-->
+        <tr *ngFor="let producto of productos">
+            <th scope="row" class="text-white">
+                <h1>{{producto.keys}}</h1>
+            </th>
+
+            <!--En caso de moviles ocultamos -->
+
+        </tr>
+
+    </tbody>
+
+</table>

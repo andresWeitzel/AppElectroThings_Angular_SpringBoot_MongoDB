@@ -60,6 +60,9 @@ export class ListadoComponentesComponent implements OnInit {
   }
 
 
+
+
+
   // Mostrar Productos
   detallesProducto(producto : any): void{
     this.navigationExtras.state.value = producto;

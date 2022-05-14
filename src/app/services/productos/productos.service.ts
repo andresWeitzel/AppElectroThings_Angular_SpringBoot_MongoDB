@@ -24,4 +24,11 @@ export class ProductosService {
   }
 
 
+
+    //Lista de Productos desde Spring
+    public graficoStockMarca(nroPagina:number , nroElementos:number , ordenacion:string, ascendente:boolean):Observable<Producto>{
+      return this.http.get<any>(`${URL_PRODUCTOS}/grafico-stock-marca?page=${nroPagina}&size=${nroElementos}&sort=${ordenacion}&asc=${ascendente}`);
+    }
+
+
 }
