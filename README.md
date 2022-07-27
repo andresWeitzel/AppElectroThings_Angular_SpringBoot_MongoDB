@@ -10,49 +10,85 @@
 
 | Área | Stack |
 | ------------- | ------------- |
-| Front End | HTML5, CSS3, Angular12, Bootstrap5 y Otros | 
-| Back End | Spring Boot, Maven, Open-API y Otros | 
+| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Angular Material, Highchart y Otros | 
+| Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros |
 | Database | MongoDB Compass, MongoDB, CMD | 
 
 <hr>
 
 </br>
 
-| Tecnologías | Versión | Finalidad
+| Tecnologías FRONTEND | Versión | Finalidad
 | ------------- | ------------- | ------------- |
-| Angular |   12.2.11 | FrameWork Web Desarrollo de Apps con TypeScript | 
-| Angular CLI | 12.2.11 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
+| Angular |   13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| Angular CLI | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
+| Angular Material | 13.3.9 | UI librería de componentes | 
+| ng-angular-popup | 0.1.2 |  Mensajes emergentes personalizados |
+| ngx-ui-loader | 13.0.0 | Animaciones de carga | 
 | Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
 | Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
+| Otros | - | - |
+
+
+</br>
+
+
+
+| Tecnologías BACKEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
 | Java |   12.0.2 | JDK |
 | Spring Tool Suite 4 | 4.9.0  | IDE |
 | Spring Boot |   2.6.4  | Framework |
 | Spring Boot Data JPA  | 2.6.3 | Mapeo de objetos y persistencia en la db |
+| Spring Security | 2.6.7 | Servicios de Seguridad |
+| JSON Web Token | 0.9.1 | Creación de tokens de acceso | 
+| Maven |  4.0.0 | Gestor de Proyectos |
+| PostMan | 9.4.1 | Test de Apis |
 | Lombok | 1.18.22 | Automatización de Código | 
-| Open-Api y UI Swagger | 1.6.4 | Documentación de la Api | 
+| Open-Api | 1.6.4 | Documentación de la Api | 
 | UI Swagger | 1.6.4 | Visualización y Gestión de la Api | 
 | Maven |  4.0.0 | Gestor de Proyectos |
-| MongoDB | 5.0 | Base de Datos |
-| MongoDB Compass	| 1.31.2 |	Gestor para MongoDB |
-| CMD | 10 | Símbolo del Sistema para linea de comandos | 
 | GNU bash / Terminal | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
 | Git | 2.29.1  | Control de Versiones |
+| Otros | - | - |
+
 
 
 </br>
 
-## Repositorios Oficiales(documentación)
+| Tecnologías DATABASE | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| MongoDB | 5.0 | Base de Datos |
+| MongoDB Compass	| 1.31.2 |	Gestor para MongoDB |
+| CMD | 10 | Símbolo del Sistema para linea de comandos | 
+| Otros | - | - |
 
+
+</br>
+
+## Documentación Oficial
+
+#### Java-JDK 12 : https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
+#### Spring Tool Suite 4 : https://spring.io/tools 
+#### Spring Security:  https://spring.io/projects/spring-security  
+#### JSON Web Security:  https://jwt.io/introduction/ 
+#### Boostrap: https://getbootstrap.com/
+#### Angular CLI: https://github.com/angular/angular-cli
+#### XAMPP :  https://www.apachefriends.org/download.html 
+#### Maven Repository: https://mvnrepository.com/ 
+#### PostMan: https://www.postman.com/downloads/ 
 #### Bootstrap:   https://getbootstrap.com/
 #### Angular:     https://angular.io/tutorial/toh-pt0
 #### IDE:         https://code.visualstudio.com/download
 #### Git:         https://git-scm.com/docs
-#### Angular CLI: https://github.com/angular/angular-cli
-#### Netlify CLI: https://www.npmjs.com/package/netlify-cli
+
+
+
 
 </br>
 
 ### Documentación No Oficial Recomendada
+
 * Api Rest Spring Boot Mongodb : https://www.youtube.com/watch?v=OtBukxJy4kg
 * Api Rest Guía Spring Boot Mongodb Codigo :https://github.com/heroe-geek/rest-api-springboot-mvc/blob/master/src/main/java/com/hg/crud/controllers/ProductController.java
 * Tutorial MongoDB con Spring Boot : https://www.mongodb.com/compatibility/spring-boot
