@@ -66,21 +66,21 @@
 
 </br>
 
-## Documentación Oficial
+### Documentación Oficial
 
-#### Java-JDK 12 : https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
-#### Spring Tool Suite 4 : https://spring.io/tools 
-#### Spring Security:  https://spring.io/projects/spring-security  
-#### JSON Web Security:  https://jwt.io/introduction/ 
-#### Boostrap: https://getbootstrap.com/
-#### Angular CLI: https://github.com/angular/angular-cli
-#### XAMPP :  https://www.apachefriends.org/download.html 
-#### Maven Repository: https://mvnrepository.com/ 
-#### PostMan: https://www.postman.com/downloads/ 
-#### Bootstrap:   https://getbootstrap.com/
-#### Angular:     https://angular.io/tutorial/toh-pt0
-#### IDE:         https://code.visualstudio.com/download
-#### Git:         https://git-scm.com/docs
+* Java-JDK 12 :       https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
+* Spring Security:  https://spring.io/projects/spring-security  
+* JSON Web Security:  https://jwt.io/introduction/ 
+* Boostrap:         https://getbootstrap.com/
+* Angular CLI:      https://github.com/angular/angular-cli
+* XAMPP :       https://www.apachefriends.org/download.html 
+* Maven Repository: https://mvnrepository.com/ 
+* PostMan:        https://www.postman.com/downloads/ 
+* Bootstrap:   https://getbootstrap.com/
+* Angular:     https://angular.io/tutorial/toh-pt0
+* Visual Studio Code:         https://code.visualstudio.com/download
+* Spring Tool Suite 4 : https://spring.io/tools 
+* Git:         https://git-scm.com/docs
 
 
 
@@ -101,10 +101,39 @@
 
 </br>
 
-### Documentación Creación de Gráficos con Highchart en Angular 12
-* Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
-* Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
-* Doc Oficial : https://api.highcharts.com/highcharts/
+### Documentación Oficial/No Oficial Librerías Frontend
+
+* Angular Popup : https://www.npmjs.com/package/ng-angular-popup
+
+* Angular Material : https://material.angular.io/guide/getting-started
+
+* Angular Bootstrap Validation 
+    * Instalación : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
+    * Implementación/ejemplos : https://mdbootstrap.com/docs/b5/angular/getting-started/installation/
+    * Validation Forms(tanto bootstrap 4 como 5) : https://mdbootstrap.com/docs/angular/forms/validation/
+
+* ngx ui loader 
+    * Instalación :  https://www.npmjs.com/package/ngx-ui-loader
+    * Implementación : https://tdev.app/ngx-ui-loader
+
+* Excel Sheets
+    * Ejemplo Base : https://www.delftstack.com/howto/angular/angular-export-to-excel/
+
+* Gráficos con Highchart
+    * Npm, config, detalles, etc : https://hackthestuff.com/article/how-to-use-highcharts-in-angular-12
+    * Doc Oficial : https://api.highcharts.com/highcharts/
+    * Doc Oficial Instalación : https://www.highcharts.com/docs/getting-started/install-from-npm
+    
+* Tipos de Gráficos Highchart
+    * Nuevo sitio Tipos de Graf : https://www.highcharts.com/blog/chartchooser/
+    * Ejemplo Base 2d : https://stackblitz.com/edit/highcharts-angular-basic-line-ucnkbj?file=src%2Fapp%2Fapp.component.ts
+    * Modificación Gráfico 2d a 3d : https://www.eduforbetterment.com/3d-pie-and-donut-chart-in-angular-using-highchart/
+
+* Treemap Graphic
+    * Ej. Base : https://stackblitz.com/edit/highcharts-angular-treemap?file=app%2Fapp.component.ts
+    * Ej. Base algunas configs : https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/treemap-with-levels
+
+</br>
 
 <hr>
 
