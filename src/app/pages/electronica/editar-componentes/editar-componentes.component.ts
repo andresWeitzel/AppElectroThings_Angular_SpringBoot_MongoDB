@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Producto } from 'src/app/services/models/producto';
+import { ProductoDTO } from 'src/app/models/producto-dto';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Producto } from 'src/app/services/models/producto';
 })
 export class EditarComponentesComponent implements OnInit{
 
-  productos: Producto = null
+  productos: ProductoDTO = null
 
   productosFormulario : FormGroup;
 

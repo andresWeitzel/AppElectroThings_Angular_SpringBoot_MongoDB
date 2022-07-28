@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { Producto } from 'src/app/services/models/producto';
+import { ProductoDTO } from 'src/app/models/producto-dto';
 
 @Component({
   selector: 'app-detalles-componentes',
@@ -19,7 +19,7 @@ export class DetallesComponentesComponent implements OnInit {
 
 
   //Aplicamos la interfaz creada Producto
-  testData:Producto = null;
+  testData:ProductoDTO = null;
 
   constructor(private router: Router) {
 

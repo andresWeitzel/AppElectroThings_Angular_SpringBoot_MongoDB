@@ -31,6 +31,16 @@
                             <input type="text" class="form-control" id="nombre" required pattern="[a-zA-Z0-9.-\s]+" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO" minlength="3" maxlength="100" placeholder="(Ej: Xperia Ae6) " formControlName="nombre">
 
                         </div>
+
+
+
+                    </div>
+                    <!-- FIN PRIMERA FILA -->
+
+
+                    <!-- SEGUNDA FILA -->
+                    <div class="d-flex justify-content-inline">
+
                         <div class="form-group m-3">
                             <label for="descripcion"><h5>Descripción</h5></label>
                             <!-- PATTERN LETRAS MINUS/MAYUSC, NUMEROS, GUIONES MEDIO Y ESPACIOS [a-zA-Z0-9.-\s]+ -->
@@ -38,20 +48,21 @@
 
                         </div>
 
-
-                    </div>
-                    <!-- FIN PRIMERA FILA -->
-                    <hr>
-
-                    <!-- SEGUNDA FILA -->
-                    <div class="d-flex justify-content-inline">
-
                         <div class="form-group m-3">
                             <label for="categoria"><h5>Categoría</h5></label>
                             <!-- PATTERN LETRAS MINUS/MAYUSC, NUMEROS, GUIONES MEDIO Y ESPACIOS [a-zA-Z0-9.-\s]+ -->
                             <input type="text" class="form-control" id="categoria" required pattern="[a-zA-Z0-9.-\s]+" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO" minlength="3" maxlength="100" placeholder="(Ej: Smartphones)" formControlName="categoria">
 
                         </div>
+
+
+
+                    </div>
+                    <!-- FIN SEGUNDA FILA -->
+
+                    <!-- TERCERA FILA -->
+                    <div class="d-flex justify-content-inline">
+
                         <div class="form-group m-3">
                             <label for="marca"><h5>Marca</h5></label>
                             <!-- PATTERN LETRAS MINUS/MAYUSC, NUMEROS, GUIONES MEDIO Y ESPACIOS [a-zA-Z0-9.-\s]+ -->
@@ -70,36 +81,38 @@
                         </div>
 
 
-                    </div>
-                    <!-- FIN SEGUNDA FILA -->
-
-                    <hr>
-                    <!-- TERCERA FILA -->
-                    <div class="d-flex justify-content-inline">
-
-
-                        <div class="form-group ms-3 me-4 m-1 col-5">
-                            <label for="imagen"><h5>Imagen</h5></label>
-                            <!-- PATTERN COMPLETO URL -->
-                            <input class="form-control" type="url" id="imagen" required pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$" title="imagen" placeholder="(Ej: https://icon-icons.com/icon/Next-arrow/1058)" formControlName="imagen">
-
-                        </div>
-                        <div class="form-group ms-5 m-1 col-5">
-                            <label for="hojaDatos"><h5>Datasheet</h5></label>
-                            <!-- PATTERN COMPLETO URL -->
-                            <input class="form-control" type="url" id="hojaDatos" required pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$" title="hoja de datos" placeholder="(Ej: https://icon-icons.com/icon/Next-arrow/1058)" formControlName="hojaDatos">
-
-                        </div>
-
 
 
                     </div>
                     <!-- FIN TERCERA FILA -->
 
-                    <hr>
+
                     <!-- CUARTA FILA -->
                     <div class="d-flex justify-content-inline">
 
+
+                        <div class="form-group ms-3 me-1 col-11">
+                            <label for="imagen"><h5>Imagen</h5></label>
+                            <!-- PATTERN COMPLETO URL -->
+                            <input class="form-control" type="url" id="imagen" required pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$" title="imagen" placeholder="(Ej: https://icon-icons.com/icon/Next-arrow/1058)" formControlName="imagen">
+
+                        </div>
+
+
+
+                    </div>
+                    <!-- FIN CUARTA FILA -->
+
+                    <!-- QUINTA FILA -->
+                    <div class="d-flex justify-content-inline">
+
+
+                        <div class="form-group m-3">
+                            <label for="hojaDatos"><h5>Datasheet</h5></label>
+                            <!-- PATTERN COMPLETO URL -->
+                            <input class="form-control" type="url" id="hojaDatos" required pattern="^(http(s)?:\/\/)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$" title="hoja de datos" placeholder="(Ej: https://icon-icons.com/icon/Next-arrow/1058)" formControlName="hojaDatos">
+
+                        </div>
 
                         <div class="form-group m-3">
                             <label for="precio"><h5>Precio</h5> </label>
@@ -109,6 +122,19 @@
 
 
                         </div>
+
+
+                    </div>
+                    <!-- FIN QUINTA FILA -->
+
+
+
+
+                    <!-- SEXTA FILA -->
+                    <div class="d-flex justify-content-inline">
+
+
+
                         <div class="form-group m-3">
                             <label for="fecha"><h5>Fecha</h5></label>
                             <!-- PATTERN dd/mm/yyyy, dd-mm-yyyy o dd.mm.yyyy -->
@@ -122,12 +148,12 @@
                             <label for="hora"><h5>Hora</h5></label>
                             <!-- PATTERN hh:mm -->
                             <input type="text" class="form-control" id="fecha" required pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$
-                    " title="hh:mm" minlength="3" maxlength="100" placeholder=" (Ej: 09:00)" formControlName="hora">
+                  " title="hh:mm" minlength="3" maxlength="100" placeholder=" (Ej: 09:00)" formControlName="hora">
 
                         </div>
 
                     </div>
-                    <!-- FIN CUARTA FILA -->
+                    <!-- FIN SEXTA FILA -->
 
 
                     <hr>

@@ -23,12 +23,20 @@
         <!--Replicamos 4 veces los productos e iconos-->
         <tr *ngFor="let producto of productos">
             <th scope="row" class="text-white">
-                <h1>{{producto.keys}}</h1>
+
+                <button class=" btn  border-dark bg-secondary justify-content-center p-1 ms-2" type="button" (click)="agregarNombresGrafico('producto.nombre')">
+                <img src="assets/list/sort01.png" width="15"  alt=""></button>
+                <h4>{{producto.nombre}}</h4>
             </th>
+
+
 
             <!--En caso de moviles ocultamos -->
 
         </tr>
+        <div>
+            <h4></h4>
+        </div>
 
     </tbody>
 

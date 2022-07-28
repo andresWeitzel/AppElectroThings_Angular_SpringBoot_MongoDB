@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import * as Highcharts from 'highcharts';
 import highcharts3D from 'highcharts/highcharts-3d';
-import { Producto } from 'src/app/services/models/producto';
+import { ProductoDTO } from 'src/app/models/producto-dto';
 import { ProductosService } from 'src/app/services/productos/productos.service';
 highcharts3D(Highcharts);
 
@@ -22,16 +22,13 @@ export class GraficosComponentesComponent implements OnInit {
   };
 
 
+  //Array de Productos
+  productos : ProductoDTO[]=[];
 
+  nombresProductos:string[]=[];
 
-
-  //Diccioinario de Productos
-  productos = new Map<string, number> ([
-    ["key1", 12],
-    ["key2", 122]
-]);
-
-
+  test:string[]=['asda','asdasd'];
+  test02:number[]=[2,23,2311,12223];
 
   //Paginado
   nroPagina=0;
@@ -42,21 +39,75 @@ export class GraficosComponentesComponent implements OnInit {
   primeraPagina=false;
   ultimaPagina=false;
 
-  constructor(private router: Router, private productoService:ProductosService) { }
 
-  ngOnInit() {}
+
+/*
+
+  //Diccioinario de Productos
+  productos = new Map<string, number> ();
+
+*/
+
+
+constructor(private router: Router, private productoService:ProductosService) { }
+
+ngOnInit() {
+
+  this.listadoProductos();
+  this.testeo();
+}
+
+
+
+//=============METODOS CRUD========================
+
+//Obtener Productos
+ listadoProductos(){
+  this.productoService.listadoProductos(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
+    (registros:any)=>{
+      this.productos = registros.content;
+      this.primeraPagina = registros.first;
+      this.ultimaPagina = registros.last;
+
+      console.log(this.productos);
+      console.log(this.productos);
+    },
+    (err)=>{
+      console.log(err.error);
+    }
+    );
+}
+
+agregarNombresGrafico(nombre:string){
+
+  this.nombresProductos.push(nombre);
+
+  console.log('nombre',nombre);
+
+
+}
+
+
+testeo(){
+
+
+
+  this.nombresProductos=Object.keys(this.productos.toString);
+
+  console.log('testeo',this.nombresProductos);
+
+  //prompt('pp');
+}
+
 
 
   //=============METODO CRUD========================
 
-  //Obtener Productos
+/*
   graficoStockMarca(){
-    this.productoService.graficoStockMarca(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
-      (registros:any)=>{
-        this.productos = registros.content;
-        this.primeraPagina = registros.first;
-        this.ultimaPagina = registros.last;
-
+    this.productoService.graficoStockMarca().subscribe(
+      (r:any)=>{
+        this.productos=r.content;
         console.log(this.productos);
       },
       (err)=>{
@@ -65,7 +116,7 @@ export class GraficosComponentesComponent implements OnInit {
       );
   }
 
-
+*/
 
 
   Highcharts: typeof Highcharts = Highcharts;
@@ -97,6 +148,8 @@ export class GraficosComponentesComponent implements OnInit {
     xAxis: {
       //categories: [[${keySetCateg}]],
       //categories:{listadoProductos()},
+      //categories: this.nombresProductos,
+      categories:this.test,
       crosshair: true,
       title: {
         text: 'Marcas',
@@ -140,6 +193,8 @@ export class GraficosComponentesComponent implements OnInit {
         dataSorting:{
           enabled:true
         },
+        data:this.test02,
+        color:'#5F96F3'
 
       },
     ],

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Producto } from 'src/app/services/models/producto';
+import { ProductoDTO } from 'src/app/models/producto-dto';
 
 @Component({
   selector: 'app-agregar-componentes',
@@ -10,7 +10,7 @@ import { Producto } from 'src/app/services/models/producto';
 })
 export class AgregarComponentesComponent implements OnInit {
 
-  testData: Producto = null
+  testData: ProductoDTO = null
 
   testDataFormulario : FormGroup;
 
