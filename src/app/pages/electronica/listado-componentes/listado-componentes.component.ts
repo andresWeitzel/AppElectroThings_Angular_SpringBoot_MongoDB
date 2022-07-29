@@ -13,7 +13,7 @@ import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-listado-componentes',
   templateUrl: './listado-componentes.component.html',
-  styleUrls: ['./listado-componentes.component.css']
+  styleUrls: ['./listado-componentes.component.scss']
 })
 export class ListadoComponentesComponent implements OnInit {
 

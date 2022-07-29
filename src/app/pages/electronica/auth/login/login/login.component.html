@@ -1,0 +1,75 @@
+<div class="container mt-1">
+
+
+  <div class="mt-1 mb-5" *ngIf="isLogged ; else loggedOut">
+
+
+              <div class=" d-flex flex-column justify-content-center mt-1 mb-5" id="aviso">
+
+                <div class="text-center d-flex justify-content-center  mt-1 ms-1 me-1 mb-5" role="alert" >
+                  <div class="alert d-flex d-row  mt-5 mb-5">
+                      <h2 class="p-2"><strong> Ya se ha Iniciado Sesión Previamente </strong>
+                      </h2>
+                      <a  [routerLink]="['/inicio-componentes']"><button type="button" class="btn btn-sm p-3 " data-bs-dismiss="alert" aria-label="Close"><strong>De Acuerdo</strong></button></a>
+                  </div>
+              </div>
+
+              <div class="mt-5 mb-5"></div>
+
+            </div>
+  </div>
+
+
+  <!--Template Login-->
+  <ng-template  #loggedOut >
+
+      <div class="row justify-content-center mt-1" id="aviso">
+
+
+          <div class="text-center d-flex justify-content-center  mt-1 ms-1 me-1" role="alert" >
+              <div class="alert" >
+
+                  <h4 class=""><strong> INICIO DE SESIÓN </strong></h4>
+
+
+
+              </div>
+          </div>
+
+          <div class="formulario mt-0 mb-5">
+
+              <img class="user" src="./assets/images/web-security.png" height="100px" width="100px">
+              <h3>ElectroThings</h3>
+              <form #form="ngForm" (ngSubmit)="onLogin()" novalidate class="mt-3">
+
+                  <div class="form-group">
+
+                      <input id="uname" type="text" placeholder="Usuario" name="username" id="username" class="form-control" [(ngModel)]="username" required>
+
+                      <input type="password" name="password" id="password" placeholder="*********" class="form-control" [(ngModel)]="password" required>
+
+                  </div>
+                  <div class="form-group d-flex justify-content-center">
+                      <!--LOGIN-->
+                      <button class="btn  btn-block justify-content-center m-2" [disabled]="!form.valid">
+                 <a >Ingresar</a> </button>
+                      <!--FIN LOGIN-->
+                      <!--SIGNIN-->
+                      <button class="btn btn-block justify-content-center m-2">
+                        <a [routerLink]="['/signin']">
+                      Registrarse
+                  </a></button>
+                      <!--FIN SIGNIN-->
+                  </div>
+
+              </form>
+
+
+          </div>
+      </div>
+
+  </ng-template>
+  <!--Fin Template Login-->
+
+
+</div>

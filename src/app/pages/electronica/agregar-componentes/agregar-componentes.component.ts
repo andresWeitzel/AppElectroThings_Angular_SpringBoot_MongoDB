@@ -6,7 +6,7 @@ import { ProductoDTO } from 'src/app/models/producto-dto';
 @Component({
   selector: 'app-agregar-componentes',
   templateUrl: './agregar-componentes.component.html',
-  styleUrls: ['./agregar-componentes.component.css']
+  styleUrls: ['./agregar-componentes.component.scss']
 })
 export class AgregarComponentesComponent implements OnInit {
 

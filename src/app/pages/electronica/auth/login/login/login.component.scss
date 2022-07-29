@@ -1,0 +1,136 @@
+div .alert {
+  opacity: 0.8;
+}
+
+table {
+  background-color: rgb(86, 34, 34);
+  opacity: 0.8;
+}
+
+#aviso {
+
+
+  .alert{
+
+    border-radius: 0.6em;
+    color: rgb(61, 0, 0);
+    background-color:  rgb(151, 99, 99);
+    text-align: center;
+    opacity: 0.8;
+
+      button{
+        border-radius: 1.2em;
+        color: rgb(187, 134, 134);
+        background-color: rgb(101, 40, 40);
+        padding: 0.5em;
+        text-align: center;
+        border-radius: 1em;
+        border-width: 1em;
+        border-color: rgb(93, 31, 31);
+
+      }
+  }
+
+
+}
+
+
+#loginFail {
+  opacity: 1;
+}
+
+//---------------------------LOGIN---------------------------------
+#particles-js {
+  height: 100%
+}
+
+.formulario {
+  position: relative;
+  width: 350px;
+  min-height: 200px;
+  background: rgb(151, 99, 99);
+  border-radius: 10px;
+  padding: 40px;
+  box-sizing: border-box;
+  opacity: 0.9;
+}
+
+.user {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px
+}
+
+
+h3 {
+  margin: 0;
+  padding: 0 0 20px;
+  color: rgb(87, 31, 31);
+  text-align: center
+}
+
+.formulario input {
+  width: 100%;
+  margin-bottom: 20px
+}
+
+.formulario input[type="text"],
+.formulario input[type="password"] {
+  border: none;
+  border-bottom: 2px solid rgb(61, 0, 0);
+  outline: none;
+  height: 40px;
+  color: rgb(61, 0, 0);
+  background: transparent;
+  font-size: 16px;
+  padding-left: 20px;
+  box-sizing: border-box
+}
+
+.formulario input[type="text"]:hover,
+.formulario input[type="password"]:hover {
+  color:  rgb(87, 31, 31);
+  border: 1px solid rgb(74, 12, 12);
+  box-shadow: 0 0 5px rgb(61, 0, 0), 0 0 10px rgb(87, 31, 31), 0 0 15px rgb(87, 31, 31), 0 2px 0 rgb(61, 0, 0)
+}
+
+.formulario input[type="text"]:focus,
+.formulario input[type="password"]:focus {
+  border-bottom: 2px solid rgb(61, 0, 0)
+}
+
+.inputBox {
+  position: relative
+}
+
+.inputBox span {
+  position: absolute;
+  top: 10px;
+  color: rgb(61, 0, 0)
+}
+
+.formulario input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: rgb(61, 0, 0);
+  color: rgb(151, 99, 99);
+  border-radius: 20px;
+  cursor: pointer
+}
+
+.formulario a {
+  color: rgb(61, 0, 0);
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  display: block
+}
+
+a:hover {
+  color: rgb(61, 0, 0)
+}
+
+//---------------------------FIN LOGIN---------------------------------

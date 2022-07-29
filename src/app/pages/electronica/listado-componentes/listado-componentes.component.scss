@@ -1,0 +1,29 @@
+div .alert {
+    opacity: 0.8;
+}
+
+table {
+
+  thead{
+    th{
+      button{
+        background-color: rgb(91, 34, 34);
+      }
+    }
+
+  }
+
+    background-color: rgb(211, 210, 210);
+    opacity: 0.8;
+    width: 50%;
+    height: 50%;
+    padding: 5px;
+
+
+    p,th,td {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      padding: 5px;
+    }
+
+}

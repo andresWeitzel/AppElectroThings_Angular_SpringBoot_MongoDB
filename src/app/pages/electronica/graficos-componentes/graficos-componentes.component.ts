@@ -10,7 +10,7 @@ highcharts3D(Highcharts);
 @Component({
   selector: 'app-graficos-componentes',
   templateUrl: './graficos-componentes.component.html',
-  styleUrls: ['./graficos-componentes.component.css']
+  styleUrls: ['./graficos-componentes.component.scss']
 })
 export class GraficosComponentesComponent implements OnInit {
 
@@ -34,7 +34,7 @@ export class GraficosComponentesComponent implements OnInit {
   nroPagina=0;
   nroElementos=10;
   ordenacion='id';
-  ascendente=true;
+  ascendente='';
 
   primeraPagina=false;
   ultimaPagina=false;
@@ -63,7 +63,7 @@ ngOnInit() {
 
 //Obtener Productos
  listadoProductos(){
-  this.productoService.listadoProductos(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
+  this.productoService.listado(this.nroPagina,this.nroElementos,this.ordenacion,this.ascendente).subscribe(
     (registros:any)=>{
       this.productos = registros.content;
       this.primeraPagina = registros.first;

@@ -21,11 +21,11 @@ import { interceptorProvider } from './services/interceptors/interceptors-produc
 //--CONFIG SPINNER--
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
-  fgsType: SPINNER.cubeGrid, // foreground spinner type
+  fgsType: SPINNER.fadingCircle, // foreground spinner type
   fgsSize: 100,
-  fgsColor: 'green',
-  bgsColor:'green',
-  pbColor:'green'
+  fgsColor: 'red',
+  bgsColor:'red',
+  pbColor:'red'
 
 };
 //--FIN CONFIG SPINNER--

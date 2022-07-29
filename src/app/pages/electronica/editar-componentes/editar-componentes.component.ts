@@ -7,7 +7,7 @@ import { ProductoDTO } from 'src/app/models/producto-dto';
 @Component({
   selector: 'app-editar-componentes',
   templateUrl: './editar-componentes.component.html',
-  styleUrls: ['./editar-componentes.component.css']
+  styleUrls: ['./editar-componentes.component.scss']
 })
 export class EditarComponentesComponent implements OnInit{
 

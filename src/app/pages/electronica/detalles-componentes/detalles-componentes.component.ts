@@ -5,7 +5,7 @@ import { ProductoDTO } from 'src/app/models/producto-dto';
 @Component({
   selector: 'app-detalles-componentes',
   templateUrl: './detalles-componentes.component.html',
-  styleUrls: ['./detalles-componentes.component.css']
+  styleUrls: ['./detalles-componentes.component.scss']
 })
 export class DetallesComponentesComponent implements OnInit {
 
