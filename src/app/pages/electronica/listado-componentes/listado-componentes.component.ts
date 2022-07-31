@@ -161,6 +161,8 @@ this.productoService.listadoFilter(this.filtroProdBusqueda,this.nroPage,this.nro
    }, 600);
    //FIN TOAST ERROR
 
+   this.filtroProdBusqueda='';
+
  //console.log(err);
 
   }
@@ -209,7 +211,7 @@ editarProducto(producto : any): void{
 
 
 //----------ELIMINAR PRODUCTOS ---------------
-eliminarProducto(id : number): void{
+eliminarProducto(id : string): void{
 
   //SPIN LOADING
   this.ngxService.start();

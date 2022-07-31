@@ -44,7 +44,7 @@ public add(producto:ProductoDTO):Observable<ProductoDTO>{
   }
 
   //--- DELETE ---
-  public delete(id:number):Observable<ProductoDTO>{
+  public delete(id:string):Observable<ProductoDTO>{
     return this.httpClient.delete<any>(`${URL_PRODUCTOS_BASE}${id}`);
 
   }
