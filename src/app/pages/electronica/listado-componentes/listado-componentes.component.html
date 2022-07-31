@@ -15,7 +15,7 @@
 
 
         <!-- BUSCADOR -->
-        <div class="text-left  " id="buscador">
+        <div class="text-left " id="buscador">
 
           <div class="d-flex flex-row justify-content-center mt-5">
 
@@ -25,8 +25,11 @@
                   <div class="d-flex flex-row text-left col-12 m-2"  (ngSubmit)="setFilter(filtroInput.value)" >
 
                       <input  type="text" name="filtro" class="form-control " placeholder="Buscador de Productos" aria-label="valor" id="filtro"  #filtroInput>
+
+                      <!--BTN'S -->
+                      <div class="d-flex d-row">
                       <!--BTN BUSQUEDA-->
-                      <a >
+                      <a>
                         <button class="btn bg-none p-1 border-dark" type="button" (click)="setFilter(filtroInput.value)" required>
                           <img src="./assets/images/search.png" alt="" width="45"
                               height="45" class="">
@@ -34,13 +37,15 @@
                     </a>
                     <!--FIN BTN BUSQUEDA-->
 
-
                       <!--BTN LIMPIAR-->
                       <button class="btn bg-none p-1 ms-2" (click)="filtroInput.value=''">
             <img src="./assets/images/clear.png" alt="" width="45"
               height="45" class="">
           </button>
                       <!--FIN BTN LIMPIAR-->
+                    </div>
+                    <!--FIN BTN'S -->
+
 
                   </div>
               </div>
@@ -231,57 +236,61 @@
 
 
         <!--PAGINACION/REGRESAR/ACTUALIZAR-->
-        <div class="container">
+        <div class="container" >
             <div class="row justify-content-center">
 
-                <!--Paginacion-->
-                <div class="col-4 mt-2">
-                    <nav aria-label="..." class="bg-dark text-white">
-                        <ul class="pagination pagination-lg bg-dark text-white">
-                            <li class="page-item  bg-dark text-white" (click)="paginaAnterior()">
-                                <button class="page-link bg-dark text-white">Anterior</button>
+                <!--BTN'S PAGINATION-->
+                <div class="col-4 mt-2" id="pagination" >
+                    <nav aria-label="..." class="bg-none text-white" >
+                        <ul class="pagination pagination-lg bg-none text-white  border-light alert-link " >
+                            <li class="page-item  bg-none text-white " (click)="paginaAnterior()">
+                              <button class="btn btn-lg btn-outline-dark  border-light alert-link  text-white">Anterior </button>
                             </li>
-                            <li class="page-item "><button class="page-link  bg-dark text-white" (click)="cambiarPagina(0)">1</button>
+                            <li class="page-item ">
+                              <button class="btn btn-lg btn-outline-dark  border-light alert-link text-white" (click)="cambiarPagina(0)">1</button>
                             </li>
                             <li class="page-item">
-                                <button class="page-link bg-dark text-white" (click)="cambiarPagina(1)">2</button>
+                                <button class="btn btn-lg btn-outline-dark  border-light alert-link text-white" (click)="cambiarPagina(1)">2</button>
                             </li>
-                            <li class="page-item"><button class="page-link bg-dark text-white" (click)="cambiarPagina(2)">3</button></li>
+                            <li class="page-item"><button class="btn btn-lg btn-outline-dark  border-light alert-link text-white" (click)="cambiarPagina(2)">3</button></li>
                             <li class="page-item">
-                                <button class="page-link bg-dark text-white" (click)="paginaSiguiente()">
+                                <button class="btn btn-lg btn-outline-dark  border-light alert-link  text-white" (click)="paginaSiguiente()">
                                    Siguiente
                                 </button>
                             </li>
                         </ul>
                     </nav>
                 </div>
-                <!--Fin Paginacion-->
+                <!--FIN BTN'S PAGINATION-->
 
-                <div class="col-2 ms-5">
+                <!--BTN'S RIGHT-->
+                <div class=" col-4  d-flex flex-row" id="pagination">
+                <div class=" ms-5" >
                     <a class="nav-link" [routerLink]="['/inicio-componentes']">
-                        <button class="btn btn-lg btn-outline-dark  border-light alert-link bg-dark text-white">Regresar
+                        <button class="btn btn-lg btn-outline-dark  border-light alert-link text-white">
                 <!--Icono Regresar Inicio-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
                   <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
                 </svg>
+                 Inicio
                   <!--Fin Icono Regresar Inicio-->
                     </button>
-
-
                     </a>
                 </div>
-                <div class="col-2 mt-2 ms-0">
 
-                    <button onClick="window.location.reload()" class="btn btn-lg btn-outline-dark  border-light alert-link bg-dark text-white">Actualizar
+                <div class=" mt-2 ms-0">
+                    <button onClick="window.location.reload()" class="btn btn-lg btn-outline-dark  border-light alert-link  text-white">
                 <!--Icono Actualizar Listado-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                   <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                   <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                 </svg>
+                 Actualizar
                   <!--Fin Icono Actualizar Listado-->
                     </button>
-
                 </div>
+              </div>
+              <!--FIN BTN'S RIGHT-->
 
             </div>
 

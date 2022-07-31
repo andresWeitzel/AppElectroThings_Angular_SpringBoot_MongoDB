@@ -2,28 +2,85 @@ div .alert {
     opacity: 0.8;
 }
 
+#buscador{
+input{
+  color:rgb(0, 0, 0);
+  text-decoration: solid;
+  font-weight: bold;
+
+}
+
+input:hover{
+  border-color: #212529;
+  border-radius: 15px;
+}
+
+  button{
+    background-color: none;
+  }
+
+ button:hover{
+    border-color: #212529;
+    border-radius: 15px;
+    opacity: 0.7;
+  }
+
+}
+
 table {
+
+  background-color: rgb(211, 210, 210);
+  opacity: 0.8;
+  width: 50%;
+  height: 50%;
+  padding: 5px;
 
   thead{
     th{
       button{
-        background-color: rgb(91, 34, 34);
+        background-color: rgb(76, 56, 56);
+        border-color: black;
+        opacity: 1;
+      }
+      button:hover{
+        background-color:rgb(143, 46, 46) ;
       }
     }
-
   }
-
-    background-color: rgb(211, 210, 210);
-    opacity: 0.8;
-    width: 50%;
-    height: 50%;
-    padding: 5px;
-
 
     p,th,td {
       margin-bottom: 0px;
       margin-top: 0px;
       padding: 5px;
     }
+
+}
+
+#pagination{
+
+  nav{
+
+    button{
+      background-color: #212529;
+    }
+
+   button:hover{
+      background-color: #393e43;
+    }
+
+  }
+
+  div{
+    button{
+      background-color: #212529;
+    }
+
+   button:hover{
+      background-color: #393e43;
+    }
+
+
+  }
+
 
 }

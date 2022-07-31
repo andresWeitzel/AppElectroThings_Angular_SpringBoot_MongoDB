@@ -157,10 +157,11 @@ this.productoService.listadoFilter(this.filtroProdBusqueda,this.nroPage,this.nro
 
     //TOAST ERROR
     setTimeout(() => {
-     this.toast.error({detail:"ERROR",summary:this.errMsj , duration:2000});
+     this.toast.error({detail:"ERROR",summary:'Producto/s No Encontrados!!'  , duration:2000});
    }, 600);
    //FIN TOAST ERROR
- console.log(err);
+
+ //console.log(err);
 
   }
 );
@@ -168,9 +169,13 @@ this.productoService.listadoFilter(this.filtroProdBusqueda,this.nroPage,this.nro
 
 
 setFilter(filtro:string){
+
+this.filtroProdBusqueda = '';
+
 if(filtro === '' || filtro === null){
 
 this.listarProductos();
+
 }else{
 
 this.filtroProdBusqueda=filtro;
@@ -289,6 +294,8 @@ console.log('Producto Seleccionado: ',producto);
 
 //Ordenar los registros por type
 orderByDirection(type:string,direct:string):void{
+
+
 this.orderBy = type;
 this.direction = direct;
 

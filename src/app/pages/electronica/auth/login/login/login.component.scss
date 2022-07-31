@@ -13,8 +13,8 @@ table {
   .alert{
 
     border-radius: 0.6em;
-    color: rgb(61, 0, 0);
-    background-color:  rgb(151, 99, 99);
+    color: white;
+    background-color:  rgb(84, 83, 83);
     text-align: center;
     opacity: 0.8;
 
@@ -48,7 +48,7 @@ table {
   position: relative;
   width: 350px;
   min-height: 200px;
-  background: rgb(151, 99, 99);
+  background: rgb(84, 83, 83);
   border-radius: 10px;
   padding: 40px;
   box-sizing: border-box;
@@ -65,7 +65,8 @@ table {
 h3 {
   margin: 0;
   padding: 0 0 20px;
-  color: rgb(87, 31, 31);
+  //color: white;
+  color: white;
   text-align: center
 }
 
@@ -77,10 +78,11 @@ h3 {
 .formulario input[type="text"],
 .formulario input[type="password"] {
   border: none;
-  border-bottom: 2px solid rgb(61, 0, 0);
+  border-bottom: 2px solid white;
   outline: none;
   height: 40px;
-  color: rgb(61, 0, 0);
+  //color: white;
+  color: white;
   background: transparent;
   font-size: 16px;
   padding-left: 20px;
@@ -89,14 +91,14 @@ h3 {
 
 .formulario input[type="text"]:hover,
 .formulario input[type="password"]:hover {
-  color:  rgb(87, 31, 31);
+  color:  white;
   border: 1px solid rgb(74, 12, 12);
-  box-shadow: 0 0 5px rgb(61, 0, 0), 0 0 10px rgb(87, 31, 31), 0 0 15px rgb(87, 31, 31), 0 2px 0 rgb(61, 0, 0)
+  box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 2px 0 white
 }
 
 .formulario input[type="text"]:focus,
 .formulario input[type="password"]:focus {
-  border-bottom: 2px solid rgb(61, 0, 0)
+  border-bottom: 2px solid white
 }
 
 .inputBox {
@@ -106,7 +108,7 @@ h3 {
 .inputBox span {
   position: absolute;
   top: 10px;
-  color: rgb(61, 0, 0)
+  color: white
 }
 
 .formulario input[type="submit"] {
@@ -114,14 +116,15 @@ h3 {
   outline: none;
   height: 40px;
   font-size: 16px;
-  background: rgb(61, 0, 0);
-  color: rgb(151, 99, 99);
+  background: white;
+  //color: gray;
+  color: rgb(10, 7, 7);
   border-radius: 20px;
   cursor: pointer
 }
 
 .formulario a {
-  color: rgb(61, 0, 0);
+  color: white;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
@@ -130,7 +133,7 @@ h3 {
 }
 
 a:hover {
-  color: rgb(61, 0, 0)
+  color: white
 }
 
 //---------------------------FIN LOGIN---------------------------------
