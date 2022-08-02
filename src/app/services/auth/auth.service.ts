@@ -5,6 +5,13 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { LoginUsuarioDto } from 'src/app/models/login-usuario-dto';
 import { SigninUsuarioDto } from 'src/app/models/signin-usuario-dto';
 import { JwtDto } from 'src/app/models/jwt-dto';
+import { environment } from 'src/environments/environment';
+
+
+
+
+const urlAuthApi : string = environment.URL_AUTH_API;
+
 
 
 @Injectable({
@@ -12,7 +19,6 @@ import { JwtDto } from 'src/app/models/jwt-dto';
 })
 export class AuthService {
 
-  AUTH_URL = 'http://localhost:8098/api/v1/auth/';
 
   constructor(private httpClient : HttpClient) {  }
 
@@ -20,11 +26,11 @@ export class AuthService {
 
   //================= SIGNIN ===============
  public signin(signinUsuario : SigninUsuarioDto): Observable<SigninUsuarioDto>{
-  return this.httpClient.post<SigninUsuarioDto>(this.AUTH_URL + 'signin' , signinUsuario).pipe(catchError(this.handleError));
+  return this.httpClient.post<SigninUsuarioDto>(urlAuthApi + 'signin' , signinUsuario).pipe(catchError(this.handleError));
  }
 //================= LOGIN ===============
 public login(loginUsuario : LoginUsuarioDto) : Observable<JwtDto>{
-  return this.httpClient.post<JwtDto>(this.AUTH_URL + 'login',loginUsuario).pipe(catchError(this.handleError));
+  return this.httpClient.post<JwtDto>(urlAuthApi + 'login',loginUsuario).pipe(catchError(this.handleError));
 }
 
 
