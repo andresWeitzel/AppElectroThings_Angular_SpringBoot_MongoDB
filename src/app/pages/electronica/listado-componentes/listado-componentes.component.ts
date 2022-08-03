@@ -191,7 +191,19 @@ this.listarProductosFilter();
 }
 
 
+//----------DETALLES PRODUCTOS ---------------
+detalleProducto(producto : any): void{
+  //SPIN LOADING
+  this.ngxService.start();
+  setTimeout(() => {
+    this.ngxService.stop();
+  }, 100);
+  //FIN SPIN LOADING
 
+
+this.navigationExtras.state['value'] = producto;
+this.router.navigate(['detalles-componentes'] , this.navigationExtras);
+}
 
 
 //----------EDITAR PRODUCTOS ---------------
@@ -274,8 +286,14 @@ eliminarProductoNoAuth(id : number): void{
 
 //=============== UTILS ===============
 
+//---------------- RECARGAR -------------------
 refresh(){
 window.location.reload();
+}
+
+//------------- REDIRECCIONAR -------------------
+redirect(page:String){
+  this.router.navigate([page]);
 }
 
 //-----------  ID PRODUCTO SELECT-------------
@@ -287,6 +305,19 @@ this.codProdSelect=producto.codigo;
 this.nombrProdSelect=producto.nombre;
 
 console.log('Producto Seleccionado: ',producto);
+}
+
+//---------- GENERATE EXCEL ----------
+name = 'listaProductos.xlsx';
+
+generateExcel(): void {
+  let element = document.getElementById('table');
+  const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+  const book: XLSX.WorkBook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+  XLSX.writeFile(book, this.name);
 }
 
 
@@ -361,18 +392,7 @@ cambiarPagina(pagina:number):void{
 
 }
 
-//============= GENERATE EXCEL ====================
-name = 'listaProductos.xlsx';
 
-generateExcel(): void {
-  let element = document.getElementById('table');
-  const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-
-  const book: XLSX.WorkBook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
-
-  XLSX.writeFile(book, this.name);
-}
 
 
 
