@@ -1,8 +1,18 @@
 <div class="container">
 
 
-    <div class="alert alert-dark bg-dark text-white text-center m-1" role="alert">
-        <h4><strong>DETALLES DEL PRODUCTO</strong></h4>
+    <div class="alert alert-dark bg-dark text-white text-center m-1 d-flex d-row justify-content-center" role="alert">
+
+      <h4><strong>DETALLES DEL PRODUCTO</strong></h4>
+
+        <!-- BTN MODAL INFO  -->
+          <button class="btn bg-none p-1 ms-2 border-none" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            <img src="./assets/images/help02.png" alt="" width="30"
+              height="30" class="">
+          </button>
+        <!-- FIN BTN MODAL INFO  -->
+
     </div>
 
 
@@ -54,23 +64,23 @@
                         <tbody class="table-dark border-light bg-dark text-center">
                             <tr>
 
-                                <td>{{testData.codigo}}</td>
+                                <td>{{producto.codigo}}</td>
 
-                                <td>{{testData.nombre}}</td>
+                                <td>{{producto.nombre}}</td>
 
-                                <td>{{testData.descripcion}}</td>
+                                <td>{{producto.descripcion}}</td>
 
-                                <td>{{testData.categoria}}</td>
+                                <td>{{producto.categoria}}</td>
 
-                                <td>{{testData.marca}}</td>
+                                <td>{{producto.marca}}</td>
                                 <td>
-                                    <a href="{{testData.imagen}}" target="_blank">Link</a></td>
+                                    <a href="{{producto.imagen}}" target="_blank">Link</a></td>
 
                                 <td>
-                                    <a href="{{testData.hojaDatos}}" target="_blank">Link</a></td>
-                                <td>{{testData.stock}} u</td>
-                                <td>${{testData.precio}}</td>
-                                <td>{{testData.fecha}}  {{testData.hora}}</td>
+                                    <a href="{{producto.hojaDatos}}" target="_blank">Link</a></td>
+                                <td>{{producto.stock}} u</td>
+                                <td>${{producto.precio}}</td>
+                                <td>{{producto.fecha}}  {{producto.hora}}</td>
 
 
                             </tr>
@@ -82,30 +92,51 @@
 
 
                     <!--BOTONES-->
-                    <div class="card-body d-flex col-12 bg-dark ">
+                    <div class="card-body d-flex col-12 bg-dark text-white ">
 
                         <div class="d-flex col-12 justify-content-center text-center bg-dark ">
 
-                            <div class="">
-                                <button class="btn btn-warning border-dark alert-link m-1" (click)="editarProducto()">
-          <!--Icono Editar Producto-->
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-          </svg>
-            <!--Fin Icono Editar Producto-->
-        </button>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-danger border-dark
-                                  text-white alert-link m-1 " (click)="eliminarProducto()">
-<!--Icono Eliminar Producto-->
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-</svg>
-<!--Fin Icono Eliminar Producto-->
-  </button>
-                            </div>
+                          <button class="btn btn-warning border-dark text-white alert-link m-1 p-1"
+                          (click)="editarProducto(producto)">
+                          <!--Icono Editar Producto-->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                            fill="currentColor" class="bi bi-pencil" viewBox="0 0 16
+                            16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0
+                              .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0
+                              1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5
+                              4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207
+                              4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1
+                              .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821
+                              3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0
+                              1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                            </svg>
+                            <!--Fin Icono Editar Producto-->
+                          </button>
+
+
+                              <a >
+                                <!-- BTN MODAL DELETE CHECK  -->
+                                <button type="button" class="btn btn-danger border-dark text-white alert-link m-1 p-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop02" (click)="setProductoSelect(producto)">
+                                           <!--Icono Eliminar Producto-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                            height="25" fill="currentColor" class="bi bi-trash"
+                            viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0
+                              0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5
+                              0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1
+                                1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0
+                                1-1-1V2a1 1 0 0 1 1-1pa1 1 0 0 1 1-1h2a1 1 0 0 1 1
+                                1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1
+                                1pa1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5
+                                3V2h11v1h-11z"/>
+                              </svg>
+                              <!--Fin Icono Eliminar Producto-->
+                                  </button>
+                                  <!-- FIN BTN MODAL DELETE CHECK -->
+                                    </a>
+
 
 
                         </div>
@@ -146,14 +177,14 @@
 
                 <hr>
                 <div class="col-md-5">
-                    <img src="{{testData.imagen}}" class="card-img-top " width="300px" height="250px" alt="...">
+                    <img src="{{producto.imagen}}" class="card-img-top " width="300px" height="250px" alt="...">
                 </div>
                 <div class="col-md-7 ">
                     <div class="card-body ">
-                        <h5 class="card-title bg-gradient bg-opacity-10 bg-dark text-center mb-2">{{testData.nombre}}</h5>
+                        <h5 class="card-title bg-gradient bg-opacity-10 bg-dark text-center mb-2">{{producto.nombre}}</h5>
 
 
-                        <p>{{testData.descripcion}}. La marca de este producto electrónico es {{testData.marca}} dentro de la categoría de {{testData.categoria}}. Con un precio de ${{testData.precio}}</p>
+                        <p>{{producto.descripcion}}. La marca de este producto electrónico es {{producto.marca}} dentro de la categoría de {{producto.categoria}}. Con un precio de ${{producto.precio}}</p>
 
                     </div>
                     <div class="card-body  ">
@@ -251,7 +282,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-2 col-md-2">
                 <a>
-                    <button class="btn btn-lg btn-outline-dark  border-light alert-link bg-dark text-white" (click)="regresarListadoProductos()">
+                    <button class="btn btn-lg btn-outline-dark  border-light alert-link bg-dark text-white" (click)="redirect('listado-componentes')">
     <!--Icono Regresar Inicio-->
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
       <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
@@ -285,3 +316,190 @@
 
 </div>
 <!--FIN CARDS-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <!--MODAL AYUDA -->
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop"
+                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content" id="modalAyuda">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="staticBackdropLabel">Guía
+                        Listado de Productos</h4>
+                      <button type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Acerca de la Gestión de Productos </h5>
+                      <p>En esta sección podemos visualizar los Productos según
+                        los requerimientos deseados, existe paginacion de
+                        productos, podemos aplicar filtros de búsqueda y las
+                        operaciones CRUD requeridas según el rol que se tenga.
+                        Los admins podrán realizar todas las Operaciones, los
+                        usuarios solamente la visualización y búsquedas.</p>
+                      <h5>Buscador de Productos </h5>
+                      <p>Es posible realizar la búsqueda de productos según
+                        filtros aplicados para cada campo del Listado. Es decir,
+                        las siglas o palabras ingresadas serán aplicadas para
+                        todos los campos. </p>
+                      <h5>Campos del Listado</h5>
+                      <p>Cada campo describe una característica del producto
+                        específico por fila. El campo opciones nos permite
+                        visualizar, editar y eliminar el producto seleccionado.
+                        También podemos agregar un producto desde la barra de
+                        navegación.</p>
+                      <ul>
+
+                        <li><strong>Código:</strong> Este código hace referencia
+                          al producto, no es posible que existan duplicados, es
+                          válido solo letras, números y ciertos caracteres.
+                          Además de un máximo de 10 digitos.</li>
+                        <li><strong>Nombre:</strong> El nombre hace referencia
+                          mismo al producto. A comparación de la descripción,
+                          este es una acotación para la clasificación de los
+                          productos.</li>
+                      </ul>
+                      <div class="mt-5 ">
+                        <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL
+                          DESARROLLADOR</strong>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-dark"
+                        data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--FIN MODAL AYUDA-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- MODAL CHECK ADMIN-->
+ <div class="modal fade" id="staticBackdrop02"
+ data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+ aria-labelledby="staticBackdropLabel" aria-hidden="true"
+ *ngIf="!isAdmin ; else adminValidado">
+
+ <div class="modal-dialog">
+   <div class="modal-content" id="modalCheckDelete">
+
+     <div class="alert alert-danger alert-link" role="alert">
+       <div class="d-flex d-row">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24"
+           height="24" fill="currentColor" class="bi
+           bi-exclamation-triangle-fill flex-shrink-0 me-2"
+           viewBox="0 0 16 16" role="img" aria-label="Warning:">
+           <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165
+             13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0
+             1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0
+             .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1
+             5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0
+             0 1 0-2z"/>
+           </svg>
+
+           <h5>
+             Servicio Habilitado para administradores!!
+           </h5>
+         </div>
+         <div class="d-flex justify-content-end mt-2">
+           <button type="button" class="btn btn-success btn-sm
+             p-1 m-1" data-bs-dismiss="modal">Aceptar</button>
+         </div>
+       </div>
+
+
+     </div>
+   </div>
+ </div>
+
+ <!-- FIN MODAL CHECK ADMIN-->
+
+
+
+
+
+
+
+
+
+                <!-- TEMPLATE MODAL DELETE-->
+                <ng-template #adminValidado>
+
+                  <!--MODAL CHECK DELETE -->
+                  <div class="modal fade" id="staticBackdrop02"
+                    data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog">
+                      <div class="modal-content" id="modalCheckDelete">
+
+                        <div class="alert alert-danger alert-link" role="alert">
+                          <div class="d-flex d-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                              height="24" fill="currentColor" class="bi
+                              bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                              viewBox="0 0 16 16" role="img"
+                              aria-label="Warning:">
+                              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165
+                                13.233c-.457.778.091 1.767.98 1.767h13.713c.889
+                                0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0
+                                .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1
+                                0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1
+                                0 2 1 1 0 0 1 0-2z"/>
+                              </svg>
+
+                              <h5>
+                                Está Seguro que desea Eliminar el Producto
+                                {{nombrProdSelect}} ??
+                              </h5>
+                            </div>
+                            <div class="d-flex justify-content-end mt-2">
+                              <button type="button" class="btn btn-success
+                                btn-sm p-1 m-1" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-danger btn-sm
+                                p-1 m-1" data-bs-dismiss="modal"
+                                (click)="eliminarProducto(idProdSelect)">Eliminar</button>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <!--FIN MODAL CHECK DELETE-->
+                  </ng-template>
+
+                  <!-- FIN TEMPLATE MODAL DELETE-->

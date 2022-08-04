@@ -217,7 +217,7 @@ editarProducto(producto : any): void{
 
 
   this.navigationExtras.state['value'] = producto;
-  this.router.navigate(['editar-productos'] , this.navigationExtras);
+  this.router.navigate(['editar-componentes'] , this.navigationExtras);
 }
 
 
