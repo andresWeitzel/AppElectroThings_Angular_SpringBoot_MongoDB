@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { EditarComponentesRoutingModule } from './editar-componentes-routing.module';
 import { EditarComponentesComponent } from './editar-componentes.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 
 
@@ -14,7 +17,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     EditarComponentesRoutingModule,
+    FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    MdbFormsModule,
+    MdbValidationModule,
   ],
 })
 export class EditarComponentesModule { }

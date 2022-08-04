@@ -39,7 +39,7 @@ public add(producto:ProductoDTO):Observable<ProductoDTO>{
 }
 
 //--- UPDATE ---
-  public update(id:number, producto:ProductoDTO):Observable<ProductoDTO>{
+  public update(id:string, producto:ProductoDTO):Observable<ProductoDTO>{
     return this.httpClient.put<any>(`${urlProductosApi}${id}`,producto);
 
   }
