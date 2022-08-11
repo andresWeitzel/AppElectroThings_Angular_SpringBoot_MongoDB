@@ -66,10 +66,6 @@ errMsj: string;
 
   ngOnInit(): void {
 
-    this.checkRoles();
-    this.checkSecurity();
-
-
     if(typeof this.producto == 'undefined'){
       this.router.navigate(['listado-componentes']);
   }else{
@@ -79,30 +75,8 @@ errMsj: string;
 
   }
 
-  //=========== SEGURIDAD ==============
-
-checkRoles(){
-  this.roles = this.tokenService.getAuthorities();
-  this.roles.forEach(
-    rol=>{
-      if(rol=='ROLE_ADMIN'){
-        this.isAdmin=true;
-        //console.log(this.isAdmin);
-      }
-
-      if(rol=='ROLE_USER'){
-        this.isUser=true;
-        //console.log(this.isUser);
-      }
-
-    });
-}
-
-checkSecurity(){
-  if(!(this.isAdmin) && !(this.isUser)){
-    this.router.navigate(['login']);
-  }
-}
+ //=========== SEGURIDAD ==============
+  //Aplicada en productos.guard y agregada en el routing
 
 
   //=============== CRUD ===============

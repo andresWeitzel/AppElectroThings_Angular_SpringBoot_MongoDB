@@ -1,8 +1,9 @@
 export class JwtDto {
 
-  token:string;
-  type:string;
-  username:string;
-  authorities:string[];
+  token:string='';
+
+  public constructor(token:string){
+    this.token=token;
+  }
 
 }

@@ -318,7 +318,14 @@
                       <li class="page-item bg-none text-white "
                         (click)="paginaAnterior()">
                         <button class="btn btn-lg btn-outline-dark border-light
-                          alert-link text-white">Anterior </button>
+                          alert-link text-white">Primera </button>
+                      </li>
+                      <li class="page-item">
+                        <button class="btn btn-lg btn-outline-dark border-light
+                          alert-link text-white" (click)="paginaAnterior()">
+                          <img
+                src="assets/pagination/arrowLeft.png" width="20" height="20" alt="">
+                        </button>
                       </li>
                       <li class="page-item ">
                         <button class="btn btn-lg btn-outline-dark border-light
@@ -335,6 +342,12 @@
                         <button class="btn btn-lg btn-outline-dark border-light
                           alert-link text-white" (click)="paginaSiguiente()">
                           Siguiente
+                        </button>
+                      </li>
+                      <li class="page-item">
+                        <button class="btn btn-lg btn-outline-dark border-light
+                          alert-link text-white" (click)="paginaSiguiente()">
+                          última
                         </button>
                       </li>
                     </ul>

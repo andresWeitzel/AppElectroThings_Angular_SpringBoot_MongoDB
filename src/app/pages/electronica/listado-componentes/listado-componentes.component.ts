@@ -32,11 +32,12 @@ idProdSelect:string='';
 codProdSelect:string='';
 nombrProdSelect:string='';
 
-//Cantidad de Productos por Grupos
-nroProdAgua=3;
 
-//FILTRO BUSQUEDA PRODUCTOS
-filtroProdBusqueda:string='';
+
+  //FILTRO BUSQUEDA PRODUCTOS
+  filtroProdBusqueda: string = '';
+  filtroProdCampo: string = '';
+
 
 //SEGURIDAD
 roles: string[]=[];
@@ -75,39 +76,12 @@ constructor(
 ) { }
 
 ngOnInit(){
-
-  this.checkRoles();
-  this.checkSecurity();
-
+  this.listarProductos();
+  this.checkEliminarProducto();
 }
 
-//=========== SEGURIDAD ==============
-
-checkRoles(){
-  this.roles = this.tokenService.getAuthorities();
-  this.roles.forEach(
-    rol=>{
-      if(rol=='ROLE_ADMIN'){
-        this.isAdmin=true;
-        //console.log(this.isAdmin);
-      }
-
-      if(rol=='ROLE_USER'){
-        this.isUser=true;
-        //console.log(this.isUser);
-      }
-
-    });
-}
-
-checkSecurity(){
-  if(!(this.isAdmin) && !(this.isUser)){
-    this.router.navigate(['login']);
-  }else{
-    this.listarProductos();
-  }
-}
-
+ //=========== SEGURIDAD ==============
+  //Aplicada en productos.guard y agregada en el routing
 
 //=========== METODOS CRUD ==============
 
@@ -169,6 +143,46 @@ this.productoService.listadoFilter(this.filtroProdBusqueda,this.nroPage,this.nro
 );
 }
 
+  //-----LISTADO PRODUCTOS FILTER/CAMPO ---------------
+  listarProductosFilterAndField() {
+    this.productoService
+      .listadoFilterAndField(
+        this.filtroProdBusqueda,
+        this.filtroProdCampo,
+        this.nroPage,
+        this.nroElements,
+        this.orderBy,
+        this.direction
+      )
+      .subscribe(
+        (data: any) => {
+          this.productos = data.content;
+          this.isFirstPage = data.first;
+          this.isLastPage = data.last;
+          this.totalPages = data.totalPages;
+          this.nroCurrentElements = data.numberOfElements;
+          this.nroTotalElements = data.totalElements;
+
+          //console.log(this.productos);
+        },
+        (err) => {
+          this.errMsj = err.error.message;
+
+          //TOAST ERROR
+          setTimeout(() => {
+            this.toast.error({
+              detail: 'ERROR',
+              summary: 'Producto/s No Encontrados!!',
+              duration: 2000,
+            });
+          }, 600);
+          //FIN TOAST ERROR
+          console.log(err);
+        }
+      );
+  }
+
+
 
 setFilter(filtro:string){
 
@@ -220,6 +234,10 @@ editarProducto(producto : any): void{
   this.router.navigate(['editar-componentes'] , this.navigationExtras);
 }
 
+  //----------CHECK ELIMINAR PRODUCTO----------
+  checkEliminarProducto(){
+    this.isAdmin = this.tokenService.isAdmin();
+  }
 
 
 //----------ELIMINAR PRODUCTOS ---------------

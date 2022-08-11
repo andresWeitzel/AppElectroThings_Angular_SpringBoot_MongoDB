@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   loginUsuarioDto : LoginUsuarioDto;
   username: string;
   password: string;
-  roles: string[] = [];
   errMsj: string;
 
 
@@ -32,15 +31,7 @@ export class LoginComponent implements OnInit {
 
   ) { }
 
-  ngOnInit(){
-    //---------- Check Logueo ------------
-    if (this.tokenService.getToken()) {
-     this.isLogged = true;
-     this.isLoginFail = false;
-     this.roles = this.tokenService.getAuthorities();
-   }
-
- }
+  ngOnInit(){ }
 
 
  redirectPage() : void{
@@ -82,12 +73,6 @@ export class LoginComponent implements OnInit {
          this.isLoginFail=false;
 
          this.tokenService.setToken(data.token);
-         this.tokenService.setUsername(data.username);
-         this.tokenService.setAuthorities(data.authorities);
-
-         this.roles = data.authorities;
-
-
 
          this.toast.success({detail:"Credenciales Válidas",summary:'Bienvenido/a!', duration:1400});
 
