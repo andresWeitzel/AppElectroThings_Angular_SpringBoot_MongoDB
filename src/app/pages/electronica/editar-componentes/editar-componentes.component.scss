@@ -1,0 +1,53 @@
+div .alert {
+    opacity: 0.8;
+}
+
+div .container {
+    opacity: 0.9;
+}
+#formulario{
+
+  form,div, div.div{
+    border-radius: 1em;
+    opacity: 0.9;
+    color: white;
+
+    mdb-form-control{
+      input, select, option{
+        background-color: rgb(28, 21, 21);
+        color: white;
+        max-width: 12em;
+      }
+
+      #imagen{
+        max-width: 25em;
+      }
+      input:hover, select:hover, option:hover{
+        background-color:  rgb(61, 33, 33);
+      }
+
+
+    }
+
+
+  }
+ }
+
+ #btnForm{
+
+  button{
+    border: none;
+    border-radius: none;
+  }
+   button:hover{
+      background-color: #393e43;
+    }
+    button:focus{
+      background-color: #58616b;
+    }
+
+
+
+  }
+
+

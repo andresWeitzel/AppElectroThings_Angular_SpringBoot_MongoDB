@@ -1,0 +1,231 @@
+div .alert {
+    opacity: 0.8;
+}
+
+#filters{
+  text-decoration: solid;
+  font-weight: bold;
+  border-radius: 0.5em;
+}
+
+#buscador {
+  div{
+
+    input{
+      color:rgb(0, 0, 0);
+      text-decoration: solid;
+      font-weight: bold;
+      border-radius: 0.5em;
+
+    }
+    select{
+      color:white;
+      background-color: #212529;
+      border-radius: 0.5em;
+      border-color: black;
+
+
+    }
+
+    input:hover, select:hover{
+      border-color: black;
+    }
+    button{
+        background-color: none;
+
+      }
+
+     button:hover{
+        border-color:none;
+        opacity: 0.7;
+      }
+
+
+  }
+
+
+
+#categoryDropdown
+#marcasDropdown
+,#dateDropdown
+, #stockDropdown
+, #moneyDropdown
+, #filterDropdown
+, #infoDropdown
+, #deleteFilter
+{
+  button{
+    color:white;
+    background-color: #212529;
+    border-radius: 0.5em;
+    border-color: none;
+    z-index: 2;
+  }
+
+
+  div,ul,li{
+    color:white;
+    background-color: #212529;
+    border-radius: 0.8em;
+    border-color: black;
+    z-index: 3;
+  }
+
+}
+
+
+input:hover{
+  border-color: #212529;
+  border-radius: 15px;
+}
+
+  button{
+    background-color: none;
+  }
+
+ button:hover{
+    border-color: #212529;
+    border-radius: 15px;
+    opacity: 0.7;
+  }
+
+}
+
+table {
+
+  background-color: rgb(211, 210, 210);
+  opacity: 0.8;
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+
+  thead{
+    th{
+      button{
+        background-color: rgb(76, 56, 56);
+        border-color: black;
+        opacity: 1;
+      }
+      button:hover{
+        background-color:rgb(143, 46, 46) ;
+      }
+    }
+  }
+
+    p,th,td {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      padding: 5px;
+    }
+
+}
+
+#pagination{
+
+  nav{
+
+    button{
+      background-color: #212529;
+    }
+
+   button:hover{
+      background-color: #393e43;
+    }
+    button:focus{
+      background-color: #58616b;
+    }
+
+  }
+
+  div{
+    button{
+      background-color: #212529;
+    }
+
+   button:hover{
+      background-color: #393e43;
+    }
+
+
+
+
+  }
+
+
+}
+
+#cardsTable{
+  background-color: rgb(41, 39, 39);
+  color: white;
+  opacity: 0.8;
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+
+  div.card-footer{
+    background-color: rgb(37, 36, 36);
+    opacity:1;
+    border-radius: 1em;
+
+    div{
+      button{
+        background-color: #212529;
+      }
+
+     button:hover{
+        background-color: #474b4e;
+      }
+
+  }
+
+
+}
+
+}
+
+
+
+#modalCheckDelete{
+  background: none;
+  border: none;
+
+  .alert{
+
+  border-radius: 15px;
+  border-color: #15351a;
+
+    button{
+      border-radius: 10px;
+    }
+  }
+
+
+}
+
+
+
+#modalsProdList
+{
+  div{
+
+    li,a{
+      background-color: #2f3235;
+      border-color: #393e43;
+      border-radius: 0.5em;
+
+    }
+    li{
+      margin: 0.5em;
+    }
+    li:hover, a:hover{
+      background-color: #393e43;
+      border-radius: 0.5em;
+    }
+
+   h6:hover{
+      background-color: #393e43;
+      border-radius: 0.5em;
+    }
+}
+
+}

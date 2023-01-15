@@ -1,0 +1,480 @@
+<div class="container">
+
+
+    <div class="alert alert-dark bg-dark text-white text-center m-1 d-flex d-row justify-content-center" role="alert">
+
+      <h4 class="">
+        <strong>DETALLES DEL PRODUCTO
+                     <!-- BTN MODAL INFO  -->
+                      <button class="btn bg-none p-1 ms-2" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        <img src="./assets/images/help02.png" alt="" width="30"
+                          height="30" class="">
+                      </button>
+                    <!-- FIN BTN MODAL INFO  -->
+      </strong></h4>
+    </div>
+
+
+    <!--CARDS-->
+    <div class="row justify-content-center">
+
+
+
+
+        <!--CARD DETALLES PRODUCTO-->
+
+        <div class="m-1">
+
+
+            <div id="card" class="card alert alert-dark bg-dark text-white text-center m-1 p-1">
+
+
+                <div id="card" class="text-center bg-dark text-white">
+
+                    <h5 class="bg-dark text-white text-center m-2 p-2"><strong>REGISTRO SELECCIONADO</strong></h5>
+                </div>
+                <div id="card" class="row g-0   bg-dark text-white ">
+                    <hr>
+
+                    <table table-condensed class="table table-secondary table-bordered border-light table-hover text-center">
+
+
+                        <thead class="table-dark border-light text-center">
+                            <tr>
+
+                                <th scope="col"><strong>CÓDIGO</strong>
+                                </th>
+                                <th scope="col"><strong>NOMBRE</strong>
+                                </th>
+                                <th scope="col"><strong>DESCRIPCIÓN</strong></th>
+                                <th scope="col"><strong>CATEGORÍA</strong></th>
+                                <th scope="col"><strong>MARCA</strong></th>
+                                <th scope="col"><strong>IMAGEN</strong></th>
+                                <th scope="col"><strong>DATASHEET</strong></th>
+                                <th scope="col"><strong>STOCK</strong></th>
+                                <th scope="col"><strong>PRECIO</strong></th>
+                                <th scope="col"><strong>FECHA / HORA</strong></th>
+
+
+                            </tr>
+                        </thead>
+
+
+                        <tbody class="table-dark border-light bg-dark text-center">
+                            <tr>
+
+                                <td>{{producto.codigo}}</td>
+
+                                <td>{{producto.nombre}}</td>
+
+                                <td>{{producto.descripcion}}</td>
+
+                                <td>{{producto.categoria}}</td>
+
+                                <td>{{producto.marca}}</td>
+                                <td class="bg-white">
+                                  <img src={{producto.imagen}} target="_blank" width="70px"
+                                    height="70px"></td>
+                                <td>
+                                  <a href={{producto.hojaDatos}} target="_blank"> <img
+                                      src="assets/images/pdf.png" width="45" height="45" alt=""></a></td>
+                                <td>{{producto.stock}} u</td>
+                                <td>${{producto.precio}}</td>
+                                <td>{{producto.fecha}}  {{producto.hora}}</td>
+
+
+                            </tr>
+
+                        </tbody>
+
+
+                    </table>
+
+
+                    <!--BOTONES-->
+                    <div class="card-body d-flex col-12 bg-dark text-white ">
+
+                        <div class="d-flex col-12 justify-content-center text-center bg-dark ">
+
+                          <a>
+                            <button class="btn btn-primary bg-dark border-dark text-white alert-link m-1 p-1 " title="Listado" (click)="redirect('listado-componentes')">
+            <!--Icono Regresar Inicio-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+              <!--Fin Icono Regresar Inicio-->
+                </button>
+                        </a>
+
+                          <button class="btn btn-warning bg-dark border-dark text-white alert-link m-1 p-1"
+                          (click)="editarProducto(producto)">
+                          <!--Icono Editar Producto-->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                            fill="currentColor" class="bi bi-pencil" viewBox="0 0 16
+                            16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0
+                              .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0
+                              1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5
+                              4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207
+                              4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1
+                              .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821
+                              3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0
+                              1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                            </svg>
+                            <!--Fin Icono Editar Producto-->
+                          </button>
+
+
+                              <a >
+                                <!-- BTN MODAL DELETE CHECK  -->
+                                <button type="button" class="btn btn-danger bg-dark border-dark text-white alert-link m-1 p-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop02" (click)="setProductoSelect(producto)">
+                                           <!--Icono Eliminar Producto-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                            height="25" fill="currentColor" class="bi bi-trash"
+                            viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0
+                              0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5
+                              0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1
+                                1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0
+                                1-1-1V2a1 1 0 0 1 1-1pa1 1 0 0 1 1-1h2a1 1 0 0 1 1
+                                1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1
+                                1pa1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5
+                                3V2h11v1h-11z"/>
+                              </svg>
+                              <!--Fin Icono Eliminar Producto-->
+                                  </button>
+                                  <!-- FIN BTN MODAL DELETE CHECK -->
+                                    </a>
+
+
+
+                        </div>
+                    </div>
+
+                    <!--FIN BOTONES-->
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  FIN CARD DETALLES PRODUCTO-->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--CARD PRODUCTO-->
+    <div class="col-md-12 col-sm-12 d-flex justify-content-center text-center mt-3 ">
+
+        <!--CARD INFO-->
+        <div class="card alert alert-dark bg-dark text-white text-center mb-1 " style="max-width: 540px;">
+            <div id="card" class="text-center bg-dark text-white text-center">
+                <h5 class="text-underline alert alert-dark  bg-dark text-white text-center m-2"><strong> INFORMACIÓN</strong></h5>
+            </div>
+            <div id="card" class="row g-0 bg-dark text-white text-center">
+
+                <hr>
+                <div class="col-md-5">
+                    <img src="{{producto.imagen}}" class="card-img-top " width="300px" height="200px" alt="...">
+                </div>
+                <div class="col-md-7 ">
+                    <div class="card-body ">
+                        <h5 class="card-title bg-gradient bg-opacity-10 bg-dark text-center mb-2">{{producto.nombre}}</h5>
+
+
+                        <p>{{producto.descripcion}}. La marca de este producto es {{producto.marca}} dentro de la categoría de {{producto.categoria}}. Con un precio de ${{producto.precio}} y un stock de {{producto.stock}} unidades.</p>
+
+                    </div>
+                    <div class="card-body  ">
+                        <a href="https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Datasheet</a>
+                        <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Proyectos</a>
+                        <a href="https://www.espressif.com/sitproyectos%20esp32es/default/files/documentation/esp32_datasheet_en.pdf" class="card-link text-dark">Más Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD INFO-->
+
+        <!--CARD CARACTERISTICAS-->
+        <div class="card alert alert-dark bg-dark text-white text-center ms-5 mb-1">
+            <div id="card" class="text-center bg-dark text-white text-center">
+                <h5 class="text-underline alert alert-dark bg-dark text-white text-center m-2">CARACTERÍSTICAS</h5>
+            </div>
+            <div id="card" class="row g-0 bg-dark text-white text-center">
+
+                <hr>
+                <table class="table table-secondary table-bordered border-dark table-hover border-light">
+                    <thead class="table-dark text-center border-light">
+                        <tr>
+                            <th scope="col"><strong>Característica</strong></th>
+
+                            <th scope="col"><strong>Valor</strong></th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="table-dark bg-dark text-center border-light">
+
+                        <tr>
+                            <td>Velocidad</td>
+                            <td>80MHz/160MHz.</td>
+                        </tr>
+                        <tr>
+                            <td>Memoria Flash</td>
+                            <td>4 MBytes.</td>
+
+                        </tr>
+                        <tr>
+                            <td>Voltaje Funcionamiento</td>
+                            <td>3.3 volts.</td>
+
+                        </tr>
+
+                        <tr>
+                          <td>Voltaje Máx. de Operación</td>
+                          <td>3.3 volts.</td>
+
+                      </tr>
+
+
+                      <tr>
+                        <td>Corriente Máxima</td>
+                        <td>0.2 ampers</td>
+
+                    </tr>
+
+                        <tr>
+                            <td>Entradas y Salidas Digitales</td>
+                            <td>11, todos (salvo el D0) con PWM, interrupciones, e I2C.</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Entradas Analógicas</td>
+                            <td>1 (Max. 3.2V).</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>Conector</td>
+                            <td> Micro-USB.</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+            </div>
+        </div>
+        <!--FIN CARD CARACTERISTICAS-->
+
+    </div>
+
+
+    <!--FIN CARD PRODUCTO-->
+
+
+
+</div>
+<!--FIN CARDS-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <!--MODAL AYUDA -->
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop"
+                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content bg-dark text-white" id="modalAyuda">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="staticBackdropLabel">Guía
+                        Listado de Productos</h4>
+                      <button type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Acerca de la Gestión de Productos </h5>
+                      <p>En esta sección podemos visualizar los Productos según
+                        los requerimientos deseados, existe paginacion de
+                        productos, podemos aplicar filtros de búsqueda y las
+                        operaciones CRUD requeridas según el rol que se tenga.
+                        Los admins podrán realizar todas las Operaciones, los
+                        usuarios solamente la visualización y búsquedas.</p>
+                      <h5>Buscador de Productos </h5>
+                      <p>Es posible realizar la búsqueda de productos según
+                        filtros aplicados para cada campo del Listado. Es decir,
+                        las siglas o palabras ingresadas serán aplicadas para
+                        todos los campos. </p>
+                      <h5>Campos del Listado</h5>
+                      <p>Cada campo describe una característica del producto
+                        específico por fila. El campo opciones nos permite
+                        visualizar, editar y eliminar el producto seleccionado.
+                        También podemos agregar un producto desde la barra de
+                        navegación.</p>
+                      <ul>
+
+                        <li><strong>Código:</strong> Este código hace referencia
+                          al producto, no es posible que existan duplicados, es
+                          válido solo letras, números y ciertos caracteres.
+                          Además de un máximo de 10 digitos.</li>
+                        <li><strong>Nombre:</strong> El nombre hace referencia
+                          mismo al producto. A comparación de la descripción,
+                          este es una acotación para la clasificación de los
+                          productos.</li>
+                      </ul>
+                      <div class="mt-5 ">
+                        <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL
+                          DESARROLLADOR</strong>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-dark"
+                        data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--FIN MODAL AYUDA-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- MODAL CHECK ADMIN-->
+ <div class="modal fade" id="staticBackdrop02"
+ data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+ aria-labelledby="staticBackdropLabel" aria-hidden="true"
+ *ngIf="!isAdmin ; else adminValidado">
+
+ <div class="modal-dialog">
+   <div class="modal-content bg-dark text-white" id="modalCheckDelete">
+
+     <div class="alert alert-danger alert-link" role="alert">
+       <div class="d-flex d-row">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24"
+           height="24" fill="currentColor" class="bi
+           bi-exclamation-triangle-fill flex-shrink-0 me-2"
+           viewBox="0 0 16 16" role="img" aria-label="Warning:">
+           <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165
+             13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0
+             1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0
+             .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1
+             5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0
+             0 1 0-2z"/>
+           </svg>
+
+           <h5>
+             Servicio Habilitado para administradores!!
+           </h5>
+         </div>
+         <div class="d-flex justify-content-end mt-2">
+           <button type="button" class="btn btn-success btn-sm
+             p-1 m-1" data-bs-dismiss="modal">Aceptar</button>
+         </div>
+       </div>
+
+
+     </div>
+   </div>
+ </div>
+
+ <!-- FIN MODAL CHECK ADMIN-->
+
+
+
+
+
+
+
+
+
+                <!-- TEMPLATE MODAL DELETE-->
+                <ng-template #adminValidado>
+
+                  <!--MODAL CHECK DELETE -->
+                  <div class="modal fade" id="staticBackdrop02"
+                    data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog">
+                      <div class="modal-content " id="modalCheckDelete">
+
+                        <div class="alert alert-danger alert-link" role="alert">
+                          <div class="d-flex d-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                              height="24" fill="currentColor" class="bi
+                              bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                              viewBox="0 0 16 16" role="img"
+                              aria-label="Warning:">
+                              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165
+                                13.233c-.457.778.091 1.767.98 1.767h13.713c.889
+                                0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0
+                                .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1
+                                0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1
+                                0 2 1 1 0 0 1 0-2z"/>
+                              </svg>
+
+                              <h5>
+                                Está Seguro que desea Eliminar el Producto
+                                {{nombrProdSelect}} ??
+                              </h5>
+                            </div>
+                            <div class="d-flex justify-content-end mt-2">
+                              <button type="button" class="btn btn-success
+                                btn-sm p-1 m-1" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-danger btn-sm
+                                p-1 m-1" data-bs-dismiss="modal"
+                                (click)="eliminarProducto(idProdSelect)">Eliminar</button>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <!--FIN MODAL CHECK DELETE-->
+                  </ng-template>
+
+                  <!-- FIN TEMPLATE MODAL DELETE-->

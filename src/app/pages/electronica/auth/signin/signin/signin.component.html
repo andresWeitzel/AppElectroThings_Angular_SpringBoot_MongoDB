@@ -1,0 +1,116 @@
+<div class="container ">
+
+
+    <div class="row justify-content-center mt-2" id="aviso">
+
+
+      <div class="text-center d-flex justify-content-center  ms-1 me-1" role="alert">
+          <div class="alert ">
+              <h4 class=""><strong> REGISTRO DE USUARIOS </strong></h4>
+          </div>
+      </div>
+
+
+      <!--FORMULARIO-->
+      <div class="formulario mt-0 mb-5">
+          <img class="user" src="./assets/images/user-profiles.png" height="100px" width="100px" >
+          <h3>ElectroThings</h3>
+
+
+          <form class="mt-3" [formGroup]="formGroup" (ngSubmit)="onRegister()" novalidate>
+
+            <!-- NOMBRE INPUT-->
+              <div class="form-group ">
+                <mdb-form-control>
+                  <mdb-error class="text-danger " *ngIf="nombreForm?.invalid && (nombreForm?.dirty || nombreForm?.touched)"><strong>Nombre Inválido</strong></mdb-error>
+                  <mdb-success class="text-success" *ngIf="nombreForm?.valid && (nombreForm?.dirty || nombreForm?.touched)"><strong>Nombre Válido</strong></mdb-success>
+
+                  <input id="nombre" type="text" placeholder="
+              Nombre" name="nombre" id="nombre" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO"  placeholder="(Ej: José)"class="form-control" [(ngModel)]="nombre" formControlName="nombre" required mdbInput mdbValidate>
+                </mdb-form-control>
+              </div>
+              <!-- FIN NOMBRE INPUT-->
+
+                  <!-- APELLIDO INPUT-->
+                  <div class="form-group mt-5">
+                    <mdb-form-control>
+                      <mdb-error class="text-danger " *ngIf="apellidoForm?.invalid && (apellidoForm?.dirty || apellidoForm?.touched)"><strong>Apellido Inválido</strong></mdb-error>
+                      <mdb-success class="text-success" *ngIf="apellidoForm?.valid && (apellidoForm?.dirty || apellidoForm?.touched)"><strong>Apellido Válido</strong></mdb-success>
+
+                      <input id="apellido" type="text" placeholder="Apellido" name="apellido" id="apellido" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO"  placeholder="(Ej:Perez)"class="form-control" [(ngModel)]="apellido" formControlName="apellido" required mdbInput mdbValidate>
+                    </mdb-form-control>
+                  </div>
+                  <!-- FIN APELLIDO INPUT-->
+
+              <!-- USERNAME INPUT-->
+              <div class="form-group mt-5">
+
+                <mdb-form-control>
+                  <mdb-error class="text-danger " *ngIf="usernameForm?.invalid && (usernameForm?.dirty || usernameForm?.touched)"><strong>Username Inválido</strong></mdb-error>
+                  <mdb-success class="text-success" *ngIf="usernameForm?.valid && (usernameForm?.dirty || usernameForm?.touched)"><strong>Username Válido</strong></mdb-success>
+
+                  <input id="username" type="text" placeholder="
+              Nombre de Usuario" name="username" title=" SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO"  placeholder="(Ej: josePerez)" id="username" class="form-control" [(ngModel)]="username" formControlName="username" required mdbInput mdbValidate>
+
+            </mdb-form-control>
+            </div>
+            <!-- FIN USERNAME INPUT-->
+
+
+            <!-- PASSWORD INPUT-->
+            <div class="form-group mt-5">
+              <mdb-form-control>
+                <mdb-error class="text-danger " *ngIf="passwordForm?.invalid && (passwordForm?.dirty || passwordForm?.touched)"><strong>Password Inválido</strong></mdb-error>
+                <mdb-success class="text-success" *ngIf="passwordForm?.valid && (passwordForm?.dirty || passwordForm?.touched)"><strong>Password Válido</strong></mdb-success>
+
+                  <input type="password" name="password" id="password" title="SOLO LETRAS MINUS/MAYUSC, NUMEROS, ESPACIOS Y GUIONES MEDIO"  placeholder="(Ej: JosePerez129Jklo)" placeholder="Contraseña" class="form-control" [(ngModel)]="password" formControlName="password" required mdbInput mdbValidate>
+
+            </mdb-form-control>
+            </div>
+            <!-- FIN PASSWORD INPUT-->
+
+            <!-- EMAIL INPUT-->
+            <div class="form-group mt-5">
+              <mdb-form-control>
+                <mdb-error class="text-danger " *ngIf="emailForm?.invalid && (emailForm?.dirty || emailForm?.touched)"><strong>Email Inválido</strong></mdb-error>
+                <mdb-success class="text-success" *ngIf="emailForm?.valid && (emailForm?.dirty || emailForm?.touched)"><strong>Email Válido</strong></mdb-success>
+
+                  <input id="email" type="text" placeholder="
+              Email" name="email" title="SOLO LETRAS MINUS/MAYUSC, NUMEROS Y GUIONES MEDIO "  placeholder="(Ej: JosePerez69@gmail.com)"  id="email" class="form-control" [(ngModel)]="email" required formControlName="email" required mdbInput mdbValidate>
+
+            </mdb-form-control>
+            </div>
+             <!-- FIN EMAIL INPUT-->
+
+
+              <div class="form-group d-flex justify-content-center mt-5">
+
+                  <!--SIGNIN-->
+                  <button type="submit" class="btn  btn-block justify-content-center m-2" [disabled]="!formGroup.valid">
+                  <a>Registrarse</a>
+                </button>
+                  <!--FIN SIGNIN-->
+
+
+                     <!--LOGIN-->
+
+                     <button class="btn  btn-block justify-content-center m-2">
+                      <a [routerLink]="['/login']">
+                    Ingresar
+                </a></button>
+                    <!--FIN LOGIN-->
+
+
+              </div>
+
+          </form>
+
+      </div>
+
+      <!--FIN FORMULARIO-->
+
+
+  </div>
+
+
+</div>

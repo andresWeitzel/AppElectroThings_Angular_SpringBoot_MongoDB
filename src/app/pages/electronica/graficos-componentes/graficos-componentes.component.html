@@ -1,0 +1,378 @@
+
+
+<!-- GRAFICAS DE PRODUCTOS -->
+<div class="container">
+
+  <!-- GRAF STOCK-CATEG -->
+  <div class="row justify-content-center m-3">
+
+    <!-- TITULO EDICCION DE PRODUCTOS -->
+    <div class="alert alert-dark bg-dark text-white text-center" role="alert">
+      <h4 class="">
+        <strong>GRÁFICAS DE PRODUCTOS
+                     <!-- BTN MODAL INFO  -->
+                      <button class="btn bg-none p-1 ms-2" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        <img src="./assets/images/help02.png" alt="" width="30"
+                          height="30" class="">
+                      </button>
+                    <!-- FIN BTN MODAL INFO  -->
+      </strong>
+    </h4>
+    </div>
+    <!-- FIN TITULO EDICCION DE PRODUCTOS -->
+
+<!--  SELECT GRAFICA DE BARRA -->
+<div class="d-flex d-column bg-dark text-white justify-content-center">
+
+
+  <div  class="d-flex d-row  text-white justify-content-center p-1">
+    <div>
+  <img src="./assets/icons-graficos/grafBarras.png" alt="" width="40"
+    height="40" class="">
+  </div>
+  <div>
+    <h5 class="text-white ms-1 mt-2">Stock de Productos por Categoría</h5>
+  </div>
+  </div>
+
+
+
+  <div class="d-flex d-row  justify align-content-center  ms-2" id="btnGrafica">
+    <div>
+   <button type="button" class="btn btn-sm  p-1 m-1 mt-2" (click)="refresh(100)"><p class="m-1">Recargar</p> </button>
+  </div>
+
+</div>
+
+
+</div>
+<!--  FIN SELECT GRAFICA DE BARRA -->
+
+
+
+
+
+
+
+<div class="d-flex d-row  justify align-content-center mt-2" *ngIf="checkGrafStockCateg" id="maquetacion">
+
+  <!--GRAF DE BARRAS-->
+  <div class="highchart">
+  <highcharts-chart [Highcharts]="HighchartsStockCateg" [options]="chartOptionsStockCateg"></highcharts-chart>
+</div>
+<!--FIN GRAF DE BARRAS-->
+
+<div class="ms-4 text-white ">
+  <h5 class="text-decoration-underline ">Cantidad por Categoría</h5>
+  <ul class="text-white bg-dark">
+    <li>{{categ[0]}} : {{stockCateg[0]}} u</li>
+    <li>{{categ[1]}}  : {{stockCateg[1]}} u</li>
+    <li>{{categ[2]}}  : {{stockCateg[2]}} u</li>
+    <li>{{categ[3]}}  : {{stockCateg[3]}} u</li>
+    <li>{{categ[4]}}  : {{stockCateg[4]}} u</li>
+    <li>{{categ[5]}}  : {{stockCateg[5]}} u</li>
+    <li>{{categ[6]}}  : {{stockCateg[6]}} u</li>
+    <li>{{categ[7]}}  : {{stockCateg[7]}} u</li>
+    <li>{{categ[8]}}  : {{stockCateg[8]}} u</li>
+    <li>{{categ[9]}}  : {{stockCateg[9]}} u</li>
+  </ul>
+</div>
+
+
+
+
+
+<div class="ms-4 text-white ">
+  <h5 class="text-decoration-underline ">Mayor Stock</h5>
+  <ul class="text-white bg-dark">
+    <li>{{catStockMax}} : {{maximoStock()}} u</li>
+  </ul>
+
+  <h5 class="text-decoration-underline ">Mínimo Stock</h5>
+  <ul class="text-white bg-dark">
+    <li>{{catStockMin}} : {{minimoStock()}} u</li>
+  </ul>
+
+  <h5 class="text-decoration-underline ">Promedio Stock</h5>
+  <ul class="text-white bg-dark">
+    <li>{{promedioStock()}} u</li>
+  </ul>
+
+  <h5 class="text-decoration-underline ">Total Stock</h5>
+  <ul class="text-white bg-dark">
+    <li>{{totalStock()}} u</li>
+  </ul>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+<!-- FIN GRAF STOCK-CATEG -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- GRAF STOCK-FECHA -->
+  <div class="row justify-content-center m-3">
+
+    <!--  SELECT GRAFICA DE AREA -->
+    <div class="d-flex d-row bg-dark text-white justify-content-center">
+
+
+      <div  class="d-flex d-row  text-white justify-content-center p-1">
+        <div>
+      <img src="./assets/icons-graficos/grafBarras.png" alt="" width="40"
+        height="40" class="">
+      </div>
+      <div>
+        <h5 class="text-white ms-1 mt-2">Stock de Productos por Años y Meses(2022)</h5>
+      </div>
+      </div>
+
+
+        <div class="d-flex d-row  justify align-content-center  ms-2" id="btnGrafica">
+          <div>
+         <button type="button" class="btn btn-sm  p-1 m-1 mt-2" (click)="generarGrafStockFecha()"><p class="m-1">Generar</p> </button>
+        </div>
+        <div>
+         <button type="button" class="btn btn-sm p-1 m-1 mt-2" (click)="ocultarGrafStockFecha()" ><p class="m-1">Ocultar</p> </button>
+        </div>
+
+    </div>
+    </div>
+     <!--  FIN SELECT GRAFICA DE AREA -->
+
+    <!--PRIMERA/SEGUNDA GRAF-->
+     <div class="d-flex d-row ">
+    <!--PRIMER GRAF-->
+      <div class="d-flex d-row  justify align-content-center mt-2" *ngIf="checkGrafStockFecha" id="maquetacion">
+
+        <!--GRAF DE AREA-->
+        <div class="highchart">
+        <highcharts-chart [Highcharts]="HighchartsStockFecha" [options]="chartOptionsStockFecha"></highcharts-chart>
+      </div>
+      <!--FIN GRAF DE AREA-->
+
+      </div>
+      <!--FIN PRIMER GRAF-->
+
+
+      <!--SEGUNDO GRAF-->
+      <div class="d-flex d-row justify align-content-center mt-2 ms-2" *ngIf="checkGrafStockFecha2022" id="maquetacion">
+
+        <!--GRAF DE AREA-->
+        <div class="highchart">
+        <highcharts-chart [Highcharts]="HighchartsStockFecha2022" [options]="chartOptionsStockFecha2022"></highcharts-chart>
+      </div>
+      <!--FIN GRAF DE AREA-->
+
+      <div class="ms-4 text-white ">
+        <h5 class="text-decoration-underline ">Cantidad por Año</h5>
+        <ul class="text-white bg-dark">
+          <li>{{fecha[0]}} : {{stockFecha[0]}} u</li>
+          <li>{{fecha[1]}}  : {{stockFecha[1]}} u</li>
+          <li>{{fecha[2]}}  : {{stockFecha[2]}} u</li>
+        </ul>
+      </div>
+
+      <div class="ms-4 text-white ">
+        <h5 class="text-decoration-underline ">Cantidad por Meses Año 2022</h5>
+        <ul class="text-white bg-dark">
+          <li>{{fecha2022[0]}} : {{stockFecha2022[0]}} u</li>
+          <li>{{fecha2022[1]}}  : {{stockFecha2022[1]}} u</li>
+          <li>{{fecha2022[2]}}  : {{stockFecha2022[2]}} u</li>
+          <li>{{fecha2022[3]}}  : {{stockFecha2022[3]}} u</li>
+          <li>{{fecha2022[4]}}  : {{stockFecha2022[4]}} u</li>
+          <li>{{fecha2022[5]}}  : {{stockFecha2022[5]}} u</li>
+          <li>{{fecha2022[6]}}  : {{stockFecha2022[6]}} u</li>
+          <li>{{fecha2022[7]}}  : {{stockFecha2022[7]}} u</li>
+          <li>{{fecha2022[8]}}  : {{stockFecha2022[8]}} u</li>
+          <li>{{fecha2022[9]}}  : {{stockFecha2022[9]}} u</li>
+          <li>{{fecha2022[10]}}  : {{stockFecha2022[10]}} u</li>
+          <li>{{fecha2022[11]}}  : {{stockFecha2022[11]}} u</li>
+
+        </ul>
+      </div>
+
+      </div>
+      <!--FIN SEGUNDO GRAF-->
+
+    </div>
+    <!--FIN PRIMERA/SEGUNDA GRAF-->
+
+    </div>
+    <!-- FIN GRAF STOCK-FECHA -->
+
+
+
+
+
+  </div>
+<!-- FIN GRAFICAS DE PRODUCTOS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <!--MODAL AYUDA -->
+              <!-- Modal -->
+              <div class="modal fade " id="staticBackdrop"
+                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content bg-dark text-white" id="modalAyuda">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="staticBackdropLabel">Guía
+                        Listado de Productos</h4>
+                      <button type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Acerca de la Gestión de Productos </h5>
+                      <p>En esta sección podemos visualizar los Productos según
+                        los requerimientos deseados, existe paginacion de
+                        productos, podemos aplicar filtros de búsqueda y las
+                        operaciones CRUD requeridas según el rol que se tenga.
+                        Los admins podrán realizar todas las Operaciones, los
+                        usuarios solamente la visualización y búsquedas.</p>
+                        <br>
+                      <h5>Buscador de Productos </h5>
+                      <p>Es posible realizar la búsqueda de productos según
+                        filtros aplicados para cada campo del Listado. Es decir,
+                        las siglas o palabras ingresadas serán aplicadas para
+                        todos los campos. </p>
+                        <br>
+                      <h5>Campos del Listado</h5>
+                      <p>Cada campo describe una característica del producto
+                        específico por fila. El campo opciones nos permite
+                        visualizar, editar y eliminar el producto seleccionado.
+                        También podemos agregar un producto desde la barra de
+                        navegación.</p>
+                      <ul>
+
+                        <li><strong>Código:</strong> Este código hace referencia
+                          al producto, no es posible que existan duplicados, es
+                          válido solo letras, números y ciertos caracteres.
+                          Además de un máximo de 10 digitos.</li>
+                        <li><strong>Nombre:</strong> El nombre hace referencia
+                          mismo al producto. A comparación de la descripción,
+                          este es una acotación para la clasificación de los
+                          productos.</li>
+                      </ul>
+                      <div class="mt-5 ">
+                        <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL
+                          DESARROLLADOR</strong>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-dark"
+                        data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--FIN MODAL AYUDA-->
+
