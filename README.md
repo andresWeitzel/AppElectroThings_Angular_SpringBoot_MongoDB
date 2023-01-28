@@ -1,4 +1,4 @@
-<img src="./doc/listado/listado01.png" style="width: 90%; height: 70%"/>
+<img src="./doc/listado/listado01.png" style="width: 100%; height: 70%"/>
 
 # AppElectroThings_Angular_Bootstrap_SpringBoot_MongoDB.
 
