@@ -1,7 +1,9 @@
+<img src="./doc/listado/listado01.png" style="width: 70%; height: 70%"/>
+
 # AppElectroThings_Angular_Bootstrap_SpringBoot_MongoDB.
 
-* Aplicación ElectroThings para la Gestión de Productos Electrónicos.
-* Esta app implementa HTML5, CSS3, SCSS, Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+* Aplicación ElectroThings para la Gestión de Productos Electrónicos implementada con HTML5, CSS3, SCSS, Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+
 * Aclaración : ESTE MICROFRONTEND NO ES COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad que se emplee.  
 
 </br>
