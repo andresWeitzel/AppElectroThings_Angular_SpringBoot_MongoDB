@@ -145,11 +145,23 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 <details>
  <summary>Ver</summary>
    
- * $${\color{yellow}POST \space \color{white}/v1/productos/}$$ (Agregar producto)
- * $${\color{blue}PUT \space \color{white}/v1/productos/{id}}$$ (Actualizar producto)
- * $${\color{red}DELETE \space \color{white}/v1/productos/{id}}$$ (Eliminar producto)
- * $${\color{green}GET \space \color{white}/v1/productos/listado}$$ (Listado de productos paginados)
- * Completar resto 
+#### Autenticación
+* http://localhost:8098/api/v1/auth/login (Autenticación)
+* http://localhost:8098/api/v1/auth/signin (Registro)
+  
+#### Gestión de Productos
+* http://localhost:8098/api/v1/productos/ (Agregar)
+* http://localhost:8098/api/v1/productos/{id} (Editar)
+* http://localhost:8098/api/v1/productos/{id} (Eliminar)
+* http://localhost:8098/api/v1/productos/listado (Listado Paginado)
+* http://localhost:8098/api/v1/productos/last-producto (Último Producto)
+* COMPLETAR
+  
+#### Administración de Usuarios  
+* http://localhost:8098/api/v1/admin/usuarios/ (Agregar)
+* http://localhost:8098/api/v1/admin/usuarios/{id} (Editar)
+* http://localhost:8098/api/v1/admin/usuarios/{id} (Eliminar)
+* http://localhost:8098/api/v1/admin/usuarios/listado (Listado)
   
 
 
