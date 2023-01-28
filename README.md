@@ -145,7 +145,8 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 <details>
  <summary>Ver</summary>
    
-* $${\color{blue}Post} http://localhost:8098/v1/productos/$$ 
+* $${\color{blue}Post \space http://localhost:8098/v1/productos/} $$ 
+  
 
 <br>
 
