@@ -4,7 +4,78 @@
 
 * Aplicación ElectroThings para la Gestión de Productos Electrónicos implementada con HTML5, CSS3, SCSS, Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
 
-* Aclaración : ESTE MICROFRONTEND NO ES COMPLETAMENTE RESPONSIVE. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad que se emplee.  
+
+<br>
+
+## Índice 📜
+
+<details>
+ <summary> Ver </summary>
+ 
+ <br>
+ 
+### Sección 1) Descripción, Tecnologías y Dependencias 
+
+ - [1.0) Descripción del Proyecto.](#10-descripción-)
+ - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
+ - [1.2) Tecnologías.](#12-tecnologías-)
+ - [1.3) Plugins.](#13-plugins-)
+ - [1.4) Extensiones VSC.](#14-extensiones-vsc-)
+
+<br>
+
+</details>
+
+
+
+
+<br>
+
+## Sección 1) Descripción, Tecnologías y Dependencias 
+
+
+### 1.0) Descripción [🔝](#índice-) 
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+ 
+* Esta aplicación ha sido desarrollada para la gestión de productos de electrónica general ( televisores, notebooks, accesorios, etc). También se ha pensado originalmente desarrollar una sección para la gestión de usuarios, pero esta funcionalidad se aplica desde el backend (Api), utilizando postman o swagger ui, al implementar un modelo de negocios únicamente para un MicroFrontEnd se deberá desarrollar otra app para la gestión de dichos usuarios.
+* Como sistema de seguridad para manejo de recursos de la app se usa Spring Security y JWT. Las Operaciones Transaccionales fueron modificadas para que solamente los administradores del sistema tengan acceso, los usuarios convencionales solamente podrán visualizar los productos y filtrar búsquedas acerca de estos según el requerimiento deseado.
+* Todos los formularios aplican validaciones de carácteres, longitudes, tamaños, valores numéricos, valores mal formados, email, contraseña, url de imágenes, etc.
+* Se implementa Paginación Completa.
+* Se aplican dos filtros de búsqueda, uno para productos de forma genérica y otro según el campo deseado, permitiendo coincidencias de carácteres y palabras.
+* Para la experiencia de usuario se utiliza Popupts, Loaders, Angular Material, Etc.
+* Es posible descargar el Listado de Productos Paginado en formato xlsx(excel), csv y pdf.
+* Todas las Páginas de la Aplicación poseen modals de Ayuda.
+* Entre Otros Recursos Disponibles.
+* Aclaración : Este Microfrontend no es responsive. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad que se emplee.
+
+
+<br>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 </br>
 
