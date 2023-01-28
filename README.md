@@ -144,13 +144,8 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 
 <details>
  <summary>Ver</summary>
-  
-  <span style="color:red">some **This is Red Bold.** text</span>
- 
-* http://localhost:8098/v1/productos
-* http://localhost:8098/v1/componentes-detalles
-* http://localhost:8098/v1/componentes-transistores-bipolares
-* http://localhost:8098/v1/componentes-capacitores-electroliticos
+   
+* $${\color{blue}Post}$$ http://localhost:8098/v1/productos/
 
 <br>
 
