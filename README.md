@@ -175,58 +175,20 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 
 <details>
  <summary>Ver</summary>
-
-### Inicio Componentes
-
-![Index app](./doc/inicio/inicioComponentes.png)
-
-### Gráficos de Área y Barra para Stock de Componentes por Categoría y Fabricante
-
-![Index app](./doc/graficos/graficoStockComponentesPorCategoria.png)
-![Index app](./doc/graficos/graficoStockComponentesPorFabricante.png)
-
-### Reportes en Excel y PDF para el Listado de Componentes Paginados según N° de Página
-
-
-
-
-
-
-<br>
-
-</details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</br>
-
-### Seguidamente se representa gráficamente de forma sucinta algunos servicios de la Aplicación
-
-</br>
-
+  
 #### Login 
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/auth/login.png)
+![Index app](./doc/auth/login.png)
 
 #### Signin
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/auth/signin.png)
+![Index app](./doc/auth/signin.png)
 
 
 ### Inicio 
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/inicio/vista.png)
+![Index app](./doc/inicio/vista.png)
+
 
 
 ### Listado de Productos Electrónicos Tabla
@@ -260,12 +222,29 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 #### Documentación Gráfica Acotada por razones de simplificación de documentación. Visualizar los videos desde la PlayList acerca de las Pruebas de Funcionalidad de la aplicación.
 
 
-</br>
+<br>
 
-</br>
+</details>
 
 
-</br>
+
+
+
+
+
+
+
+
+
+<br>
+
+<br>
+
+### `Siguiente sección en proceso de actualización` 
+
+<details>
+ <summary>Ver</summary>
+  
 
 ### Documentación No Oficial Recomendada
 
@@ -1644,3 +1623,10 @@ export class DetallesComponentesComponent implements OnInit {
 ### 3) Deploy
 * netlify deploy --prod
 #### IMPORTANTE: Luego de ingresar este comando, asegurarse de colocar correctamente el `Publish directory` , sino no se va a deployar correctamente, en general es  `dist/'nombre de tu proyecto sin comillas' ` 
+
+
+
+
+<br>
+
+</details>
