@@ -1,9 +1,11 @@
 <img src="./doc/listado/listado01.png" style="width: 100%; height: 80%"/>
 
 # AppElectroThings_Angular_SpringBoot_MongoDB.
-
-* Aplicación ElectroThings para la Gestión de Productos Electrónicos implementada con HTML5, CSS3, SCSS, Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
-
+Aplicación ElectroThings para la Gestión de Productos Electrónicos implementada con HTML5, CSS3, SCSS, Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
+* [Repositorio ApiRest_ElectroThingsV1](https://github.com/andresWeitzel/ApiRest_ElectroThingsV1_SpringBoot_MongoDB)
+* [Repositorio db_ElectroThings_MongoDB](https://github.com/andresWeitzel/db_ElectroThings_MongoDB)
+* [PlayList del Proyecto](https://www.youtube.com/playlist?list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy)
+ 
 
 <br>
 
@@ -51,6 +53,81 @@
 * Todas las Páginas de la Aplicación poseen modals de Ayuda.
 * Entre Otros Recursos Disponibles.
 * Aclaración : Este Microfrontend no es responsive. El enfoque es la funcionalidad de la aplicación, la maquetación es totalmente aplicable en relación al tiempo de disponibilidad que se emplee.
+* [Repositorio ApiRest_ElectroThingsV1](https://github.com/andresWeitzel/ApiRest_ElectroThingsV1_SpringBoot_MongoDB)
+* [Repositorio db_ElectroThings_MongoDB](https://github.com/andresWeitzel/db_ElectroThings_MongoDB)
+* [PlayList del Proyecto](https://www.youtube.com/playlist?list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy)
+  
+
+<br>
+
+</details>
+
+
+
+### 1.1) Ejecución del Proyecto [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+  
+* Crear un entorno de trabajo a través de algún IDE
+* Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppElectroThings_Angular_SpringBoot_MongoDB`)
+* Dentro del directorio instalar todos los plugins implementados
+  * `npm i`
+
+<br>
+
+</details>
+
+
+
+### 1.2) Tecnologías [🔝](#índice-)
+
+<details>
+  <summary>Ver</summary>
+ 
+ <br>
+
+
+| Área | Stack |
+| ------------- | ------------- |
+| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Angular Material, Highchart y Otros | 
+| Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros |
+| Database | MongoDB Compass, MongoDB, CMD | 
+
+
+| Tecnologías FRONTEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| [Angular](https://angular.io/) |  13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
+| [Angular CLI](https://docs.angular.lat/cli) | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
+| [Angular Material](https://material.angular.io/) | 13.3.9 | UI librería de componentes | 
+| [ng-angular-popup](https://www.npmjs.com/package/ng-angular-popup) | 0.1.2 |  Mensajes emergentes personalizados |
+| [ngx-ui-loader](https://www.npmjs.com/package/ngx-ui-loader) | 13.0.0 | Animaciones de carga | 
+| [Bootstrap](https://getbootstrap.com/) | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
+| [Visual Studio Code](https://code.visualstudio.com/download) | 1.51.1  | Entorno de Desarrollo |
+
+
+| Tecnologías BACKEND | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| [Java]( https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html) |   12.0.2 | JDK |
+| [Spring Tool Suite 4](https://spring.io/blog/2021/06/21/spring-tools-4-11-0-released) | 4.9.0  | IDE |
+| [Spring Boot](https://spring.io/) |   2.6.4  | Framework |
+| [Spring Boot Data JPA](https://spring.io/projects/spring-data-jpa)  | 2.6.3 | Mapeo de objetos y persistencia en la db |
+| [Spring Security](https://spring.io/projects/spring-security) | 2.6.7 | Servicios de Seguridad |
+| [JSON Web Token](https://jwt.io/) | 0.9.1 | Creación de tokens de acceso | 
+| [Maven](https://maven.apache.org/) |  4.0.0 | Gestor de Proyectos |
+| [Postman](https://www.postman.com/) | 9.4.1 | Test de Apis |
+| [Lombok](https://projectlombok.org/) | 1.18.22 | Automatización de Código | 
+| [Open-Api](https://www.openapis.org/) | 1.6.4 | Documentación de la Api | 
+| [UI Swagger](https://swagger.io/tools/swagger-ui/) | 1.6.4 | Visualización y Gestión de la Api | 
+| [GNU bash / Terminal](https://www.gnu.org/software/bash/) | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
+| [Git](https://git-scm.com/) | 2.29.1  | Control de Versiones |
+
+
+| Tecnologías DATABASE | Versión | Finalidad
+| ------------- | ------------- | ------------- |
+| [MongoDB](https://www.mongodb.com/) | 5.0 | Base de Datos |
+| [MongoDB Compass](https://www.mongodb.com/products/compass)	| 1.31.2 |	Gestor para MongoDB |
+
 
 
 <br>
@@ -60,6 +137,21 @@
 
 
 
+### Documentación Oficial
+
+* Java-JDK 12 :       https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
+* Spring Security:  https://spring.io/projects/spring-security  
+* JSON Web Security:  https://jwt.io/introduction/ 
+* Boostrap:         https://getbootstrap.com/
+* Angular CLI:      https://github.com/angular/angular-cli
+* XAMPP :       https://www.apachefriends.org/download.html 
+* Maven Repository: https://mvnrepository.com/ 
+* PostMan:        https://www.postman.com/downloads/ 
+* Bootstrap:   https://getbootstrap.com/
+* Angular:     https://angular.io/tutorial/toh-pt0
+* Visual Studio Code:         https://code.visualstudio.com/download
+* Spring Tool Suite 4 : https://spring.io/tools 
+* Git:         https://git-scm.com/docs
 
 
 
@@ -75,14 +167,14 @@
 
 
 
- 
-
-</br>
 
 
-* Repositorio ApiRest_ElectroThingsV1 : https://github.com/andresWeitzel/ApiRest_ElectroThingsV1_SpringBoot_MongoDB
-* Repositorio db_ElectroThings_MongoDB : https://github.com/andresWeitzel/db_ElectroThings_MongoDB
-* PlayList del Proyecto : https://www.youtube.com/playlist?list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy
+
+
+
+
+
+
 
 </br>
 
@@ -137,81 +229,7 @@
 
 </br>
 
-| Área | Stack |
-| ------------- | ------------- |
-| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Angular Material, Highchart y Otros | 
-| Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros |
-| Database | MongoDB Compass, MongoDB, CMD | 
-
-<hr>
-
 </br>
-
-| Tecnologías FRONTEND | Versión | Finalidad
-| ------------- | ------------- | ------------- |
-| Angular |   13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
-| Angular CLI | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
-| Angular Material | 13.3.9 | UI librería de componentes | 
-| ng-angular-popup | 0.1.2 |  Mensajes emergentes personalizados |
-| ngx-ui-loader | 13.0.0 | Animaciones de carga | 
-| Bootstrap | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
-| Visual Studio Code | 1.51.1  | Entorno de Desarrollo |
-| Otros | - | - |
-
-
-</br>
-
-
-
-| Tecnologías BACKEND | Versión | Finalidad
-| ------------- | ------------- | ------------- |
-| Java |   12.0.2 | JDK |
-| Spring Tool Suite 4 | 4.9.0  | IDE |
-| Spring Boot |   2.6.4  | Framework |
-| Spring Boot Data JPA  | 2.6.3 | Mapeo de objetos y persistencia en la db |
-| Spring Security | 2.6.7 | Servicios de Seguridad |
-| JSON Web Token | 0.9.1 | Creación de tokens de acceso | 
-| Maven |  4.0.0 | Gestor de Proyectos |
-| PostMan | 9.4.1 | Test de Apis |
-| Lombok | 1.18.22 | Automatización de Código | 
-| Open-Api | 1.6.4 | Documentación de la Api | 
-| UI Swagger | 1.6.4 | Visualización y Gestión de la Api | 
-| Maven |  4.0.0 | Gestor de Proyectos |
-| GNU bash / Terminal | 4.4.23  | Bash / Terminal para el manejo e implementación de Git integrado al Spring Tool Suite |
-| Git | 2.29.1  | Control de Versiones |
-| Otros | - | - |
-
-
-
-</br>
-
-| Tecnologías DATABASE | Versión | Finalidad
-| ------------- | ------------- | ------------- |
-| MongoDB | 5.0 | Base de Datos |
-| MongoDB Compass	| 1.31.2 |	Gestor para MongoDB |
-| CMD | 10 | Símbolo del Sistema para linea de comandos | 
-| Otros | - | - |
-
-
-</br>
-
-### Documentación Oficial
-
-* Java-JDK 12 :       https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
-* Spring Security:  https://spring.io/projects/spring-security  
-* JSON Web Security:  https://jwt.io/introduction/ 
-* Boostrap:         https://getbootstrap.com/
-* Angular CLI:      https://github.com/angular/angular-cli
-* XAMPP :       https://www.apachefriends.org/download.html 
-* Maven Repository: https://mvnrepository.com/ 
-* PostMan:        https://www.postman.com/downloads/ 
-* Bootstrap:   https://getbootstrap.com/
-* Angular:     https://angular.io/tutorial/toh-pt0
-* Visual Studio Code:         https://code.visualstudio.com/download
-* Spring Tool Suite 4 : https://spring.io/tools 
-* Git:         https://git-scm.com/docs
-
-
 
 
 </br>
