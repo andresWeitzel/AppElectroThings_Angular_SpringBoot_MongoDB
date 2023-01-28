@@ -145,9 +145,12 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 <details>
  <summary>Ver</summary>
    
- * $${\color{blue}Post \space \color{white}/v1/productos/}$$ 
+ * $${\color{yellow}POST \space \color{white}/v1/productos/}$$ (Agregar producto)
+ * $${\color{blue}PUT \space \color{white}/v1/productos/{id}}$$ (Actualizar producto)
+ * $${\color{red}DELETE \space \color{white}/v1/productos/{id}}$$ (Eliminar producto)
+ * $${\color{green}GET \space \color{white}/v1/productos/listado}$$ (Listado de productos paginados)
+ * Completar resto 
   
-  $${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
 
 <br>
