@@ -87,21 +87,17 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
  
  <br>
 
-
-| Área | Stack |
-| ------------- | ------------- |
-| Front End | HTML5, CSS3, SCSS, Bootstrap5, Angular13, Angular Material, Highchart y Otros | 
-| Back End | Spring Boot, Spring Security, JWT, Lombok, Maven, Swagger UI, Open-API y Otros |
-| Database | MongoDB Compass, MongoDB, CMD | 
-
-
 | Tecnologías FRONTEND | Versión | Finalidad
 | ------------- | ------------- | ------------- |
+| [HTML](https://www.w3schools.com/html/) |  5.0 | Lenguaje de Hipertexto | 
+| [Css](https://www.w3schools.com/css/) |  3.0 | Lenguaje de hojas de estilo para presentación de documentos.  |
+| [Scss](https://sass-lang.com/) | 1.57 | Preprocesador de css.  |
 | [Angular](https://angular.io/) |  13.3.0 | FrameWork Web Desarrollo de Apps con TypeScript | 
 | [Angular CLI](https://docs.angular.lat/cli) | 13.3.0 | Herramienta de Angular para depurar, crear, publicar, etc Apps |
 | [Angular Material](https://material.angular.io/) | 13.3.9 | UI librería de componentes | 
 | [ng-angular-popup](https://www.npmjs.com/package/ng-angular-popup) | 0.1.2 |  Mensajes emergentes personalizados |
 | [ngx-ui-loader](https://www.npmjs.com/package/ngx-ui-loader) | 13.0.0 | Animaciones de carga | 
+| [Highchart](https://www.highcharts.com/) | 13.3.9 | Librería para la generación de gráficos |  
 | [Bootstrap](https://getbootstrap.com/) | 5.1  | FrameWork Web Diseño y Desarrollo de Apps |
 | [Visual Studio Code](https://code.visualstudio.com/download) | 1.51.1  | Entorno de Desarrollo |
 
@@ -133,26 +129,6 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 <br>
 
 </details>
-
-
-
-
-### Documentación Oficial
-
-* Java-JDK 12 :       https://www.oracle.com/java/technologies/javase/jdk12-archive-downloads.html
-* Spring Security:  https://spring.io/projects/spring-security  
-* JSON Web Security:  https://jwt.io/introduction/ 
-* Boostrap:         https://getbootstrap.com/
-* Angular CLI:      https://github.com/angular/angular-cli
-* XAMPP :       https://www.apachefriends.org/download.html 
-* Maven Repository: https://mvnrepository.com/ 
-* PostMan:        https://www.postman.com/downloads/ 
-* Bootstrap:   https://getbootstrap.com/
-* Angular:     https://angular.io/tutorial/toh-pt0
-* Visual Studio Code:         https://code.visualstudio.com/download
-* Spring Tool Suite 4 : https://spring.io/tools 
-* Git:         https://git-scm.com/docs
-
 
 
 
