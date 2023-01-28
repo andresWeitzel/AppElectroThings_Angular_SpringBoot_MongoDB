@@ -21,9 +21,12 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
  - [1.0) Descripción del Proyecto.](#10-descripción-)
  - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
  - [1.2) Tecnologías.](#12-tecnologías-)
- - [1.3) Plugins.](#13-plugins-)
- - [1.4) Extensiones VSC.](#14-extensiones-vsc-)
 
+### Sección 2) Endpoints y Recursos 
+ 
+ - [2.0) EndPoints.](#endpoints-)
+ - [2.1) Recursos y Servicios.](#recursos-y-servicios-)  
+  
 <br>
 
 </details>
@@ -68,6 +71,8 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 
 <details>
   <summary>Ver</summary>
+  
+ <br>  
   
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppElectroThings_Angular_SpringBoot_MongoDB`)
@@ -125,6 +130,27 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 | [MongoDB Compass](https://www.mongodb.com/products/compass)	| 1.31.2 |	Gestor para MongoDB |
 
 
+<br>
+
+</details>
+
+
+<br>
+
+
+## Sección 2) EndPoints y Recursos
+
+### 2.0) EndPoints [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+  
+  <span style="color:red">some **This is Red Bold.** text</span>
+ 
+* http://localhost:8098/v1/productos
+* http://localhost:8098/v1/componentes-detalles
+* http://localhost:8098/v1/componentes-transistores-bipolares
+* http://localhost:8098/v1/componentes-capacitores-electroliticos
 
 <br>
 
@@ -132,12 +158,30 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 
 
 
+### 2.1) Recursos y Servicios [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+
+### Inicio Componentes
+
+![Index app](./doc/inicio/inicioComponentes.png)
+
+### Gráficos de Área y Barra para Stock de Componentes por Categoría y Fabricante
+
+![Index app](./doc/graficos/graficoStockComponentesPorCategoria.png)
+![Index app](./doc/graficos/graficoStockComponentesPorFabricante.png)
+
+### Reportes en Excel y PDF para el Listado de Componentes Paginados según N° de Página
 
 
 
 
 
 
+<br>
+
+</details>
 
 
 
