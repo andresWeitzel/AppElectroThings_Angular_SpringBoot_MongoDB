@@ -145,7 +145,7 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 <details>
  <summary>Ver</summary>
    
-* $${\color{blue}Post \space \color{white}http://localhost:8098/v1/productos/}$$ 
+ $${\color{blue}Post \space \color{white}http://localhost:8098/v1/productos/}$$ 
   
   $${\color{red}Welcome \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
 
