@@ -155,14 +155,18 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 * http://localhost:8098/api/v1/productos/{id} (Eliminar)
 * http://localhost:8098/api/v1/productos/listado (Listado Paginado)
 * http://localhost:8098/api/v1/productos/last-producto (Último Producto)
-* COMPLETAR
-  
+* http://localhost:8098/api/v1/productos/listado-filter/{filtro} (Listado paginado con filtro)
+* http://localhost:8098/api/v1/productos/codigo/{codigo} (Listado paginado según su código)
+* http://localhost:8098/api/v1/productos/nombre/{nombre} (Listado paginado según su nombre)
+* http://localhost:8098/api/v1/productos/descripcion/{descripcion} (Listado paginado según su descripción)
+* http://localhost:8098/api/v1/productos/categoria/{categoria} (Listado paginado según su categoria)
+* Revisar Swagger para visualizar el resto de los endpoints 
+
 #### Administración de Usuarios  
 * http://localhost:8098/api/v1/admin/usuarios/ (Agregar)
 * http://localhost:8098/api/v1/admin/usuarios/{id} (Editar)
 * http://localhost:8098/api/v1/admin/usuarios/{id} (Eliminar)
 * http://localhost:8098/api/v1/admin/usuarios/listado (Listado)
-  
 
 
 <br>
