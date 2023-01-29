@@ -180,11 +180,11 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 <details>
  <summary>Ver</summary>
   
-#### Login 
+### Login 
 
 ![Index app](./doc/auth/login.png)
 
-#### Signin
+### Signin
 
 ![Index app](./doc/auth/signin.png)
 
@@ -197,28 +197,28 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 
 ### Listado de Productos Electrónicos Tabla
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/listado/listado01.png)
+![Index app](./doc/listado/listado01.png)
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/listado/listado02.png)
+![Index app](./doc/listado/listado02.png)
 
 ### Listado de Productos Electrónicos Cards
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/listado/listadoCards.png)
+![Index app](./doc/listado/listadoCards.png)
 
 
 ### Gráficos de Barra para Stock de Productos por Categoría.
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/graficas/productosCateg.png)
+![Index app](./doc/graficas/productosCateg.png)
 
 
 ### Novedades de Productos
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/novedades/novedades.png)
+![Index app](./doc/novedades/novedades.png)
 
 
 ### Acerca de Productos
 
-![Index app](https://gitlab.com/andres-weitzel/AppTiendaElectronica_Angular_Bootstrap_SpringBoot_MongoDB/-/raw/master/documentation/acercaProductos/acercaDe.png)
+![Index app](./doc/acercaProductos/acercaDe.png)
 
 
 </br>
