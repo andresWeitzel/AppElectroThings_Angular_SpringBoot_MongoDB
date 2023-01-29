@@ -22,10 +22,19 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
  - [1.1) Ejecución del Proyecto.](#11-ejecución-del-proyecto-)
  - [1.2) Tecnologías.](#12-tecnologías-)
 
+  
 ### Sección 2) Endpoints y Recursos 
  
  - [2.0) EndPoints.](#endpoints-)
- - [2.1) Recursos y Servicios.](#recursos-y-servicios-)  
+ - [2.1) Recursos y Servicios.](#recursos-y-servicios-)
+  
+  
+### Sección 3) Prueba de Funcionalidad y Referencias
+ 
+ - [3.0) Prueba de Funcionalidad.](#30-prueba-de-funcionalidad-)
+ - [3.1) Referencias.](#31-referencias-)
+	  
+  
   
 <br>
 
@@ -231,24 +240,32 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 </details>
 
 
-
-
-
-
-
-
-
-
-
 <br>
 
-<br>
 
-### `Siguiente sección en proceso de actualización` 
+## Sección 3) Prueba de Funcionalidad y Referencias
+
+
+### 3.0) Prueba de Funcionalidad [🔝](#índice-)
 
 <details>
  <summary>Ver</summary>
-  
+
+### Comprobación login de usuarios
+[![Alt text](./doc/youtube/login.png)](https://www.youtube.com/watch?v=dqFHov36c0M&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=1) 
+
+
+
+ <br>
+
+</details>
+
+
+### 3.1) Referencias [🔝](#índice-)
+
+<details>
+ <summary>Ver</summary>
+
 
 ### Documentación No Oficial Recomendada
 
@@ -312,6 +329,32 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
     * Instalación Secure Local Storage : https://www.npmjs.com/package/secure-web-storage?activeTab=readme
     * Instalacion CryptoJs : https://www.npmjs.com/package/crypto-js
 
+ <br>
+
+</details>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+<br>
+
+### `Siguiente sección en proceso de actualización` 
+
+<details>
+ <summary>Ver</summary>
+  
+
 </br>
 
 <hr>
@@ -321,11 +364,6 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 
 </br>
 
-# Documentación de Desarrollo Sin Revisión y Actualización Momentáneamente
-
-</br>
-
-<hr>
 
 ## Indice
 
