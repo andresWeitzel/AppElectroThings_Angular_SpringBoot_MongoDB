@@ -268,7 +268,7 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 
 <br>  
   
-### `Se ressume documentación gráfica. Visualizar Playlist del proyecto para más funcionalidades`  
+### `Se resume documentación gráfica. Visualizar Playlist del proyecto para más funcionalidades`  
 
  <br>
 
