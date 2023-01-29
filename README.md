@@ -254,7 +254,19 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 ### Comprobación login de usuarios [(Ver)](https://www.youtube.com/watch?v=dqFHov36c0M&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=1)
 [![Alt text](./doc/youtube/login.png)](https://www.youtube.com/watch?v=dqFHov36c0M&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=1) 
 
+### Comprobación signin de usuarios [(Ver)](https://www.youtube.com/watch?v=FpU96PbdFC0&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=2)
+[![Alt text](./doc/youtube/signin.png)](https://www.youtube.com/watch?v=FpU96PbdFC0&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=2) 
 
+### Comprobación token y refresh token [(Ver)](https://www.youtube.com/watch?v=CZdsom5hdfg&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=3)
+[![Alt text](./doc/youtube/signin.png)](https://www.youtube.com/watch?v=CZdsom5hdfg&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=3) 
+    
+### Comprobación listado de productos [(Ver)](https://www.youtube.com/watch?v=fScBOXLMPzg&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=4)
+[![Alt text](./doc/youtube/signin.png)](https://www.youtube.com/watch?v=fScBOXLMPzg&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=4) 
+    
+### Comprobación búsqueda de productos con filtro [(Ver)](https://www.youtube.com/watch?v=P26hk1GgsqU&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=5)
+[![Alt text](./doc/youtube/signin.png)](https://www.youtube.com/watch?v=P26hk1GgsqU&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=5) 
+
+### `Se ressume documentación gráfica. Visualizar Playlist del proyecto para más funcionalidades`  
 
  <br>
 
