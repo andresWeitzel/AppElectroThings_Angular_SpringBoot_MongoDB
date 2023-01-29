@@ -251,7 +251,7 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
 <details>
  <summary>Ver</summary>
 
-### Comprobación login de usuarios [Ver](https://www.youtube.com/watch?v=dqFHov36c0M&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=1)
+### Comprobación login de usuarios [(Ver)](https://www.youtube.com/watch?v=dqFHov36c0M&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=1)
 [![Alt text](./doc/youtube/login.png)](https://www.youtube.com/watch?v=dqFHov36c0M&list=PLCl11UFjHurAg4I2Sv8Q7rpkNUTk5fQQy&index=1) 
 
 
