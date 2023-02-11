@@ -85,8 +85,14 @@ Aplicación ElectroThings para la Gestión de Productos Electrónicos implementa
   
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/AppElectroThings_Angular_SpringBoot_MongoDB`)
+* Posicionarnos sobre el proyecto
+  * `cd proyecto`
 * Dentro del directorio instalar todos los plugins implementados
   * `npm i`
+* Ejecutar la base de datos
+* Ejecutar la api rest
+* Ejecutar el proyecto
+  * `ng serve`
 
 <br>
 
