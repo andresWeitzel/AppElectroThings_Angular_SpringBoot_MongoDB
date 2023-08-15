@@ -8,17 +8,12 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 import { TokenService } from 'src/app/services/token/token.service';
 
-
-
-
-
 //Excel
 import * as XLSX from 'xlsx';
 
 //PDFs
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-
 
 @Component({
   selector: 'app-listado-componentes',
@@ -32,26 +27,21 @@ export class ListadoComponentesComponent implements OnInit {
     },
   };
 
-
-
-
   //PRODUCTOS LISTADO
   productos: ProductoDTO[] = [];
 
   //Ultimo Producto
-  lastProducto : ProductoDTO[]=[];
+  lastProducto: ProductoDTO[] = [];
 
   //Select Producto
-  precioProducto:number=0;
+  precioProducto: number = 0;
 
   //DOLAR
-  dolarCompra:number=0;
-  dolarVenta:number=0;
-
+  dolarCompra: number = 0;
+  dolarVenta: number = 0;
 
   //Conversion
-  converDolarPeso:number=0;
-
+  converDolarPeso: number = 0;
 
   //PRODUCTO SELECCIONADO
   productoSelect: ProductoDTO[] = [];
@@ -62,7 +52,6 @@ export class ListadoComponentesComponent implements OnInit {
   //FILTRO BUSQUEDA PRODUCTOS
   filtroProdBusqueda: string = '';
   filtroProdCampo: string = '';
-
 
   //SEGURIDAD
   isAdmin = false;
@@ -82,7 +71,6 @@ export class ListadoComponentesComponent implements OnInit {
   nroCurrentElements = 0;
   nroTotalElements = 0;
 
-
   //Caracteristicas
   orderBy = 'id';
   direction = 'asc';
@@ -93,7 +81,7 @@ export class ListadoComponentesComponent implements OnInit {
   constructor(
     private router: Router,
     private productoService: ProductosService,
-    private dolarService :DolarService,
+    private dolarService: DolarService,
     private tokenService: TokenService,
     private toast: NgToastService,
     private ngxService: NgxUiLoaderService
@@ -126,7 +114,6 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
-
           this.errMsj = err.error.message;
 
           //TOAST ERROR
@@ -150,15 +137,19 @@ export class ListadoComponentesComponent implements OnInit {
   //----------ULTIMO PRODUCTO ---------------
   listarLastProducto() {
     this.productoService
-      .listado(((this.totalPages)), ((this.nroTotalElements)-(this.nroTotalElements -1)), this.orderBy, this.direction)
+      .listado(
+        this.totalPages,
+        this.nroTotalElements - (this.nroTotalElements - 1),
+        this.orderBy,
+        this.direction
+      )
       .subscribe(
         (data: any) => {
           this.lastProducto = data.content;
-          console.log('Ultimo Producto',this.lastProducto);
+          console.log('Ultimo Producto', this.lastProducto);
           console.log(this.totalPages);
         },
         (err) => {
-
           this.errMsj = err.error.message;
 
           //TOAST ERROR
@@ -222,11 +213,7 @@ export class ListadoComponentesComponent implements OnInit {
       );
   }
 
-
-
-  setFilter(filtro: string, campo: string, nroPag:number) {
-
-
+  setFilter(filtro: string, campo: string, nroPag: number) {
     this.filtroProdCampo = '';
     this.filtroProdBusqueda = '';
 
@@ -234,7 +221,6 @@ export class ListadoComponentesComponent implements OnInit {
       this.listarProductos();
       this.listarLastProducto();
     } else {
-
       this.filtroProdCampo = campo;
       this.filtroProdBusqueda = filtro;
       this.nroPage = nroPag;
@@ -244,25 +230,21 @@ export class ListadoComponentesComponent implements OnInit {
     }
   }
 
-
   //----------GET DOLAR COMPRA------------
   getDolarCompra() {
     this.dolarService
       .getDolarCompra()
-      .then(obj => this.dolarCompra = obj.replace(/,/g, '.'));
-
+      .then((obj) => (this.dolarCompra = obj.replace(/,/g, '.')));
   }
   //----------GET DOLAR VENTA------------
   getDolarVenta() {
     this.dolarService
       .getDolarVenta()
-      .then(obj => this.dolarVenta = obj.replace(/,/g, '.'));
-
+      .then((obj) => (this.dolarVenta = obj.replace(/,/g, '.')));
   }
 
   //----------DETALLES PRODUCTOS ---------------
   detalleProducto(producto: any): void {
-
     this.spinLoader(100);
 
     this.navigationExtras.state['value'] = producto;
@@ -271,19 +253,16 @@ export class ListadoComponentesComponent implements OnInit {
 
   //----------EDITAR PRODUCTOS ---------------
   editarProducto(producto: any): void {
-
     this.spinLoader(100);
 
     this.navigationExtras.state['value'] = producto;
     this.router.navigate(['editar-componentes'], this.navigationExtras);
   }
 
-   //----------SELECCIONAR PRODUCTO ---------------
-   selectPrecioProducto(producto: number): void {
-
-   this.precioProducto = producto;
+  //----------SELECCIONAR PRODUCTO ---------------
+  selectPrecioProducto(producto: number): void {
+    this.precioProducto = producto;
   }
-
 
   //----------CHECK ELIMINAR PRODUCTO----------
   checkEliminarProducto() {
@@ -292,12 +271,10 @@ export class ListadoComponentesComponent implements OnInit {
 
   //----------ELIMINAR PRODUCTOS ---------------
   eliminarProducto(id: string): void {
-
     this.spinLoader(100);
 
     this.productoService.delete(id).subscribe(
       (data: any) => {
-
         this.toast.success({
           detail: 'Operación Exitosa',
           summary: 'Se ha Eliminado el Producto!!',
@@ -327,7 +304,6 @@ export class ListadoComponentesComponent implements OnInit {
 
   //----------ELIMINAR PRODUCTOS ---------------
   eliminarProductoNoAuth(id: number): void {
-
     this.spinLoader(100);
 
     this.toast.error({
@@ -339,14 +315,6 @@ export class ListadoComponentesComponent implements OnInit {
     this.refresh(2100);
   }
 
-
-
-
-
-
-
-
-
   //=============== UTILS ===============
 
   //---------------- RECARGAR -------------------
@@ -357,7 +325,7 @@ export class ListadoComponentesComponent implements OnInit {
   }
 
   //---------- RUEDA DE CARGA ------------
-   spinLoader(ms: number) {
+  spinLoader(ms: number) {
     //SPIN LOADING
     this.ngxService.start();
     setTimeout(() => {
@@ -382,16 +350,14 @@ export class ListadoComponentesComponent implements OnInit {
   }
 
   //------------TYPE LIST ---------------
-  setTypeListTable(set:boolean){
+  setTypeListTable(set: boolean) {
     this.typeListTable = set;
   }
 
+  //============= GENERATE EXCEL ====================
+  nameExcell = 'listaComponentes.xlsx';
 
-//============= GENERATE EXCEL ====================
-nameExcell = 'listaComponentes.xlsx';
-
-generateExcel(): void {
-
+  generateExcel(): void {
     //TOAST SUCCESS
     setTimeout(() => {
       this.toast.success({
@@ -402,99 +368,89 @@ generateExcel(): void {
     }, 600);
     //FIN TOAST SUCCESS
 
+    let element = document.getElementById('table');
 
-  let element = document.getElementById('table');
-
-  const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-
-  //eliminamos columnas
-  delete(worksheet['F1']);
-
-  delete(worksheet['G1']);
-  delete(worksheet['K1']);
-
-  //ej reemplazamos por vacio
-    /*
-   //Reemplazamos el campo imagen por vacio
-   XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "F1" });
-  */
-
-
-  const book: XLSX.WorkBook = XLSX.utils.book_new();
-
-
-  XLSX.utils.book_append_sheet(book, worksheet);
-
-
-
-  //Agregamos paginado
-  XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: "L1" });
-
-  XLSX.utils.sheet_add_aoa(worksheet, [[this.nroPage+'/'+this.totalPages]], { origin: "L2" });
-
-  XLSX.utils.sheet_add_aoa(worksheet, [['NRO ELEMENTOS']], { origin: "M1" });
-
-  XLSX.utils.sheet_add_aoa(worksheet, [[this.nroCurrentElements+'/'+this.nroTotalElements]], { origin: "M2" });
-
-
-  XLSX.writeFile(book, this.nameExcell);
-}
-
- //============= GENERATE CSV ====================
- nameCsv = 'listaComponentes.csv';
-
- generateCsv(): void {
-
-
-      //TOAST SUCCESS
-      setTimeout(() => {
-        this.toast.success({
-          detail: 'SUCCESS',
-          summary: 'Descargando Archivo .csv!!',
-          duration: 2000,
-        });
-      }, 600);
-      //FIN TOAST SUCCESS
-
-   let element = document.getElementById('table');
-
-   const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
     //eliminamos columnas
-  delete(worksheet['F1']);
+    delete worksheet['F1'];
 
+    delete worksheet['G1'];
+    delete worksheet['K1'];
 
-  delete(worksheet['G1']);
-  delete(worksheet['K1']);
-
-  //ej reemplazamos por vacio
+    //ej reemplazamos por vacio
     /*
    //Reemplazamos el campo imagen por vacio
    XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "F1" });
   */
 
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
 
-   const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet);
 
+    //Agregamos paginado
+    XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: 'L1' });
 
-   XLSX.utils.book_append_sheet(book, worksheet);
+    XLSX.utils.sheet_add_aoa(
+      worksheet,
+      [[this.nroPage + '/' + this.totalPages]],
+      { origin: 'L2' }
+    );
 
+    XLSX.utils.sheet_add_aoa(worksheet, [['NRO ELEMENTOS']], { origin: 'M1' });
 
-   XLSX.utils.sheet_to_csv;
+    XLSX.utils.sheet_add_aoa(
+      worksheet,
+      [[this.nroCurrentElements + '/' + this.nroTotalElements]],
+      { origin: 'M2' }
+    );
 
+    XLSX.writeFile(book, this.nameExcell);
+  }
 
-   XLSX.writeFile(book, this.nameCsv);
- }
+  //============= GENERATE CSV ====================
+  nameCsv = 'listaComponentes.csv';
 
+  generateCsv(): void {
+    //TOAST SUCCESS
+    setTimeout(() => {
+      this.toast.success({
+        detail: 'SUCCESS',
+        summary: 'Descargando Archivo .csv!!',
+        duration: 2000,
+      });
+    }, 600);
+    //FIN TOAST SUCCESS
 
+    let element = document.getElementById('table');
 
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
- //============= GENERATE PDF ====================
- namePdf = 'listaComponentes.pdf';
+    //eliminamos columnas
+    delete worksheet['F1'];
 
- generatePdf(): void {
+    delete worksheet['G1'];
+    delete worksheet['K1'];
 
+    //ej reemplazamos por vacio
+    /*
+   //Reemplazamos el campo imagen por vacio
+   XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "F1" });
+  */
 
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(book, worksheet);
+
+    XLSX.utils.sheet_to_csv;
+
+    XLSX.writeFile(book, this.nameCsv);
+  }
+
+  //============= GENERATE PDF ====================
+  namePdf = 'listaComponentes.pdf';
+
+  generatePdf(): void {
     //TOAST SUCCESS
     setTimeout(() => {
       this.toast.success({
@@ -505,31 +461,24 @@ generateExcel(): void {
     }, 600);
     //FIN TOAST SUCCESS
 
+    //Admitimos img
+    const options = { logging: true, letterRendering: true, useCORS: true };
 
+    let DATA: any = document.getElementById('table');
 
-  //Admitimos img
-  const options = { logging: true, letterRendering: true, useCORS: true };
+    html2canvas(DATA, options).then((canvas) => {
+      let fileWidth = 208;
 
-  let DATA: any = document.getElementById('table');
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      const FILEURI = canvas.toDataURL('image/png');
+      let PDF = new jsPDF('p', 'mm', 'a4');
 
+      let position = 0;
 
-
-  html2canvas(DATA, options).then((canvas) => {
-    let fileWidth = 208;
-
-    let fileHeight = (canvas.height * fileWidth) / canvas.width;
-    const FILEURI = canvas.toDataURL('image/png');
-    let PDF = new jsPDF('p', 'mm', 'a4');
-
-    let position = 0;
-
-
-
-    PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
-    PDF.save(this.namePdf);
-  });
-
-}
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+      PDF.save(this.namePdf);
+    });
+  }
 
   //=========== METODOS PAGINACION ==============
 
@@ -547,52 +496,47 @@ generateExcel(): void {
 
   //Pagina Anterior
   paginaAnterior(): void {
-
-      if (this.nroPage != 0 && this.nroPage > 0) {
-        this.nroPage--;
-        this.listarProductos();
-      } else {
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: 'ERROR',
-            summary: 'No es Posible Disminuir una Página!!',
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
-      }
-
+    if (this.nroPage != 0 && this.nroPage > 0) {
+      this.nroPage--;
+      this.listarProductos();
+    } else {
+      //TOAST ERROR
+      setTimeout(() => {
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'No es Posible Disminuir una Página!!',
+          duration: 2000,
+        });
+      }, 600);
+      //FIN TOAST ERROR
+    }
   }
 
   //Pagina Anterior
   paginaSiguiente(): void {
-
-      if (!this.isLastPage && this.nroPage >= 0) {
-        this.nroPage++;
-        this.listarProductos();
-      } else {
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: 'ERROR',
-            summary: 'No es Posible Aumentar una Página!!',
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
-      }
-
+    if (!this.isLastPage && this.nroPage >= 0) {
+      this.nroPage++;
+      this.listarProductos();
+    } else {
+      //TOAST ERROR
+      setTimeout(() => {
+        this.toast.error({
+          detail: 'ERROR',
+          summary: 'No es Posible Aumentar una Página!!',
+          duration: 2000,
+        });
+      }, 600);
+      //FIN TOAST ERROR
+    }
   }
 
   cambiarPagina(pagina: number): void {
-
     this.nroPage = pagina;
 
     if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
-     this.listarProductosFilter();
+      this.listarProductosFilter();
     }
   }
 
