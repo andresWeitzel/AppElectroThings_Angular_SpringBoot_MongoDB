@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageEncryptedService } from './storage-enccrypted/storage-encrypted.service';
+import { StorageEncryptedService } from './storage-encrypted/storage-encrypted.service';
 
 
 //Variables que se almacenan en el cliente
