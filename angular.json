@@ -26,6 +26,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "raf",
+              "rgbcolor",
+              "core-js",
+              "secure-web-storage",
+              "crypto-js",
+              "html2canvas",
+              "highcharts"
+           ],
             "outputPath": "dist/crudAngularFirebaseBootstrap",
             "index": "src/index.html",
             "main": "src/main.ts",
