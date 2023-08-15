@@ -7,8 +7,19 @@
         <strong>
           LISTADO DE PRODUCTOS
           <!-- BTN MODAL INFO  -->
-          <button class="btn bg-none p-1 ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <img src="./assets/images/help02.png" alt="" width="30" height="30" class="" />
+          <button
+            class="btn bg-none p-1 ms-2"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <img
+              src="{{ imgInfo }}"
+              loading="lazy"
+              alt=""
+              width="30"
+              height="30"
+              class=""
+            />
           </button>
           <!-- FIN BTN MODAL INFO  -->
         </strong>
@@ -24,10 +35,16 @@
         <div class="ms-5">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Notebook',
-            'categoria', 0)"
+            (click)="setFilter('Notebook', 'categoria', 0)"
           >
-            <img src="./assets/icons-products/notebook.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgNotebook }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Notebooks</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -40,10 +57,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Monitores',
-            'categoria', 0)"
+            (click)="setFilter('Monitores', 'categoria', 0)"
           >
-            <img src="./assets/icons-products/monitor.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgMonitor }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Monitores</div>
               <span class="badge badge-primary badge-pill mt-1">+1 marca</span>
@@ -56,10 +79,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Smart TV',
-            'categoria', 0)"
+            (click)="setFilter('Smart TV', 'categoria', 0)"
           >
-            <img src="./assets/icons-products/smartTv.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgSmartTv }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Smart TV</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -72,10 +101,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Celulares',
-            'categoria', 0)"
+            (click)="setFilter('Celulares', 'categoria', 0)"
           >
-            <img src="./assets/icons-products/celular.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgCelular }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Celulares</div>
               <span class="badge badge-primary badge-pill mt-1">+3 marcas</span>
@@ -88,10 +123,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Tablet',
-            'categoria', 0)"
+            (click)="setFilter('Tablet', 'categoria', 0)"
           >
-            <img src="./assets/icons-products/tablets.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgTablet }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Tablets</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -104,10 +145,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('teclado',
-            'descripcion', 0)"
+            (click)="setFilter('teclado', 'descripcion', 0)"
           >
-            <img src="./assets/icons-products/teclado.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgTeclado }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Teclados</div>
               <span class="badge badge-primary badge-pill mt-1">+3 marcas</span>
@@ -120,10 +167,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('micrófono',
-            'descripcion', 0)"
+            (click)="setFilter('micrófono', 'descripcion', 0)"
           >
-            <img src="./assets/icons-products/mic.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgMic }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Micrófonos</div>
               <span class="badge badge-primary badge-pill mt-1">+1 marca</span>
@@ -136,10 +189,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Auricular',
-            'nombre', 0)"
+            (click)="setFilter('Auricular', 'nombre', 0)"
           >
-            <img src="./assets/icons-products/auricular.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgAuricular }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Auriculares</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -156,10 +215,16 @@
         <div class="ms-5">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Disco', 'nombre',
-            0)"
+            (click)="setFilter('Disco', 'nombre', 0)"
           >
-            <img src="./assets/icons-products/hard-drive.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgHardDrive }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Discos Rígid.</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -172,10 +237,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('usb', 'nombre',
-            0)"
+            (click)="setFilter('usb', 'nombre', 0)"
           >
-            <img src="./assets/icons-products/cable.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgCable }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Usb</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -188,10 +259,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Adaptador',
-            'nombre', 0)"
+            (click)="setFilter('Adaptador', 'nombre', 0)"
           >
-            <img src="./assets/icons-products/adaptador.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgAdaptador }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Adaptad.</div>
               <span class="badge badge-primary badge-pill mt-1">+1 marca</span>
@@ -202,8 +279,18 @@
 
         <!-- Btn Carg.Baterias  -->
         <div class="ms-2">
-          <button class="btn bg-dark p-2 d-flex d-row text-center text-white" (click)="setFilter('Cargador Baterías', 'descripcion', 0)">
-            <img src="./assets/icons-products/cargBaterias.png" alt="" width="50" height="50" class="" />
+          <button
+            class="btn bg-dark p-2 d-flex d-row text-center text-white"
+            (click)="setFilter('Cargador Baterías', 'descripcion', 0)"
+          >
+            <img
+              src="{{ imgCargBaterias }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Carg. Bat.</div>
               <span class="badge badge-primary badge-pill mt-1">+1 marca</span>
@@ -216,10 +303,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Esp8266',
-            'nombre', 0)"
+            (click)="setFilter('Esp8266', 'nombre', 0)"
           >
-            <img src="./assets/icons-products/esp8266.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgEsp8266 }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Esp8266</div>
               <span class="badge badge-primary badge-pill mt-1">+1 marca</span>
@@ -230,8 +323,18 @@
 
         <!-- Btn Arduinos  -->
         <div class="ms-2">
-          <button class="btn bg-dark p-2 d-flex d-row text-center text-white" (click)="setFilter('Arduino', 'marca', 0)">
-            <img src="./assets/icons-products/placas.png" alt="" width="50" height="50" class="" />
+          <button
+            class="btn bg-dark p-2 d-flex d-row text-center text-white"
+            (click)="setFilter('Arduino', 'marca', 0)"
+          >
+            <img
+              src="{{ imgPlacas }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Arduinos</div>
               <span class="badge badge-primary badge-pill mt-1">+1 marca</span>
@@ -244,10 +347,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Switch',
-            'nombre', 0)"
+            (click)="setFilter('Switch', 'nombre', 0)"
           >
-            <img src="./assets/icons-products/switch.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgSwitch }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Switch</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -260,10 +369,16 @@
         <div class="ms-2">
           <button
             class="btn bg-dark p-2 d-flex d-row text-center text-white"
-            (click)="setFilter('Cable UTP',
-            'nombre',0)"
+            (click)="setFilter('Cable UTP', 'nombre', 0)"
           >
-            <img src="./assets/icons-products/cableRedes.png" alt="" width="50" height="50" class="" />
+            <img
+              src="{{ imgCableRedes }}"
+              loading="lazy"
+              alt=""
+              width="50"
+              height="50"
+              class=""
+            />
             <div class="ms-2 me-auto d-column">
               <div class="fw-bold">Cable de Red</div>
               <span class="badge badge-primary badge-pill mt-1">+2 marcas</span>
@@ -279,104 +394,157 @@
     <!-- FILTERS, BUSCADOR AND UTILS -->
     <div class="text-left" id="buscador">
       <div class="d-flex flex-row justify-content-center mt-5">
-
-
-
-
-
         <!--FILTERS-->
-        <div class="text-left d-flex d-row mt-2 mb-2 me-5 p-1 bg-dark" id="filters">
+        <div
+          class="text-left d-flex d-row mt-2 mb-2 me-5 p-1 bg-dark"
+          id="filters"
+        >
           <!-- CATEGORY FILTER-->
           <div class="p-1 ms-0" id="categoryFilter">
-
-            <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalProdCateg">
-              <img src="./assets/icons-crud/filter-categ.svg" alt="" title="Productos por Categoría" width="30" height="30" class="icon-white" />
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProdCateg"
+            >
+              <img
+                src="{{ imgFilterCateg }}"
+                loading="lazy"
+                alt=""
+                title="Productos por Categoría"
+                width="30"
+                height="30"
+                class="icon-white"
+              />
             </button>
-
           </div>
           <!-- FIN CATEGORY FILTER-->
 
-
-
-
           <!-- MARCAS FILTER-->
           <div class="p-1 ms-sm-0">
-
-            <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalProdMarcas">
-              <img src="./assets/icons-crud/filter-marca.svg" alt="" title="Productos por Marca" width="30" height="30" class="icon-white" />
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProdMarcas"
+            >
+              <img
+                src="{{ imgFilterMarca }}"
+                loading="lazy"
+                alt=""
+                title="Productos por Marca"
+                width="30"
+                height="30"
+                class="icon-white"
+              />
             </button>
-
           </div>
           <!-- FIN MARCAS FILTER-->
 
-
-
           <!--DATE FILTER-->
           <div class="p-1 ms-0">
-
-            <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalProdFechas">
-              <img src="./assets/icons-crud/filter-date.svg" alt="" title="Productos por Fechas" width="30" height="30" class="icon-white" />
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProdFechas"
+            >
+              <img
+                src="{{ imgFilterDate }}"
+                loading="lazy"
+                alt=""
+                title="Productos por Fechas"
+                width="30"
+                height="30"
+                class="icon-white"
+              />
             </button>
-
           </div>
           <!--FIN DATE FILTER-->
 
           <!-- STOCK FILTER-->
           <div class="p-1 ms-0">
-
-            <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalProdStock">
-              <img src="./assets/icons-crud/filter-stock.svg" alt="" title="Productos por Stock" width="30" height="30" class="icon-white" />
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProdStock"
+            >
+              <img
+                src="{{ imgFilterStock }}"
+                loading="lazy"
+                alt=""
+                title="Productos por Stock"
+                width="30"
+                height="30"
+                class="icon-white"
+              />
             </button>
           </div>
           <!-- FIN STOCK FILTER-->
 
+          <!-- MONEY FILTER-->
+          <div class="p-1 ms-0">
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProdPrecio"
+            >
+              <img
+                src="{{ imgFilterPrecio }}"
+                loading="lazy"
+                alt=""
+                title="Productos por Precio"
+                width="30"
+                height="30"
+                class="icon-white"
+              />
+            </button>
+          </div>
+          <!-- FIN MONEY FILTER-->
 
-
-             <!-- MONEY FILTER-->
-             <div class="p-1 ms-0">
-
-              <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalProdPrecio">
-                <img src="./assets/icons-crud/filter-precio.svg" alt="" title="Productos por Precio" width="30" height="30" class="icon-white" />
-              </button>
-            </div>
-            <!-- FIN MONEY FILTER-->
-
-
-                         <!-- INFO FILTER-->
-                         <div class="p-1 ms-0">
-
-                          <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalProdInfo">
-                            <img src="./assets/icons-crud/filter-info.svg" alt="" title="Info de Filtros" width="30" height="30" class="icon-white" />
-                          </button>
-                        </div>
-                        <!-- FIN INFO FILTER-->
-
-
-
+          <!-- INFO FILTER-->
+          <div class="p-1 ms-0">
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalProdInfo"
+            >
+              <img
+                src="{{ imgFilterInfo }}"
+                loading="lazy"
+                alt=""
+                title="Info de Filtros"
+                width="30"
+                height="30"
+                class="icon-white"
+              />
+            </button>
+          </div>
+          <!-- FIN INFO FILTER-->
 
           <div class="mt-2 ms-4 me-2 boder-rounder" id="deleteFilter">
-            <button class="bg-danger border-danger text-white" (click)="setFilter('listado-filter', '',0)">
+            <button
+              class="bg-danger border-danger text-white"
+              (click)="setFilter('listado-filter', '', 0)"
+            >
               <title>Eliminar Filtros</title>
 
-              <img src="./assets/icons-crud/filter-delete.svg" alt="" width="20" title="Eliminar Filtros" height="25" class="icon-white" />
+              <img
+                src="{{ imgFilterDelete }}"
+                loading="lazy"
+                alt=""
+                width="20"
+                title="Eliminar Filtros"
+                height="25"
+                class="icon-white"
+              />
             </button>
           </div>
         </div>
         <!--FIN FILTERS-->
 
-
-
-
-
-
-
-
         <!-- FORM FILTRO -->
         <div class="text-left col-6">
           <div
             class="d-flex flex-row text-center col-10 m-2"
-            (ngSubmit)="setFilter(filtroInput.value,
-                                    campoInput.value,0)"
+            (ngSubmit)="setFilter(filtroInput.value, campoInput.value, 0)"
           >
             <!--SELECT FILTER-->
             <select type="text" name="categoria" #campoInput>
@@ -395,7 +563,15 @@
             </select>
             <!--FIN SELECT FILTER-->
 
-            <input type="text" name="filtro" class="form-control" placeholder="Buscador de Productos" aria-label="valor" id="filtro" #filtroInput />
+            <input
+              type="text"
+              name="filtro"
+              class="form-control"
+              placeholder="Buscador de Productos"
+              aria-label="valor"
+              id="filtro"
+              #filtroInput
+            />
 
             <!--BTN'S -->
             <div class="d-flex d-row">
@@ -404,19 +580,37 @@
                 <button
                   class="btn bg-none p-1 border-dark"
                   type="button"
-                  (click)="setFilter(filtroInput.value,
-                                          campoInput.value,0)"
+                  (click)="setFilter(filtroInput.value, campoInput.value, 0)"
                   required
                   id="btnBusqueda"
                 >
-                  <img src="./assets/images/search.png" alt="" width="45" height="45" class="" />
+                  <img
+                    src="{{ imgSearch }}"
+                    loading="lazy"
+                    alt=""
+                    width="45"
+                    height="45"
+                    class=""
+                  />
                 </button>
               </a>
               <!--FIN BTN BUSQUEDA-->
 
               <!--BTN LIMPIAR-->
-              <button class="btn bg-none p-1 ms-2" (click)="filtroInput.value=''" id="btnLimpiar">
-                <img src="./assets/forms/papelera.png" alt="" width="45" height="45" tittle="Limpiar Buscador" class="" />
+              <button
+                class="btn bg-none p-1 ms-2"
+                (click)="filtroInput.value = ''"
+                id="btnLimpiar"
+              >
+                <img
+                  src="{{ imgPapelera }}"
+                  loading="lazy"
+                  alt=""
+                  width="45"
+                  height="45"
+                  tittle="Limpiar Buscador"
+                  class=""
+                />
               </button>
               <!--FIN BTN LIMPIAR-->
             </div>
@@ -425,82 +619,133 @@
         </div>
 
         <!-- BTN'S RIGHT LIST -->
-        <div class=" d-flex d-row justify-content-end ms-1 mt-3 mb-0">
-
-        <!-- BTN ADD -->
+        <div class="d-flex d-row justify-content-end ms-1 mt-3 mb-0">
+          <!-- BTN ADD -->
           <div>
-          <button class="btn btn-success alert-link m-1 p-1" [routerLink]="['/agregar-componentes']" title="Agregar Producto">
-            <img src="./assets/icons-crud/add-product.svg" alt="" width="30" height="30" tittle="Agregar Producto" class="" />
-          </button>
-        </div>
-         <!-- FIN BTN ADD -->
-         <!-- BTN LAST PRODUCT -->
-        <div>
-          <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalLastProduct">
-            <img src="./assets/icons-crud/last-product.png" alt="" width="40" height="40" tittle="Último Producto" class="" />
-          </button>
-        </div>
-        <!-- FIN BTN LAST PRODUCT -->
-        <!-- BTN DIVISAS  -->
-        <div>
-          <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalDivisas">
-            <img src="./assets/icons-crud/divisas.png" alt="" width="45" height="50" tittle="Divisas" class="" />
-          </button>
-        </div>
-        <!-- FIN BTN DIVISAS  -->
+            <button
+              class="btn btn-success alert-link m-1 p-1"
+              [routerLink]="['/agregar-componentes']"
+              title="Agregar Producto"
+            >
+              <img
+                src="{{ imgAddProduct }}"
+                loading="lazy"
+                alt=""
+                width="30"
+                height="30"
+                tittle="Agregar Producto"
+                class=""
+              />
+            </button>
+          </div>
+          <!-- FIN BTN ADD -->
+          <!-- BTN LAST PRODUCT -->
+          <div>
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalLastProduct"
+            >
+              <img
+                src="{{ imgLastProduct }}"
+                loading="lazy"
+                alt=""
+                width="40"
+                height="40"
+                tittle="Último Producto"
+                class=""
+              />
+            </button>
+          </div>
+          <!-- FIN BTN LAST PRODUCT -->
+          <!-- BTN DIVISAS  -->
+          <div>
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalDivisas"
+            >
+              <img
+                src="{{ imgDivisas }}"
+                loading="lazy"
+                alt=""
+                width="45"
+                height="50"
+                tittle="Divisas"
+                class=""
+              />
+            </button>
+          </div>
+          <!-- FIN BTN DIVISAS  -->
 
-        <!-- BTN DOWNLOAD  -->
-        <div>
-          <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalArchivos">
-                <img src="./assets/icons-crud/download.svg" alt="" width="35" height="40" tittle="Descargar Listado" class="" />
-          </button>
-        </div>
-        <!-- FIN BTN DOWNLOAD  -->
-        <!-- BTN CARD PRODUCTOS LIST  -->
-        <div>
-          <button class="btn bg-none text-white p-1 ms-4 " (click)="setTypeListTable(false)">
-                 <img src="./assets/icons-crud/card-table-list.svg" alt="" width="40" height="40" title="Listado Card" class="" />
-          </button>
-        </div>
-        <!-- FIN BTN CARD PRODUCTOS LIST  -->
-        <!-- BTN CARD PRODUCTOS TABLE -->
-        <div>
-          <button class="btn bg-none text-white p-1 ms-1 mt-1" (click)="setTypeListTable(true)">
-            <img src="./assets/icons-crud/table-list.svg" alt="" width="45" height="30" title="Listado Table" class="" />
-          </button>
-        </div>
+          <!-- BTN DOWNLOAD  -->
+          <div>
+            <button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalArchivos"
+            >
+              <img
+                src="{{ imgDownload }}"
+                loading="lazy"
+                alt=""
+                width="35"
+                height="40"
+                tittle="Descargar Listado"
+                class=""
+              />
+            </button>
+          </div>
+          <!-- FIN BTN DOWNLOAD  -->
+          <!-- BTN CARD PRODUCTOS LIST  -->
+          <div>
+            <button
+              class="btn bg-none text-white p-1 ms-4"
+              (click)="setTypeListTable(false)"
+            >
+              <img
+                src="{{ imgCardTableList }}"
+                loading="lazy"
+                alt=""
+                width="40"
+                height="40"
+                title="Listado Card"
+                class=""
+              />
+            </button>
+          </div>
+          <!-- FIN BTN CARD PRODUCTOS LIST  -->
+
+          <!-- BTN CARD PRODUCTOS TABLE -->
+          <div>
+            <button
+              class="btn bg-none text-white p-1 ms-1 mt-1"
+              (click)="setTypeListTable(true)"
+            >
+              <img
+                src="{{ imgTableList }}"
+                loading="lazy"
+                alt=""
+                width="45"
+                height="30"
+                title="Listado Table"
+                class=""
+              />
+            </button>
+          </div>
         </div>
         <!-- FIN BTN CARD PRODUCTOS TABLE -->
-
       </div>
     </div>
     <!-- FIN FILTERS, BUSCADOR AND UTILS-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- TABLA PRODUCTOS -->
     <table
       table-condensed
       class="table table-secondary table-bordered border-dark table-hover m-3"
-      *ngIf="typeListTable ; else cardsTable"  id="table">
+      *ngIf="typeListTable; else cardsTable"
+      id="table"
+    >
       <thead class="table-dark text-center">
         <tr>
           <th scope="row">
@@ -515,28 +760,70 @@
                   data-bs-target="#codDropdown"
                   aria-controls="codDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
-
-                  <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Descargar Listado" class="" />
-
+                  aria-label="Toggle navigation"
+                >
+                  <img
+                    src="{{ imgSelectSort }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Descargar Listado"
+                    class=""
+                  />
                 </button>
 
                 <div class="collapse navbar-collapse" id="codDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="codDropdown">
-                        <h6 class="text-decoration-underline m-2 text-white">Ordenamiento</h6>
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="codDropdown"
+                      >
+                        <h6 class="text-decoration-underline m-2 text-white">
+                          Ordenamiento
+                        </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#codDropdown" aria-controls="codDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('codigo','asc')">
-                                <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#codDropdown"
+                            aria-controls="codDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('codigo', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#codDropdown" aria-controls="codDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('codigo','desc')">
-
-                                <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#codDropdown"
+                            aria-controls="codDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('codigo', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -562,26 +849,68 @@
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Orden Ascendente" class="" />
+                  <img
+                    src="{{ imgSelectSort }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Orden Ascendente"
+                    class=""
+                  />
                 </button>
 
                 <div class="collapse navbar-collapse" id="nombDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="nombDropdown">
-                        <h6 class="text-decoration-underline m-2 text-white">Ordenamiento</h6>
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="nombDropdown"
+                      >
+                        <h6 class="text-decoration-underline m-2 text-white">
+                          Ordenamiento
+                        </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#nombDropdown" aria-controls="nombDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('nombre','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#nombDropdown"
+                            aria-controls="nombDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('nombre', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#nombDropdown" aria-controls="nombDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('nombre','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#nombDropdown"
+                            aria-controls="nombDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('nombre', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -608,24 +937,67 @@
                   aria-label="Toggle
                                                                       navigation"
                 >
-                <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="descrDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="descrDropdown">
-                        <h6 class="text-decoration-underline m-2 text-white">Ordenamiento</h6>
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="descrDropdown"
+                      >
+                        <h6 class="text-decoration-underline m-2 text-white">
+                          Ordenamiento
+                        </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#descrDropdown" aria-controls="descrDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('descripcion','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#descrDropdown"
+                            aria-controls="descrDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('descripcion', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#descrDropdown" aria-controls="descrDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('descripcion','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#descrDropdown"
+                            aria-controls="descrDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('descripcion', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -652,25 +1024,67 @@
                   aria-label="Toggle
                                                                               navigation"
                 >
-                <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="categDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="categDropdown">
-                        <h6 class="text-decoration-underline m-2 text-white">Ordenamiento</h6>
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="categDropdown"
+                      >
+                        <h6 class="text-decoration-underline m-2 text-white">
+                          Ordenamiento
+                        </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#categDropdown" aria-controls="categDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('categoria','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#categDropdown"
+                            aria-controls="categDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('categoria', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#categDropdown" aria-controls="categDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('categoria','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#categDropdown"
+                            aria-controls="categDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('categoria', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -697,28 +1111,67 @@
                   aria-label="Toggle
                                                                                       navigation"
                 >
-                <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="marcaDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="marcaDropdown">
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="marcaDropdown"
+                      >
                         <h6 class="text-decoration-underline m-2 text-white">
                           Ordenamiento
                         </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#marcaDropdown" aria-controls="marcaDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('marca','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#marcaDropdown"
+                            aria-controls="marcaDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('marca', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#marcaDropdown" aria-controls="marcaDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('marca','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#marcaDropdown"
+                            aria-controls="marcaDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('marca', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -742,30 +1195,69 @@
                   data-bs-target="#imagenDropdown"
                   aria-controls="imagenDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
-
-                  <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
-
+                  aria-label="Toggle navigation"
+                >
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="imagenDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="imagenDropdown">
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="imagenDropdown"
+                      >
                         <h6 class="text-decoration-underline m-2 text-white">
                           Ordenamiento
                         </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#imagenDropdown" aria-controls="imagenDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('imagen','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#imagenDropdown"
+                            aria-controls="imagenDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('imagen', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#imagenDropdown" aria-controls="imagenDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('imagen','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#imagenDropdown"
+                            aria-controls="imagenDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('imagen', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -789,31 +1281,69 @@
                   data-bs-target="#datSheDropdown"
                   aria-controls="datSheDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
-
-                  <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
-
+                  aria-label="Toggle navigation"
+                >
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="datSheDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="datSheDropdown">
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="datSheDropdown"
+                      >
                         <h6 class="text-decoration-underline m-2 text-white">
                           Ordenamiento
                         </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#datSheDropdown" aria-controls="datSheDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('hojaDatos','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#datSheDropdown"
+                            aria-controls="datSheDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('hojaDatos', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#datSheDropdown" aria-controls="datSheDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('hojaDatos','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#datSheDropdown"
+                            aria-controls="datSheDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('hojaDatos', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -837,32 +1367,69 @@
                   data-bs-target="#stockDropdown"
                   aria-controls="stockDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
-
-
-                  <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
-
+                  aria-label="Toggle navigation"
+                >
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="stockDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="stockDropdown">
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="stockDropdown"
+                      >
                         <h6 class="text-decoration-underline m-2 text-white">
                           Ordenamiento
                         </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#stockDropdown" aria-controls="stockDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('stock','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#stockDropdown"
+                            aria-controls="stockDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('stock', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#stockDropdown" aria-controls="stockDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('stock','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#stockDropdown"
+                            aria-controls="stockDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('stock', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -886,33 +1453,69 @@
                   data-bs-target="#precioDropdown"
                   aria-controls="precioDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
-
-
-                         <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
-
-
+                  aria-label="Toggle navigation"
+                >
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="precioDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="precioDropdown">
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="precioDropdown"
+                      >
                         <h6 class="text-decoration-underline m-2 text-white">
                           Ordenamiento
                         </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#precioDropdown" aria-controls="precioDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('precio','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#precioDropdown"
+                            aria-controls="precioDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('precio', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#precioDropdown" aria-controls="precioDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('precio','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#precioDropdown"
+                            aria-controls="precioDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('precio', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -936,30 +1539,69 @@
                   data-bs-target="#fechaDropdown"
                   aria-controls="fechaDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
-
-                  <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
-
+                  aria-label="Toggle navigation"
+                >
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="fechaDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="fechaDropdown">
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="fechaDropdown"
+                      >
                         <h6 class="text-decoration-underline m-2 text-white">
                           Ordenamiento
                         </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#fechaDropdown" aria-controls="fechaDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('fecha','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#fechaDropdown"
+                            aria-controls="fechaDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('fecha', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#fechaDropdown" aria-controls="fechaDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('fecha','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#fechaDropdown"
+                            aria-controls="fechaDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('fecha', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -979,31 +1621,69 @@
                   data-bs-target="#horaDropdown"
                   aria-controls="horaDropdown"
                   aria-expanded="false"
-                  aria-label="Toggle navigation">
-
-                  <img src="./assets/icons-crud/select-sort.svg" alt="" width="20" height="20" tittle="Ordenamiento" class="" />
-
+                  aria-label="Toggle navigation"
+                >
+                  <img
+                    src="{{ imgOrderDesc }}"
+                    loading="lazy"
+                    alt=""
+                    width="20"
+                    height="20"
+                    tittle="Ordenamiento"
+                    class=""
+                  />
                 </button>
                 <div class="collapse navbar-collapse" id="horaDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                      <ul class="dropdown-menu dropdown-menu-dark justify-content-center text-center" aria-labelledby="horaDropdown">
+                      <ul
+                        class="dropdown-menu dropdown-menu-dark justify-content-center text-center"
+                        aria-labelledby="horaDropdown"
+                      >
                         <h6 class="text-decoration-underline m-2 text-white">
                           Ordenamiento
                         </h6>
                         <div class="d-flex d-row justify-content-center">
-                          <li data-bs-toggle="collapse" data-bs-target="#horaDropdown" aria-controls="horaDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('hora','asc')">
-
-                              <img src="./assets/icons-crud/order-asc.svg" alt="" width="25" height="25" title="Orden Ascendente" class="" />
-
-
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#horaDropdown"
+                            aria-controls="horaDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('hora', 'asc')"
+                            >
+                              <img
+                                src="{{ imgOrderAsc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Ascendente"
+                                class=""
+                              />
                             </a>
                           </li>
-                          <li data-bs-toggle="collapse" data-bs-target="#horaDropdown" aria-controls="horaDropdown" aria-expanded="false">
-                            <a class="dropdown-item p-1" (click)="orderByDirection('hora','desc')">
-
-                              <img src="./assets/icons-crud/order-desc.svg" alt="" width="25" height="25" title="Orden Descendente" class="" />
+                          <li
+                            data-bs-toggle="collapse"
+                            data-bs-target="#horaDropdown"
+                            aria-controls="horaDropdown"
+                            aria-expanded="false"
+                          >
+                            <a
+                              class="dropdown-item p-1"
+                              (click)="orderByDirection('hora', 'desc')"
+                            >
+                              <img
+                                src="{{ imgOrderDesc }}"
+                                loading="lazy"
+                                alt=""
+                                width="25"
+                                height="25"
+                                title="Orden Descendente"
+                                class=""
+                              />
                             </a>
                           </li>
                         </div>
@@ -1022,57 +1702,107 @@
       </thead>
       <!-- REGISTROS FILTRO -->
       <tbody class="table-dark bg-dark text-center">
-        <!--Replicamos 4 veces los productos e iconos-->
-        <tr
-          *ngFor="let producto of  productos">
+        <tr *ngFor="let producto of productos">
           <th scope="row" class="text-white text-center">
-            {{producto.codigo | slice : 0:15}}..
+            {{ producto.codigo | slice: 0 : 15 }}..
           </th>
-          <td>{{producto.nombre | slice : 0:20}}..</td>
-          <td>{{producto.descripcion | slice : 0:20}}..</td>
-          <td>{{producto.categoria}}</td>
-          <td>{{producto.marca}}</td>
+          <td>{{ producto.nombre | slice: 0 : 20 }}..</td>
+          <td>{{ producto.descripcion | slice: 0 : 20 }}..</td>
+          <td>{{ producto.categoria }}</td>
+          <td>{{ producto.marca }}</td>
           <td class="bg-white">
-            <img src="{{producto.imagen}}" target="_blank" width="70px" height="70px" />
+            <img
+              src="{{ producto.imagen }}"
+              target="_blank"
+              width="70px"
+              height="70px"
+            />
           </td>
           <td>
-            <a class="d-flex d-row justify-content-center mt-2" href="{{producto.hojaDatos}}" target="_blank"> <img src="assets/images/pdf.png" width="40" height="40" alt="" /></a>
+            <a
+              class="d-flex d-row justify-content-center mt-2"
+              href="{{ producto.hojaDatos }}"
+              target="_blank"
+            >
+              <img src="assets/images/pdf.png" width="40" height="40" alt=""
+            /></a>
           </td>
-          <td>{{producto.stock}} u.</td>
-
-
+          <td>{{ producto.stock }} u.</td>
 
           <td>
-
-
-            ${{producto.precio}}
+            ${{ producto.precio }}
 
             <div>
-              <button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalDivisa" (click)="selectPrecioProducto(producto.precio)">
-                <img src="./assets/icons-crud/help.png" alt="" width="30" height="30" tittle="Ayuda Divisa" class="" />
+              <button
+                class="btn bg-none text-white p-1 ms-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDivisa"
+                (click)="selectPrecioProducto(producto.precio)"
+              >
+
+                <img
+                  src="./assets/icons-crud/help.png"
+                  alt=""
+                  width="30"
+                  height="30"
+                  tittle="Ayuda Divisa"
+                  class=""
+                />
               </button>
             </div>
-
           </td>
-          <td>{{producto.fecha}} / {{producto.hora}}</td>
+          <td>{{ producto.fecha }} / {{ producto.hora }}</td>
           <!--En caso de moviles ocultamos -->
           <td class="btn-group d-none d-sm-block" role="group">
             <div class="d-flex justify-content-center">
-              <button class="btn btn-primary border-dark alert-link m-1 p-1" (click)="detalleProducto(producto)">
+              <button
+                class="btn btn-primary border-dark alert-link m-1 p-1"
+                (click)="detalleProducto(producto)"
+              >
                 <!--Icono Visualizar Producto-->
-                <img src="./assets/icons-crud/details-product.svg" alt="" width="25" height="25" title="Detalles Producto" class="" />
+                <img
+                  src="./assets/icons-crud/details-product.svg"
+                  alt=""
+                  width="25"
+                  height="25"
+                  title="Detalles Producto"
+                  class=""
+                />
                 <!--Fin Icono Visualizar Producto-->
               </button>
-              <button class="btn btn-warning border-dark alert-link m-1 p-1" (click)="editarProducto(producto)">
+              <button
+                class="btn btn-warning border-dark alert-link m-1 p-1"
+                (click)="editarProducto(producto)"
+              >
                 <!--Icono Editar Producto-->
-                <img src="./assets/icons-crud/edit-product.svg" alt="" width="25" height="25" title="Editar Producto" class="" />
+                <img
+                  src="./assets/icons-crud/edit-product.svg"
+                  alt=""
+                  width="25"
+                  height="25"
+                  title="Editar Producto"
+                  class=""
+                />
                 <!--Fin Icono Editar Producto-->
               </button>
               <a>
                 <!-- BTN MODAL DELETE CHECK  -->
-                <button type="button" class="btn btn-danger border-dark alert-link m-1 p-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop02" (click)="setProductoSelect(producto)">
+                <button
+                  type="button"
+                  class="btn btn-danger border-dark alert-link m-1 p-1"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop02"
+                  (click)="setProductoSelect(producto)"
+                >
                   <!--Icono Eliminar Producto-->
-                  <img src="./assets/icons-crud/delete-product.svg" alt="" width="25" height="25" title="Eliminar Producto" class="" />
+                  <img
+                    src="./assets/icons-crud/delete-product.svg"
+                    alt=""
+                    width="25"
+                    height="25"
+                    title="Eliminar Producto"
+                    class=""
+                  />
                   <!--Fin Icono Eliminar Producto-->
                 </button>
                 <!-- FIN BTN MODAL DELETE CHECK -->
@@ -1085,63 +1815,104 @@
     </table>
     <!-- FIN TABLA PRODUCTOS -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- TEMPLATE CARDS TABLE-->
     <ng-template #cardsTable>
       <div
         class="card m-2"
-        style="width: 14rem; height: 32rem;"
+        style="width: 14rem; height: 32rem"
         *ngFor="let producto of productos"
         id="cardsTable"
       >
-        {{producto.codigo}}
-        <img src="{{producto.imagen}}" target="_blank" width="100px" height="150px" class="card-img-top" />
+        {{ producto.codigo }}
+        <img
+          src="{{ producto.imagen }}"
+          target="_blank"
+          width="100px"
+          height="150px"
+          class="card-img-top"
+        />
         <div class="card-body text-left">
           <h5 class="card-title text-center text-decoration-underline">
-            {{producto.nombre | slice : 0:20 }}..
+            {{ producto.nombre | slice: 0 : 20 }}..
           </h5>
           <br />
-          <p><strong>Categoría : </strong>{{producto.categoria}} / {{producto.marca}}</p>
-          <p><strong>Precio : </strong>${{producto.precio}}<button class="btn bg-none text-white p-1 ms-1" data-bs-toggle="modal" data-bs-target="#modalDivisa" (click)="selectPrecioProducto(producto.precio)">
-            <img src="./assets/icons-crud/help.png" alt="" width="30" height="25" tittle="Ayuda Divisa" class="" />
-          </button></p>
+          <p>
+            <strong>Categoría : </strong>{{ producto.categoria }} /
+            {{ producto.marca }}
+          </p>
+          <p>
+            <strong>Precio : </strong>${{ producto.precio
+            }}<button
+              class="btn bg-none text-white p-1 ms-1"
+              data-bs-toggle="modal"
+              data-bs-target="#modalDivisa"
+              (click)="selectPrecioProducto(producto.precio)"
+            >
+              <img
+                src="./assets/icons-crud/help.png"
+                alt=""
+                width="30"
+                height="25"
+                tittle="Ayuda Divisa"
+                class=""
+              />
+            </button>
+          </p>
 
-          <p><strong>Stock : </strong>{{producto.stock}}u.</p>
+          <p><strong>Stock : </strong>{{ producto.stock }}u.</p>
           <div class="card-footer d-flex justify-content-center me-0 mb-1 m-3">
+            <button
+              class="btn btn-primary bg-dark alert-link m-1 p-1 mb-1"
+              (click)="detalleProducto(producto)"
+            >
+              <!--Icono Visualizar Producto-->
+              <img
+                src="./assets/icons-crud/details-product.svg"
+                alt=""
+                width="25"
+                height="25"
+                title="Detalles Producto"
+                class=""
+              />
+              <!--Fin Icono Visualizar Producto-->
+            </button>
 
-            <button class="btn btn-primary bg-dark alert-link m-1 p-1 mb-1" (click)="detalleProducto(producto)">
-                             <!--Icono Visualizar Producto-->
-                             <img src="./assets/icons-crud/details-product.svg" alt="" width="25" height="25" title="Detalles Producto" class="" />
-                             <!--Fin Icono Visualizar Producto-->
-                           </button>
-
-                           <button class="btn btn-warning border-dark bg-dark alert-link m-1 p-1" (click)="editarProducto(producto)">
-                             <!--Icono Editar Producto-->
-                             <img src="./assets/icons-crud/edit-product.svg" alt="" width="25" height="25" title="Editar Producto" class="" />
-                             <!--Fin Icono Editar Producto-->
-                           </button>
-                           <a>
-                             <!-- BTN MODAL DELETE CHECK  -->
-                             <button type="button" class="btn btn-danger bg-dark border-dark alert-link m-1 p-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop02" (click)="setProductoSelect(producto)">
-                               <!--Icono Eliminar Producto-->
-                               <img src="./assets/icons-crud/delete-product.svg" alt="" width="25" height="25" title="Eliminar Producto" class="" />
-                               <!--Fin Icono Eliminar Producto-->
-                             </button>
-                             <!-- FIN BTN MODAL DELETE CHECK -->
+            <button
+              class="btn btn-warning border-dark bg-dark alert-link m-1 p-1"
+              (click)="editarProducto(producto)"
+            >
+              <!--Icono Editar Producto-->
+              <img
+                src="./assets/icons-crud/edit-product.svg"
+                alt=""
+                width="25"
+                height="25"
+                title="Editar Producto"
+                class=""
+              />
+              <!--Fin Icono Editar Producto-->
+            </button>
+            <a>
+              <!-- BTN MODAL DELETE CHECK  -->
+              <button
+                type="button"
+                class="btn btn-danger bg-dark border-dark alert-link m-1 p-1"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop02"
+                (click)="setProductoSelect(producto)"
+              >
+                <!--Icono Eliminar Producto-->
+                <img
+                  src="./assets/icons-crud/delete-product.svg"
+                  alt=""
+                  width="25"
+                  height="25"
+                  title="Eliminar Producto"
+                  class=""
+                />
+                <!--Fin Icono Eliminar Producto-->
+              </button>
+              <!-- FIN BTN MODAL DELETE CHECK -->
             </a>
           </div>
         </div>
@@ -1150,89 +1921,156 @@
     <!-- FIN TEMPLATE CARDS TABLE-->
 
 
-
-
-
-
-
-
-
     <!--PAGINACION/REGRESAR/ACTUALIZAR-->
     <div class="container col-12">
       <div class="row justify-content-center">
         <!--BTN'S PAGINATION-->
         <div class="col-4 mt-2" id="pagination">
           <nav aria-label="..." class="bg-none text-white">
-            <ul class="pagination pagination-lg bg-none text-white border-light alert-link">
-              <li class="page-item bg-none text-white" (click)="cambiarPagina(0)">
-                <button class="btn btn-outline-dark border-light alert-link text-white">
-                  <img src="assets/pagination/arrowLastLeft.png" width="15" height="15" alt="" />
-                </button>
-              </li>
-              <li class="page-item">
-                <button class="btn btn-outline-dark border-light alert-link text-white" (click)="paginaAnterior()">
-                  <img src="assets/pagination/arrowLeft.png" width="15" height="15" alt="" />
-                </button>
-              </li>
-              <li class="page-item">
-                <button class="btn btn-outline-dark border-light alert-link text-white" (click)="cambiarPagina(0)">1</button>
-              </li>
-              <li class="page-item">
-                <button class="btn btn-outline-dark border-light alert-link text-white" (click)="cambiarPagina(1)">2</button>
-              </li>
-              <li class="page-item"><button class="btn btn-outline-dark border-light alert-link text-white" (click)="cambiarPagina(2)">3</button></li>
-              <li class="page-item">
-                <button class="btn btn-outline-dark border-light alert-link text-white" (click)="paginaSiguiente()">
-                  <img src="assets/pagination/arrowRight.png" width="15" height="15" alt="" />
+            <ul
+              class="pagination pagination-lg bg-none text-white border-light alert-link"
+            >
+              <li
+                class="page-item bg-none text-white"
+                (click)="cambiarPagina(0)"
+              >
+                <button
+                  class="btn btn-outline-dark border-light alert-link text-white"
+                >
+                  <img
+                    src="assets/pagination/arrowLastLeft.png"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />
                 </button>
               </li>
               <li class="page-item">
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
-                  (click)="cambiarPagina(this.totalPages - 1)" >
-                  <img src="assets/pagination/arrowLastRight.png" width="15" height="15" alt="" />
+                  (click)="paginaAnterior()"
+                >
+                  <img
+                    src="assets/pagination/arrowLeft.png"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />
+                </button>
+              </li>
+              <li class="page-item">
+                <button
+                  class="btn btn-outline-dark border-light alert-link text-white"
+                  (click)="cambiarPagina(0)"
+                >
+                  1
+                </button>
+              </li>
+              <li class="page-item">
+                <button
+                  class="btn btn-outline-dark border-light alert-link text-white"
+                  (click)="cambiarPagina(1)"
+                >
+                  2
+                </button>
+              </li>
+              <li class="page-item">
+                <button
+                  class="btn btn-outline-dark border-light alert-link text-white"
+                  (click)="cambiarPagina(2)"
+                >
+                  3
+                </button>
+              </li>
+              <li class="page-item">
+                <button
+                  class="btn btn-outline-dark border-light alert-link text-white"
+                  (click)="paginaSiguiente()"
+                >
+                  <img
+                    src="assets/pagination/arrowRight.png"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />
+                </button>
+              </li>
+              <li class="page-item">
+                <button
+                  class="btn btn-outline-dark border-light alert-link text-white"
+                  (click)="cambiarPagina(this.totalPages - 1)"
+                >
+                  <img
+                    src="assets/pagination/arrowLastRight.png"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />
                 </button>
               </li>
             </ul>
           </nav>
         </div>
         <!--FIN BTN'S PAGINATION-->
+
         <!-- INFO NRO DE PAGINA Y ELEMENTOS -->
-        <div class="col-6 bg-none text-white border-light alert-link d-flex flex-row mt-2 ms-5" id="pagination">
+        <div
+          class="col-6 bg-none text-white border-light alert-link d-flex flex-row mt-2 ms-5"
+          id="pagination"
+        >
           <nav aria-label="..." class="bg-none text-white">
-            <ul class="pagination pagination-lg bg-none text-white border-light alert-link">
+            <ul
+              class="pagination pagination-lg bg-none text-white border-light alert-link"
+            >
               <li class="page-item bg-none text-white ms-5">
                 <button
-                  *ngIf="nroTotalElements!=0"
+                  *ngIf="nroTotalElements != 0"
                   class="btn btn-outline-dark border-light alert-link text-white"
                 >
-                  Página: {{nroPage + 1}} / {{totalPages}}
+                  Página: {{ nroPage + 1 }} / {{ totalPages }}
                 </button>
                 <button
-                  *ngIf="nroTotalElements
-                                                                                                                                                              ==
-                                                                                                                                                              0"
+                  *ngIf="nroTotalElements == 0"
                   class="btn btn-outline-dark border-light alert-link text-white"
                 >
-                  Página: {{nroPage + 1}} de {{totalPages}}
+                  Página: {{ nroPage + 1 }} de {{ totalPages }}
                 </button>
-                <button class="btn btn-outline-dark bg-none border-light alert-link text-white">
-                  Elementos: {{nroCurrentElements}} / {{nroTotalElements}}
+                <button
+                  class="btn btn-outline-dark bg-none border-light alert-link text-white"
+                >
+                  Elementos: {{ nroCurrentElements }} / {{ nroTotalElements }}
                 </button>
               </li>
               <li class="page-item bg-none text-white ms-5">
                 <a [routerLink]="['/inicio-componentes']">
-                  <button class="btn btn-outline-dark border-light alert-link text-white" >
+                  <button
+                    class="btn btn-outline-dark border-light alert-link text-white"
+                  >
                     <!--Icono Regresar Inicio-->
-                    <img src="assets/icons-crud/return.svg" width="15" height="15" alt="" title="Regresar Inicio" />
+                    <img
+                      src="assets/icons-crud/return.svg"
+                      width="15"
+                      height="15"
+                      alt=""
+                      title="Regresar Inicio"
+                    />
                     <!--Fin Icono Regresar Inicio-->
                   </button>
                 </a>
               </li>
               <li class="page-item bg-none text-white ms-2">
-                <button onClick="window.location.reload()" class="btn btn-outline-dark border-light alert-link text-white" >
+                <button
+                  onClick="window.location.reload()"
+                  class="btn btn-outline-dark border-light alert-link text-white"
+                >
                   <!--Icono Actualizar Listado-->
-                  <img src="assets/icons-crud/reload.svg" width="15" height="15" alt="" title="Actualizar Listado" />
+                  <img
+                    src="assets/icons-crud/reload.svg"
+                    width="15"
+                    height="15"
+                    alt=""
+                    title="Actualizar Listado"
+                  />
                   <!--Fin Icono Actualizar Listado-->
                 </button>
               </li>
@@ -1247,535 +2085,665 @@
 </div>
 <!-- FIN LISTADO DE PRODUCTOS -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL AYUDA -->
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalAyuda">
       <div class="modal-header">
-        <h4 class="modal-title" id="staticBackdropLabel">Guía Listado de Productos</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="staticBackdropLabel">
+          Guía Listado de Productos
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <h5>Acerca de la Gestión de Productos</h5>
         <p>
-          En esta sección podemos visualizar los Productos según los requerimientos deseados, existe paginacion de productos, podemos aplicar filtros de búsqueda y las operaciones CRUD requeridas según el rol que se tenga. Los admins podrán
-          realizar todas las Operaciones, los usuarios solamente la visualización y búsquedas.
+          En esta sección podemos visualizar los Productos según los
+          requerimientos deseados, existe paginacion de productos, podemos
+          aplicar filtros de búsqueda y las operaciones CRUD requeridas según el
+          rol que se tenga. Los admins podrán realizar todas las Operaciones,
+          los usuarios solamente la visualización y búsquedas.
         </p>
         <br />
         <h5>Buscador de Productos</h5>
-        <p>Es posible realizar la búsqueda de productos según filtros aplicados para cada campo del Listado. Es decir, las siglas o palabras ingresadas serán aplicadas para todos los campos.</p>
+        <p>
+          Es posible realizar la búsqueda de productos según filtros aplicados
+          para cada campo del Listado. Es decir, las siglas o palabras
+          ingresadas serán aplicadas para todos los campos.
+        </p>
         <br />
         <h5>Campos del Listado</h5>
         <p>
-          Cada campo describe una característica del producto específico por fila. El campo opciones nos permite visualizar, editar y eliminar el producto seleccionado. También podemos agregar un producto desde la barra de navegación.
+          Cada campo describe una característica del producto específico por
+          fila. El campo opciones nos permite visualizar, editar y eliminar el
+          producto seleccionado. También podemos agregar un producto desde la
+          barra de navegación.
         </p>
         <ul>
-          <li><strong>Código:</strong> Este código hace referencia al producto, no es posible que existan duplicados, es válido solo letras, números y ciertos caracteres. Además de un máximo de 10 digitos.</li>
-          <li><strong>Nombre:</strong> El nombre hace referencia mismo al producto. A comparación de la descripción, este es una acotación para la clasificación de los productos.</li>
+          <li>
+            <strong>Código:</strong> Este código hace referencia al producto, no
+            es posible que existan duplicados, es válido solo letras, números y
+            ciertos caracteres. Además de un máximo de 10 digitos.
+          </li>
+          <li>
+            <strong>Nombre:</strong> El nombre hace referencia mismo al
+            producto. A comparación de la descripción, este es una acotación
+            para la clasificación de los productos.
+          </li>
         </ul>
         <div class="mt-5">
-          <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL DESARROLLADOR</strong>
+          <strong
+            >CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL
+            DESARROLLADOR</strong
+          >
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL AYUDA-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL PRODUCTOS-CATEGORIAS -->
 <!-- Modal -->
-<div class="modal fade" id="modalProdCateg" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalProdCategLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalProdCateg"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalProdCategLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalProdCateg">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalProdCategLabel">Productos por Categoría</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalProdCategLabel">
+          Productos por Categoría
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
         <h5>Acerca de Filtros de Productos por Categoría</h5>
-        <br>
+        <br />
         <p>
-         Estos Filtros se aplican para la búsqueda de productos según su categoría en el Sistema. Esta Búsqueda es posible realizarla desde el buscador general desde este listado.
+          Estos Filtros se aplican para la búsqueda de productos según su
+          categoría en el Sistema. Esta Búsqueda es posible realizarla desde el
+          buscador general desde este listado.
         </p>
         <br />
 
-
-        <div class="d-flex d-row justify-content-center ">
-          <h5 class="text-decoration-underline m-2 justify-content-center">Categorías de Productos</h5>
+        <div class="d-flex d-row justify-content-center">
+          <h5 class="text-decoration-underline m-2 justify-content-center">
+            Categorías de Productos
+          </h5>
         </div>
 
-
-        <div class="d-flex d-column justify-content-center ">
-
-        <div class="container-list d-flex d-row justify-content-center ">
-          <ul class="navbar-nav border-secondary">
-
+        <div class="d-flex d-column justify-content-center">
+          <div class="container-list d-flex d-row justify-content-center">
+            <ul class="navbar-nav border-secondary">
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Placas Electronicas','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Placas Electronicas', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Placas Electr.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Gamer','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Gamer', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Gamer.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Monitores','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Monitores', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Monitores.</h6>
                   </a>
                 </li>
               </div>
 
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Smart TV','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Smart TV', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Smart TV.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Notebook','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Notebook', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Notebook.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Celulares','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Celulares', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Celulares.</h6>
                   </a>
                 </li>
               </div>
 
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Tablet','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Tablet', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Tablet.</h6>
                   </a>
                 </li>
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Generales','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Generales', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Generales.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Redes','categoria',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Redes', 'categoria', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Redes.</h6>
                   </a>
                 </li>
               </div>
 
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Microcontroladores','categoria',0)">
-                    <h6 class="text-white text-center p-1">Microcontroladores.</h6>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Microcontroladores', 'categoria', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">
+                      Microcontroladores.
+                    </h6>
                   </a>
                 </li>
               </div>
-        </ul>
-      </div>
-      </div>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL PRODUCTOS-CATEGORIAS-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL PRODUCTOS-MARCAS -->
 <!-- Modal -->
-<div class="modal fade" id="modalProdMarcas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalProdMarcasLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalProdMarcas"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalProdMarcasLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalProdMarcas">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalProdMarcasLabel">Productos por Marcas</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalProdMarcasLabel">
+          Productos por Marcas
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
         <h5>Acerca de Filtros de Productos por Marcas</h5>
-        <br>
+        <br />
         <p>
-         Estos Filtros se aplican para la búsqueda de productos según su marca en el Sistema. Esta Búsqueda es posible realizarla desde el buscador general desde este listado.
+          Estos Filtros se aplican para la búsqueda de productos según su marca
+          en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
+          general desde este listado.
         </p>
         <br />
 
-
-        <div class="d-flex d-row justify-content-center ">
-          <h5 class="text-decoration-underline m-2 justify-content-center">Marcas de Productos</h5>
+        <div class="d-flex d-row justify-content-center">
+          <h5 class="text-decoration-underline m-2 justify-content-center">
+            Marcas de Productos
+          </h5>
         </div>
 
-
-        <div class="d-flex d-column justify-content-center ">
-
-        <div class="container-list d-flex d-row justify-content-center ">
-          <ul class="navbar-nav border-secondary">
-
+        <div class="d-flex d-column justify-content-center">
+          <div class="container-list d-flex d-row justify-content-center">
+            <ul class="navbar-nav border-secondary">
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('Arduino','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Arduino', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Arduino.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Asus','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Asus', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Asus.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Generica','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Generica', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Genérica.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Noblex','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Noblex', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Noblex.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Philips','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Philips', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Philips.</h6>
                   </a>
                 </li>
-
               </div>
 
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Lora','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Lora', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Lora.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('HP','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('HP', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">HP.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Samsung','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Samsung', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Samsung.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('RCA','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('RCA', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">RCA.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Nulibash','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Nulibash', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Nulibash.</h6>
                   </a>
                 </li>
               </div>
 
               <div class="d-flex d-row">
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Dell','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Dell', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Dell.</h6>
                   </a>
                 </li>
 
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Xperia','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Xperia', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Xperia.</h6>
                   </a>
                 </li>
 
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Baseus','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Baseus', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Baseus.</h6>
                   </a>
                 </li>
 
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Hikvision','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Hikvision', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Hikvision.</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Cisco','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Cisco', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Cisco.</h6>
                   </a>
                 </li>
-
               </div>
 
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('HyperX','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('HyperX', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">HyperX.</h6>
                   </a>
                 </li>
 
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Logitech','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Logitech', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Logitech.</h6>
                   </a>
                 </li>
 
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('Noga','marca',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('Noga', 'marca', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Noga.</h6>
                   </a>
                 </li>
               </div>
-        </ul>
-      </div>
-      </div>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL PRODUCTOS-MARCAS-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL PRODUCTOS-FECHAS -->
 <!-- Modal -->
-<div class="modal fade" id="modalProdFechas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalProdFechasLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalProdFechas"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalProdFechasLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalProdFechas">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalProdFechasLabel">Productos por Fechas</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalProdFechasLabel">
+          Productos por Fechas
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
         <h5>Acerca de Filtros de Productos por Fechas</h5>
-        <br>
+        <br />
         <p>
-         Estos Filtros se aplican para la búsqueda de productos según su fecha en el Sistema. Esta Búsqueda es posible realizarla desde el buscador general desde este listado.
+          Estos Filtros se aplican para la búsqueda de productos según su fecha
+          en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
+          general desde este listado.
         </p>
         <br />
 
-
-        <div class="d-flex d-row justify-content-center ">
-          <h5 class="text-decoration-underline m-2 justify-content-center">Fechas de Inserción de Productos</h5>
+        <div class="d-flex d-row justify-content-center">
+          <h5 class="text-decoration-underline m-2 justify-content-center">
+            Fechas de Inserción de Productos
+          </h5>
         </div>
 
+        <div class="d-flex d-column justify-content-center">
+          <div class="container-list d-flex d-row justify-content-center">
+            <ul class="navbar-nav border-secondary">
+              <hr />
 
-        <div class="d-flex d-column justify-content-center ">
-
-        <div class="container-list d-flex d-row justify-content-center ">
-          <ul class="navbar-nav border-secondary">
-
-            <hr/>
-
-            <h6 class="text-decoration-underline">Productos por Año</h6>
+              <h6 class="text-decoration-underline">Productos por Año</h6>
 
               <div class="d-flex d-row">
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('-22','fecha',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-22', 'fecha', 0)"
+                  >
                     <h6 class="text-white text-center p-1">2022</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('-21','fecha',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-21', 'fecha', 0)"
+                  >
                     <h6 class="text-white text-center p-1">2021</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-20','fecha',0)">
-                  <h6 class="text-white text-center p-1">2020</h6>
-                </a>
-              </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-20', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">2020</h6>
+                  </a>
+                </li>
               </div>
 
-              <hr/>
-
+              <hr />
 
               <h6 class="text-decoration-underline">Meses 2022</h6>
 
               <div class="d-flex d-row">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-01-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Enero.</h6>
+                  </a>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-01-22','fecha',0)">
-                  <h6 class="text-white text-center p-1">Enero.</h6>
-                </a>
-              </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-02-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Febre.</h6>
+                  </a>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-02-22','fecha',0)">
-                  <h6 class="text-white text-center p-1">Febre.</h6>
-                </a>
-              </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-03-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Marzo.</h6>
+                  </a>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-03-22','fecha',0)">
-                  <h6 class="text-white text-center p-1">Marzo.</h6>
-                </a>
-              </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-04-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Abril.</h6>
+                  </a>
+                </li>
+              </div>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-04-22','fecha',0)">
-                  <h6 class="text-white text-center p-1">Abril.</h6>
-                </a>
-              </li>
-
-            </div>
-
-
-
-
-
-            <div class="d-flex d-row">
-
-
-
-              <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('-05-22','fecha',0)">
+              <div class="d-flex d-row">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-05-22', 'fecha', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Mayo.</h6>
                   </a>
-              </li>
+                </li>
 
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-06-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Junio.</h6>
+                  </a>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-06-22','fecha',0)">
-                  <h6 class="text-white text-center p-1">Junio.</h6>
-                </a>
-              </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-07-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Julio.</h6>
+                  </a>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                    <a class="dropdown-item p-1" (click)="setFilter('-07-22','fecha',0)">
-                      <h6 class="text-white text-center p-1">Julio.</h6>
-                    </a>
-                  </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-08-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Agosto.</h6>
+                  </a>
+                </li>
+              </div>
 
-                  <li data-bs-dismiss="modal" >
-                    <a class="dropdown-item p-1" (click)="setFilter('-08-22','fecha',0)">
-                      <h6 class="text-white text-center p-1">Agosto.</h6>
-                    </a>
-                  </li>
-            </div>
-
-
-
-
-
-            <div class="d-flex d-row">
-
-              <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('-09-22','fecha',0)">
+              <div class="d-flex d-row">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-09-22', 'fecha', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Septi.</h6>
                   </a>
-              </li>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-10-22','fecha',0)">
-                  <h6 class="text-white text-center p-1">Octub.</h6>
-                </a>
-              </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-10-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Octub.</h6>
+                  </a>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('-11-22','fecha',0)">
-                  <h6 class="text-white text-center p-1">Novie.</h6>
-                </a>
-                  </li>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-11-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Novie.</h6>
+                  </a>
+                </li>
 
-                  <li data-bs-dismiss="modal" >
-                    <a class="dropdown-item p-1" (click)="setFilter('-12-22','fecha',0)">
-                      <h6 class="text-white text-center p-1">Dicie.</h6>
-                    </a>
-                  </li>
-            </div>
-
-
-
-        </ul>
-      </div>
-      </div>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('-12-22', 'fecha', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Dicie.</h6>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
@@ -1784,431 +2752,512 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL PRODUCTOS-STOCK -->
 <!-- Modal -->
-<div class="modal fade" id="modalProdStock" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalProdStockLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalProdStock"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalProdStockLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalProdStock">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalProdStockLabel">Productos por Stock</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalProdStockLabel">
+          Productos por Stock
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
         <h5>Acerca de Filtros de Productos por Stock</h5>
-        <br>
+        <br />
         <p>
-         Estos Filtros se aplican para la búsqueda de productos según su Stock en el Sistema. Esta Búsqueda es posible realizarla desde el buscador general desde este listado.
+          Estos Filtros se aplican para la búsqueda de productos según su Stock
+          en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
+          general desde este listado.
         </p>
         <br />
 
-
-        <div class="d-flex d-row justify-content-center ">
-          <h5 class="text-decoration-underline m-2 justify-content-center">Stock de Productos</h5>
+        <div class="d-flex d-row justify-content-center">
+          <h5 class="text-decoration-underline m-2 justify-content-center">
+            Stock de Productos
+          </h5>
         </div>
 
-
-        <div class="d-flex d-column justify-content-center ">
-
-        <div class="container-list d-flex d-row justify-content-center ">
-          <ul class="navbar-nav border-secondary">
-
-
-
+        <div class="d-flex d-column justify-content-center">
+          <div class="container-list d-flex d-row justify-content-center">
+            <ul class="navbar-nav border-secondary">
               <div class="d-flex d-row">
-
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('31','stock-filter',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('31', 'stock-filter', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Hasta 30u</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('101','stock-filter',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('101', 'stock-filter', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Hasta 100u</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('301','stock-filter',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('301', 'stock-filter', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Hasta 300u</h6>
                   </a>
-              </li>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                    <a class="dropdown-item p-1" (click)="setFilter('1001','stock-filter',0)">
-                      <h6 class="text-white text-center p-1">Hasta 1000u</h6>
-                    </a>
-            </li>
-            </div>
-
-        </ul>
-      </div>
-      </div>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('1001', 'stock-filter', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Hasta 1000u</h6>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL PRODUCTOS-STOCK-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL PRODUCTOS-PRECIO -->
 <!-- Modal -->
-<div class="modal fade" id="modalProdPrecio" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalProdPrecioLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalProdPrecio"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalProdPrecioLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalProdPrecio">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalProdPrecioLabel">Productos por Precio</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalProdPrecioLabel">
+          Productos por Precio
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
         <h5>Acerca de Filtros de Productos por Precio</h5>
-        <br>
+        <br />
         <p>
-         Estos Filtros se aplican para la búsqueda de productos según su Precio en el Sistema. Esta Búsqueda es posible realizarla desde el buscador general desde este listado.
+          Estos Filtros se aplican para la búsqueda de productos según su Precio
+          en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
+          general desde este listado.
         </p>
         <br />
 
-
-        <div class="d-flex d-row justify-content-center ">
-          <h5 class="text-decoration-underline m-2 justify-content-center">Precios de Productos</h5>
+        <div class="d-flex d-row justify-content-center">
+          <h5 class="text-decoration-underline m-2 justify-content-center">
+            Precios de Productos
+          </h5>
         </div>
 
-
-        <div class="d-flex d-column justify-content-center ">
-
-        <div class="container-list d-flex d-row justify-content-center ">
-          <ul class="navbar-nav border-secondary">
-
-
+        <div class="d-flex d-column justify-content-center">
+          <div class="container-list d-flex d-row justify-content-center">
+            <ul class="navbar-nav border-secondary">
               <div class="d-flex d-row">
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('501','precio-filter',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('501', 'precio-filter', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Hasta $500</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('1501','precio-filter',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('1501', 'precio-filter', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Hasta $1500</h6>
                   </a>
                 </li>
 
-                <li data-bs-dismiss="modal" >
-                  <a class="dropdown-item p-1" (click)="setFilter('2501','precio-filter',0)">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('2501', 'precio-filter', 0)"
+                  >
                     <h6 class="text-white text-center p-1">Hasta $2500</h6>
                   </a>
-              </li>
-            </div>
-
+                </li>
+              </div>
 
               <div class="d-flex d-row">
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('10001', 'precio-filter', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Hasta $10000</h6>
+                  </a>
+                </li>
 
-              <li data-bs-dismiss="modal" >
-                <a class="dropdown-item p-1" (click)="setFilter('10001','precio-filter',0)">
-                  <h6 class="text-white text-center p-1">Hasta $10000</h6>
-                </a>
-            </li>
-
-            <li data-bs-dismiss="modal" >
-              <a class="dropdown-item p-1" (click)="setFilter('5001','precio-filter',0)">
-                <h6 class="text-white text-center p-1">Hasta $5000</h6>
-              </a>
-          </li>
-
-
-
-            </div>
-
-        </ul>
-      </div>
-      </div>
+                <li data-bs-dismiss="modal">
+                  <a
+                    class="dropdown-item p-1"
+                    (click)="setFilter('5001', 'precio-filter', 0)"
+                  >
+                    <h6 class="text-white text-center p-1">Hasta $5000</h6>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL PRODUCTOS-PRECIO-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL DIVISAS -->
 <!-- Modal -->
-<div class="modal fade" id="modalDivisas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalDivisasLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalDivisas"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalDivisasLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalDivisas">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalDivisasLabel">Información de Divisas</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalDivisasLabel">
+          Información de Divisas
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
-      <div class="modal-body text-center justify-content-center" id="modalsProdList">
-
+      <div
+        class="modal-body text-center justify-content-center"
+        id="modalsProdList"
+      >
         <p>
-         Las mismas consisten en una integración de Servicios por parte de la página dólarsi. Además en esta aplicación se utiliza la api brindada por la página para obtener recursos específicos, como por ejemplo dólar casa/oficial para compra, venta. etc.
+          Las mismas consisten en una integración de Servicios por parte de la
+          página dólarsi. Además en esta aplicación se utiliza la api brindada
+          por la página para obtener recursos específicos, como por ejemplo
+          dólar casa/oficial para compra, venta. etc.
         </p>
         <br />
 
-        <iframe width="400px" height="500px" src="https://www.dolarsi.com/func/moduloArriba-n.html" frameborder="0" scrolling="0" allowfullscreen=""></iframe>
-
+        <iframe
+          width="400px"
+          height="500px"
+          src="https://www.dolarsi.com/func/moduloArriba-n.html"
+          frameborder="0"
+          scrolling="0"
+          allowfullscreen=""
+        ></iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL DIVISAS-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL PRODUCTOS-INFO -->
 <!-- Modal -->
-<div class="modal fade" id="modalProdInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalProdInfoLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalProdInfo"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalProdInfoLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalProdInfo">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalProdInfoLabel">Información de Filtros</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalProdInfoLabel">
+          Información de Filtros
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
         <h5>Acerca de Filtros Aplicados</h5>
-        <br>
-          <p><strong>Filtro Aplicado :</strong> Búsqueda por <strong>{{filtroProdCampo}}</strong>. Según el filtro <strong>{{filtroProdBusqueda}} </strong> y página <strong>{{nroPage + 1}} </strong></p>
         <br />
-
+        <p>
+          <strong>Filtro Aplicado :</strong> Búsqueda por
+          <strong>{{ filtroProdCampo }}</strong
+          >. Según el filtro <strong>{{ filtroProdBusqueda }} </strong> y página
+          <strong>{{ nroPage + 1 }} </strong>
+        </p>
+        <br />
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL PRODUCTOS-INFO-->
 
-
-
-
-
 <!--MODAL DIVISA -->
 <!-- Modal -->
-<div class="modal fade" id="modalDivisa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalDivisaLabel" aria-hidden="true">
-  <div class="modal-dialog" >
+<div
+  class="modal fade"
+  id="modalDivisa"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalDivisaLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalDivisa">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalDivisaLabel">Información de Precios</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalDivisaLabel">
+          Información de Precios
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
-
-
         <div class="d-flex d-column">
-        <div class="alert alert-primary p-1" role="alert">
-          <div>Precio en Pesos : <strong> ${{this.precioProducto}}</strong></div>
+          <div class="alert alert-primary p-1" role="alert">
+            <div>
+              Precio en Pesos : <strong> ${{ this.precioProducto }}</strong>
+            </div>
+          </div>
+          <div class="alert alert-success ms-2 p-1" role="alert">
+            <div>
+              Precio en Dólares :
+              <strong
+                >$USD{{
+                  this.precioProducto / this.dolarCompra | number: "1.00-00"
+                }}</strong
+              >
+            </div>
+          </div>
         </div>
-        <div class="alert alert-success ms-2 p-1" role="alert">
-          <div>Precio en Dólares : <strong>$USD{{(this.precioProducto/this.dolarCompra) | number: '1.00-00'}}</strong></div>
+        <br />
+
+        <div class="mt-1 ms-5 justify-content-center">
+          <h5 class="">Dólar Oficial</h5>
+          <table
+            table-condensed
+            class="table table-dark table-bordered border-white table-hover text-center text-white m-1"
+          >
+            <thead>
+              <tr>
+                <td><strong>Compra</strong></td>
+                <td><strong>Venta</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>${{ this.dolarCompra }}</strong>
+                </td>
+                <td>
+                  <strong>${{ this.dolarVenta }}</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
-      <br>
-
-
-      <div class="mt-1 ms-5 justify-content-center">
-
-        <h5 class="">Dólar Oficial</h5>
-      <table table-condensed
-      class="table table-dark table-bordered border-white table-hover text-center text-white m-1">
-
-        <thead>
-          <tr>
-           <td> <strong>Compra</strong></td>
-            <td><strong>Venta</strong></td>
-          </tr>
-
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>${{this.dolarCompra}}</strong></td>
-            <td><strong>${{this.dolarVenta}}</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-
-
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL DIVISA-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL LAST PRODUCTO -->
 <!-- Modal -->
-<div class="modal fade" id="modalLastProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLastProductLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="modalLastProduct"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalLastProductLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalLastProduct">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalLastProductLabel">Último Producto Agregado</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalLastProductLabel">
+          Último Producto Agregado
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-
         <h5>Selección del Producto</h5>
-        <p>El producto es determinado a través de la última operación de inserción.</p>
+        <p>
+          El producto es determinado a través de la última operación de
+          inserción.
+        </p>
         <div class="d-flex d-row justify-content-center m-2">
-
-
-
-
-<!--CARD LAST PRODUCTO-->
+          <!--CARD LAST PRODUCTO-->
 
           <div
-          class="card bg-dark border-2 border-dark m-2"
-          style="width: 14rem; height: 32rem;"
-          *ngFor="let lastProd of lastProducto"
-          id="cardsTable"
-        >
-          {{lastProd.codigo}}
-          <img src="{{lastProd.imagen}}" target="_blank" width="100px" height="150px" class="card-img-top" />
-          <div class="card-body text-left">
-            <h5 class="card-title text-center text-decoration-underline">
-              {{lastProd.nombre | slice : 0:20 }}..
-            </h5>
-            <br />
-            <p><strong>Categoría : </strong>{{lastProd.categoria}} / {{lastProd.marca}}</p>
-            <p><strong>Precio : </strong>${{lastProd.precio}}</p>
-            <p><strong>Stock : </strong>{{lastProd.stock}}u.</p>
-            <div class="card-footer d-flex justify-content-center me-0 mb-1 m-3">
+            class="card bg-dark border-2 border-dark m-2"
+            style="width: 14rem; height: 32rem"
+            *ngFor="let lastProd of lastProducto"
+            id="cardsTable"
+          >
+            {{ lastProd.codigo }}
+            <img
+              src="{{ lastProd.imagen }}"
+              target="_blank"
+              width="100px"
+              height="150px"
+              class="card-img-top"
+            />
+            <div class="card-body text-left">
+              <h5 class="card-title text-center text-decoration-underline">
+                {{ lastProd.nombre | slice: 0 : 20 }}..
+              </h5>
+              <br />
+              <p>
+                <strong>Categoría : </strong>{{ lastProd.categoria }} /
+                {{ lastProd.marca }}
+              </p>
+              <p><strong>Precio : </strong>${{ lastProd.precio }}</p>
+              <p><strong>Stock : </strong>{{ lastProd.stock }}u.</p>
+              <div
+                class="card-footer d-flex justify-content-center me-0 mb-1 m-3"
+              >
+                <button
+                  class="btn btn-primary bg-dark alert-link m-1 p-1 mb-1"
+                  data-bs-dismiss="modal"
+                  (click)="detalleProducto(lastProd)"
+                >
+                  <!--Icono Visualizar Producto-->
+                  <img
+                    src="./assets/icons-crud/details-product.svg"
+                    alt=""
+                    width="25"
+                    height="25"
+                    title="Detalles Producto"
+                    class=""
+                  />
+                  <!--Fin Icono Visualizar Producto-->
+                </button>
 
-              <button class="btn btn-primary bg-dark alert-link m-1 p-1 mb-1" data-bs-dismiss="modal" (click)="detalleProducto(lastProd)">
-                               <!--Icono Visualizar Producto-->
-                               <img src="./assets/icons-crud/details-product.svg" alt="" width="25" height="25" title="Detalles Producto" class="" />
-                               <!--Fin Icono Visualizar Producto-->
-                             </button>
-
-                             <button class="btn btn-warning border-dark bg-dark alert-link m-1 p-1" data-bs-dismiss="modal" (click)="editarProducto(lastProd)">
-                               <!--Icono Editar Producto-->
-                               <img src="./assets/icons-crud/edit-product.svg" alt="" width="25" height="25" title="Editar Producto" class="" />
-                               <!--Fin Icono Editar Producto-->
-                             </button>
-                             <a>
-                               <!-- BTN MODAL DELETE CHECK  -->
-                               <button type="button" data-bs-dismiss="modal" class="btn btn-danger bg-dark border-dark alert-link m-1 p-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop02" (click)="setProductoSelect(lastProd)">
-                                 <!--Icono Eliminar Producto-->
-                                 <img src="./assets/icons-crud/delete-product.svg" alt="" width="25" height="25" title="Eliminar Producto" class="" />
-                                 <!--Fin Icono Eliminar Producto-->
-                               </button>
-                               <!-- FIN BTN MODAL DELETE CHECK -->
-              </a>
+                <button
+                  class="btn btn-warning border-dark bg-dark alert-link m-1 p-1"
+                  data-bs-dismiss="modal"
+                  (click)="editarProducto(lastProd)"
+                >
+                  <!--Icono Editar Producto-->
+                  <img
+                    src="./assets/icons-crud/edit-product.svg"
+                    alt=""
+                    width="25"
+                    height="25"
+                    title="Editar Producto"
+                    class=""
+                  />
+                  <!--Fin Icono Editar Producto-->
+                </button>
+                <a>
+                  <!-- BTN MODAL DELETE CHECK  -->
+                  <button
+                    type="button"
+                    data-bs-dismiss="modal"
+                    class="btn btn-danger bg-dark border-dark alert-link m-1 p-1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop02"
+                    (click)="setProductoSelect(lastProd)"
+                  >
+                    <!--Icono Eliminar Producto-->
+                    <img
+                      src="./assets/icons-crud/delete-product.svg"
+                      alt=""
+                      width="25"
+                      height="25"
+                      title="Eliminar Producto"
+                      class=""
+                    />
+                    <!--Fin Icono Eliminar Producto-->
+                  </button>
+                  <!-- FIN BTN MODAL DELETE CHECK -->
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-<!--FIN CARD LAST PRODUCTO-->
-
-
-
-
-
-
-
-
-
-
+          <!--FIN CARD LAST PRODUCTO-->
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
@@ -2216,67 +3265,87 @@
 <!--FIN MODAL LAST PRODUCTO-->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL ARCHIVO DESCARGA -->
 <!-- Modal -->
-<div class="modal fade" id="modalArchivos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalArchivosLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="modalArchivos"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="modalArchivosLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalArchivos">
       <div class="modal-header">
-        <h4 class="modal-title" id="modalArchivosLabel">Archivos de Descarga</h4>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title" id="modalArchivosLabel">
+          Archivos de Descarga
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <h5>Acerca de Archivos de Descarga</h5>
         <p>
-          Es posible descargar el listado de productos paginado a través de varios formatos de archivos(pdf, xlsx y csv). Los Archivos descargados mantendrán el orden de lista y solamente los productos según el paginado seleccionado.
+          Es posible descargar el listado de productos paginado a través de
+          varios formatos de archivos(pdf, xlsx y csv). Los Archivos descargados
+          mantendrán el orden de lista y solamente los productos según el
+          paginado seleccionado.
         </p>
         <br />
         <h5>Selección de Archivos</h5>
-        <p>Dar click en algún tipo de archivo deseado y esperar a que el mismo se descargue (Los PDF suelen tardar más que el resto).</p>
+        <p>
+          Dar click en algún tipo de archivo deseado y esperar a que el mismo se
+          descargue (Los PDF suelen tardar más que el resto).
+        </p>
         <div class="d-flex d-row justify-content-center m-2">
-          <button data-bs-dismiss="modal" class="btn border-dark justify-content-center p-1 m-2" type="button" (click)="generatePdf()">
+          <button
+            data-bs-dismiss="modal"
+            class="btn border-dark justify-content-center p-1 m-2"
+            type="button"
+            (click)="generatePdf()"
+          >
             <img src="assets/download/pdf.png" width="55" height="55" alt="" />
           </button>
 
-          <button data-bs-dismiss="modal" class="btn border-dark justify-content-center p-1 m-2" type="button" (click)="generateExcel()">
-            <img src="assets/download/excel.png" width="55" height="55" alt="" />
+          <button
+            data-bs-dismiss="modal"
+            class="btn border-dark justify-content-center p-1 m-2"
+            type="button"
+            (click)="generateExcel()"
+          >
+            <img
+              src="assets/download/excel.png"
+              width="55"
+              height="55"
+              alt=""
+            />
           </button>
 
-          <button data-bs-dismiss="modal" class="btn border-dark justify-content-center p-1 m-2" type="button" (click)="generateCsv()">
+          <button
+            data-bs-dismiss="modal"
+            class="btn border-dark justify-content-center p-1 m-2"
+            type="button"
+            (click)="generateCsv()"
+          >
             <img src="assets/download/csv.png" width="55" height="55" alt="" />
           </button>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
 </div>
 <!--FIN MODAL ARCHIVOS DESCARGA-->
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- MODAL CHECK ADMIN-->
 <div
@@ -2287,21 +3356,31 @@
   tabindex="-1"
   aria-labelledby="staticBackdropLabel"
   aria-hidden="true"
-  *ngIf="!isAdmin ; else adminValidado">
+  *ngIf="!isAdmin; else adminValidado"
+>
   <div class="modal-dialog">
     <div class="modal-content bg-dark text-white" id="modalCheckDelete">
       <div class="alert alert-danger alert-link" role="alert">
         <div class="d-flex d-row">
           <div class="mt-0 m-1 p-1 d-flex d-row">
-          <img src="assets/icons-crud/warning.svg" width="25" height="25" alt="" title="Alerta" />
-          <h5 class="ms-2">
-            Servicio Habilitado para administradores!!
-          </h5>
-        </div>
-
+            <img
+              src="assets/icons-crud/warning.svg"
+              width="25"
+              height="25"
+              alt=""
+              title="Alerta"
+            />
+            <h5 class="ms-2">Servicio Habilitado para administradores!!</h5>
+          </div>
         </div>
         <div class="d-flex justify-content-end mt-2">
-          <button type="button" class="btn btn-success btn-sm p-1 m-1" data-bs-dismiss="modal">Aceptar</button>
+          <button
+            type="button"
+            class="btn btn-success btn-sm p-1 m-1"
+            data-bs-dismiss="modal"
+          >
+            Aceptar
+          </button>
         </div>
       </div>
     </div>
@@ -2309,26 +3388,50 @@
 </div>
 <!-- FIN MODAL CHECK ADMIN-->
 
-
-
-
-
 <!-- TEMPLATE MODAL DELETE-->
 <ng-template #adminValidado>
   <!--MODAL CHECK DELETE -->
-  <div class="modal fade" id="staticBackdrop02" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="staticBackdrop02"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content" id="modalCheckDelete">
         <div class="alert alert-danger alert-link" role="alert">
-          <div class="d-flex d-row  m-1 p-1">
-              <img src="assets/icons-crud/warning.svg" width="25" height="25" alt="" title="Alerta" />
-              <h5 class="ms-2">
-                Está Seguro que desea Eliminar el Producto {{nombrProdSelect}} ??
-              </h5>
+          <div class="d-flex d-row m-1 p-1">
+            <img
+              src="assets/icons-crud/warning.svg"
+              width="25"
+              height="25"
+              alt=""
+              title="Alerta"
+            />
+            <h5 class="ms-2">
+              Está Seguro que desea Eliminar el Producto
+              {{ nombrProdSelect }} ??
+            </h5>
           </div>
           <div class="d-flex justify-content-end mt-2">
-            <button type="button" class="btn btn-success btn-sm p-1 m-1" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger btn-sm p-1 m-1" data-bs-dismiss="modal" (click)="eliminarProducto(idProdSelect)">Eliminar</button>
+            <button
+              type="button"
+              class="btn btn-success btn-sm p-1 m-1"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger btn-sm p-1 m-1"
+              data-bs-dismiss="modal"
+              (click)="eliminarProducto(idProdSelect)"
+            >
+              Eliminar
+            </button>
           </div>
         </div>
       </div>
@@ -2337,8 +3440,3 @@
   <!--FIN MODAL CHECK DELETE-->
 </ng-template>
 <!-- FIN TEMPLATE MODAL DELETE-->
-
-
-
-
-

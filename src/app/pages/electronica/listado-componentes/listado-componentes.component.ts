@@ -1,19 +1,18 @@
+//External
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { ProductoDTO } from 'src/app/models/producto-dto';
-import { ProductosService } from 'src/app/services/productos/productos.service';
-import { DolarService } from 'src/app/services/dolar/dolar.service';
 import { NgToastService } from 'ng-angular-popup';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
-
-import { TokenService } from 'src/app/services/token/token.service';
-
-//Excel
 import * as XLSX from 'xlsx';
-
-//PDFs
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+//Models
+import { ProductoDTO } from 'src/app/models/producto-dto';
+//Service
+import { ProductosService } from 'src/app/services/productos/productos.service';
+import { DolarService } from 'src/app/services/dolar/dolar.service';
+import { TokenService } from 'src/app/services/token/token.service';
+
 
 @Component({
   selector: 'app-listado-componentes',
@@ -21,6 +20,66 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./listado-componentes.component.scss'],
 })
 export class ListadoComponentesComponent implements OnInit {
+
+  //ImgPaths
+  imgInfo="./assets/images/help02.png";
+  imgNotebook ="./assets/icons-products/notebook.png";
+  imgMonitor="./assets/icons-products/monitor.png";
+  imgSmartTv="./assets/icons-products/smartTv.png";
+  imgCelular="./assets/icons-products/celular.png";
+  imgTablet="./assets/icons-products/tablets.png";
+  imgTeclado="./assets/icons-products/teclado.png";
+  imgMic="./assets/icons-products/mic.png";
+  imgAuricular="./assets/icons-products/auricular.png";
+  imgHardDrive="./assets/icons-products/hard-drive.png";
+  imgCable="./assets/icons-products/cable.png";
+  imgAdaptador="./assets/icons-products/adaptador.png";
+  imgCargBaterias="./assets/icons-products/cargBaterias.png";
+  imgEsp8266="./assets/icons-products/esp8266.png";
+  imgPlacas="./assets/icons-products/placas.png";
+  imgSwitch="./assets/icons-products/switch.png";
+  imgCableRedes="./assets/icons-products/cableRedes.png";
+  imgFilterCateg="./assets/icons-crud/filter-categ.svg";
+  imgFilterMarca="./assets/icons-crud/filter-marca.svg";
+  imgFilterDate="./assets/icons-crud/filter-date.svg";
+  imgFilterStock="./assets/icons-crud/filter-stock.svg";
+  imgFilterPrecio="./assets/icons-crud/filter-precio.svg";
+  imgFilterInfo="./assets/icons-crud/filter-info.svg";
+  imgFilterDelete="./assets/icons-crud/filter-delete.svg";
+  imgSearch="./assets/images/search.png";
+  imgPapelera="./assets/forms/papelera.png";
+  imgAddProduct="./assets/icons-crud/add-product.svg";
+  imgLastProduct="./assets/icons-crud/last-product.png";
+  imgDivisas="./assets/icons-crud/divisas.png";
+  imgDownload="./assets/icons-crud/download.svg";
+  imgCardTableList="./assets/icons-crud/card-table-list.svg";
+  imgTableList="./assets/icons-crud/table-list.svg";
+  imgSelectSort="./assets/icons-crud/select-sort.svg";
+  imgOrderAsc="./assets/icons-crud/order-asc.svg";
+  imgOrderDesc="./assets/icons-crud/order-desc.svg";
+
+
+/*
+"assets/images/pdf.png"
+"./assets/icons-crud/help.png"
+"./assets/icons-crud/details-product.svg"
+"./assets/icons-crud/edit-product.svg"
+"./assets/icons-crud/delete-product.svg"
+"assets/pagination/arrowLastLeft.png"
+"assets/pagination/arrowLeft.png"
+"assets/pagination/arrowRight.png"
+"assets/pagination/arrowLastRight.png"
+"assets/icons-crud/return.svg"
+"assets/icons-crud/reload.svg"
+assets/download/pdf.png
+"assets/download/excel.png"
+"assets/download/csv.png"
+"assets/icons-crud/warning.svg"
+
+  */
+
+
+
   navigationExtras: NavigationExtras = {
     state: {
       value: null,
@@ -94,6 +153,7 @@ export class ListadoComponentesComponent implements OnInit {
     this.listarLastProducto();
     this.checkEliminarProducto();
   }
+
 
   //=========== SEGURIDAD ==============
   //Aplicada en productos.guard y agregada en el routing
