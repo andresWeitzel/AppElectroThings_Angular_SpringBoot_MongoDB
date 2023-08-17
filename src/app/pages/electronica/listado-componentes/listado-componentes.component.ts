@@ -78,7 +78,6 @@ export class ListadoComponentesComponent implements OnInit {
   imgReturn = "./assets/icons-crud/return.svg";
   imgReload = "./assets/icons-crud/reload.svg";
   //end img paginacion
-  //start img paginacion
   //start modal download file
   imgDownloadPdf = "./assets/download/pdf.png";
   imgDownloadExcel = "./assets/download/excel.png";
@@ -86,63 +85,44 @@ export class ListadoComponentesComponent implements OnInit {
   imgWarning = "./assets/icons-crud/warning.svg";
   //end modal download file
 
+  //Product
+  productos: ProductoDTO[] = [];
+  lastProducto: ProductoDTO[] = [];
+  precioProducto: number = 0;
+  //Dolar
+  dolarCompra: number = 0;
+  dolarVenta: number = 0;
+  converDolarPeso: number = 0;
+  //Producto seleccionado
+  productoSelect: ProductoDTO[] = [];
+  idProdSelect: string = "";
+  codProdSelect: string = "";
+  nombrProdSelect: string = "";
+  //filtros busqueda productos
+  filtroProdBusqueda: string = "";
+  filtroProdCampo: string = "";
+  //Auth
+  isAdmin = false;
+  isUser = false;
+  typeListTable = true;
+  //Paginado
+  nroPage = 0;
+  isFirstPage = false;
+  isLastPage = false;
+  totalPages = 0;
+  nroElements = 10;
+  nroCurrentElements = 0;
+  nroTotalElements = 0;
+  orderBy = "id";
+  direction = "asc";
+  //Errores
+  errMsj: string;
 
   navigationExtras: NavigationExtras = {
     state: {
       value: null,
     },
   };
-
-  //PRODUCTOS LISTADO
-  productos: ProductoDTO[] = [];
-
-  //Ultimo Producto
-  lastProducto: ProductoDTO[] = [];
-
-  //Select Producto
-  precioProducto: number = 0;
-
-  //DOLAR
-  dolarCompra: number = 0;
-  dolarVenta: number = 0;
-
-  //Conversion
-  converDolarPeso: number = 0;
-
-  //PRODUCTO SELECCIONADO
-  productoSelect: ProductoDTO[] = [];
-  idProdSelect: string = "";
-  codProdSelect: string = "";
-  nombrProdSelect: string = "";
-
-  //FILTRO BUSQUEDA PRODUCTOS
-  filtroProdBusqueda: string = "";
-  filtroProdCampo: string = "";
-
-  //SEGURIDAD
-  isAdmin = false;
-  isUser = false;
-
-  //TYPE LIST
-  typeListTable = true;
-
-  //PAGINADO
-  nroPage = 0;
-  isFirstPage = false;
-  isLastPage = false;
-  totalPages = 0;
-
-  //Elements
-  nroElements = 10;
-  nroCurrentElements = 0;
-  nroTotalElements = 0;
-
-  //Caracteristicas
-  orderBy = "id";
-  direction = "asc";
-
-  //ERRORES
-  errMsj: string;
 
   constructor(
     private router: Router,
@@ -161,12 +141,9 @@ export class ListadoComponentesComponent implements OnInit {
     this.checkEliminarProducto();
   }
 
-  //=========== SEGURIDAD ==============
-  //Aplicada en productos.guard y agregada en el routing
-
-  //=========== METODOS CRUD ==============
-
-  //----------LISTADO PRODUCTOS ---------------
+  // ======================
+  // ===== PRODUCT LIST ===
+  // ======================
   listarProductos() {
     this.productoService
       .listado(this.nroPage, this.nroElements, this.orderBy, this.direction)
@@ -190,17 +167,15 @@ export class ListadoComponentesComponent implements OnInit {
               duration: 2000,
             });
           }, 600);
-
           //FIN TOAST ERROR
-          //console.log(err);
-          //console.log('listado');
-
           this.refresh(3000);
         }
       );
   }
 
-  //----------ULTIMO PRODUCTO ---------------
+  // ======================
+  // ===== LAST PRODUCT ===
+  // ======================
   listarLastProducto() {
     this.productoService
       .listado(
@@ -226,17 +201,15 @@ export class ListadoComponentesComponent implements OnInit {
               duration: 2000,
             });
           }, 600);
-
           //FIN TOAST ERROR
-          //console.log(err);
-          //console.log('listado');
-
           this.refresh(3000);
         }
       );
   }
 
-  //-----LISTADO PRODUCTOS FILTER/CAMPO ---------------
+  // ==================================
+  // ===== PRODUCT LIST WITH FILTERS ===
+  // ===================================
   listarProductosFilter() {
     this.productoService
       .listadoFilterAndField(
@@ -255,8 +228,6 @@ export class ListadoComponentesComponent implements OnInit {
           this.totalPages = data.totalPages;
           this.nroCurrentElements = data.numberOfElements;
           this.nroTotalElements = data.totalElements;
-
-          //console.log(this.productos);
         },
         (err) => {
           this.errMsj = err.error.message;
@@ -269,16 +240,15 @@ export class ListadoComponentesComponent implements OnInit {
               duration: 2000,
             });
           }, 600);
-
           //FIN TOAST ERROR
-          //console.log(err);
-          //console.log('listado-filter');
-
           this.refresh(3000);
         }
       );
   }
 
+  // ==================================
+  // ===== SET FILTERS FOR PRODUCTS ===
+  // ===================================
   setFilter(filtro: string, campo: string, nroPag: number) {
     this.filtroProdCampo = "";
     this.filtroProdBusqueda = "";
@@ -296,20 +266,27 @@ export class ListadoComponentesComponent implements OnInit {
     }
   }
 
-  //----------GET DOLAR COMPRA------------
+  // ==========================
+  // ===== GET DOLAR COMPRA ===
+  // ==========================
   getDolarCompra() {
     this.dolarService
       .getDolarCompra()
       .then((obj) => (this.dolarCompra = obj.replace(/,/g, ".")));
   }
-  //----------GET DOLAR VENTA------------
+
+  // ==========================
+  // ===== GET DOLAR VENTA ===
+  // ==========================
   getDolarVenta() {
     this.dolarService
       .getDolarVenta()
       .then((obj) => (this.dolarVenta = obj.replace(/,/g, ".")));
   }
 
-  //----------DETALLES PRODUCTOS ---------------
+  // ==================================
+  // ===== DETALLE PRODUCTO NAVIGATE ===
+  // ===================================
   detalleProducto(producto: any): void {
     this.spinLoader(100);
 
@@ -317,7 +294,9 @@ export class ListadoComponentesComponent implements OnInit {
     this.router.navigate(["detalles-componentes"], this.navigationExtras);
   }
 
-  //----------EDITAR PRODUCTOS ---------------
+  // ==================================
+  // ===== EDITAR PRODUCTO NAVIGATE ===
+  // ===================================
   editarProducto(producto: any): void {
     this.spinLoader(100);
 
@@ -325,17 +304,23 @@ export class ListadoComponentesComponent implements OnInit {
     this.router.navigate(["editar-componentes"], this.navigationExtras);
   }
 
-  //----------SELECCIONAR PRODUCTO ---------------
+  // =============================
+  // ===== SET PRECIO PRODUCTO ===
+  // =============================
   selectPrecioProducto(producto: number): void {
     this.precioProducto = producto;
   }
 
-  //----------CHECK ELIMINAR PRODUCTO----------
+  // =============================
+  // ===== CHECK TOKEN SERVICE ===
+  // =============================
   checkEliminarProducto() {
     this.isAdmin = this.tokenService.isAdmin();
   }
 
-  //----------ELIMINAR PRODUCTOS ---------------
+  // =============================
+  // ===== ELIMINAR PRODUCTO ===
+  // =============================
   eliminarProducto(id: string): void {
     this.spinLoader(100);
 
@@ -346,9 +331,7 @@ export class ListadoComponentesComponent implements OnInit {
           summary: "Se ha Eliminado el Producto!!",
           duration: 2000,
         });
-
         console.log("Producto Eliminado");
-
         this.refresh(2100);
       },
       (err) => {
@@ -368,7 +351,9 @@ export class ListadoComponentesComponent implements OnInit {
     );
   }
 
-  //----------ELIMINAR PRODUCTOS ---------------
+  // ====================================
+  // ===== ELIMINAR PRODUCTO ERROR AUTH===
+  // =====================================
   eliminarProductoNoAuth(id: number): void {
     this.spinLoader(100);
 
@@ -381,16 +366,18 @@ export class ListadoComponentesComponent implements OnInit {
     this.refresh(2100);
   }
 
-  //=============== UTILS ===============
-
-  //---------------- RECARGAR -------------------
+  // =========================
+  // ===== RECARGAR-REFRESH===
+  // =========================
   refresh(ms: number) {
     setTimeout(() => {
       window.location.reload();
     }, ms);
   }
 
-  //---------- RUEDA DE CARGA ------------
+  // =========================
+  // ===== SPIN LOADER ===
+  // =========================
   spinLoader(ms: number) {
     //SPIN LOADING
     this.ngxService.start();
@@ -400,7 +387,9 @@ export class ListadoComponentesComponent implements OnInit {
     //FIN SPIN LOADING
   }
 
-  //------------- REDIRECCIONAR -------------------
+  // =========================
+  // ===== REDIRECT===
+  // =========================
   redirect(page: String) {
     this.router.navigate([page]);
   }
