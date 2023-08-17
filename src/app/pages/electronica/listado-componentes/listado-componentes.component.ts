@@ -1,83 +1,90 @@
 //External
-import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { NgToastService } from 'ng-angular-popup';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
-import * as XLSX from 'xlsx';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { Component, OnInit } from "@angular/core";
+import { NavigationExtras, Router } from "@angular/router";
+import { NgToastService } from "ng-angular-popup";
+import { NgxUiLoaderService } from "ngx-ui-loader";
+import * as XLSX from "xlsx";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 //Models
-import { ProductoDTO } from 'src/app/models/producto-dto';
+import { ProductoDTO } from "src/app/models/producto-dto";
 //Service
-import { ProductosService } from 'src/app/services/productos/productos.service';
-import { DolarService } from 'src/app/services/dolar/dolar.service';
-import { TokenService } from 'src/app/services/token/token.service';
-
+import { ProductosService } from "src/app/services/productos/productos.service";
+import { DolarService } from "src/app/services/dolar/dolar.service";
+import { TokenService } from "src/app/services/token/token.service";
 
 @Component({
-  selector: 'app-listado-componentes',
-  templateUrl: './listado-componentes.component.html',
-  styleUrls: ['./listado-componentes.component.scss'],
+  selector: "app-listado-componentes",
+  templateUrl: "./listado-componentes.component.html",
+  styleUrls: ["./listado-componentes.component.scss"],
 })
 export class ListadoComponentesComponent implements OnInit {
-
   //ImgPaths
-  imgInfo="./assets/images/help02.png";
-  imgNotebook ="./assets/icons-products/notebook.png";
-  imgMonitor="./assets/icons-products/monitor.png";
-  imgSmartTv="./assets/icons-products/smartTv.png";
-  imgCelular="./assets/icons-products/celular.png";
-  imgTablet="./assets/icons-products/tablets.png";
-  imgTeclado="./assets/icons-products/teclado.png";
-  imgMic="./assets/icons-products/mic.png";
-  imgAuricular="./assets/icons-products/auricular.png";
-  imgHardDrive="./assets/icons-products/hard-drive.png";
-  imgCable="./assets/icons-products/cable.png";
-  imgAdaptador="./assets/icons-products/adaptador.png";
-  imgCargBaterias="./assets/icons-products/cargBaterias.png";
-  imgEsp8266="./assets/icons-products/esp8266.png";
-  imgPlacas="./assets/icons-products/placas.png";
-  imgSwitch="./assets/icons-products/switch.png";
-  imgCableRedes="./assets/icons-products/cableRedes.png";
-  imgFilterCateg="./assets/icons-crud/filter-categ.svg";
-  imgFilterMarca="./assets/icons-crud/filter-marca.svg";
-  imgFilterDate="./assets/icons-crud/filter-date.svg";
-  imgFilterStock="./assets/icons-crud/filter-stock.svg";
-  imgFilterPrecio="./assets/icons-crud/filter-precio.svg";
-  imgFilterInfo="./assets/icons-crud/filter-info.svg";
-  imgFilterDelete="./assets/icons-crud/filter-delete.svg";
-  imgSearch="./assets/images/search.png";
-  imgPapelera="./assets/forms/papelera.png";
-  imgAddProduct="./assets/icons-crud/add-product.svg";
-  imgLastProduct="./assets/icons-crud/last-product.png";
-  imgDivisas="./assets/icons-crud/divisas.png";
-  imgDownload="./assets/icons-crud/download.svg";
-  imgCardTableList="./assets/icons-crud/card-table-list.svg";
-  imgTableList="./assets/icons-crud/table-list.svg";
-  imgSelectSort="./assets/icons-crud/select-sort.svg";
-  imgOrderAsc="./assets/icons-crud/order-asc.svg";
-  imgOrderDesc="./assets/icons-crud/order-desc.svg";
-
-
-/*
-"assets/images/pdf.png"
-"./assets/icons-crud/help.png"
-"./assets/icons-crud/details-product.svg"
-"./assets/icons-crud/edit-product.svg"
-"./assets/icons-crud/delete-product.svg"
-"assets/pagination/arrowLastLeft.png"
-"assets/pagination/arrowLeft.png"
-"assets/pagination/arrowRight.png"
-"assets/pagination/arrowLastRight.png"
-"assets/icons-crud/return.svg"
-"assets/icons-crud/reload.svg"
-assets/download/pdf.png
-"assets/download/excel.png"
-"assets/download/csv.png"
-"assets/icons-crud/warning.svg"
-
-  */
-
+  imgInfo = "./assets/images/help02.png";
+  //start img filtros por grupos de componentes
+  imgNotebook = "./assets/icons-products/notebook.png";
+  imgMonitor = "./assets/icons-products/monitor.png";
+  imgSmartTv = "./assets/icons-products/smartTv.png";
+  imgCelular = "./assets/icons-products/celular.png";
+  imgTablet = "./assets/icons-products/tablets.png";
+  imgTeclado = "./assets/icons-products/teclado.png";
+  imgMic = "./assets/icons-products/mic.png";
+  imgAuricular = "./assets/icons-products/auricular.png";
+  imgHardDrive = "./assets/icons-products/hard-drive.png";
+  imgCable = "./assets/icons-products/cable.png";
+  imgAdaptador = "./assets/icons-products/adaptador.png";
+  imgCargBaterias = "./assets/icons-products/cargBaterias.png";
+  imgEsp8266 = "./assets/icons-products/esp8266.png";
+  imgPlacas = "./assets/icons-products/placas.png";
+  imgSwitch = "./assets/icons-products/switch.png";
+  imgCableRedes = "./assets/icons-products/cableRedes.png";
+  //end img filtros por grupos de componentes
+  //start img filtros por tipos de campos
+  imgFilterCateg = "./assets/icons-crud/filter-categ.svg";
+  imgFilterMarca = "./assets/icons-crud/filter-marca.svg";
+  imgFilterDate = "./assets/icons-crud/filter-date.svg";
+  imgFilterStock = "./assets/icons-crud/filter-stock.svg";
+  imgFilterPrecio = "./assets/icons-crud/filter-precio.svg";
+  imgFilterInfo = "./assets/icons-crud/filter-info.svg";
+  imgFilterDelete = "./assets/icons-crud/filter-delete.svg";
+  //end img filtros por tipos de campos
+  //start img buscador
+  imgSearch = "./assets/images/search.png";
+  imgPapelera = "./assets/forms/papelera.png";
+  //end img buscador
+  //start img filtros derecha
+  imgAddProduct = "./assets/icons-crud/add-product.svg";
+  imgLastProduct = "./assets/icons-crud/last-product.png";
+  imgDivisas = "./assets/icons-crud/divisas.png";
+  imgDownload = "./assets/icons-crud/download.svg";
+  imgCardTableList = "./assets/icons-crud/card-table-list.svg";
+  imgTableList = "./assets/icons-crud/table-list.svg";
+  //end img filtros derecha
+  //start img filtros tabla
+  imgSelectSort = "./assets/icons-crud/select-sort.svg";
+  imgOrderAsc = "./assets/icons-crud/order-asc.svg";
+  imgOrderDesc = "./assets/icons-crud/order-desc.svg";
+  imgPdf = "./assets/images/pdf.png";
+  imgPrecioHelp = "./assets/icons-crud/help.png";
+  imgDetailsProduct = "./assets/icons-crud/details-product.svg";
+  imgEditProduct = "./assets/icons-crud/edit-product.svg";
+  imgDeleteProduct = "./assets/icons-crud/delete-product.svg";
+  //end img filtros tabla
+  //start img paginacion
+  imgArrowLastLeft = "./assets/pagination/arrowLastLeft.png";
+  imgArrowLeft = "./assets/pagination/arrowLeft.png";
+  imgArrowRight = "./assets/pagination/arrowRight.png";
+  imgArrowLastRight = "./assets/pagination/arrowLastRight.png";
+  imgReturn = "./assets/icons-crud/return.svg";
+  imgReload = "./assets/icons-crud/reload.svg";
+  //end img paginacion
+  //start img paginacion
+  //start modal download file
+  imgDownloadPdf = "./assets/download/pdf.png";
+  imgDownloadExcel = "./assets/download/excel.png";
+  imgDownloadCsv = "./assets/download/csv.png";
+  imgWarning = "./assets/icons-crud/warning.svg";
+  //end modal download file
 
 
   navigationExtras: NavigationExtras = {
@@ -104,13 +111,13 @@ assets/download/pdf.png
 
   //PRODUCTO SELECCIONADO
   productoSelect: ProductoDTO[] = [];
-  idProdSelect: string = '';
-  codProdSelect: string = '';
-  nombrProdSelect: string = '';
+  idProdSelect: string = "";
+  codProdSelect: string = "";
+  nombrProdSelect: string = "";
 
   //FILTRO BUSQUEDA PRODUCTOS
-  filtroProdBusqueda: string = '';
-  filtroProdCampo: string = '';
+  filtroProdBusqueda: string = "";
+  filtroProdCampo: string = "";
 
   //SEGURIDAD
   isAdmin = false;
@@ -131,8 +138,8 @@ assets/download/pdf.png
   nroTotalElements = 0;
 
   //Caracteristicas
-  orderBy = 'id';
-  direction = 'asc';
+  orderBy = "id";
+  direction = "asc";
 
   //ERRORES
   errMsj: string;
@@ -153,7 +160,6 @@ assets/download/pdf.png
     this.listarLastProducto();
     this.checkEliminarProducto();
   }
-
 
   //=========== SEGURIDAD ==============
   //Aplicada en productos.guard y agregada en el routing
@@ -179,7 +185,7 @@ assets/download/pdf.png
           //TOAST ERROR
           setTimeout(() => {
             this.toast.error({
-              detail: 'ERROR',
+              detail: "ERROR",
               summary: this.errMsj,
               duration: 2000,
             });
@@ -206,7 +212,7 @@ assets/download/pdf.png
       .subscribe(
         (data: any) => {
           this.lastProducto = data.content;
-          console.log('Ultimo Producto', this.lastProducto);
+          console.log("Ultimo Producto", this.lastProducto);
           console.log(this.totalPages);
         },
         (err) => {
@@ -215,7 +221,7 @@ assets/download/pdf.png
           //TOAST ERROR
           setTimeout(() => {
             this.toast.error({
-              detail: 'ERROR',
+              detail: "ERROR",
               summary: this.errMsj,
               duration: 2000,
             });
@@ -258,7 +264,7 @@ assets/download/pdf.png
           //TOAST ERROR
           setTimeout(() => {
             this.toast.error({
-              detail: 'ERROR',
+              detail: "ERROR",
               summary: this.errMsj,
               duration: 2000,
             });
@@ -274,10 +280,10 @@ assets/download/pdf.png
   }
 
   setFilter(filtro: string, campo: string, nroPag: number) {
-    this.filtroProdCampo = '';
-    this.filtroProdBusqueda = '';
+    this.filtroProdCampo = "";
+    this.filtroProdBusqueda = "";
 
-    if (filtro === '' || filtro === null || campo === '' || campo === null) {
+    if (filtro === "" || filtro === null || campo === "" || campo === null) {
       this.listarProductos();
       this.listarLastProducto();
     } else {
@@ -294,29 +300,29 @@ assets/download/pdf.png
   getDolarCompra() {
     this.dolarService
       .getDolarCompra()
-      .then((obj) => (this.dolarCompra = obj.replace(/,/g, '.')));
+      .then((obj) => (this.dolarCompra = obj.replace(/,/g, ".")));
   }
   //----------GET DOLAR VENTA------------
   getDolarVenta() {
     this.dolarService
       .getDolarVenta()
-      .then((obj) => (this.dolarVenta = obj.replace(/,/g, '.')));
+      .then((obj) => (this.dolarVenta = obj.replace(/,/g, ".")));
   }
 
   //----------DETALLES PRODUCTOS ---------------
   detalleProducto(producto: any): void {
     this.spinLoader(100);
 
-    this.navigationExtras.state['value'] = producto;
-    this.router.navigate(['detalles-componentes'], this.navigationExtras);
+    this.navigationExtras.state["value"] = producto;
+    this.router.navigate(["detalles-componentes"], this.navigationExtras);
   }
 
   //----------EDITAR PRODUCTOS ---------------
   editarProducto(producto: any): void {
     this.spinLoader(100);
 
-    this.navigationExtras.state['value'] = producto;
-    this.router.navigate(['editar-componentes'], this.navigationExtras);
+    this.navigationExtras.state["value"] = producto;
+    this.router.navigate(["editar-componentes"], this.navigationExtras);
   }
 
   //----------SELECCIONAR PRODUCTO ---------------
@@ -336,12 +342,12 @@ assets/download/pdf.png
     this.productoService.delete(id).subscribe(
       (data: any) => {
         this.toast.success({
-          detail: 'Operación Exitosa',
-          summary: 'Se ha Eliminado el Producto!!',
+          detail: "Operación Exitosa",
+          summary: "Se ha Eliminado el Producto!!",
           duration: 2000,
         });
 
-        console.log('Producto Eliminado');
+        console.log("Producto Eliminado");
 
         this.refresh(2100);
       },
@@ -351,7 +357,7 @@ assets/download/pdf.png
         //TOAST ERROR
         setTimeout(() => {
           this.toast.error({
-            detail: 'ERROR',
+            detail: "ERROR",
             summary: this.errMsj,
             duration: 2000,
           });
@@ -367,8 +373,8 @@ assets/download/pdf.png
     this.spinLoader(100);
 
     this.toast.error({
-      detail: 'Operación No Autorizada',
-      summary: 'Servicio Habilitado para administradores!!',
+      detail: "Operación No Autorizada",
+      summary: "Servicio Habilitado para administradores!!",
       duration: 2000,
     });
 
@@ -406,7 +412,7 @@ assets/download/pdf.png
     this.codProdSelect = producto.codigo;
     this.nombrProdSelect = producto.nombre;
 
-    console.log('Producto Seleccionado: ', producto);
+    console.log("Producto Seleccionado: ", producto);
   }
 
   //------------TYPE LIST ---------------
@@ -415,28 +421,28 @@ assets/download/pdf.png
   }
 
   //============= GENERATE EXCEL ====================
-  nameExcell = 'listaComponentes.xlsx';
+  nameExcell = "listaComponentes.xlsx";
 
   generateExcel(): void {
     //TOAST SUCCESS
     setTimeout(() => {
       this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Descargando Archivo .xlsx!!',
+        detail: "SUCCESS",
+        summary: "Descargando Archivo .xlsx!!",
         duration: 2000,
       });
     }, 600);
     //FIN TOAST SUCCESS
 
-    let element = document.getElementById('table');
+    let element = document.getElementById("table");
 
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
     //eliminamos columnas
-    delete worksheet['F1'];
+    delete worksheet["F1"];
 
-    delete worksheet['G1'];
-    delete worksheet['K1'];
+    delete worksheet["G1"];
+    delete worksheet["K1"];
 
     //ej reemplazamos por vacio
     /*
@@ -449,48 +455,48 @@ assets/download/pdf.png
     XLSX.utils.book_append_sheet(book, worksheet);
 
     //Agregamos paginado
-    XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: 'L1' });
+    XLSX.utils.sheet_add_aoa(worksheet, [["NRO PAGINA"]], { origin: "L1" });
 
     XLSX.utils.sheet_add_aoa(
       worksheet,
-      [[this.nroPage + '/' + this.totalPages]],
-      { origin: 'L2' }
+      [[this.nroPage + "/" + this.totalPages]],
+      { origin: "L2" }
     );
 
-    XLSX.utils.sheet_add_aoa(worksheet, [['NRO ELEMENTOS']], { origin: 'M1' });
+    XLSX.utils.sheet_add_aoa(worksheet, [["NRO ELEMENTOS"]], { origin: "M1" });
 
     XLSX.utils.sheet_add_aoa(
       worksheet,
-      [[this.nroCurrentElements + '/' + this.nroTotalElements]],
-      { origin: 'M2' }
+      [[this.nroCurrentElements + "/" + this.nroTotalElements]],
+      { origin: "M2" }
     );
 
     XLSX.writeFile(book, this.nameExcell);
   }
 
   //============= GENERATE CSV ====================
-  nameCsv = 'listaComponentes.csv';
+  nameCsv = "listaComponentes.csv";
 
   generateCsv(): void {
     //TOAST SUCCESS
     setTimeout(() => {
       this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Descargando Archivo .csv!!',
+        detail: "SUCCESS",
+        summary: "Descargando Archivo .csv!!",
         duration: 2000,
       });
     }, 600);
     //FIN TOAST SUCCESS
 
-    let element = document.getElementById('table');
+    let element = document.getElementById("table");
 
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
     //eliminamos columnas
-    delete worksheet['F1'];
+    delete worksheet["F1"];
 
-    delete worksheet['G1'];
-    delete worksheet['K1'];
+    delete worksheet["G1"];
+    delete worksheet["K1"];
 
     //ej reemplazamos por vacio
     /*
@@ -508,14 +514,14 @@ assets/download/pdf.png
   }
 
   //============= GENERATE PDF ====================
-  namePdf = 'listaComponentes.pdf';
+  namePdf = "listaComponentes.pdf";
 
   generatePdf(): void {
     //TOAST SUCCESS
     setTimeout(() => {
       this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Descargando Archivo .pdf!!',
+        detail: "SUCCESS",
+        summary: "Descargando Archivo .pdf!!",
         duration: 2000,
       });
     }, 600);
@@ -524,18 +530,18 @@ assets/download/pdf.png
     //Admitimos img
     const options = { logging: true, letterRendering: true, useCORS: true };
 
-    let DATA: any = document.getElementById('table');
+    let DATA: any = document.getElementById("table");
 
     html2canvas(DATA, options).then((canvas) => {
       let fileWidth = 208;
 
       let fileHeight = (canvas.height * fileWidth) / canvas.width;
-      const FILEURI = canvas.toDataURL('image/png');
-      let PDF = new jsPDF('p', 'mm', 'a4');
+      const FILEURI = canvas.toDataURL("image/png");
+      let PDF = new jsPDF("p", "mm", "a4");
 
       let position = 0;
 
-      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+      PDF.addImage(FILEURI, "PNG", 0, position, fileWidth, fileHeight);
       PDF.save(this.namePdf);
     });
   }
@@ -547,7 +553,7 @@ assets/download/pdf.png
     this.orderBy = type;
     this.direction = direct;
 
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
+    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
       this.listarProductosFilter();
@@ -563,8 +569,8 @@ assets/download/pdf.png
       //TOAST ERROR
       setTimeout(() => {
         this.toast.error({
-          detail: 'ERROR',
-          summary: 'No es Posible Disminuir una Página!!',
+          detail: "ERROR",
+          summary: "No es Posible Disminuir una Página!!",
           duration: 2000,
         });
       }, 600);
@@ -581,8 +587,8 @@ assets/download/pdf.png
       //TOAST ERROR
       setTimeout(() => {
         this.toast.error({
-          detail: 'ERROR',
-          summary: 'No es Posible Aumentar una Página!!',
+          detail: "ERROR",
+          summary: "No es Posible Aumentar una Página!!",
           duration: 2000,
         });
       }, 600);
@@ -593,7 +599,7 @@ assets/download/pdf.png
   cambiarPagina(pagina: number): void {
     this.nroPage = pagina;
 
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
+    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
       this.listarProductos();
     } else {
       this.listarProductosFilter();

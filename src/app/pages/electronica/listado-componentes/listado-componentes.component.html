@@ -1,7 +1,7 @@
 <!-- LISTADO DE PRODUCTOS -->
 <div class="container">
   <div class="row justify-content-center m-3">
-    <!-- TITULO EDICCION DE PRODUCTOS -->
+    <!-- TITULO EDICION DE PRODUCTOS -->
     <div class="alert alert-dark bg-dark text-white text-center" role="alert">
       <h4 class="">
         <strong>
@@ -25,7 +25,7 @@
         </strong>
       </h4>
     </div>
-    <!-- FIN TITULO EDICCION DE PRODUCTOS -->
+    <!-- FIN TITULO EDICION DE PRODUCTOS -->
 
     <!--  ICONOS PRODUCTOS -->
     <div class="text-center" role="alert">
@@ -1724,7 +1724,12 @@
               href="{{ producto.hojaDatos }}"
               target="_blank"
             >
-              <img src="assets/images/pdf.png" width="40" height="40" alt=""
+              <img
+                src="{{ imgPdf }}"
+                loading="lazy"
+                width="40"
+                height="40"
+                alt=""
             /></a>
           </td>
           <td>{{ producto.stock }} u.</td>
@@ -1739,9 +1744,8 @@
                 data-bs-target="#modalDivisa"
                 (click)="selectPrecioProducto(producto.precio)"
               >
-
                 <img
-                  src="./assets/icons-crud/help.png"
+                  src="{{ imgPrecioHelp }}" loading="lazy"
                   alt=""
                   width="30"
                   height="30"
@@ -1761,7 +1765,7 @@
               >
                 <!--Icono Visualizar Producto-->
                 <img
-                  src="./assets/icons-crud/details-product.svg"
+                  src="{{ imgDetailsProduct }}" loading="lazy"
                   alt=""
                   width="25"
                   height="25"
@@ -1776,7 +1780,7 @@
               >
                 <!--Icono Editar Producto-->
                 <img
-                  src="./assets/icons-crud/edit-product.svg"
+                  src="{{ imgEditProduct }}" loading="lazy"
                   alt=""
                   width="25"
                   height="25"
@@ -1796,7 +1800,7 @@
                 >
                   <!--Icono Eliminar Producto-->
                   <img
-                    src="./assets/icons-crud/delete-product.svg"
+                  src="{{ imgDeleteProduct }}" loading="lazy"
                     alt=""
                     width="25"
                     height="25"
@@ -1849,7 +1853,7 @@
               (click)="selectPrecioProducto(producto.precio)"
             >
               <img
-                src="./assets/icons-crud/help.png"
+                                loading="lazy"
                 alt=""
                 width="30"
                 height="25"
@@ -1867,7 +1871,7 @@
             >
               <!--Icono Visualizar Producto-->
               <img
-                src="./assets/icons-crud/details-product.svg"
+                src="{{ imgPrecioHelp }}" loading="lazy"
                 alt=""
                 width="25"
                 height="25"
@@ -1883,7 +1887,7 @@
             >
               <!--Icono Editar Producto-->
               <img
-                src="./assets/icons-crud/edit-product.svg"
+                src="{{ imgEditProduct }}" loading="lazy"
                 alt=""
                 width="25"
                 height="25"
@@ -1903,7 +1907,7 @@
               >
                 <!--Icono Eliminar Producto-->
                 <img
-                  src="./assets/icons-crud/delete-product.svg"
+                  src="{{ imgDeleteProduct }}" loading="lazy"
                   alt=""
                   width="25"
                   height="25"
@@ -1919,7 +1923,6 @@
       </div>
     </ng-template>
     <!-- FIN TEMPLATE CARDS TABLE-->
-
 
     <!--PAGINACION/REGRESAR/ACTUALIZAR-->
     <div class="container col-12">
@@ -1938,7 +1941,7 @@
                   class="btn btn-outline-dark border-light alert-link text-white"
                 >
                   <img
-                    src="assets/pagination/arrowLastLeft.png"
+                  src="{{ imgArrowLastLeft }}" loading="lazy"
                     width="15"
                     height="15"
                     alt=""
@@ -1951,7 +1954,7 @@
                   (click)="paginaAnterior()"
                 >
                   <img
-                    src="assets/pagination/arrowLeft.png"
+                  src="{{ imgArrowLeft }}" loading="lazy"
                     width="15"
                     height="15"
                     alt=""
@@ -1988,7 +1991,7 @@
                   (click)="paginaSiguiente()"
                 >
                   <img
-                    src="assets/pagination/arrowRight.png"
+                  src="{{ imgArrowRight }}" loading="lazy"
                     width="15"
                     height="15"
                     alt=""
@@ -2001,7 +2004,7 @@
                   (click)="cambiarPagina(this.totalPages - 1)"
                 >
                   <img
-                    src="assets/pagination/arrowLastRight.png"
+                  src="{{ imgArrowLastRight }}" loading="lazy"
                     width="15"
                     height="15"
                     alt=""
@@ -2048,7 +2051,7 @@
                   >
                     <!--Icono Regresar Inicio-->
                     <img
-                      src="assets/icons-crud/return.svg"
+                    src="{{ imgReturn }}" loading="lazy"
                       width="15"
                       height="15"
                       alt=""
@@ -2065,7 +2068,7 @@
                 >
                   <!--Icono Actualizar Listado-->
                   <img
-                    src="assets/icons-crud/reload.svg"
+                  src="{{ imgReload }}" loading="lazy"
                     width="15"
                     height="15"
                     alt=""
@@ -2750,8 +2753,6 @@
 </div>
 <!--FIN MODAL PRODUCTOS-FECHAS-->
 
-
-
 <!--MODAL PRODUCTOS-STOCK -->
 <!-- Modal -->
 <div
@@ -3198,7 +3199,7 @@
                 >
                   <!--Icono Visualizar Producto-->
                   <img
-                    src="./assets/icons-crud/details-product.svg"
+                    src="{{ imgPrecioHelp }}" loading="lazy"
                     alt=""
                     width="25"
                     height="25"
@@ -3215,7 +3216,7 @@
                 >
                   <!--Icono Editar Producto-->
                   <img
-                    src="./assets/icons-crud/edit-product.svg"
+                    src="{{ imgEditProduct }}" loading="lazy"
                     alt=""
                     width="25"
                     height="25"
@@ -3236,7 +3237,7 @@
                   >
                     <!--Icono Eliminar Producto-->
                     <img
-                      src="./assets/icons-crud/delete-product.svg"
+                      src="{{ imgDeleteProduct }}" loading="lazy"
                       alt=""
                       width="25"
                       height="25"
@@ -3263,7 +3264,6 @@
   </div>
 </div>
 <!--FIN MODAL LAST PRODUCTO-->
-
 
 <!--MODAL ARCHIVO DESCARGA -->
 <!-- Modal -->
@@ -3310,7 +3310,7 @@
             type="button"
             (click)="generatePdf()"
           >
-            <img src="assets/download/pdf.png" width="55" height="55" alt="" />
+            <img src="{{ imgDownloadPdf }}" loading="lazy" width="55" height="55" alt="" />
           </button>
 
           <button
@@ -3320,7 +3320,7 @@
             (click)="generateExcel()"
           >
             <img
-              src="assets/download/excel.png"
+            src="{{ imgDownloadExcel }}" loading="lazy"
               width="55"
               height="55"
               alt=""
@@ -3333,7 +3333,7 @@
             type="button"
             (click)="generateCsv()"
           >
-            <img src="assets/download/csv.png" width="55" height="55" alt="" />
+            <img src="{{ imgDownloadCsv }}" loading="lazy" width="55" height="55" alt="" />
           </button>
         </div>
       </div>
@@ -3364,7 +3364,7 @@
         <div class="d-flex d-row">
           <div class="mt-0 m-1 p-1 d-flex d-row">
             <img
-              src="assets/icons-crud/warning.svg"
+              src="{{ imgWarning }}" loading="lazy"
               width="25"
               height="25"
               alt=""
@@ -3405,7 +3405,7 @@
         <div class="alert alert-danger alert-link" role="alert">
           <div class="d-flex d-row m-1 p-1">
             <img
-              src="assets/icons-crud/warning.svg"
+              src="{{ imgWarning }}" loading="lazy"
               width="25"
               height="25"
               alt=""
