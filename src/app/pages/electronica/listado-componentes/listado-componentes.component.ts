@@ -90,8 +90,8 @@ export class ListadoComponentesComponent implements OnInit {
   lastProducto: ProductoDTO[] = [];
   precioProducto: number = 0;
   //Dolar
-  dolarCompra: number = 0;
-  dolarVenta: number = 0;
+  dolarBuy: number = 0;
+  dolarSale: number = 0;
   converDolarPeso: number = 0;
   //Producto seleccionado
   productoSelect: ProductoDTO[] = [];
@@ -134,8 +134,8 @@ export class ListadoComponentesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getDolarCompra();
-    this.getDolarVenta();
+    this.getDolarBuy();
+    this.getDolarSale();
     this.listarProductos();
     this.listarLastProducto();
     this.checkEliminarProducto();
@@ -157,6 +157,7 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
+          console.log(err);
           this.errMsj = err.error.message;
 
           //TOAST ERROR
@@ -191,8 +192,8 @@ export class ListadoComponentesComponent implements OnInit {
           console.log(this.totalPages);
         },
         (err) => {
+          console.log(err);
           this.errMsj = err.error.message;
-
           //TOAST ERROR
           setTimeout(() => {
             this.toast.error({
@@ -230,8 +231,8 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
+          console.log(err);
           this.errMsj = err.error.message;
-
           //TOAST ERROR
           setTimeout(() => {
             this.toast.error({
@@ -250,38 +251,46 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== SET FILTERS FOR PRODUCTS ===
   // ===================================
   setFilter(filtro: string, campo: string, nroPag: number) {
-    this.filtroProdCampo = "";
-    this.filtroProdBusqueda = "";
+    try {
+      this.filtroProdCampo = "";
+      this.filtroProdBusqueda = "";
 
-    if (filtro === "" || filtro === null || campo === "" || campo === null) {
-      this.listarProductos();
+      if (filtro === ("" || null) || campo === ("" || null)) {
+        this.listarProductos();
+      } else {
+        this.filtroProdCampo = campo;
+        this.filtroProdBusqueda = filtro;
+        this.nroPage = nroPag;
+        this.listarProductosFilter();
+      }
       this.listarLastProducto();
-    } else {
-      this.filtroProdCampo = campo;
-      this.filtroProdBusqueda = filtro;
-      this.nroPage = nroPag;
-
-      this.listarProductosFilter();
-      this.listarLastProducto();
+    } catch (err) {
+      console.log(err);
     }
   }
 
   // ==========================
   // ===== GET DOLAR COMPRA ===
   // ==========================
-  getDolarCompra() {
+  getDolarBuy() {
     this.dolarService
-      .getDolarCompra()
-      .then((obj) => (this.dolarCompra = obj.replace(/,/g, ".")));
+      .getDolarBuy()
+      .then((obj) => (this.dolarBuy = obj))
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   // ==========================
   // ===== GET DOLAR VENTA ===
   // ==========================
-  getDolarVenta() {
+  getDolarSale() {
     this.dolarService
-      .getDolarVenta()
-      .then((obj) => (this.dolarVenta = obj.replace(/,/g, ".")));
+      .getDolarSale()
+      .then((obj) => (this.dolarSale = obj))
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   // ==================================
@@ -394,8 +403,9 @@ export class ListadoComponentesComponent implements OnInit {
     this.router.navigate([page]);
   }
 
-  //-----------  ID PRODUCTO SELECT-------------
-
+  // =========================
+  // ===== SET PRODUCT SELECT===
+  // =========================
   setProductoSelect(producto: ProductoDTO) {
     this.idProdSelect = producto.id;
     this.codProdSelect = producto.codigo;
@@ -404,12 +414,16 @@ export class ListadoComponentesComponent implements OnInit {
     console.log("Producto Seleccionado: ", producto);
   }
 
-  //------------TYPE LIST ---------------
+  // =========================
+  // ===== SET TYPE OF LIST===
+  // =========================
   setTypeListTable(set: boolean) {
     this.typeListTable = set;
   }
 
-  //============= GENERATE EXCEL ====================
+  // =========================
+  // ===== GENERATE EXCEL===
+  // =========================
   nameExcell = "listaComponentes.xlsx";
 
   generateExcel(): void {
@@ -463,7 +477,9 @@ export class ListadoComponentesComponent implements OnInit {
     XLSX.writeFile(book, this.nameExcell);
   }
 
-  //============= GENERATE CSV ====================
+  // =====================
+  // ===== GENERATE CSV===
+  // =====================
   nameCsv = "listaComponentes.csv";
 
   generateCsv(): void {
@@ -502,7 +518,9 @@ export class ListadoComponentesComponent implements OnInit {
     XLSX.writeFile(book, this.nameCsv);
   }
 
-  //============= GENERATE PDF ====================
+  // =====================
+  // ===== GENERATE PDF===
+  // =====================
   namePdf = "listaComponentes.pdf";
 
   generatePdf(): void {
@@ -535,9 +553,13 @@ export class ListadoComponentesComponent implements OnInit {
     });
   }
 
-  //=========== METODOS PAGINACION ==============
+  // =====================
+  // ===== PAGINATION ===
+  // =====================
 
-  //Ordenar los registros por type
+  // =====================
+  // ===== ORDER BY ===
+  // =====================
   orderByDirection(type: string, direct: string): void {
     this.orderBy = type;
     this.direction = direct;
@@ -549,7 +571,9 @@ export class ListadoComponentesComponent implements OnInit {
     }
   }
 
-  //Pagina Anterior
+  // =====================
+  // ===== LAST PAGE===
+  // =====================
   paginaAnterior(): void {
     if (this.nroPage != 0 && this.nroPage > 0) {
       this.nroPage--;
@@ -567,7 +591,9 @@ export class ListadoComponentesComponent implements OnInit {
     }
   }
 
-  //Pagina Anterior
+  // =====================
+  // ===== NEXT PAGE===
+  // =====================
   paginaSiguiente(): void {
     if (!this.isLastPage && this.nroPage >= 0) {
       this.nroPage++;
@@ -585,6 +611,9 @@ export class ListadoComponentesComponent implements OnInit {
     }
   }
 
+  // =====================
+  // ===== CHANGE PAGE===
+  // =====================
   cambiarPagina(pagina: number): void {
     this.nroPage = pagina;
 
@@ -593,10 +622,5 @@ export class ListadoComponentesComponent implements OnInit {
     } else {
       this.listarProductosFilter();
     }
-  }
-
-  //=============== PRODUCTOS POR GRUPO =============
-  countProdByGroup(): void {
-    //this.nroProdAgua = this.productos.find.g
   }
 }

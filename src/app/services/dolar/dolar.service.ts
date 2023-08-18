@@ -1,29 +1,28 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class DolarService {
   urlDolarApi: string = environment.URL_DOLAR_API;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor() {}
 
-  //================ METODOS CRUD ====================
-
-  //--Get Dolar Compra--
-  async getDolarCompra(){
-        const dolar = await fetch(this.urlDolarApi);
-        const dolarJson = await dolar.json();
-        return dolarJson[0].casa.compra;
+  async getDolarBuy() {
+    let dolar = await fetch(this.urlDolarApi);
+    let dolarJson = await dolar.json();
+    dolarJson = dolarJson[0].casa.compra;
+    let dolarJsonFormat = dolarJson.replace(/,/g, ".");
+    return dolarJsonFormat;
   }
-    //--Get Dolar Venta--
-    async getDolarVenta(){
-      const dolar = await fetch(this.urlDolarApi);
-      const dolarJson = await dolar.json();
-      return dolarJson[0].casa.venta;
-}
-
+  async getDolarSale() {
+    let dolar = await fetch(this.urlDolarApi);
+    let dolarJson = await dolar.json();
+    dolarJson = dolarJson[0].casa.venta;
+    let dolarJsonFormat = dolarJson.replace(/,/g, ".");
+    return dolarJsonFormat;
+  }
 }
