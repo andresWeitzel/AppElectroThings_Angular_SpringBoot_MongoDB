@@ -12,6 +12,7 @@ import { ProductoDTO } from "src/app/models/producto-dto";
 import { ProductosService } from "src/app/services/productos/productos.service";
 import { DolarService } from "src/app/services/dolar/dolar.service";
 import { TokenService } from "src/app/services/token/token.service";
+import { GenerateFiles } from "src/app/utilities/GenerateFiles";
 
 @Component({
   selector: "app-listado-componentes",
@@ -521,36 +522,13 @@ export class ListadoComponentesComponent implements OnInit {
   // =====================
   // ===== GENERATE PDF===
   // =====================
-  namePdf = "listaComponentes.pdf";
-
   generatePdf(): void {
-    //TOAST SUCCESS
-    setTimeout(() => {
-      this.toast.success({
-        detail: "SUCCESS",
-        summary: "Descargando Archivo .pdf!!",
-        duration: 2000,
-      });
-    }, 600);
-    //FIN TOAST SUCCESS
+    let namePdf = "listaComponentes.pdf";
+    let data: any = document.getElementById("table");
 
-    //Admitimos img
-    const options = { logging: true, letterRendering: true, useCORS: true };
+    let pdf = new GenerateFiles(this.toast);
+    pdf.generatePdf(namePdf, data);
 
-    let DATA: any = document.getElementById("table");
-
-    html2canvas(DATA, options).then((canvas) => {
-      let fileWidth = 208;
-
-      let fileHeight = (canvas.height * fileWidth) / canvas.width;
-      const FILEURI = canvas.toDataURL("image/png");
-      let PDF = new jsPDF("p", "mm", "a4");
-
-      let position = 0;
-
-      PDF.addImage(FILEURI, "PNG", 0, position, fileWidth, fileHeight);
-      PDF.save(this.namePdf);
-    });
   }
 
   // =====================
