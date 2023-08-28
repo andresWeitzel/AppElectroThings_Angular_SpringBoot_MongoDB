@@ -422,113 +422,58 @@ export class ListadoComponentesComponent implements OnInit {
     this.typeListTable = set;
   }
 
+    // =========================
+  // ===== GET PAGINATE===
+  // =========================
+  getPaginate() {
+    var paginate = {
+      nroPage: this.nroPage,
+      totalPages: this.totalPages,
+      nroCurrentElements: this.nroCurrentElements,
+      nroTotalElements: this.nroTotalElements,
+    };
+    return paginate;
+  }
+
+
   // =========================
   // ===== GENERATE EXCEL===
   // =========================
-  nameExcell = "listaComponentes.xlsx";
 
   generateExcel(): void {
-    //TOAST SUCCESS
-    setTimeout(() => {
-      this.toast.success({
-        detail: "SUCCESS",
-        summary: "Descargando Archivo .xlsx!!",
-        duration: 2000,
-      });
-    }, 600);
-    //FIN TOAST SUCCESS
+    let nameExcel = 'listaComponentes.xlsx';
 
-    let element = document.getElementById("table");
+    let data = document.getElementById('table');
 
-    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+    let paginate = this.getPaginate();
 
-    //eliminamos columnas
-    delete worksheet["F1"];
-
-    delete worksheet["G1"];
-    delete worksheet["K1"];
-
-    //ej reemplazamos por vacio
-    /*
-   //Reemplazamos el campo imagen por vacio
-   XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "F1" });
-  */
-
-    const book: XLSX.WorkBook = XLSX.utils.book_new();
-
-    XLSX.utils.book_append_sheet(book, worksheet);
-
-    //Agregamos paginado
-    XLSX.utils.sheet_add_aoa(worksheet, [["NRO PAGINA"]], { origin: "L1" });
-
-    XLSX.utils.sheet_add_aoa(
-      worksheet,
-      [[this.nroPage + "/" + this.totalPages]],
-      { origin: "L2" }
+    let excel = new GenerateFiles(this.toast).generateExcel(
+      nameExcel,
+      data,
+      paginate,
     );
-
-    XLSX.utils.sheet_add_aoa(worksheet, [["NRO ELEMENTOS"]], { origin: "M1" });
-
-    XLSX.utils.sheet_add_aoa(
-      worksheet,
-      [[this.nroCurrentElements + "/" + this.nroTotalElements]],
-      { origin: "M2" }
-    );
-
-    XLSX.writeFile(book, this.nameExcell);
   }
 
   // =====================
   // ===== GENERATE CSV===
   // =====================
-  nameCsv = "listaComponentes.csv";
 
   generateCsv(): void {
-    //TOAST SUCCESS
-    setTimeout(() => {
-      this.toast.success({
-        detail: "SUCCESS",
-        summary: "Descargando Archivo .csv!!",
-        duration: 2000,
-      });
-    }, 600);
-    //FIN TOAST SUCCESS
+    let nameCsv = 'listaComponentes.csv';
 
-    let element = document.getElementById("table");
+    let data = document.getElementById('table');
 
-    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-
-    //eliminamos columnas
-    delete worksheet["F1"];
-
-    delete worksheet["G1"];
-    delete worksheet["K1"];
-
-    //ej reemplazamos por vacio
-    /*
-   //Reemplazamos el campo imagen por vacio
-   XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "F1" });
-  */
-
-    const book: XLSX.WorkBook = XLSX.utils.book_new();
-
-    XLSX.utils.book_append_sheet(book, worksheet);
-
-    XLSX.utils.sheet_to_csv;
-
-    XLSX.writeFile(book, this.nameCsv);
+    let csv = new GenerateFiles(this.toast).generateCsv(nameCsv, data);
   }
 
   // =====================
   // ===== GENERATE PDF===
   // =====================
   generatePdf(): void {
-    let namePdf = "listaComponentes.pdf";
-    let data: any = document.getElementById("table");
+    let namePdf = 'listaComponentes.pdf';
+    let data: any = document.getElementById('table');
 
-    let pdf = new GenerateFiles(this.toast);
-    pdf.generatePdf(namePdf, data);
-
+    let pdf = new GenerateFiles(this.toast).generatePdf(namePdf, data);
   }
 
   // =====================
