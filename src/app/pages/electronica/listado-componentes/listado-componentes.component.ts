@@ -3,16 +3,15 @@ import { Component, OnInit } from "@angular/core";
 import { NavigationExtras, Router } from "@angular/router";
 import { NgToastService } from "ng-angular-popup";
 import { NgxUiLoaderService } from "ngx-ui-loader";
-import * as XLSX from "xlsx";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 //Models
 import { ProductoDTO } from "src/app/models/producto-dto";
 //Service
 import { ProductosService } from "src/app/services/productos/productos.service";
 import { DolarService } from "src/app/services/dolar/dolar.service";
 import { TokenService } from "src/app/services/token/token.service";
+
 import { GenerateFiles } from "src/app/utilities/GenerateFiles";
+import { ToastNotification } from "src/app/services/utilities/ToastNotification";
 
 @Component({
   selector: "app-listado-componentes",
@@ -118,6 +117,10 @@ export class ListadoComponentesComponent implements OnInit {
   direction = "asc";
   //Errores
   errMsj: string;
+  //Utilities
+  file: GenerateFiles = new GenerateFiles(this.toastService);
+  toast: ToastNotification = new ToastNotification(this.toastService);
+
 
   navigationExtras: NavigationExtras = {
     state: {
@@ -130,7 +133,7 @@ export class ListadoComponentesComponent implements OnInit {
     private productoService: ProductosService,
     private dolarService: DolarService,
     private tokenService: TokenService,
-    private toast: NgToastService,
+    private toastService: NgToastService,
     private ngxService: NgxUiLoaderService
   ) {}
 
@@ -141,6 +144,9 @@ export class ListadoComponentesComponent implements OnInit {
     this.listarLastProducto();
     this.checkEliminarProducto();
   }
+
+
+
 
   // ======================
   // ===== PRODUCT LIST ===
@@ -158,19 +164,9 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
-          console.log(err);
           this.errMsj = err.error.message;
-
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: "ERROR",
-              summary: this.errMsj,
-              duration: 2000,
-            });
-          }, 600);
-          //FIN TOAST ERROR
-          this.refresh(3000);
+          console.log(this.errMsj);
+          this.toast.toastError(this.errMsj);
         }
       );
   }
@@ -189,22 +185,11 @@ export class ListadoComponentesComponent implements OnInit {
       .subscribe(
         (data: any) => {
           this.lastProducto = data.content;
-          console.log("Ultimo Producto", this.lastProducto);
-          console.log(this.totalPages);
         },
         (err) => {
-          console.log(err);
           this.errMsj = err.error.message;
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: "ERROR",
-              summary: this.errMsj,
-              duration: 2000,
-            });
-          }, 600);
-          //FIN TOAST ERROR
-          this.refresh(3000);
+          console.log(this.errMsj);
+          this.toast.toastError(this.errMsj);
         }
       );
   }
@@ -232,18 +217,9 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
-          console.log(err);
           this.errMsj = err.error.message;
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: "ERROR",
-              summary: this.errMsj,
-              duration: 2000,
-            });
-          }, 600);
-          //FIN TOAST ERROR
-          this.refresh(3000);
+          console.log(this.errMsj);
+          this.toast.toastError(this.errMsj);
         }
       );
   }
@@ -336,7 +312,7 @@ export class ListadoComponentesComponent implements OnInit {
 
     this.productoService.delete(id).subscribe(
       (data: any) => {
-        this.toast.success({
+        this.toastService.success({
           detail: "Operación Exitosa",
           summary: "Se ha Eliminado el Producto!!",
           duration: 2000,
@@ -347,15 +323,15 @@ export class ListadoComponentesComponent implements OnInit {
       (err) => {
         this.errMsj = err.error.message;
 
-        //TOAST ERROR
+        //TOASTService ERROR
         setTimeout(() => {
-          this.toast.error({
+          this.toastService.error({
             detail: "ERROR",
             summary: this.errMsj,
             duration: 2000,
           });
         }, 600);
-        //FIN TOAST ERROR
+        //FIN TOASTService ERROR
         console.log(this.errMsj);
       }
     );
@@ -367,7 +343,7 @@ export class ListadoComponentesComponent implements OnInit {
   eliminarProductoNoAuth(id: number): void {
     this.spinLoader(100);
 
-    this.toast.error({
+    this.toastService.error({
       detail: "Operación No Autorizada",
       summary: "Servicio Habilitado para administradores!!",
       duration: 2000,
@@ -447,7 +423,7 @@ export class ListadoComponentesComponent implements OnInit {
 
     let paginate = this.getPaginate();
 
-    let excel = new GenerateFiles(this.toast).generateExcel(
+    this.file.generateExcel(
       nameExcel,
       data,
       paginate,
@@ -463,7 +439,7 @@ export class ListadoComponentesComponent implements OnInit {
 
     let data = document.getElementById('table');
 
-    let csv = new GenerateFiles(this.toast).generateCsv(nameCsv, data);
+    this.file.generateCsv(nameCsv, data);
   }
 
   // =====================
@@ -473,7 +449,7 @@ export class ListadoComponentesComponent implements OnInit {
     let namePdf = 'listaComponentes.pdf';
     let data: any = document.getElementById('table');
 
-    let pdf = new GenerateFiles(this.toast).generatePdf(namePdf, data);
+    this.file.generatePdf(namePdf, data);
   }
 
   // =====================
@@ -502,15 +478,15 @@ export class ListadoComponentesComponent implements OnInit {
       this.nroPage--;
       this.listarProductos();
     } else {
-      //TOAST ERROR
+      //TOASTService ERROR
       setTimeout(() => {
-        this.toast.error({
+        this.toastService.error({
           detail: "ERROR",
           summary: "No es Posible Disminuir una Página!!",
           duration: 2000,
         });
       }, 600);
-      //FIN TOAST ERROR
+      //FIN TOASTService ERROR
     }
   }
 
@@ -522,15 +498,15 @@ export class ListadoComponentesComponent implements OnInit {
       this.nroPage++;
       this.listarProductos();
     } else {
-      //TOAST ERROR
+      //TOASTService ERROR
       setTimeout(() => {
-        this.toast.error({
+        this.toastService.error({
           detail: "ERROR",
           summary: "No es Posible Aumentar una Página!!",
           duration: 2000,
         });
       }, 600);
-      //FIN TOAST ERROR
+      //FIN TOASTService ERROR
     }
   }
 
