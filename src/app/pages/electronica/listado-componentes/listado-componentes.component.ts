@@ -1,17 +1,15 @@
 //External
 import { Component, OnInit } from "@angular/core";
 import { NavigationExtras, Router } from "@angular/router";
-import { NgToastService } from "ng-angular-popup";
-import { NgxUiLoaderService } from "ngx-ui-loader";
 //Models
 import { ProductoDTO } from "src/app/models/producto-dto";
-//Service
+//Services
 import { ProductosService } from "src/app/services/productos/productos.service";
 import { DolarService } from "src/app/services/dolar/dolar.service";
 import { TokenService } from "src/app/services/token/token.service";
-
-import { GenerateFiles } from "src/app/utilities/GenerateFiles";
-import { ToastNotification } from "src/app/services/utilities/ToastNotification";
+import { GenerateFilesService } from "src/app/services/utilities/generate-files.service";
+import { ToastNotificationService } from "src/app/services/utilities/toast-notification.service";
+import { SpinLoaderService } from "src/app/services/utilities/spin-loader.service";
 
 @Component({
   selector: "app-listado-componentes",
@@ -117,10 +115,6 @@ export class ListadoComponentesComponent implements OnInit {
   direction = "asc";
   //Errores
   errMsj: string;
-  //Utilities
-  file: GenerateFiles = new GenerateFiles(this.toastService);
-  toast: ToastNotification = new ToastNotification(this.toastService);
-
 
   navigationExtras: NavigationExtras = {
     state: {
@@ -133,8 +127,9 @@ export class ListadoComponentesComponent implements OnInit {
     private productoService: ProductosService,
     private dolarService: DolarService,
     private tokenService: TokenService,
-    private toastService: NgToastService,
-    private ngxService: NgxUiLoaderService
+    private generateFileService: GenerateFilesService,
+    private toastService: ToastNotificationService,
+    private spinLoaderService: SpinLoaderService
   ) {}
 
   ngOnInit() {
@@ -144,9 +139,6 @@ export class ListadoComponentesComponent implements OnInit {
     this.listarLastProducto();
     this.checkEliminarProducto();
   }
-
-
-
 
   // ======================
   // ===== PRODUCT LIST ===
@@ -166,7 +158,7 @@ export class ListadoComponentesComponent implements OnInit {
         (err) => {
           this.errMsj = err.error.message;
           console.log(this.errMsj);
-          this.toast.toastError(this.errMsj);
+          this.toastService.error(this.errMsj);
         }
       );
   }
@@ -189,7 +181,7 @@ export class ListadoComponentesComponent implements OnInit {
         (err) => {
           this.errMsj = err.error.message;
           console.log(this.errMsj);
-          this.toast.toastError(this.errMsj);
+          this.toastService.error(this.errMsj);
         }
       );
   }
@@ -219,7 +211,7 @@ export class ListadoComponentesComponent implements OnInit {
         (err) => {
           this.errMsj = err.error.message;
           console.log(this.errMsj);
-          this.toast.toastError(this.errMsj);
+          this.toastService.error(this.errMsj);
         }
       );
   }
@@ -274,7 +266,7 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== DETALLE PRODUCTO NAVIGATE ===
   // ===================================
   detalleProducto(producto: any): void {
-    this.spinLoader(100);
+    this.spinLoaderService.load(100);
 
     this.navigationExtras.state["value"] = producto;
     this.router.navigate(["detalles-componentes"], this.navigationExtras);
@@ -284,7 +276,7 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== EDITAR PRODUCTO NAVIGATE ===
   // ===================================
   editarProducto(producto: any): void {
-    this.spinLoader(100);
+    this.spinLoaderService.load(100);
 
     this.navigationExtras.state["value"] = producto;
     this.router.navigate(["editar-componentes"], this.navigationExtras);
@@ -308,31 +300,19 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== ELIMINAR PRODUCTO ===
   // =============================
   eliminarProducto(id: string): void {
-    this.spinLoader(100);
+    this.spinLoaderService.load(100);
 
     this.productoService.delete(id).subscribe(
       (data: any) => {
-        this.toastService.success({
-          detail: "Operación Exitosa",
-          summary: "Se ha Eliminado el Producto!!",
-          duration: 2000,
-        });
+        this.toastService.successfulOperation("Se ha eliminado el producto!!");
+
         console.log("Producto Eliminado");
         this.refresh(2100);
       },
       (err) => {
         this.errMsj = err.error.message;
-
-        //TOASTService ERROR
-        setTimeout(() => {
-          this.toastService.error({
-            detail: "ERROR",
-            summary: this.errMsj,
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOASTService ERROR
         console.log(this.errMsj);
+        this.toastService.error(this.errMsj);
       }
     );
   }
@@ -341,13 +321,11 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== ELIMINAR PRODUCTO ERROR AUTH===
   // =====================================
   eliminarProductoNoAuth(id: number): void {
-    this.spinLoader(100);
+    this.spinLoaderService.load(100);
 
-    this.toastService.error({
-      detail: "Operación No Autorizada",
-      summary: "Servicio Habilitado para administradores!!",
-      duration: 2000,
-    });
+    this.toastService.unauthorizedOperation(
+      "Servicio Habilitado para administradores!!"
+    );
 
     this.refresh(2100);
   }
@@ -359,18 +337,6 @@ export class ListadoComponentesComponent implements OnInit {
     setTimeout(() => {
       window.location.reload();
     }, ms);
-  }
-
-  // =========================
-  // ===== SPIN LOADER ===
-  // =========================
-  spinLoader(ms: number) {
-    //SPIN LOADING
-    this.ngxService.start();
-    setTimeout(() => {
-      this.ngxService.stop();
-    }, ms);
-    //FIN SPIN LOADING
   }
 
   // =========================
@@ -387,8 +353,6 @@ export class ListadoComponentesComponent implements OnInit {
     this.idProdSelect = producto.id;
     this.codProdSelect = producto.codigo;
     this.nombrProdSelect = producto.nombre;
-
-    console.log("Producto Seleccionado: ", producto);
   }
 
   // =========================
@@ -398,7 +362,7 @@ export class ListadoComponentesComponent implements OnInit {
     this.typeListTable = set;
   }
 
-    // =========================
+  // =========================
   // ===== GET PAGINATE===
   // =========================
   getPaginate() {
@@ -411,23 +375,18 @@ export class ListadoComponentesComponent implements OnInit {
     return paginate;
   }
 
-
   // =========================
   // ===== GENERATE EXCEL===
   // =========================
 
   generateExcel(): void {
-    let nameExcel = 'listaComponentes.xlsx';
+    let nameExcel = "listaComponentes.xlsx";
 
-    let data = document.getElementById('table');
+    let data = document.getElementById("table");
 
     let paginate = this.getPaginate();
 
-    this.file.generateExcel(
-      nameExcel,
-      data,
-      paginate,
-    );
+    this.generateFileService.generateExcel(nameExcel, data, paginate);
   }
 
   // =====================
@@ -435,21 +394,21 @@ export class ListadoComponentesComponent implements OnInit {
   // =====================
 
   generateCsv(): void {
-    let nameCsv = 'listaComponentes.csv';
+    let nameCsv = "listaComponentes.csv";
 
-    let data = document.getElementById('table');
+    let data = document.getElementById("table");
 
-    this.file.generateCsv(nameCsv, data);
+    this.generateFileService.generateCsv(nameCsv, data);
   }
 
   // =====================
   // ===== GENERATE PDF===
   // =====================
   generatePdf(): void {
-    let namePdf = 'listaComponentes.pdf';
-    let data: any = document.getElementById('table');
+    let namePdf = "listaComponentes.pdf";
+    let data: any = document.getElementById("table");
 
-    this.file.generatePdf(namePdf, data);
+    this.generateFileService.generatePdf(namePdf, data);
   }
 
   // =====================
@@ -460,13 +419,19 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== ORDER BY ===
   // =====================
   orderByDirection(type: string, direct: string): void {
-    this.orderBy = type;
-    this.direction = direct;
+    try {
+      this.orderBy = type;
+      this.direction = direct;
 
-    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
-      this.listarProductos();
-    } else {
-      this.listarProductosFilter();
+      if (this.filtroProdBusqueda === ("" || null)) {
+        this.listarProductos();
+      } else {
+        this.listarProductosFilter();
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
@@ -474,19 +439,17 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== LAST PAGE===
   // =====================
   paginaAnterior(): void {
-    if (this.nroPage != 0 && this.nroPage > 0) {
-      this.nroPage--;
-      this.listarProductos();
-    } else {
-      //TOASTService ERROR
-      setTimeout(() => {
-        this.toastService.error({
-          detail: "ERROR",
-          summary: "No es Posible Disminuir una Página!!",
-          duration: 2000,
-        });
-      }, 600);
-      //FIN TOASTService ERROR
+    try {
+      if (this.nroPage != 0 && this.nroPage > 0) {
+        this.nroPage--;
+        this.listarProductos();
+      } else {
+        this.toastService.error("No es posible disminuir una página!!");
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
@@ -494,19 +457,17 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== NEXT PAGE===
   // =====================
   paginaSiguiente(): void {
-    if (!this.isLastPage && this.nroPage >= 0) {
-      this.nroPage++;
-      this.listarProductos();
-    } else {
-      //TOASTService ERROR
-      setTimeout(() => {
-        this.toastService.error({
-          detail: "ERROR",
-          summary: "No es Posible Aumentar una Página!!",
-          duration: 2000,
-        });
-      }, 600);
-      //FIN TOASTService ERROR
+    try {
+      if (!this.isLastPage && this.nroPage >= 0) {
+        this.nroPage++;
+        this.listarProductos();
+      } else {
+        this.toastService.error("No es posible aumentar una página!!");
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
@@ -514,12 +475,18 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== CHANGE PAGE===
   // =====================
   cambiarPagina(pagina: number): void {
-    this.nroPage = pagina;
+    try {
+      this.nroPage = pagina;
 
-    if (this.filtroProdBusqueda === "" || this.filtroProdBusqueda === null) {
-      this.listarProductos();
-    } else {
-      this.listarProductosFilter();
+      if (this.filtroProdBusqueda === ("" || null)) {
+        this.listarProductos();
+      } else {
+        this.listarProductosFilter();
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 }
