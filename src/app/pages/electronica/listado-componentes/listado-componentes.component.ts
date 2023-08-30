@@ -11,6 +11,8 @@ import { GenerateFilesService } from "src/app/services/utilities/generate-files.
 import { ToastNotificationService } from "src/app/services/utilities/toast-notification.service";
 import { SpinLoaderService } from "src/app/services/utilities/spin-loader.service";
 
+//Update
+
 @Component({
   selector: "app-listado-componentes",
   templateUrl: "./listado-componentes.component.html",
@@ -261,7 +263,6 @@ export class ListadoComponentesComponent implements OnInit {
         console.log(err);
       });
   }
-
   // ==================================
   // ===== DETALLE PRODUCTO NAVIGATE ===
   // ===================================
