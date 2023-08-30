@@ -1,118 +1,148 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { ProductoDTO } from 'src/app/models/producto-dto';
-import { ProductosService } from 'src/app/services/productos/productos.service';
-import { DolarService } from 'src/app/services/dolar/dolar.service';
-import { NgToastService } from 'ng-angular-popup';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
-
-import { TokenService } from 'src/app/services/token/token.service';
-
-
-
-
-
-//Excel
-import * as XLSX from 'xlsx';
-
-//PDFs
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-
+//External
+import { Component, OnInit } from "@angular/core";
+import { NavigationExtras, Router } from "@angular/router";
+//Models
+import { ProductoDTO } from "src/app/models/producto-dto";
+//Services
+import { ProductosService } from "src/app/services/productos/productos.service";
+import { DolarService } from "src/app/services/dolar/dolar.service";
+import { TokenService } from "src/app/services/token/token.service";
+import { GenerateFilesService } from "src/app/services/utilities/generate-files.service";
+import { ToastNotificationService } from "src/app/services/utilities/toast-notification.service";
+import { SpinLoaderService } from "src/app/services/utilities/spin-loader.service";
 
 @Component({
-  selector: 'app-listado-componentes',
-  templateUrl: './listado-componentes.component.html',
-  styleUrls: ['./listado-componentes.component.scss'],
+  selector: "app-listado-componentes",
+  templateUrl: "./listado-componentes.component.html",
+  styleUrls: ["./listado-componentes.component.scss"],
 })
 export class ListadoComponentesComponent implements OnInit {
+  //ImgPaths
+  imgInfo = "./assets/images/help02.png";
+  //start img filtros por grupos de componentes
+  imgNotebook = "./assets/icons-products/notebook.png";
+  imgMonitor = "./assets/icons-products/monitor.png";
+  imgSmartTv = "./assets/icons-products/smartTv.png";
+  imgCelular = "./assets/icons-products/celular.png";
+  imgTablet = "./assets/icons-products/tablets.png";
+  imgTeclado = "./assets/icons-products/teclado.png";
+  imgMic = "./assets/icons-products/mic.png";
+  imgAuricular = "./assets/icons-products/auricular.png";
+  imgHardDrive = "./assets/icons-products/hard-drive.png";
+  imgCable = "./assets/icons-products/cable.png";
+  imgAdaptador = "./assets/icons-products/adaptador.png";
+  imgCargBaterias = "./assets/icons-products/cargBaterias.png";
+  imgEsp8266 = "./assets/icons-products/esp8266.png";
+  imgPlacas = "./assets/icons-products/placas.png";
+  imgSwitch = "./assets/icons-products/switch.png";
+  imgCableRedes = "./assets/icons-products/cableRedes.png";
+  //end img filtros por grupos de componentes
+  //start img filtros por tipos de campos
+  imgFilterCateg = "./assets/icons-crud/filter-categ.svg";
+  imgFilterMarca = "./assets/icons-crud/filter-marca.svg";
+  imgFilterDate = "./assets/icons-crud/filter-date.svg";
+  imgFilterStock = "./assets/icons-crud/filter-stock.svg";
+  imgFilterPrecio = "./assets/icons-crud/filter-precio.svg";
+  imgFilterInfo = "./assets/icons-crud/filter-info.svg";
+  imgFilterDelete = "./assets/icons-crud/filter-delete.svg";
+  //end img filtros por tipos de campos
+  //start img buscador
+  imgSearch = "./assets/images/search.png";
+  imgPapelera = "./assets/forms/papelera.png";
+  //end img buscador
+  //start img filtros derecha
+  imgAddProduct = "./assets/icons-crud/add-product.svg";
+  imgLastProduct = "./assets/icons-crud/last-product.png";
+  imgDivisas = "./assets/icons-crud/divisas.png";
+  imgDownload = "./assets/icons-crud/download.svg";
+  imgCardTableList = "./assets/icons-crud/card-table-list.svg";
+  imgTableList = "./assets/icons-crud/table-list.svg";
+  //end img filtros derecha
+  //start img filtros tabla
+  imgSelectSort = "./assets/icons-crud/select-sort.svg";
+  imgOrderAsc = "./assets/icons-crud/order-asc.svg";
+  imgOrderDesc = "./assets/icons-crud/order-desc.svg";
+  imgPdf = "./assets/images/pdf.png";
+  imgPrecioHelp = "./assets/icons-crud/help.png";
+  imgDetailsProduct = "./assets/icons-crud/details-product.svg";
+  imgEditProduct = "./assets/icons-crud/edit-product.svg";
+  imgDeleteProduct = "./assets/icons-crud/delete-product.svg";
+  //end img filtros tabla
+  //start img paginacion
+  imgArrowLastLeft = "./assets/pagination/arrowLastLeft.png";
+  imgArrowLeft = "./assets/pagination/arrowLeft.png";
+  imgArrowRight = "./assets/pagination/arrowRight.png";
+  imgArrowLastRight = "./assets/pagination/arrowLastRight.png";
+  imgReturn = "./assets/icons-crud/return.svg";
+  imgReload = "./assets/icons-crud/reload.svg";
+  //end img paginacion
+  //start modal download file
+  imgDownloadPdf = "./assets/download/pdf.png";
+  imgDownloadExcel = "./assets/download/excel.png";
+  imgDownloadCsv = "./assets/download/csv.png";
+  imgWarning = "./assets/icons-crud/warning.svg";
+  //end modal download file
+
+  //Product
+  productos: ProductoDTO[] = [];
+  lastProducto: ProductoDTO[] = [];
+  precioProducto: number = 0;
+  //Dolar
+  dolarBuy: number = 0;
+  dolarSale: number = 0;
+  converDolarPeso: number = 0;
+  //Producto seleccionado
+  productoSelect: ProductoDTO[] = [];
+  idProdSelect: string = "";
+  codProdSelect: string = "";
+  nombrProdSelect: string = "";
+  //filtros busqueda productos
+  filtroProdBusqueda: string = "";
+  filtroProdCampo: string = "";
+  //Auth
+  isAdmin = false;
+  isUser = false;
+  typeListTable = true;
+  //Paginado
+  nroPage = 0;
+  isFirstPage = false;
+  isLastPage = false;
+  totalPages = 0;
+  nroElements = 10;
+  nroCurrentElements = 0;
+  nroTotalElements = 0;
+  orderBy = "id";
+  direction = "asc";
+  //Errores
+  errMsj: string;
+
   navigationExtras: NavigationExtras = {
     state: {
       value: null,
     },
   };
 
-
-
-
-  //PRODUCTOS LISTADO
-  productos: ProductoDTO[] = [];
-
-  //Ultimo Producto
-  lastProducto : ProductoDTO[]=[];
-
-  //Select Producto
-  precioProducto:number=0;
-
-  //DOLAR
-  dolarCompra:number=0;
-  dolarVenta:number=0;
-
-
-  //Conversion
-  converDolarPeso:number=0;
-
-
-  //PRODUCTO SELECCIONADO
-  productoSelect: ProductoDTO[] = [];
-  idProdSelect: string = '';
-  codProdSelect: string = '';
-  nombrProdSelect: string = '';
-
-  //FILTRO BUSQUEDA PRODUCTOS
-  filtroProdBusqueda: string = '';
-  filtroProdCampo: string = '';
-
-
-  //SEGURIDAD
-  isAdmin = false;
-  isUser = false;
-
-  //TYPE LIST
-  typeListTable = true;
-
-  //PAGINADO
-  nroPage = 0;
-  isFirstPage = false;
-  isLastPage = false;
-  totalPages = 0;
-
-  //Elements
-  nroElements = 10;
-  nroCurrentElements = 0;
-  nroTotalElements = 0;
-
-
-  //Caracteristicas
-  orderBy = 'id';
-  direction = 'asc';
-
-  //ERRORES
-  errMsj: string;
-
   constructor(
     private router: Router,
     private productoService: ProductosService,
-    private dolarService :DolarService,
+    private dolarService: DolarService,
     private tokenService: TokenService,
-    private toast: NgToastService,
-    private ngxService: NgxUiLoaderService
+    private generateFileService: GenerateFilesService,
+    private toastService: ToastNotificationService,
+    private spinLoaderService: SpinLoaderService
   ) {}
 
   ngOnInit() {
-    this.getDolarCompra();
-    this.getDolarVenta();
+    this.getDolarBuy();
+    this.getDolarSale();
     this.listarProductos();
     this.listarLastProducto();
     this.checkEliminarProducto();
   }
 
-  //=========== SEGURIDAD ==============
-  //Aplicada en productos.guard y agregada en el routing
-
-  //=========== METODOS CRUD ==============
-
-  //----------LISTADO PRODUCTOS ---------------
+  // ======================
+  // ===== PRODUCT LIST ===
+  // ======================
   listarProductos() {
     this.productoService
       .listado(this.nroPage, this.nroElements, this.orderBy, this.direction)
@@ -126,60 +156,39 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroTotalElements = data.totalElements;
         },
         (err) => {
-
           this.errMsj = err.error.message;
-
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: 'ERROR',
-              summary: this.errMsj,
-              duration: 2000,
-            });
-          }, 600);
-
-          //FIN TOAST ERROR
-          //console.log(err);
-          //console.log('listado');
-
-          this.refresh(3000);
+          console.log(this.errMsj);
+          this.toastService.error(this.errMsj);
         }
       );
   }
 
-  //----------ULTIMO PRODUCTO ---------------
+  // ======================
+  // ===== LAST PRODUCT ===
+  // ======================
   listarLastProducto() {
     this.productoService
-      .listado(((this.totalPages)), ((this.nroTotalElements)-(this.nroTotalElements -1)), this.orderBy, this.direction)
+      .listado(
+        this.totalPages,
+        this.nroTotalElements - (this.nroTotalElements - 1),
+        this.orderBy,
+        this.direction
+      )
       .subscribe(
         (data: any) => {
           this.lastProducto = data.content;
-          console.log('Ultimo Producto',this.lastProducto);
-          console.log(this.totalPages);
         },
         (err) => {
-
           this.errMsj = err.error.message;
-
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: 'ERROR',
-              summary: this.errMsj,
-              duration: 2000,
-            });
-          }, 600);
-
-          //FIN TOAST ERROR
-          //console.log(err);
-          //console.log('listado');
-
-          this.refresh(3000);
+          console.log(this.errMsj);
+          this.toastService.error(this.errMsj);
         }
       );
   }
 
-  //-----LISTADO PRODUCTOS FILTER/CAMPO ---------------
+  // ==================================
+  // ===== PRODUCT LIST WITH FILTERS ===
+  // ===================================
   listarProductosFilter() {
     this.productoService
       .listadoFilterAndField(
@@ -198,406 +207,286 @@ export class ListadoComponentesComponent implements OnInit {
           this.totalPages = data.totalPages;
           this.nroCurrentElements = data.numberOfElements;
           this.nroTotalElements = data.totalElements;
-
-          //console.log(this.productos);
         },
         (err) => {
           this.errMsj = err.error.message;
-
-          //TOAST ERROR
-          setTimeout(() => {
-            this.toast.error({
-              detail: 'ERROR',
-              summary: this.errMsj,
-              duration: 2000,
-            });
-          }, 600);
-
-          //FIN TOAST ERROR
-          //console.log(err);
-          //console.log('listado-filter');
-
-          this.refresh(3000);
+          console.log(this.errMsj);
+          this.toastService.error(this.errMsj);
         }
       );
   }
 
+  // ==================================
+  // ===== SET FILTERS FOR PRODUCTS ===
+  // ===================================
+  setFilter(filtro: string, campo: string, nroPag: number) {
+    try {
+      this.filtroProdCampo = "";
+      this.filtroProdBusqueda = "";
 
-
-  setFilter(filtro: string, campo: string, nroPag:number) {
-
-
-    this.filtroProdCampo = '';
-    this.filtroProdBusqueda = '';
-
-    if (filtro === '' || filtro === null || campo === '' || campo === null) {
-      this.listarProductos();
+      if (filtro === ("" || null) || campo === ("" || null)) {
+        this.listarProductos();
+      } else {
+        this.filtroProdCampo = campo;
+        this.filtroProdBusqueda = filtro;
+        this.nroPage = nroPag;
+        this.listarProductosFilter();
+      }
       this.listarLastProducto();
-    } else {
-
-      this.filtroProdCampo = campo;
-      this.filtroProdBusqueda = filtro;
-      this.nroPage = nroPag;
-
-      this.listarProductosFilter();
-      this.listarLastProducto();
+    } catch (err) {
+      console.log(err);
     }
   }
 
-
-  //----------GET DOLAR COMPRA------------
-  getDolarCompra() {
+  // ==========================
+  // ===== GET DOLAR COMPRA ===
+  // ==========================
+  getDolarBuy() {
     this.dolarService
-      .getDolarCompra()
-      .then(obj => this.dolarCompra = obj.replace(/,/g, '.'));
-
-  }
-  //----------GET DOLAR VENTA------------
-  getDolarVenta() {
-    this.dolarService
-      .getDolarVenta()
-      .then(obj => this.dolarVenta = obj.replace(/,/g, '.'));
-
+      .getDolarBuy()
+      .then((obj) => (this.dolarBuy = obj))
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
-  //----------DETALLES PRODUCTOS ---------------
+  // ==========================
+  // ===== GET DOLAR VENTA ===
+  // ==========================
+  getDolarSale() {
+    this.dolarService
+      .getDolarSale()
+      .then((obj) => (this.dolarSale = obj))
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  // ==================================
+  // ===== DETALLE PRODUCTO NAVIGATE ===
+  // ===================================
   detalleProducto(producto: any): void {
+    this.spinLoaderService.load(100);
 
-    this.spinLoader(100);
-
-    this.navigationExtras.state['value'] = producto;
-    this.router.navigate(['detalles-componentes'], this.navigationExtras);
+    this.navigationExtras.state["value"] = producto;
+    this.router.navigate(["detalles-componentes"], this.navigationExtras);
   }
 
-  //----------EDITAR PRODUCTOS ---------------
+  // ==================================
+  // ===== EDITAR PRODUCTO NAVIGATE ===
+  // ===================================
   editarProducto(producto: any): void {
+    this.spinLoaderService.load(100);
 
-    this.spinLoader(100);
-
-    this.navigationExtras.state['value'] = producto;
-    this.router.navigate(['editar-componentes'], this.navigationExtras);
+    this.navigationExtras.state["value"] = producto;
+    this.router.navigate(["editar-componentes"], this.navigationExtras);
   }
 
-   //----------SELECCIONAR PRODUCTO ---------------
-   selectPrecioProducto(producto: number): void {
-
-   this.precioProducto = producto;
+  // =============================
+  // ===== SET PRECIO PRODUCTO ===
+  // =============================
+  selectPrecioProducto(producto: number): void {
+    this.precioProducto = producto;
   }
 
-
-  //----------CHECK ELIMINAR PRODUCTO----------
+  // =============================
+  // ===== CHECK TOKEN SERVICE ===
+  // =============================
   checkEliminarProducto() {
     this.isAdmin = this.tokenService.isAdmin();
   }
 
-  //----------ELIMINAR PRODUCTOS ---------------
+  // =============================
+  // ===== ELIMINAR PRODUCTO ===
+  // =============================
   eliminarProducto(id: string): void {
-
-    this.spinLoader(100);
+    this.spinLoaderService.load(100);
 
     this.productoService.delete(id).subscribe(
       (data: any) => {
+        this.toastService.successfulOperation("Se ha eliminado el producto!!");
 
-        this.toast.success({
-          detail: 'Operación Exitosa',
-          summary: 'Se ha Eliminado el Producto!!',
-          duration: 2000,
-        });
-
-        console.log('Producto Eliminado');
-
+        console.log("Producto Eliminado");
         this.refresh(2100);
       },
       (err) => {
         this.errMsj = err.error.message;
-
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: 'ERROR',
-            summary: this.errMsj,
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
         console.log(this.errMsj);
+        this.toastService.error(this.errMsj);
       }
     );
   }
 
-  //----------ELIMINAR PRODUCTOS ---------------
+  // ====================================
+  // ===== ELIMINAR PRODUCTO ERROR AUTH===
+  // =====================================
   eliminarProductoNoAuth(id: number): void {
+    this.spinLoaderService.load(100);
 
-    this.spinLoader(100);
-
-    this.toast.error({
-      detail: 'Operación No Autorizada',
-      summary: 'Servicio Habilitado para administradores!!',
-      duration: 2000,
-    });
+    this.toastService.unauthorizedOperation(
+      "Servicio Habilitado para administradores!!"
+    );
 
     this.refresh(2100);
   }
 
-
-
-
-
-
-
-
-
-  //=============== UTILS ===============
-
-  //---------------- RECARGAR -------------------
+  // =========================
+  // ===== RECARGAR-REFRESH===
+  // =========================
   refresh(ms: number) {
     setTimeout(() => {
       window.location.reload();
     }, ms);
   }
 
-  //---------- RUEDA DE CARGA ------------
-   spinLoader(ms: number) {
-    //SPIN LOADING
-    this.ngxService.start();
-    setTimeout(() => {
-      this.ngxService.stop();
-    }, ms);
-    //FIN SPIN LOADING
-  }
-
-  //------------- REDIRECCIONAR -------------------
+  // =========================
+  // ===== REDIRECT===
+  // =========================
   redirect(page: String) {
     this.router.navigate([page]);
   }
 
-  //-----------  ID PRODUCTO SELECT-------------
-
+  // =========================
+  // ===== SET PRODUCT SELECT===
+  // =========================
   setProductoSelect(producto: ProductoDTO) {
     this.idProdSelect = producto.id;
     this.codProdSelect = producto.codigo;
     this.nombrProdSelect = producto.nombre;
-
-    console.log('Producto Seleccionado: ', producto);
   }
 
-  //------------TYPE LIST ---------------
-  setTypeListTable(set:boolean){
+  // =========================
+  // ===== SET TYPE OF LIST===
+  // =========================
+  setTypeListTable(set: boolean) {
     this.typeListTable = set;
   }
 
+  // =========================
+  // ===== GET PAGINATE===
+  // =========================
+  getPaginate() {
+    var paginate = {
+      nroPage: this.nroPage,
+      totalPages: this.totalPages,
+      nroCurrentElements: this.nroCurrentElements,
+      nroTotalElements: this.nroTotalElements,
+    };
+    return paginate;
+  }
 
-//============= GENERATE EXCEL ====================
-nameExcell = 'listaComponentes.xlsx';
+  // =========================
+  // ===== GENERATE EXCEL===
+  // =========================
 
-generateExcel(): void {
+  generateExcel(): void {
+    let nameExcel = "listaComponentes.xlsx";
 
-    //TOAST SUCCESS
-    setTimeout(() => {
-      this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Descargando Archivo .xlsx!!',
-        duration: 2000,
-      });
-    }, 600);
-    //FIN TOAST SUCCESS
+    let data = document.getElementById("table");
 
+    let paginate = this.getPaginate();
 
-  let element = document.getElementById('table');
+    this.generateFileService.generateExcel(nameExcel, data, paginate);
+  }
 
-  const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+  // =====================
+  // ===== GENERATE CSV===
+  // =====================
 
-  //eliminamos columnas
-  delete(worksheet['F1']);
+  generateCsv(): void {
+    let nameCsv = "listaComponentes.csv";
 
-  delete(worksheet['G1']);
-  delete(worksheet['K1']);
+    let data = document.getElementById("table");
 
-  //ej reemplazamos por vacio
-    /*
-   //Reemplazamos el campo imagen por vacio
-   XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "F1" });
-  */
+    this.generateFileService.generateCsv(nameCsv, data);
+  }
 
+  // =====================
+  // ===== GENERATE PDF===
+  // =====================
+  generatePdf(): void {
+    let namePdf = "listaComponentes.pdf";
+    let data: any = document.getElementById("table");
 
-  const book: XLSX.WorkBook = XLSX.utils.book_new();
+    this.generateFileService.generatePdf(namePdf, data);
+  }
 
+  // =====================
+  // ===== PAGINATION ===
+  // =====================
 
-  XLSX.utils.book_append_sheet(book, worksheet);
-
-
-
-  //Agregamos paginado
-  XLSX.utils.sheet_add_aoa(worksheet, [['NRO PAGINA']], { origin: "L1" });
-
-  XLSX.utils.sheet_add_aoa(worksheet, [[this.nroPage+'/'+this.totalPages]], { origin: "L2" });
-
-  XLSX.utils.sheet_add_aoa(worksheet, [['NRO ELEMENTOS']], { origin: "M1" });
-
-  XLSX.utils.sheet_add_aoa(worksheet, [[this.nroCurrentElements+'/'+this.nroTotalElements]], { origin: "M2" });
-
-
-  XLSX.writeFile(book, this.nameExcell);
-}
-
- //============= GENERATE CSV ====================
- nameCsv = 'listaComponentes.csv';
-
- generateCsv(): void {
-
-
-      //TOAST SUCCESS
-      setTimeout(() => {
-        this.toast.success({
-          detail: 'SUCCESS',
-          summary: 'Descargando Archivo .csv!!',
-          duration: 2000,
-        });
-      }, 600);
-      //FIN TOAST SUCCESS
-
-   let element = document.getElementById('table');
-
-   const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-
-    //eliminamos columnas
-  delete(worksheet['F1']);
-
-
-  delete(worksheet['G1']);
-  delete(worksheet['K1']);
-
-  //ej reemplazamos por vacio
-    /*
-   //Reemplazamos el campo imagen por vacio
-   XLSX.utils.sheet_add_aoa(worksheet, [['']], { origin: "F1" });
-  */
-
-
-   const book: XLSX.WorkBook = XLSX.utils.book_new();
-
-
-   XLSX.utils.book_append_sheet(book, worksheet);
-
-
-   XLSX.utils.sheet_to_csv;
-
-
-   XLSX.writeFile(book, this.nameCsv);
- }
-
-
-
-
- //============= GENERATE PDF ====================
- namePdf = 'listaComponentes.pdf';
-
- generatePdf(): void {
-
-
-    //TOAST SUCCESS
-    setTimeout(() => {
-      this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Descargando Archivo .pdf!!',
-        duration: 2000,
-      });
-    }, 600);
-    //FIN TOAST SUCCESS
-
-
-
-  //Admitimos img
-  const options = { logging: true, letterRendering: true, useCORS: true };
-
-  let DATA: any = document.getElementById('table');
-
-
-
-  html2canvas(DATA, options).then((canvas) => {
-    let fileWidth = 208;
-
-    let fileHeight = (canvas.height * fileWidth) / canvas.width;
-    const FILEURI = canvas.toDataURL('image/png');
-    let PDF = new jsPDF('p', 'mm', 'a4');
-
-    let position = 0;
-
-
-
-    PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
-    PDF.save(this.namePdf);
-  });
-
-}
-
-  //=========== METODOS PAGINACION ==============
-
-  //Ordenar los registros por type
+  // =====================
+  // ===== ORDER BY ===
+  // =====================
   orderByDirection(type: string, direct: string): void {
-    this.orderBy = type;
-    this.direction = direct;
+    try {
+      this.orderBy = type;
+      this.direction = direct;
 
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
-      this.listarProductos();
-    } else {
-      this.listarProductosFilter();
+      if (this.filtroProdBusqueda === ("" || null)) {
+        this.listarProductos();
+      } else {
+        this.listarProductosFilter();
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
-  //Pagina Anterior
+  // =====================
+  // ===== LAST PAGE===
+  // =====================
   paginaAnterior(): void {
-
+    try {
       if (this.nroPage != 0 && this.nroPage > 0) {
         this.nroPage--;
         this.listarProductos();
       } else {
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: 'ERROR',
-            summary: 'No es Posible Disminuir una Página!!',
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
+        this.toastService.error("No es posible disminuir una página!!");
       }
-
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 
-  //Pagina Anterior
+  // =====================
+  // ===== NEXT PAGE===
+  // =====================
   paginaSiguiente(): void {
-
+    try {
       if (!this.isLastPage && this.nroPage >= 0) {
         this.nroPage++;
         this.listarProductos();
       } else {
-        //TOAST ERROR
-        setTimeout(() => {
-          this.toast.error({
-            detail: 'ERROR',
-            summary: 'No es Posible Aumentar una Página!!',
-            duration: 2000,
-          });
-        }, 600);
-        //FIN TOAST ERROR
+        this.toastService.error("No es posible aumentar una página!!");
       }
-
-  }
-
-  cambiarPagina(pagina: number): void {
-
-    this.nroPage = pagina;
-
-    if (this.filtroProdBusqueda === '' || this.filtroProdBusqueda === null) {
-      this.listarProductos();
-    } else {
-     this.listarProductosFilter();
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
     }
   }
 
-  //=============== PRODUCTOS POR GRUPO =============
-  countProdByGroup(): void {
-    //this.nroProdAgua = this.productos.find.g
+  // =====================
+  // ===== CHANGE PAGE===
+  // =====================
+  cambiarPagina(pagina: number): void {
+    try {
+      this.nroPage = pagina;
+
+      if (this.filtroProdBusqueda === ("" || null)) {
+        this.listarProductos();
+      } else {
+        this.listarProductosFilter();
+      }
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
   }
 }
