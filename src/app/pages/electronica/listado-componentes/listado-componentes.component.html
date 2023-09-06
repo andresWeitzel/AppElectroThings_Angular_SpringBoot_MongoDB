@@ -1,11 +1,11 @@
-<!-- LISTADO DE PRODUCTOS -->
+<!-- LISTADO DE productS -->
 <div class="container">
   <div class="row justify-content-center m-3">
-    <!-- TITULO EDICION DE PRODUCTOS -->
+    <!-- TITULO EDICION DE productS -->
     <div class="alert alert-dark bg-dark text-white text-center" role="alert">
       <h4 class="">
         <strong>
-          LISTADO DE PRODUCTOS
+          LISTADO DE productS
           <!-- BTN MODAL INFO  -->
           <button
             class="btn bg-none p-1 ms-2"
@@ -25,9 +25,9 @@
         </strong>
       </h4>
     </div>
-    <!-- FIN TITULO EDICION DE PRODUCTOS -->
+    <!-- FIN TITULO EDICION DE productS -->
 
-    <!--  ICONOS PRODUCTOS -->
+    <!--  ICONOS productS -->
     <div class="text-center" role="alert">
       <!-- Primera Fila -->
       <div class="d-flex d-row">
@@ -389,7 +389,7 @@
       </div>
       <!-- Fin Segunda Fila -->
     </div>
-    <!--  FIN ICONOS PRODUCTOS -->
+    <!--  FIN ICONOS productS -->
 
     <!-- FILTERS, BUSCADOR AND UTILS -->
     <div class="text-left" id="buscador">
@@ -410,7 +410,7 @@
                 src="{{ imgFilterCateg }}"
                 loading="lazy"
                 alt=""
-                title="Productos por Categoría"
+                title="products por Categoría"
                 width="30"
                 height="30"
                 class="icon-white"
@@ -430,7 +430,7 @@
                 src="{{ imgFilterMarca }}"
                 loading="lazy"
                 alt=""
-                title="Productos por Marca"
+                title="products por Marca"
                 width="30"
                 height="30"
                 class="icon-white"
@@ -450,7 +450,7 @@
                 src="{{ imgFilterDate }}"
                 loading="lazy"
                 alt=""
-                title="Productos por Fechas"
+                title="products por Fechas"
                 width="30"
                 height="30"
                 class="icon-white"
@@ -470,7 +470,7 @@
                 src="{{ imgFilterStock }}"
                 loading="lazy"
                 alt=""
-                title="Productos por Stock"
+                title="products por Stock"
                 width="30"
                 height="30"
                 class="icon-white"
@@ -490,7 +490,7 @@
                 src="{{ imgFilterPrecio }}"
                 loading="lazy"
                 alt=""
-                title="Productos por Precio"
+                title="products por Precio"
                 width="30"
                 height="30"
                 class="icon-white"
@@ -567,7 +567,7 @@
               type="text"
               name="filtro"
               class="form-control"
-              placeholder="Buscador de Productos"
+              placeholder="Buscador de products"
               aria-label="valor"
               id="filtro"
               #filtroInput
@@ -625,7 +625,7 @@
             <button
               class="btn btn-success alert-link m-1 p-1"
               [routerLink]="['/agregar-componentes']"
-              title="Agregar Producto"
+              title="Agregar product"
             >
               <img
                 src="{{ imgAddProduct }}"
@@ -633,7 +633,7 @@
                 alt=""
                 width="30"
                 height="30"
-                tittle="Agregar Producto"
+                tittle="Agregar product"
                 class=""
               />
             </button>
@@ -652,7 +652,7 @@
                 alt=""
                 width="40"
                 height="40"
-                tittle="Último Producto"
+                tittle="Último product"
                 class=""
               />
             </button>
@@ -697,11 +697,11 @@
             </button>
           </div>
           <!-- FIN BTN DOWNLOAD  -->
-          <!-- BTN CARD PRODUCTOS LIST  -->
+          <!-- BTN CARD productS LIST  -->
           <div>
             <button
               class="btn bg-none text-white p-1 ms-4"
-              (click)="setTypeListTable(false)"
+              (click)="setTableTypeListed(false)"
             >
               <img
                 src="{{ imgCardTableList }}"
@@ -714,13 +714,13 @@
               />
             </button>
           </div>
-          <!-- FIN BTN CARD PRODUCTOS LIST  -->
+          <!-- FIN BTN CARD productS LIST  -->
 
-          <!-- BTN CARD PRODUCTOS TABLE -->
+          <!-- BTN CARD productS TABLE -->
           <div>
             <button
               class="btn bg-none text-white p-1 ms-1 mt-1"
-              (click)="setTypeListTable(true)"
+              (click)="setTableTypeListed(true)"
             >
               <img
                 src="{{ imgTableList }}"
@@ -734,16 +734,16 @@
             </button>
           </div>
         </div>
-        <!-- FIN BTN CARD PRODUCTOS TABLE -->
+        <!-- FIN BTN CARD productS TABLE -->
       </div>
     </div>
     <!-- FIN FILTERS, BUSCADOR AND UTILS-->
 
-    <!-- TABLA PRODUCTOS -->
+    <!-- TABLA productS -->
     <table
       table-condensed
       class="table table-secondary table-bordered border-dark table-hover m-3"
-      *ngIf="typeListTable; else cardsTable"
+      *ngIf="tableTypeListed; else cardsTable"
       id="table"
     >
       <thead class="table-dark text-center">
@@ -1699,17 +1699,17 @@
       </thead>
       <!-- REGISTROS FILTRO -->
       <tbody class="table-dark bg-dark text-center">
-        <tr *ngFor="let producto of productos">
+        <tr *ngFor="let product of products">
           <th scope="row" class="text-white text-center">
-            {{ producto.codigo | slice: 0 : 15 }}..
+            {{ product.codigo | slice: 0 : 15 }}..
           </th>
-          <td>{{ producto.nombre | slice: 0 : 20 }}..</td>
-          <td>{{ producto.descripcion | slice: 0 : 20 }}..</td>
-          <td>{{ producto.categoria }}</td>
-          <td>{{ producto.marca }}</td>
+          <td>{{ product.nombre | slice: 0 : 20 }}..</td>
+          <td>{{ product.descripcion | slice: 0 : 20 }}..</td>
+          <td>{{ product.categoria }}</td>
+          <td>{{ product.marca }}</td>
           <td class="bg-white">
             <img
-              src="{{ producto.imagen }}"
+              src="{{ product.imagen }}"
               target="_blank"
               width="70px"
               height="70px"
@@ -1718,7 +1718,7 @@
           <td>
             <a
               class="d-flex d-row justify-content-center mt-2"
-              href="{{ producto.hojaDatos }}"
+              href="{{ product.hojaDatos }}"
               target="_blank"
             >
               <img
@@ -1729,17 +1729,17 @@
                 alt=""
             /></a>
           </td>
-          <td>{{ producto.stock }} u.</td>
+          <td>{{ product.stock }} u.</td>
 
           <td>
-            ${{ producto.precio }}
+            ${{ product.precio }}
 
             <div>
               <button
                 class="btn bg-none text-white p-1 ms-1"
                 data-bs-toggle="modal"
                 data-bs-target="#modalDivisa"
-                (click)="selectPrecioProducto(producto.precio)"
+                (click)="setProductPrice(product.precio)"
               >
                 <img
                   src="{{ imgPrecioHelp }}" loading="lazy"
@@ -1752,39 +1752,39 @@
               </button>
             </div>
           </td>
-          <td>{{ producto.fecha }} / {{ producto.hora }}</td>
+          <td>{{ product.fecha }} / {{ product.hora }}</td>
           <!--En caso de moviles ocultamos -->
           <td class="btn-group d-none d-sm-block" role="group">
             <div class="d-flex justify-content-center">
               <button
                 class="btn btn-primary border-dark alert-link m-1 p-1"
-                (click)="detalleProducto(producto)"
+                (click)="navigateDetailsProduct(product)"
               >
-                <!--Icono Visualizar Producto-->
+                <!--Icono Visualizar product-->
                 <img
                   src="{{ imgDetailsProduct }}" loading="lazy"
                   alt=""
                   width="25"
                   height="25"
-                  title="Detalles Producto"
+                  title="Detalles product"
                   class=""
                 />
-                <!--Fin Icono Visualizar Producto-->
+                <!--Fin Icono Visualizar product-->
               </button>
               <button
                 class="btn btn-warning border-dark alert-link m-1 p-1"
-                (click)="editarProducto(producto)"
+                (click)="navigateEditProduct(product)"
               >
-                <!--Icono Editar Producto-->
+                <!--Icono Editar product-->
                 <img
                   src="{{ imgEditProduct }}" loading="lazy"
                   alt=""
                   width="25"
                   height="25"
-                  title="Editar Producto"
+                  title="Editar product"
                   class=""
                 />
-                <!--Fin Icono Editar Producto-->
+                <!--Fin Icono Editar product-->
               </button>
               <a>
                 <!-- BTN MODAL DELETE CHECK  -->
@@ -1793,18 +1793,18 @@
                   class="btn btn-danger border-dark alert-link m-1 p-1"
                   data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop02"
-                  (click)="setProductoSelect(producto)"
+                  (click)="setProductSelect(product)"
                 >
-                  <!--Icono Eliminar Producto-->
+                  <!--Icono Eliminar product-->
                   <img
                   src="{{ imgDeleteProduct }}" loading="lazy"
                     alt=""
                     width="25"
                     height="25"
-                    title="Eliminar Producto"
+                    title="Eliminar product"
                     class=""
                   />
-                  <!--Fin Icono Eliminar Producto-->
+                  <!--Fin Icono Eliminar product-->
                 </button>
                 <!-- FIN BTN MODAL DELETE CHECK -->
               </a>
@@ -1814,19 +1814,19 @@
       </tbody>
       <!-- FIN REGISTROS-->
     </table>
-    <!-- FIN TABLA PRODUCTOS -->
+    <!-- FIN TABLA productS -->
 
     <!-- TEMPLATE CARDS TABLE-->
     <ng-template #cardsTable>
       <div
         class="card m-2"
         style="width: 14rem; height: 32rem"
-        *ngFor="let producto of productos"
+        *ngFor="let product of products"
         id="cardsTable"
       >
-        {{ producto.codigo }}
+        {{ product.codigo }}
         <img
-          src="{{ producto.imagen }}"
+          src="{{ product.imagen }}"
           target="_blank"
           width="100px"
           height="150px"
@@ -1834,20 +1834,20 @@
         />
         <div class="card-body text-left">
           <h5 class="card-title text-center text-decoration-underline">
-            {{ producto.nombre | slice: 0 : 20 }}..
+            {{ product.nombre | slice: 0 : 20 }}..
           </h5>
           <br />
           <p>
-            <strong>Categoría : </strong>{{ producto.categoria }} /
-            {{ producto.marca }}
+            <strong>Categoría : </strong>{{ product.categoria }} /
+            {{ product.marca }}
           </p>
           <p>
-            <strong>Precio : </strong>${{ producto.precio
+            <strong>Precio : </strong>${{ product.precio
             }}<button
               class="btn bg-none text-white p-1 ms-1"
               data-bs-toggle="modal"
               data-bs-target="#modalDivisa"
-              (click)="selectPrecioProducto(producto.precio)"
+              (click)="setProductPrice(product.precio)"
             >
               <img
               src="{{ imgPrecioHelp }}"
@@ -1861,38 +1861,38 @@
             </button>
           </p>
 
-          <p><strong>Stock : </strong>{{ producto.stock }}u.</p>
+          <p><strong>Stock : </strong>{{ product.stock }}u.</p>
           <div class="card-footer d-flex justify-content-center me-0 mb-1 m-3">
             <button
               class="btn btn-primary bg-dark alert-link m-1 p-1 mb-1"
-              (click)="detalleProducto(producto)"
+              (click)="navigateDetailsProduct(product)"
             >
-              <!--Icono Visualizar Producto-->
+              <!--Icono Visualizar product-->
               <img
                 src="{{ imgDetailsProduct }}" loading="lazy"
                 alt=""
                 width="25"
                 height="25"
-                title="Detalles Producto"
+                title="Detalles product"
                 class=""
               />
-              <!--Fin Icono Visualizar Producto-->
+              <!--Fin Icono Visualizar product-->
             </button>
 
             <button
               class="btn btn-warning border-dark bg-dark alert-link m-1 p-1"
-              (click)="editarProducto(producto)"
+              (click)="navigateEditProduct(product)"
             >
-              <!--Icono Editar Producto-->
+              <!--Icono Editar product-->
               <img
                 src="{{ imgEditProduct }}" loading="lazy"
                 alt=""
                 width="25"
                 height="25"
-                title="Editar Producto"
+                title="Editar product"
                 class=""
               />
-              <!--Fin Icono Editar Producto-->
+              <!--Fin Icono Editar product-->
             </button>
             <a>
               <!-- BTN MODAL DELETE CHECK  -->
@@ -1901,18 +1901,18 @@
                 class="btn btn-danger bg-dark border-dark alert-link m-1 p-1"
                 data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop02"
-                (click)="setProductoSelect(producto)"
+                (click)="setProductSelect(product)"
               >
-                <!--Icono Eliminar Producto-->
+                <!--Icono Eliminar product-->
                 <img
                   src="{{ imgDeleteProduct }}" loading="lazy"
                   alt=""
                   width="25"
                   height="25"
-                  title="Eliminar Producto"
+                  title="Eliminar product"
                   class=""
                 />
-                <!--Fin Icono Eliminar Producto-->
+                <!--Fin Icono Eliminar product-->
               </button>
               <!-- FIN BTN MODAL DELETE CHECK -->
             </a>
@@ -1933,7 +1933,7 @@
             >
               <li
                 class="page-item bg-none text-white"
-                (click)="cambiarPagina(0)"
+                (click)="changePage(0)"
               >
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
@@ -1949,7 +1949,7 @@
               <li class="page-item">
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
-                  (click)="paginaAnterior()"
+                  (click)="previousPage()"
                 >
                   <img
                   src="{{ imgArrowLeft }}" loading="lazy"
@@ -1962,7 +1962,7 @@
               <li class="page-item">
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
-                  (click)="cambiarPagina(0)"
+                  (click)="changePage(0)"
                 >
                   1
                 </button>
@@ -1970,7 +1970,7 @@
               <li class="page-item">
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
-                  (click)="cambiarPagina(1)"
+                  (click)="changePage(1)"
                 >
                   2
                 </button>
@@ -1978,7 +1978,7 @@
               <li class="page-item">
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
-                  (click)="cambiarPagina(2)"
+                  (click)="changePage(2)"
                 >
                   3
                 </button>
@@ -1986,7 +1986,7 @@
               <li class="page-item">
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
-                  (click)="paginaSiguiente()"
+                  (click)="nextPage()"
                 >
                   <img
                   src="{{ imgArrowRight }}" loading="lazy"
@@ -1999,7 +1999,7 @@
               <li class="page-item">
                 <button
                   class="btn btn-outline-dark border-light alert-link text-white"
-                  (click)="cambiarPagina(this.totalPages - 1)"
+                  (click)="changePage(this.totalPages - 1)"
                 >
                   <img
                   src="{{ imgArrowLastRight }}" loading="lazy"
@@ -2084,7 +2084,7 @@
     <!--FIN PAGINACION/REGRESAR/ACTUALIZAR-->
   </div>
 </div>
-<!-- FIN LISTADO DE PRODUCTOS -->
+<!-- FIN LISTADO DE productS -->
 
 <!--MODAL AYUDA -->
 <!-- Modal -->
@@ -2101,7 +2101,7 @@
     <div class="modal-content bg-dark text-white" id="modalAyuda">
       <div class="modal-header">
         <h4 class="modal-title" id="staticBackdropLabel">
-          Guía Listado de Productos
+          Guía Listado de products
         </h4>
         <button
           type="button"
@@ -2111,39 +2111,39 @@
         ></button>
       </div>
       <div class="modal-body">
-        <h5>Acerca de la Gestión de Productos</h5>
+        <h5>Acerca de la Gestión de products</h5>
         <p>
-          En esta sección podemos visualizar los Productos según los
-          requerimientos deseados, existe paginacion de productos, podemos
+          En esta sección podemos visualizar los products según los
+          requerimientos deseados, existe paginacion de products, podemos
           aplicar filtros de búsqueda y las operaciones CRUD requeridas según el
           rol que se tenga. Los admins podrán realizar todas las Operaciones,
           los usuarios solamente la visualización y búsquedas.
         </p>
         <br />
-        <h5>Buscador de Productos</h5>
+        <h5>Buscador de products</h5>
         <p>
-          Es posible realizar la búsqueda de productos según filtros aplicados
+          Es posible realizar la búsqueda de products según filtros aplicados
           para cada campo del Listado. Es decir, las siglas o palabras
           ingresadas serán aplicadas para todos los campos.
         </p>
         <br />
         <h5>Campos del Listado</h5>
         <p>
-          Cada campo describe una característica del producto específico por
+          Cada campo describe una característica del product específico por
           fila. El campo opciones nos permite visualizar, editar y eliminar el
-          producto seleccionado. También podemos agregar un producto desde la
+          product seleccionado. También podemos agregar un product desde la
           barra de navegación.
         </p>
         <ul>
           <li>
-            <strong>Código:</strong> Este código hace referencia al producto, no
+            <strong>Código:</strong> Este código hace referencia al product, no
             es posible que existan duplicados, es válido solo letras, números y
             ciertos caracteres. Además de un máximo de 10 digitos.
           </li>
           <li>
             <strong>Nombre:</strong> El nombre hace referencia mismo al
-            producto. A comparación de la descripción, este es una acotación
-            para la clasificación de los productos.
+            product. A comparación de la descripción, este es una acotación
+            para la clasificación de los products.
           </li>
         </ul>
         <div class="mt-5">
@@ -2163,7 +2163,7 @@
 </div>
 <!--FIN MODAL AYUDA-->
 
-<!--MODAL PRODUCTOS-CATEGORIAS -->
+<!--MODAL productS-CATEGORIAS -->
 <!-- Modal -->
 <div
   class="modal fade"
@@ -2178,7 +2178,7 @@
     <div class="modal-content bg-dark text-white" id="modalProdCateg">
       <div class="modal-header">
         <h4 class="modal-title" id="modalProdCategLabel">
-          Productos por Categoría
+          products por Categoría
         </h4>
         <button
           type="button"
@@ -2188,10 +2188,10 @@
         ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
-        <h5>Acerca de Filtros de Productos por Categoría</h5>
+        <h5>Acerca de Filtros de products por Categoría</h5>
         <br />
         <p>
-          Estos Filtros se aplican para la búsqueda de productos según su
+          Estos Filtros se aplican para la búsqueda de products según su
           categoría en el Sistema. Esta Búsqueda es posible realizarla desde el
           buscador general desde este listado.
         </p>
@@ -2199,7 +2199,7 @@
 
         <div class="d-flex d-row justify-content-center">
           <h5 class="text-decoration-underline m-2 justify-content-center">
-            Categorías de Productos
+            Categorías de products
           </h5>
         </div>
 
@@ -2316,9 +2316,9 @@
     </div>
   </div>
 </div>
-<!--FIN MODAL PRODUCTOS-CATEGORIAS-->
+<!--FIN MODAL productS-CATEGORIAS-->
 
-<!--MODAL PRODUCTOS-MARCAS -->
+<!--MODAL productS-MARCAS -->
 <!-- Modal -->
 <div
   class="modal fade"
@@ -2333,7 +2333,7 @@
     <div class="modal-content bg-dark text-white" id="modalProdMarcas">
       <div class="modal-header">
         <h4 class="modal-title" id="modalProdMarcasLabel">
-          Productos por Marcas
+          products por Marcas
         </h4>
         <button
           type="button"
@@ -2343,10 +2343,10 @@
         ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
-        <h5>Acerca de Filtros de Productos por Marcas</h5>
+        <h5>Acerca de Filtros de products por Marcas</h5>
         <br />
         <p>
-          Estos Filtros se aplican para la búsqueda de productos según su marca
+          Estos Filtros se aplican para la búsqueda de products según su marca
           en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
           general desde este listado.
         </p>
@@ -2354,7 +2354,7 @@
 
         <div class="d-flex d-row justify-content-center">
           <h5 class="text-decoration-underline m-2 justify-content-center">
-            Marcas de Productos
+            Marcas de products
           </h5>
         </div>
 
@@ -2542,9 +2542,9 @@
     </div>
   </div>
 </div>
-<!--FIN MODAL PRODUCTOS-MARCAS-->
+<!--FIN MODAL productS-MARCAS-->
 
-<!--MODAL PRODUCTOS-FECHAS -->
+<!--MODAL productS-FECHAS -->
 <!-- Modal -->
 <div
   class="modal fade"
@@ -2559,7 +2559,7 @@
     <div class="modal-content bg-dark text-white" id="modalProdFechas">
       <div class="modal-header">
         <h4 class="modal-title" id="modalProdFechasLabel">
-          Productos por Fechas
+          products por Fechas
         </h4>
         <button
           type="button"
@@ -2569,10 +2569,10 @@
         ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
-        <h5>Acerca de Filtros de Productos por Fechas</h5>
+        <h5>Acerca de Filtros de products por Fechas</h5>
         <br />
         <p>
-          Estos Filtros se aplican para la búsqueda de productos según su fecha
+          Estos Filtros se aplican para la búsqueda de products según su fecha
           en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
           general desde este listado.
         </p>
@@ -2580,7 +2580,7 @@
 
         <div class="d-flex d-row justify-content-center">
           <h5 class="text-decoration-underline m-2 justify-content-center">
-            Fechas de Inserción de Productos
+            Fechas de Inserción de products
           </h5>
         </div>
 
@@ -2589,7 +2589,7 @@
             <ul class="navbar-nav border-secondary">
               <hr />
 
-              <h6 class="text-decoration-underline">Productos por Año</h6>
+              <h6 class="text-decoration-underline">products por Año</h6>
 
               <div class="d-flex d-row">
                 <li data-bs-dismiss="modal">
@@ -2749,9 +2749,9 @@
     </div>
   </div>
 </div>
-<!--FIN MODAL PRODUCTOS-FECHAS-->
+<!--FIN MODAL productS-FECHAS-->
 
-<!--MODAL PRODUCTOS-STOCK -->
+<!--MODAL productS-STOCK -->
 <!-- Modal -->
 <div
   class="modal fade"
@@ -2766,7 +2766,7 @@
     <div class="modal-content bg-dark text-white" id="modalProdStock">
       <div class="modal-header">
         <h4 class="modal-title" id="modalProdStockLabel">
-          Productos por Stock
+          products por Stock
         </h4>
         <button
           type="button"
@@ -2776,10 +2776,10 @@
         ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
-        <h5>Acerca de Filtros de Productos por Stock</h5>
+        <h5>Acerca de Filtros de products por Stock</h5>
         <br />
         <p>
-          Estos Filtros se aplican para la búsqueda de productos según su Stock
+          Estos Filtros se aplican para la búsqueda de products según su Stock
           en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
           general desde este listado.
         </p>
@@ -2787,7 +2787,7 @@
 
         <div class="d-flex d-row justify-content-center">
           <h5 class="text-decoration-underline m-2 justify-content-center">
-            Stock de Productos
+            Stock de products
           </h5>
         </div>
 
@@ -2843,9 +2843,9 @@
     </div>
   </div>
 </div>
-<!--FIN MODAL PRODUCTOS-STOCK-->
+<!--FIN MODAL productS-STOCK-->
 
-<!--MODAL PRODUCTOS-PRECIO -->
+<!--MODAL productS-PRECIO -->
 <!-- Modal -->
 <div
   class="modal fade"
@@ -2860,7 +2860,7 @@
     <div class="modal-content bg-dark text-white" id="modalProdPrecio">
       <div class="modal-header">
         <h4 class="modal-title" id="modalProdPrecioLabel">
-          Productos por Precio
+          products por Precio
         </h4>
         <button
           type="button"
@@ -2870,10 +2870,10 @@
         ></button>
       </div>
       <div class="modal-body" id="modalsProdList">
-        <h5>Acerca de Filtros de Productos por Precio</h5>
+        <h5>Acerca de Filtros de products por Precio</h5>
         <br />
         <p>
-          Estos Filtros se aplican para la búsqueda de productos según su Precio
+          Estos Filtros se aplican para la búsqueda de products según su Precio
           en el Sistema. Esta Búsqueda es posible realizarla desde el buscador
           general desde este listado.
         </p>
@@ -2881,7 +2881,7 @@
 
         <div class="d-flex d-row justify-content-center">
           <h5 class="text-decoration-underline m-2 justify-content-center">
-            Precios de Productos
+            Precios de products
           </h5>
         </div>
 
@@ -2948,7 +2948,7 @@
     </div>
   </div>
 </div>
-<!--FIN MODAL PRODUCTOS-PRECIO-->
+<!--FIN MODAL productS-PRECIO-->
 
 <!--MODAL DIVISAS -->
 <!-- Modal -->
@@ -3005,7 +3005,7 @@
 </div>
 <!--FIN MODAL DIVISAS-->
 
-<!--MODAL PRODUCTOS-INFO -->
+<!--MODAL productS-INFO -->
 <!-- Modal -->
 <div
   class="modal fade"
@@ -3034,8 +3034,8 @@
         <br />
         <p>
           <strong>Filtro Aplicado :</strong> Búsqueda por
-          <strong>{{ filtroProdCampo }}</strong
-          >. Según el filtro <strong>{{ filtroProdBusqueda }} </strong> y página
+          <strong>{{ productsFieldSearch }}</strong
+          >. Según el filtro <strong>{{ productsSearchFilter }} </strong> y página
           <strong>{{ nroPage + 1 }} </strong>
         </p>
         <br />
@@ -3048,7 +3048,7 @@
     </div>
   </div>
 </div>
-<!--FIN MODAL PRODUCTOS-INFO-->
+<!--FIN MODAL productS-INFO-->
 
 <!--MODAL DIVISA -->
 <!-- Modal -->
@@ -3078,7 +3078,7 @@
         <div class="d-flex d-column">
           <div class="alert alert-primary p-1" role="alert">
             <div>
-              Precio en Pesos : <strong> ${{ this.precioProducto }}</strong>
+              Precio en Pesos : <strong> ${{ this.productPrice }}</strong>
             </div>
           </div>
           <div class="alert alert-success ms-2 p-1" role="alert">
@@ -3086,7 +3086,7 @@
               Precio en Dólares :
               <strong
                 >$USD{{
-                  this.precioProducto / this.dolarBuy | number: "1.00-00"
+                  this.productPrice / this.dolarBuy | number: "1.00-00"
                 }}</strong
               >
             </div>
@@ -3129,7 +3129,7 @@
 </div>
 <!--FIN MODAL DIVISA-->
 
-<!--MODAL LAST PRODUCTO -->
+<!--MODAL LAST product -->
 <!-- Modal -->
 <div
   class="modal fade"
@@ -3144,7 +3144,7 @@
     <div class="modal-content bg-dark text-white" id="modalLastProduct">
       <div class="modal-header">
         <h4 class="modal-title" id="modalLastProductLabel">
-          Último Producto Agregado
+          Último product Agregado
         </h4>
         <button
           type="button"
@@ -3154,18 +3154,18 @@
         ></button>
       </div>
       <div class="modal-body">
-        <h5>Selección del Producto</h5>
+        <h5>Selección del product</h5>
         <p>
-          El producto es determinado a través de la última operación de
+          El product es determinado a través de la última operación de
           inserción.
         </p>
         <div class="d-flex d-row justify-content-center m-2">
-          <!--CARD LAST PRODUCTO-->
+          <!--CARD LAST product-->
 
           <div
             class="card bg-dark border-2 border-dark m-2"
             style="width: 14rem; height: 32rem"
-            *ngFor="let lastProd of lastProducto"
+            *ngFor="let lastProd of lastProduct"
             id="cardsTable"
           >
             {{ lastProd.codigo }}
@@ -3193,35 +3193,35 @@
                 <button
                   class="btn btn-primary bg-dark alert-link m-1 p-1 mb-1"
                   data-bs-dismiss="modal"
-                  (click)="detalleProducto(lastProd)"
+                  (click)="navigateDetailsProduct(lastProd)"
                 >
-                  <!--Icono Visualizar Producto-->
+                  <!--Icono Visualizar product-->
                   <img
                     src="{{ imgPrecioHelp }}" loading="lazy"
                     alt=""
                     width="25"
                     height="25"
-                    title="Detalles Producto"
+                    title="Detalles product"
                     class=""
                   />
-                  <!--Fin Icono Visualizar Producto-->
+                  <!--Fin Icono Visualizar product-->
                 </button>
 
                 <button
                   class="btn btn-warning border-dark bg-dark alert-link m-1 p-1"
                   data-bs-dismiss="modal"
-                  (click)="editarProducto(lastProd)"
+                  (click)="navigateEditProduct(lastProd)"
                 >
-                  <!--Icono Editar Producto-->
+                  <!--Icono Editar product-->
                   <img
                     src="{{ imgEditProduct }}" loading="lazy"
                     alt=""
                     width="25"
                     height="25"
-                    title="Editar Producto"
+                    title="Editar product"
                     class=""
                   />
-                  <!--Fin Icono Editar Producto-->
+                  <!--Fin Icono Editar product-->
                 </button>
                 <a>
                   <!-- BTN MODAL DELETE CHECK  -->
@@ -3231,18 +3231,18 @@
                     class="btn btn-danger bg-dark border-dark alert-link m-1 p-1"
                     data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop02"
-                    (click)="setProductoSelect(lastProd)"
+                    (click)="setProductSelect(lastProd)"
                   >
-                    <!--Icono Eliminar Producto-->
+                    <!--Icono Eliminar product-->
                     <img
                       src="{{ imgDeleteProduct }}" loading="lazy"
                       alt=""
                       width="25"
                       height="25"
-                      title="Eliminar Producto"
+                      title="Eliminar product"
                       class=""
                     />
-                    <!--Fin Icono Eliminar Producto-->
+                    <!--Fin Icono Eliminar product-->
                   </button>
                   <!-- FIN BTN MODAL DELETE CHECK -->
                 </a>
@@ -3250,7 +3250,7 @@
             </div>
           </div>
 
-          <!--FIN CARD LAST PRODUCTO-->
+          <!--FIN CARD LAST product-->
         </div>
       </div>
       <div class="modal-footer">
@@ -3261,7 +3261,7 @@
     </div>
   </div>
 </div>
-<!--FIN MODAL LAST PRODUCTO-->
+<!--FIN MODAL LAST product-->
 
 <!--MODAL ARCHIVO DESCARGA -->
 <!-- Modal -->
@@ -3290,9 +3290,9 @@
       <div class="modal-body">
         <h5>Acerca de Archivos de Descarga</h5>
         <p>
-          Es posible descargar el listado de productos paginado a través de
+          Es posible descargar el listado de products paginado a través de
           varios formatos de archivos(pdf, xlsx y csv). Los Archivos descargados
-          mantendrán el orden de lista y solamente los productos según el
+          mantendrán el orden de lista y solamente los products según el
           paginado seleccionado.
         </p>
         <br />
@@ -3410,8 +3410,8 @@
               title="Alerta"
             />
             <h5 class="ms-2">
-              Está Seguro que desea Eliminar el Producto
-              {{ nombrProdSelect }} ??
+              Está Seguro que desea Eliminar el product
+              {{ nameSelectedProduct }} ??
             </h5>
           </div>
           <div class="d-flex justify-content-end mt-2">
@@ -3426,7 +3426,7 @@
               type="button"
               class="btn btn-danger btn-sm p-1 m-1"
               data-bs-dismiss="modal"
-              (click)="eliminarProducto(idProdSelect)"
+              (click)="deleteProduct(idSelectedProduct)"
             >
               Eliminar
             </button>
