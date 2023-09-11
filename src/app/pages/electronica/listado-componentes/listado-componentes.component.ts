@@ -157,8 +157,8 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroCurrentElements = data.numberOfElements;
           this.nroTotalElements = data.totalElements;
         },
-        (err) => {
-          this.errMsj = err.error.message;
+        (error) => {
+          this.errMsj = error.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
         }
@@ -180,8 +180,8 @@ export class ListadoComponentesComponent implements OnInit {
         (data: any) => {
           this.lastProduct = data.content;
         },
-        (err) => {
-          this.errMsj = err.error.message;
+        (error) => {
+          this.errMsj = error.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
         }
@@ -210,8 +210,8 @@ export class ListadoComponentesComponent implements OnInit {
           this.nroCurrentElements = data.numberOfElements;
           this.nroTotalElements = data.totalElements;
         },
-        (err) => {
-          this.errMsj = err.error.message;
+        (error) => {
+          this.errMsj = error.message;
           console.log(this.errMsj);
           this.toastService.error(this.errMsj);
         }
@@ -226,7 +226,9 @@ export class ListadoComponentesComponent implements OnInit {
       this.productsFieldSearch = "";
       this.productsSearchFilter = "";
 
-      if (filtro === ("" || null) || campo === ("" || null)) {
+      console.log({'FILTRO':filtro});
+
+        if (filtro === "" || filtro === null || campo === "" || campo === null) {
         this.listProducts();
       } else {
         this.productsFieldSearch = campo;
@@ -234,8 +236,8 @@ export class ListadoComponentesComponent implements OnInit {
         this.nroPage = nroPag;
         this.listProductsFilter();
       }
-      this.listLastProduct();
     } catch (error) {
+      console.log(error);
       this.errMsj = error.message;
       console.log(this.errMsj);
       this.toastService.error(this.errMsj);
@@ -249,8 +251,8 @@ export class ListadoComponentesComponent implements OnInit {
     this.dolarService
       .getDolarBuy()
       .then((obj) => (this.dolarBuy = obj))
-      .catch((err) => {
-        this.errMsj = err.error.message;
+      .catch((error) => {
+        this.errMsj = error.message;
         console.log(this.errMsj);
         this.toastService.error(this.errMsj);
       });
@@ -263,8 +265,8 @@ export class ListadoComponentesComponent implements OnInit {
     this.dolarService
       .getDolarSale()
       .then((obj) => (this.dolarSale = obj))
-      .catch((err) => {
-        this.errMsj = err.error.message;
+      .catch((error) => {
+        this.errMsj = error.message;
         console.log(this.errMsj);
         this.toastService.error(this.errMsj);
       });
@@ -326,8 +328,8 @@ export class ListadoComponentesComponent implements OnInit {
         console.log("Producto Eliminado");
         this.refresh(2100);
       },
-      (err) => {
-        this.errMsj = err.error.message;
+      (error) => {
+        this.errMsj = error.message;
         console.log(this.errMsj);
         this.toastService.error(this.errMsj);
       }
@@ -369,9 +371,16 @@ export class ListadoComponentesComponent implements OnInit {
   // ===== RECARGAR-REFRESH===
   // =========================
   refresh(ms: number) {
-    setTimeout(() => {
-      window.location.reload();
-    }, ms);
+    try {
+      setTimeout(() => {
+        window.location.reload();
+      }, ms);
+    } catch (error) {
+      this.errMsj = error.message;
+      console.log(this.errMsj);
+      this.toastService.error(this.errMsj);
+    }
+
   }
 
   // =========================
@@ -494,7 +503,7 @@ export class ListadoComponentesComponent implements OnInit {
       this.orderBy = type;
       this.direction = direct;
 
-      if (this.productsSearchFilter === ("" || null)) {
+      if (this.productsSearchFilter === "" || this.productsSearchFilter === null) {
         this.listProducts();
       } else {
         this.listProductsFilter();
@@ -549,7 +558,7 @@ export class ListadoComponentesComponent implements OnInit {
     try {
       this.nroPage = pagina;
 
-      if (this.productsSearchFilter === ("" || null)) {
+      if (this.productsSearchFilter === "" || this.productsSearchFilter === null) {
         this.listProducts();
       } else {
         this.listProductsFilter();
