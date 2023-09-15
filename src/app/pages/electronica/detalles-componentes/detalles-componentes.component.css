@@ -1,0 +1,38 @@
+div .alert {
+  opacity: 0.8;
+}
+
+#card {
+  opacity: 0.9;
+}
+
+table {
+  background-color: rgb(211, 210, 210);
+  opacity: 0.8;
+  padding: 5px;
+}
+table thead th button {
+  background-color: rgb(76, 56, 56);
+  border-color: black;
+  opacity: 1;
+}
+table thead th button:hover {
+  background-color: rgb(143, 46, 46);
+}
+table p, table th, table td {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 5px;
+}
+
+#modalCheckDelete {
+  background: none;
+  border: none;
+}
+#modalCheckDelete .alert {
+  border-radius: 15px;
+  border-color: #15351a;
+}
+#modalCheckDelete .alert button {
+  border-radius: 10px;
+}/*# sourceMappingURL=detalles-componentes.component.css.map */

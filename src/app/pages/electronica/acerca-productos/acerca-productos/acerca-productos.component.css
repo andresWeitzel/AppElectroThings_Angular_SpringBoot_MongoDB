@@ -1,0 +1,20 @@
+div .alert {
+  opacity: 0.8;
+}
+
+.scrollspy-example {
+  position: relative;
+  height: 80%;
+  width: 100%;
+  overflow: auto;
+  background-color: none;
+  color: white;
+  z-index: 3;
+}
+.scrollspy-example .card {
+  color: black;
+}
+
+#scrollspy-example-child a {
+  color: white;
+}/*# sourceMappingURL=acerca-productos.component.css.map */
