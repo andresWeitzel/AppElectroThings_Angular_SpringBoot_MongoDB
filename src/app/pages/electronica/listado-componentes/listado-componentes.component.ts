@@ -451,6 +451,7 @@ export class ListadoComponentesComponent implements OnInit {
     try {
       let nameExcel = "listaComponentes.xlsx";
       let data = document.getElementById("table");
+      //let valuesFileDownload = dataTable.getElementById("table");
       let paginate = this.getPaginate();
       this.generateFileService.generateExcel(nameExcel, data, paginate);
     } catch (error) {
