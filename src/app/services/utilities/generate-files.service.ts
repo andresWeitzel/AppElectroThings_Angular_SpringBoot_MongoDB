@@ -71,6 +71,8 @@ export class GenerateFilesService {
 
   generateExcel(excelName: string, data: any, paginate: any) {
     try {
+      //Change here text content
+      console.log(data);
       //Paginate
       let nroPage = paginate["nroPage"];
       let totalPages = paginate["totalPages"];
@@ -85,11 +87,11 @@ export class GenerateFilesService {
 
       XLSX.utils.book_append_sheet(book, worksheet);
 
+      //Reemplazamos el campo imagenes por vacio
+      XLSX.utils.sheet_add_aoa(worksheet, [[""]], { origin: "F1" });
+
       //Reemplazamos el campo accion por vacio
       XLSX.utils.sheet_add_aoa(worksheet, [[""]], { origin: "K1" });
-
-      //Reemplazamos el campo imagenes por vacio
-      XLSX.utils.sheet_add_aoa(worksheet, [[""]], { origin: "C1" });
 
       //Agregamos paginado
       XLSX.utils.sheet_add_aoa(worksheet, [["NRO PAGINA"]], { origin: "L1" });

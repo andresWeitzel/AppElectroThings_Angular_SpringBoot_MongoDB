@@ -1,301 +1,417 @@
 <div class="container">
-    <div class="row justify-content-center">
-
-
-        <div class="alert alert-dark bg-dark text-white text-center" role="alert">
-          <h4 class="">
-            <strong>INICIO
-                         <!-- BTN MODAL INFO  -->
-                          <button class="btn bg-none p-1 ms-2" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            <img src="./assets/images/help02.png" alt="" width="30"
-                              height="30" class="">
-                          </button>
-                        <!-- FIN BTN MODAL INFO  -->
-          </strong></h4>
-        </div>
-
-        <!--CARDS COMPONENTES-->
-        <div class="d-flex justify-content-center">
-            <!--LISTADO DE COMPONENTES-->
-            <div class="card bg-dark text-white m-1 ms-0">
-                <img src="/assets/background/red-back-10.jpg" class="card-img" height="350px" alt="...">
-                <div class="card-img-overlay">
-
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong><img src="assets/images/list-products.png" width="50px" height="50px" alt="" title="LISTADO"> LISTADO DE PRODUCTOS</strong></h4>
-
-                    <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
-                        <ol>
-                            <li>Listado de Productos Paginados</li>
-                            <li>Detalles y Características</li>
-                            <li>Formularios REGEX</li>
-                            <li>Modificación del Producto</li>
-                            <li>Eliminación del Producto</li>
-                            <li>Otros</li>
-                        </ol>
-
-                        <div class="mt-1">
-                            <a class="nav-link" [routerLink]="['/listado-componentes']">
-                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">VER PRODUCTOS</button>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-            <!-- FIN LISTADO DE COMPONENTES-->
-            <!--AGREGAR COMPONENTES-->
-            <div class="card bg-dark text-white m-1 ">
-                <img src="/assets/background/red-back-12.jpg" class="card-img" height="350px" alt="...">
-                <div class="card-img-overlay">
-
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong><img src="assets/images/package.png" width="50px" height="50px" alt="" title="AGREGAR"> AGREGAR PRODUCTOS</strong></h4>
-
-                    <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
-                        <ol>
-                            <li>Formulario REGEX</li>
-                            <li>Transacción Directa</li>
-                            <li>Comprobación</li>
-                            <li>Detalle del Producto Agregado</li>
-                            <li>Modificación del Producto</li>
-                            <li>Eliminación del Producto</li>
-                        </ol>
-
-                        <div class="mt-1">
-                            <a class="nav-link" [routerLink]="['/agregar-componentes']">
-                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">AGREGAR PRODUCTO</button>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!--FIN AGREGAR COMPONENTES-->
-            <!--EDITAR-->
-            <div class="card bg-dark text-white  m-1 ">
-                <img src="/assets/background/red-back-10.jpg" class="card-img" height="350px" alt="...">
-                <div class="card-img-overlay ">
-
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong><img src="assets/images/edit.png" width="50px" height="50px" alt="" title="EDITAR"> EDITAR PRODUCTOS</strong></h4>
-
-                    <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
-                        <ol>
-                            <li>Formulario REGEX</li>
-                            <li>Transacción Directa</li>
-                            <li>Información del Producto</li>
-                            <li>Detalle del Producto Editado</li>
-                            <li>Modificación del Producto</li>
-                            <li>Eliminación del Producto</li>
-                        </ol>
-
-                        <div class="mt-1">
-                            <a class="nav-link" [routerLink]="['/listado-componentes']">
-                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">EDITAR PRODUCTO</button>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!--FIN EDITAR-->
-
-        </div>
-        <!--FIN CARDS COMPONENTES-->
-
-
-        <!-- CARD UTILIDADES-->
-        <div class="d-flex justify-content-center">
-
-
-          <!--ANALYTICS-->
-          <div class="card bg-dark text-white m-1 ms-0">
-            <img src="/assets/background/red-back-12.jpg" class="card-img" height="350px" alt="...">
-            <div class="card-img-overlay">
-
-                <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong><img src="assets/images/graphics02.png" width="50px" height="50px" alt="" title="Analytics"> ANALYTICS</strong></h4>
-
-                <div class="container align-content-left bg-dark">
-                    <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
-                    <ol>
-                        <li>Gráfico de Área Stock de Productos según cada Categoría</li>
-                        <li>Gráfico de Área Stock de Productos por Año y Meses</li>
-                        <li>Promedios, Máximos y Mínimos, etc.</li>
-                        <li>Otros.</li>
-                    </ol>
-
-                    <div class="mt-1">
-                        <a class="nav-link" [routerLink]="['/novedades-componentes']">
-                            <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">VER Analytics</button>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
-        <!--FIN ANALYTICS-->
-
-
-
-
-
-
-            <!--ACERCA DE PRODUCTOS-->
-            <div class="card bg-dark text-white m-1 ms-0">
-                <img src="/assets/background/red-back-01.jpg" class="card-img" height="350px" alt="...">
-                <div class="card-img-overlay">
-
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong><img src="assets/images/productsAbout.png" width="50px" height="50px" alt="" title="NOVEDADES"> ACERCA DE PRODUCTOS</strong></h4>
-
-                    <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline p-2 mb-0">Operaciones Disponibles:</p>
-                        <ol>
-                            <li>Detalles y Tipos de Placas Electrónicas</li>
-                            <li>Detalles y Tipos de Monitores, Notebooks</li>
-                            <li>Detalles y Tipos de Accesorios, Gamer, etc.</li>
-                            <li>Video Reviews y Blog</li>
-                            <li>Otros.</li>
-                        </ol>
-
-                        <div class="mt-1">
-                            <a class="nav-link" [routerLink]="['/novedades-componentes']">
-                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">VER ACERCA DE PRODUCTOS</button>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-            <!--FIN ACERCA DE PRODUCTOS-->
-
-            <!--NOVEDADES-->
-            <div class="card bg-dark text-white m-1 ">
-                <img src="/assets/background/red-back-12.jpg" class="card-img" height="350px" alt="...">
-                <div class="card-img-overlay">
-
-                    <h4 class="card-title alert alert-dark bg-dark text-white text-center p-1"><strong><img src="assets/images/megaphone.png" width="50px" height="50px" alt="" title="AYUDA"> NOVEDADES</strong></h4>
-
-                    <div class="container align-content-left bg-dark">
-                        <p class="text-decoration-underline mb-0 p-2">Operaciones Disponibles:</p>
-                        <ol>
-                            <li>Nuevas Placas Electrónicas</li>
-                            <li>Nuevos Componentes</li>
-                            <li>Nuevos Proveedores</li>
-                            <li>Fabricantes</li>
-                            <li>Blog Técnico</li>
-                            <li>Otros(Destacados)</li>
-                        </ol>
-
-                        <div class="mt-1">
-                            <a class="nav-link" [routerLink]="['/ayuda']">
-                                <button class="btn btn-danger border-light d-grid gap-2 col-12 p-1" type="button ">VER NOVEDADES</button>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-               <!--FIN NOVEDADES-->
-
-
-        </div>
-        <!--FIN CARD UTILIDADES-->
-
-
+  <div class="row justify-content-center">
+    <div class="alert alert-dark bg-dark text-white text-center" role="alert">
+      <h4 class="">
+        <strong
+          >INICIO
+          <!-- BTN MODAL INFO  -->
+          <button
+            class="btn bg-none p-1 ms-2"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <img
+              src="{{imgHelp}}"
+              alt="imgHelp"
+              width="30"
+              height="30"
+              class=""
+            />
+          </button>
+          <!-- FIN BTN MODAL INFO  -->
+        </strong>
+      </h4>
     </div>
+
+    <!--CARDS COMPONENTES-->
+    <div class="d-flex justify-content-center">
+      <!--LISTADO DE COMPONENTES-->
+      <div class="card bg-dark text-white m-1 ms-0">
+        <img
+          src="{{imgBgRedBlack01}}"
+          class="card-img"
+          height="350px"
+          alt="..."
+        />
+        <div class="card-img-overlay">
+          <h4
+            class="card-title alert alert-dark bg-dark text-white text-center p-1"
+          >
+            <strong
+              ><img
+                src="{{imgBooks}}"
+                width="50px"
+                height="50px"
+                alt=""
+                title="LISTADO"
+              />
+              LISTADO DE PRODUCTOS</strong
+            >
+          </h4>
+
+          <div class="container align-content-left bg-dark">
+            <p class="text-decoration-underline p-2 mb-0">
+              Operaciones Disponibles:
+            </p>
+            <ol>
+              <li>Listado de Productos Paginados</li>
+              <li>Detalles y Características</li>
+              <li>Formularios REGEX</li>
+              <li>Modificación del Producto</li>
+              <li>Eliminación del Producto</li>
+              <li>Otros</li>
+            </ol>
+
+            <div class="mt-1">
+              <a class="nav-link" [routerLink]="['/listado-componentes']">
+                <button
+                  class="btn btn-danger border-light d-grid gap-2 col-12 p-1"
+                  type="button "
+                >
+                  VER PRODUCTOS
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN LISTADO DE COMPONENTES-->
+      <!--AGREGAR COMPONENTES-->
+      <div class="card bg-dark text-white m-1">
+        <img
+          src="{{imgBgRedBlue}}"
+          class="card-img"
+          height="350px"
+          alt="..."
+        />
+        <div class="card-img-overlay">
+          <h4
+            class="card-title alert alert-dark bg-dark text-white text-center p-1"
+          >
+            <strong
+              ><img
+                src="{{imgPackage}}"
+                width="50px"
+                height="50px"
+                alt=""
+                title="AGREGAR"
+              />
+              AGREGAR PRODUCTOS</strong
+            >
+          </h4>
+
+          <div class="container align-content-left bg-dark">
+            <p class="text-decoration-underline p-2 mb-0">
+              Operaciones Disponibles:
+            </p>
+            <ol>
+              <li>Formulario REGEX</li>
+              <li>Transacción Directa</li>
+              <li>Comprobación</li>
+              <li>Detalle del Producto Agregado</li>
+              <li>Modificación del Producto</li>
+              <li>Eliminación del Producto</li>
+            </ol>
+
+            <div class="mt-1">
+              <a class="nav-link" [routerLink]="['/agregar-componentes']">
+                <button
+                  class="btn btn-danger border-light d-grid gap-2 col-12 p-1"
+                  type="button "
+                >
+                  AGREGAR PRODUCTO
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN AGREGAR COMPONENTES-->
+      <!--EDITAR-->
+      <div class="card bg-dark text-white m-1">
+        <img
+          src="{{imgBgRedBlack01}}"
+          class="card-img"
+          height="350px"
+          alt="..."
+        />
+        <div class="card-img-overlay">
+          <h4
+            class="card-title alert alert-dark bg-dark text-white text-center p-1"
+          >
+            <strong
+              ><img
+                src="{{imgHand}}"
+                width="50px"
+                height="50px"
+                alt=""
+                title="EDITAR"
+              />
+              EDITAR PRODUCTOS</strong
+            >
+          </h4>
+
+          <div class="container align-content-left bg-dark">
+            <p class="text-decoration-underline p-2 mb-0">
+              Operaciones Disponibles:
+            </p>
+            <ol>
+              <li>Formulario REGEX</li>
+              <li>Transacción Directa</li>
+              <li>Información del Producto</li>
+              <li>Detalle del Producto Editado</li>
+              <li>Modificación del Producto</li>
+              <li>Eliminación del Producto</li>
+            </ol>
+
+            <div class="mt-1">
+              <a class="nav-link" [routerLink]="['/listado-componentes']">
+                <button
+                  class="btn btn-danger border-light d-grid gap-2 col-12 p-1"
+                  type="button "
+                >
+                  EDITAR PRODUCTO
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN EDITAR-->
+    </div>
+    <!--FIN CARDS COMPONENTES-->
+
+    <!-- CARD UTILIDADES-->
+    <div class="d-flex justify-content-center">
+      <!--ANALYTICS-->
+      <div class="card bg-dark text-white m-1 ms-0">
+        <img
+          src="{{imgBgRedBlue}}"
+          class="card-img"
+          height="350px"
+          alt="..."
+        />
+        <div class="card-img-overlay">
+          <h4
+            class="card-title alert alert-dark bg-dark text-white text-center p-1"
+          >
+            <strong
+              ><img
+                src="{{imgGraphics}}"
+                width="50px"
+                height="50px"
+                alt=""
+                title="Analytics"
+              />
+              ANALYTICS</strong
+            >
+          </h4>
+
+          <div class="container align-content-left bg-dark">
+            <p class="text-decoration-underline p-2 mb-0">
+              Operaciones Disponibles:
+            </p>
+            <ol>
+              <li>Gráfico de Área Stock de Productos según cada Categoría</li>
+              <li>Gráfico de Área Stock de Productos por Año y Meses</li>
+              <li>Promedios, Máximos y Mínimos, etc.</li>
+              <li>Otros.</li>
+            </ol>
+
+            <div class="mt-1">
+              <a class="nav-link" [routerLink]="['/novedades-componentes']">
+                <button
+                  class="btn btn-danger border-light d-grid gap-2 col-12 p-1"
+                  type="button "
+                >
+                  VER Analytics
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN ANALYTICS-->
+
+      <!--ACERCA DE PRODUCTOS-->
+      <div class="card bg-dark text-white m-1 ms-0">
+        <img
+          src="{{imgBgRedBlack02}}"
+          class="card-img"
+          height="350px"
+          alt="..."
+        />
+        <div class="card-img-overlay">
+          <h4
+            class="card-title alert alert-dark bg-dark text-white text-center p-1"
+          >
+            <strong
+              ><img
+                src="{{imgNotebook}}"
+                width="50px"
+                height="50px"
+                alt=""
+                title="NOVEDADES"
+              />
+              ACERCA DE PRODUCTOS</strong
+            >
+          </h4>
+
+          <div class="container align-content-left bg-dark">
+            <p class="text-decoration-underline p-2 mb-0">
+              Operaciones Disponibles:
+            </p>
+            <ol>
+              <li>Detalles y Tipos de Placas Electrónicas</li>
+              <li>Detalles y Tipos de Monitores, Notebooks</li>
+              <li>Detalles y Tipos de Accesorios, Gamer, etc.</li>
+              <li>Video Reviews y Blog</li>
+              <li>Otros.</li>
+            </ol>
+
+            <div class="mt-1">
+              <a class="nav-link" [routerLink]="['/novedades-componentes']">
+                <button
+                  class="btn btn-danger border-light d-grid gap-2 col-12 p-1"
+                  type="button "
+                >
+                  VER ACERCA DE PRODUCTOS
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN ACERCA DE PRODUCTOS-->
+
+      <!--NOVEDADES-->
+      <div class="card bg-dark text-white m-1">
+        <img
+          src="{{imgBgRedBlue}}"
+          class="card-img"
+          height="350px"
+          alt="..."
+        />
+        <div class="card-img-overlay">
+          <h4
+            class="card-title alert alert-dark bg-dark text-white text-center p-1"
+          >
+            <strong
+              ><img
+                src="{{imgMegaphone}}"
+                width="50px"
+                height="50px"
+                alt=""
+                title="AYUDA"
+              />
+              NOVEDADES</strong
+            >
+          </h4>
+
+          <div class="container align-content-left bg-dark">
+            <p class="text-decoration-underline mb-0 p-2">
+              Operaciones Disponibles:
+            </p>
+            <ol>
+              <li>Nuevas Placas Electrónicas</li>
+              <li>Nuevos Componentes</li>
+              <li>Nuevos Proveedores</li>
+              <li>Fabricantes</li>
+              <li>Blog Técnico</li>
+              <li>Otros (Destacados)</li>
+            </ol>
+
+            <div class="mt-1">
+              <a class="nav-link" [routerLink]="['/ayuda']">
+                <button
+                  class="btn btn-danger border-light d-grid gap-2 col-12 p-1"
+                  type="button "
+                >
+                  VER NOVEDADES
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN NOVEDADES-->
+    </div>
+    <!--FIN CARD UTILIDADES-->
+  </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--MODAL AYUDA -->
-              <!-- Modal -->
-              <div class="modal fade " id="staticBackdrop"
-                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content bg-dark text-white" id="modalAyuda">
-                    <div class="modal-header">
-                      <h4 class="modal-title" id="staticBackdropLabel">Guía
-                        Listado de Productos</h4>
-                      <button type="button" class="btn-close btn-close-white"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <h5>Acerca de la Gestión de Productos </h5>
-                      <p>En esta sección podemos visualizar los Productos según
-                        los requerimientos deseados, existe paginacion de
-                        productos, podemos aplicar filtros de búsqueda y las
-                        operaciones CRUD requeridas según el rol que se tenga.
-                        Los admins podrán realizar todas las Operaciones, los
-                        usuarios solamente la visualización y búsquedas.</p>
-                        <br>
-                      <h5>Buscador de Productos </h5>
-                      <p>Es posible realizar la búsqueda de productos según
-                        filtros aplicados para cada campo del Listado. Es decir,
-                        las siglas o palabras ingresadas serán aplicadas para
-                        todos los campos. </p>
-                        <br>
-                      <h5>Campos del Listado</h5>
-                      <p>Cada campo describe una característica del producto
-                        específico por fila. El campo opciones nos permite
-                        visualizar, editar y eliminar el producto seleccionado.
-                        También podemos agregar un producto desde la barra de
-                        navegación.</p>
-                      <ul>
-
-                        <li><strong>Código:</strong> Este código hace referencia
-                          al producto, no es posible que existan duplicados, es
-                          válido solo letras, números y ciertos caracteres.
-                          Además de un máximo de 10 digitos.</li>
-                        <li><strong>Nombre:</strong> El nombre hace referencia
-                          mismo al producto. A comparación de la descripción,
-                          este es una acotación para la clasificación de los
-                          productos.</li>
-                      </ul>
-                      <div class="mt-5 ">
-                        <strong>CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL
-                          DESARROLLADOR</strong>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-dark"
-                        data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--FIN MODAL AYUDA-->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white" id="modalAyuda">
+      <div class="modal-header">
+        <h4 class="modal-title" id="staticBackdropLabel">
+          Guía Listado de Productos
+        </h4>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h5>Acerca de la Gestión de Productos</h5>
+        <p>
+          En esta sección podemos visualizar los Productos según los
+          requerimientos deseados, existe paginacion de productos, podemos
+          aplicar filtros de búsqueda y las operaciones CRUD requeridas según el
+          rol que se tenga. Los admins podrán realizar todas las Operaciones,
+          los usuarios solamente la visualización y búsquedas.
+        </p>
+        <br />
+        <h5>Buscador de Productos</h5>
+        <p>
+          Es posible realizar la búsqueda de productos según filtros aplicados
+          para cada campo del Listado. Es decir, las siglas o palabras
+          ingresadas serán aplicadas para todos los campos.
+        </p>
+        <br />
+        <h5>Campos del Listado</h5>
+        <p>
+          Cada campo describe una característica del producto específico por
+          fila. El campo opciones nos permite visualizar, editar y eliminar el
+          producto seleccionado. También podemos agregar un producto desde la
+          barra de navegación.
+        </p>
+        <ul>
+          <li>
+            <strong>Código:</strong> Este código hace referencia al producto, no
+            es posible que existan duplicados, es válido solo letras, números y
+            ciertos caracteres. Además de un máximo de 10 digitos.
+          </li>
+          <li>
+            <strong>Nombre:</strong> El nombre hace referencia mismo al
+            producto. A comparación de la descripción, este es una acotación
+            para la clasificación de los productos.
+          </li>
+        </ul>
+        <div class="mt-5">
+          <strong
+            >CONTENIDO PARCIALMENTE DISPONIBLE, CONTACTAR AL
+            DESARROLLADOR</strong
+          >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--FIN MODAL AYUDA-->
