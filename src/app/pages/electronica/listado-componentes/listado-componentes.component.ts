@@ -513,6 +513,7 @@ export class ListadoComponentesComponent implements OnInit {
       this.errMsj = error.message;
       console.log(this.errMsj);
       this.toastService.error(this.errMsj);
+      //Add handle exception
     }
   }
 

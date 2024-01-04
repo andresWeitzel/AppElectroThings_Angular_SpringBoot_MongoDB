@@ -1,0 +1,170 @@
+div .alert {
+  opacity: 0.8;
+}
+
+#filters {
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  font-weight: bold;
+  border-radius: 0.5em;
+}
+
+#buscador div input {
+  color: rgb(0, 0, 0);
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  font-weight: bold;
+  border-radius: 0.5em;
+}
+#buscador div select {
+  color: white;
+  background-color: #212529;
+  border-radius: 0.5em;
+  border-color: black;
+}
+#buscador div input:hover, #buscador div select:hover {
+  border-color: black;
+}
+#buscador div button {
+  background-color: none;
+}
+#buscador div button:hover {
+  border-color: none;
+  opacity: 0.7;
+}
+#buscador #categoryDropdown #marcasDropdown button,
+#buscador #dateDropdown button,
+#buscador #stockDropdown button,
+#buscador #moneyDropdown button,
+#buscador #filterDropdown button,
+#buscador #infoDropdown button,
+#buscador #deleteFilter button {
+  color: white;
+  background-color: #212529;
+  border-radius: 0.5em;
+  border-color: none;
+  z-index: 2;
+}
+#buscador #categoryDropdown #marcasDropdown div, #buscador #categoryDropdown #marcasDropdown ul, #buscador #categoryDropdown #marcasDropdown li,
+#buscador #dateDropdown div,
+#buscador #dateDropdown ul,
+#buscador #dateDropdown li,
+#buscador #stockDropdown div,
+#buscador #stockDropdown ul,
+#buscador #stockDropdown li,
+#buscador #moneyDropdown div,
+#buscador #moneyDropdown ul,
+#buscador #moneyDropdown li,
+#buscador #filterDropdown div,
+#buscador #filterDropdown ul,
+#buscador #filterDropdown li,
+#buscador #infoDropdown div,
+#buscador #infoDropdown ul,
+#buscador #infoDropdown li,
+#buscador #deleteFilter div,
+#buscador #deleteFilter ul,
+#buscador #deleteFilter li {
+  color: white;
+  background-color: #212529;
+  border-radius: 0.8em;
+  border-color: black;
+  z-index: 3;
+}
+#buscador input:hover {
+  border-color: #212529;
+  border-radius: 15px;
+}
+#buscador button {
+  background-color: none;
+}
+#buscador button:hover {
+  border-color: #212529;
+  border-radius: 15px;
+  opacity: 0.7;
+}
+
+table {
+  background-color: rgb(211, 210, 210);
+  opacity: 0.8;
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+}
+table thead th button {
+  background-color: rgb(76, 56, 56);
+  border-color: black;
+  opacity: 1;
+}
+table thead th button:hover {
+  background-color: rgb(143, 46, 46);
+}
+table p, table th, table td {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 5px;
+}
+
+#pagination nav button {
+  background-color: #212529;
+}
+#pagination nav button:hover {
+  background-color: #393e43;
+}
+#pagination nav button:focus {
+  background-color: #58616b;
+}
+#pagination div button {
+  background-color: #212529;
+}
+#pagination div button:hover {
+  background-color: #393e43;
+}
+
+#cardsTable {
+  background-color: rgb(41, 39, 39);
+  color: white;
+  opacity: 0.8;
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+}
+#cardsTable div.card-footer {
+  background-color: rgb(37, 36, 36);
+  opacity: 1;
+  border-radius: 1em;
+}
+#cardsTable div.card-footer div button {
+  background-color: #212529;
+}
+#cardsTable div.card-footer div button:hover {
+  background-color: #474b4e;
+}
+
+#modalCheckDelete {
+  background: none;
+  border: none;
+}
+#modalCheckDelete .alert {
+  border-radius: 15px;
+  border-color: #15351a;
+}
+#modalCheckDelete .alert button {
+  border-radius: 10px;
+}
+
+#modalsProdList div li, #modalsProdList div a {
+  background-color: #2f3235;
+  border-color: #393e43;
+  border-radius: 0.5em;
+}
+#modalsProdList div li {
+  margin: 0.5em;
+}
+#modalsProdList div li:hover, #modalsProdList div a:hover {
+  background-color: #393e43;
+  border-radius: 0.5em;
+}
+#modalsProdList div h6:hover {
+  background-color: #393e43;
+  border-radius: 0.5em;
+}/*# sourceMappingURL=listado-componentes.component.css.map */

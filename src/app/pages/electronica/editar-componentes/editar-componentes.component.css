@@ -1,0 +1,35 @@
+div .alert {
+  opacity: 0.8;
+}
+
+div .container {
+  opacity: 0.9;
+}
+
+#formulario form, #formulario div, #formulario div.div {
+  border-radius: 1em;
+  opacity: 0.9;
+  color: white;
+}
+#formulario form mdb-form-control input, #formulario form mdb-form-control select, #formulario form mdb-form-control option, #formulario div mdb-form-control input, #formulario div mdb-form-control select, #formulario div mdb-form-control option, #formulario div.div mdb-form-control input, #formulario div.div mdb-form-control select, #formulario div.div mdb-form-control option {
+  background-color: rgb(28, 21, 21);
+  color: white;
+  max-width: 12em;
+}
+#formulario form mdb-form-control #imagen, #formulario div mdb-form-control #imagen, #formulario div.div mdb-form-control #imagen {
+  max-width: 25em;
+}
+#formulario form mdb-form-control input:hover, #formulario form mdb-form-control select:hover, #formulario form mdb-form-control option:hover, #formulario div mdb-form-control input:hover, #formulario div mdb-form-control select:hover, #formulario div mdb-form-control option:hover, #formulario div.div mdb-form-control input:hover, #formulario div.div mdb-form-control select:hover, #formulario div.div mdb-form-control option:hover {
+  background-color: rgb(61, 33, 33);
+}
+
+#btnForm button {
+  border: none;
+  border-radius: none;
+}
+#btnForm button:hover {
+  background-color: #393e43;
+}
+#btnForm button:focus {
+  background-color: #58616b;
+}/*# sourceMappingURL=editar-componentes.component.css.map */
