@@ -1,4 +1,4 @@
-<img src="./doc/listado/listado01.png" style="width: 100%; height: 80%"/>
+<img src="./doc/listado/listado01.png" style="width: 100%; height: 80%"/> 
 
 # AppElectroThings_Angular_SpringBoot_MongoDB.
 Aplicación ElectroThings para la Gestión de Productos Electrónicos implementada con HTML5, CSS3, SCSS, Angular, Bootstrap, Highchart, Spring-Boot, Spring Security, Spring MVC, Microservicios, SpringFox, Swagger UI, Git, DBeaver, PgAdmin, PostgreSQL y Otras Tecnologías.
